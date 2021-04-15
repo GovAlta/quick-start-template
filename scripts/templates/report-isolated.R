@@ -22,6 +22,8 @@ library(stringr)   # strings
 library(lubridate) # dates
 
 # ---- declare-globals ---------------------------------------------------------
+
+# ---- declare-functions -------------------------------------------------------
 # custom function for HTML tables
 neat <- function(x, output_format = "html"){
   # knitr.table.format = output_format
@@ -70,6 +72,7 @@ quick_save <- function(g,name,...){
     ...
   )
 }
+
 # ---- load-data ---------------------------------------------------------------
 
 
