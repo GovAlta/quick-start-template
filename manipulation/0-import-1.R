@@ -53,13 +53,8 @@ path_file2  <- "M:/Folder1/Folder2/Data-group-1.csv"
 # store script-specific function here
 
 # ---- load-data ---------------------------------------------------------------
-# import sheet(s) from `.xlsx`
-dto <- list() # to store data sets 
-dto[["dataset_name1"]] <- readxl::read_xlsx(path_file1, sheet = "Sheet Name 1")
-dto[["dataset_name2"]] <- readr::read_csv(path_file2, trim_ws = T)
-dto
-# import data from every sheet
-sheet_names <- readxl::excel_sheets(path_file) # to cycle through
+# import data from every sheet of a `*.xlsx` file
+sheet_names <- readxl::excel_sheets(path_file1) # to cycle through
 dto <- list() # empty shell to hold elements
 for(sheet_i in sheet_names){
   # i <- sheet_names[1]
@@ -67,8 +62,14 @@ for(sheet_i in sheet_names){
 }
 # to isolate a given imported sheet in a tibble
 ds0 <- dto$`Sheet Name` %>% tibble::as_tibble()
+
+dto <- list() # to store data sets 
+dto[["dataset_name1"]] <- readxl::read_xlsx(path_file1, sheet = "Sheet Name 1")
+dto[["dataset_name2"]] <- readr::read_csv(path_file2, trim_ws = T)
+dto
+
 # minimize (if needed) and store a local copy for quick assess and development
-dto %>% readr::write_rds("./data-unshared/derived/.rds",compress = "xz")
+# dto %>% readr::write_rds("./data-unshared/derived/00-import-1-small.rds",compress = "xz")
 
 
 # ---- inspect-data ------------------------------------------------------------
@@ -86,8 +87,8 @@ dto %>% readr::write_rds("./data-unshared/derived/.rds",compress = "xz")
 # ---- graph-2 -----------------------------------------------------------------
 
 # ---- save-to-disk ------------------------------------------------------------
-# naming convention: step_id - data_transfer_object - cohort_id
-path_data_out <- "./data-unshared/derived/.../0-dto-1.rds"
+# naming convention: step_id - step_name - cohort_id
+path_data_out <- "./data-unshared/derived/.../0-import-1.rds"
 # ---- publish -----------------------------------------------------------------
 # naming convention: step_id - data_transfer_object - cohort_id
 # one report (.Rmd) per script (.R), unless report series
