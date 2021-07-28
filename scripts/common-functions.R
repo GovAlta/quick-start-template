@@ -1,3 +1,30 @@
+# sets the aesthetic palette applied to all graphs in the project
+ggplot2::theme_set(
+  ggplot2::theme_bw(
+  )+
+    theme(
+      strip.background = element_rect(fill="grey95", color = NA)
+    )
+)
+
+# prints physical plots to disk, with physical dimensions of width and height
+quick_save <- function(g,name,...){
+  ggplot2::ggsave(
+    filename = paste0(name,".jpg"),
+    plot     = g,
+    device   = "jpg",
+    path     = prints_folder,
+    # width    = width,
+    # height   = height,
+    # units = "cm",
+    dpi      = 'retina',
+    limitsize = FALSE,
+    ...
+  )
+}
+
+
+
 # print names and associated lables of variables (if attr(.,"label)) is present
 names_labels <- function(ds){
   dd <- as.data.frame(ds)
