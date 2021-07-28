@@ -39,6 +39,13 @@ main_theme <- theme_bw() +
 #########################################################
 # for variable sets, so they're consistent across graphs & chapters
 
+# High contrast colorblind safe palette for binary variable:
+# https://colorbrewer2.org/#type=diverging&scheme=PuOr&n=3
+binary_colors <- c(
+  "TRUE"   = "#f1a340" # orange
+  ,"FALSE" = "#998ec3" # purple
+)
+
 # standard palette to be used across IHACRU reports
 # qualitative, 9 categories (max), printer friendly
 # http://colorbrewer2.org/#type=qualitative&scheme=Set1&n=7
@@ -137,12 +144,12 @@ acru_colors_9 <- c(
 #   return( df )
 # } # TukeyBoxplot(dsPregnancy$BabyWeightInKG)
 #
-# RemoveLeadingZero <- function( x ) {
-#   #   g <- grep("\\A\\b(?<=0)(\\.\\d{1,})$", x, perl=TRUE, value=TRUE);
-#   g <- gsub("\\b(0)(\\.\\d{1,})$", "\\2", x, perl=TRUE);
-#   return( g )
-# } #
-# # RemoveLeadingZero(0.444)
+RemoveLeadingZero <- function( x ) {
+  #   g <- grep("\\A\\b(?<=0)(\\.\\d{1,})$", x, perl=TRUE, value=TRUE);
+  g <- gsub("\\b(0)(\\.\\d{1,})$", "\\2", x, perl=TRUE);
+  return( g )
+} #
+# RemoveLeadingZero(0.444)
 # # RemoveLeadingZero(431.444)
 # WrapColumns <- function( d, wrapCount=3L ) {
 #   rowCountOriginal <- nrow(d)
@@ -168,10 +175,10 @@ numformat <- function(val, decimal_count = 2){
   # decimal_count <- 2
   # (rounded_value = round(val,.01))
   format_expression <- paste0("%.",decimal_count,"f")
-
+  
   sub("^(-?)0.", "\\1.", sprintf(format_expression, val))
-
-  }
+  
+}
 
 
 #########################################################
