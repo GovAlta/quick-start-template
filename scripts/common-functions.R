@@ -1,4 +1,4 @@
-# sets the aesthetic palette applied to all graphs in the project
+library(ggplot2)
 ggplot2::theme_set(
   ggplot2::theme_bw(
   )+
@@ -6,8 +6,6 @@ ggplot2::theme_set(
       strip.background = element_rect(fill="grey95", color = NA)
     )
 )
-
-# prints physical plots to disk, with physical dimensions of width and height
 quick_save <- function(g,name,...){
   ggplot2::ggsave(
     filename = paste0(name,".jpg"),
@@ -22,7 +20,6 @@ quick_save <- function(g,name,...){
     ...
   )
 }
-
 
 
 # print names and associated lables of variables (if attr(.,"label)) is present
