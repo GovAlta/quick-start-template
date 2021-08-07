@@ -62,6 +62,17 @@ acru_colors_9 <- c(
   ,"grey"   = "#999999" # grey
 )
 
+# to color the effects in a glm model
+pal_direction_significance <-  c(
+  "Increase (99%)"   = "#2b8cbe"
+  ,"Increase (95%)"  = "#7bccc4"
+  ,"Increase (90%)"  = "#bae4bc"
+  ,"Not Significant" = "NA"
+  ,"Decrease (90%)"  = "#fdcc8a"
+  ,"Decrease (95%)"  = "#fc8d59"
+  ,"Decrease (99%)"  = "#d7301f"
+)
+
 #
 # transformColor <- function( palette ) {
 #   return( palette )
@@ -175,10 +186,10 @@ numformat <- function(val, decimal_count = 2){
   # decimal_count <- 2
   # (rounded_value = round(val,.01))
   format_expression <- paste0("%.",decimal_count,"f")
-  
+
   sub("^(-?)0.", "\\1.", sprintf(format_expression, val))
-  
-}
+
+  }
 
 
 #########################################################
