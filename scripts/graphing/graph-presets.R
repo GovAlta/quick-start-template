@@ -46,6 +46,18 @@ binary_colors <- c(
   ,"FALSE" = "#998ec3" # purple
 )
 
+# main palette of the Government of Alberta visual identity (edition 23)
+# https://open.alberta.ca/publications/government-of-alberta-visual-identity-manual
+# the sequence reflects recommended frequency of use
+abcol <- c(
+  "grey"        = "#5f6a72" # stone   - grey
+  ,"magenta"    = "#d40072" # dusk    - magenta
+  ,"brown"      = "#ff7900" # sunset  - brown
+  ,"green"      = "#77b800" # pasture - green
+  ,"blue"       = "#00aad2" # sky     - blue
+  ,"yellow"     = "#edb700" # prairie - yellow
+)
+
 # standard palette to be used across IHACRU reports
 # qualitative, 9 categories (max), printer friendly
 # http://colorbrewer2.org/#type=qualitative&scheme=Set1&n=7

@@ -1,10 +1,10 @@
 #' ---
 #' title: "0-import"
 #' author: "First Last"
-#' date: "YYYY-MM-DD"
+#' date: "last Updated: `r Sys.Date()`"
 #' ---
 #+ echo=F
-# rmarkdown::render(input = "./manipulation/1-ellis.R") # run to knit, don't uncomment
+# rmarkdown::render(input = "./manipulation/0-import.R") # run to knit, don't uncomment
 #+ echo=F ----------------------------------------------------------------------
 library(knitr)
 # align the root with the project working directory
@@ -23,10 +23,9 @@ echo_chunks <- TRUE
 eval_chunks <- TRUE
 cache_chunks <- TRUE
 report_render_start_time <- Sys.time()
-# ---- load-sources ------------------------------------------------------------
+#+ load-sources ------------------------------------------------------------
 base::source("./scripts/common-functions.R") # project-level
-
-# ---- load-packages -----------------------------------------------------------
+#+ load-packages -----------------------------------------------------------
 # Prefer to be greedy: load only what's needed
 # Three ways, from least (1) to most(3) greedy:
 # -- 1.Attach these packages so their functions don't need to be qualified: http://r-pkgs.had.co.nz/namespace.html#search-path
@@ -44,56 +43,34 @@ requireNamespace("janitor"  )# tidy data
 requireNamespace("forcats"  )# factors
 requireNamespace("stringr"  )# strings
 requireNamespace("lubridate")# dates
+#+ declare-globals -------------------------------------------------------------
+# Constant values that won't change throughout the report
 
-# ---- declare-globals ---------------------------------------------------------
-# Constant values that won't change.
+#+ declare-functions -----------------------------------------------------------
 
-# ---- declare-functions -------------------------------------------------------
-
-# ---- load-data, eval=eval_chunks ---------------------------------------------------------------
-# config      <- config::get()
-# See ODBC setup guide developed by BBMC of OUHSC
-# https://github.com/OuhscBbmc/BbmcResources/blob/master/instructions/odbc-dsn.md
-# Set up the DSN connection using ODBC tool as described in the guide above
-dsn <- "CONNECTION_NAME_DSN" # one per database, typically in config file
-# SQL that will extract the table(s)
-sql <- "
-  SELECT TOP 10
-    *
-  FROM [CAO_PROD].[dbo].[TEAM_TABLE]
-"
-cnn <- DBI::dbConnect(odbc::odbc(),dsn=dsn) # open the connection
-ds0 <- DBI::dbGetQuery(cnn, sql) # read the data
-DBI::dbDisconnect(cnn) # hang up the phone
-rm(dsn, cnn, sql) # clean up
-# ---- inspect-data ------------------------------------------------------------
+#+ results="asis", echo=echo_chunks
+cat("\n# 2.Data ")
+#+ load-data, eval=eval_chunks -------------------------------------------------
+ds0 <- readr::readr_csv("./data-private/raw/input-data.csv")
+#+ inspect-data ----------------------------------------------------------------
 ds0 %>% glimpse()
+#+ tweak-data, eval=eval_chunks ------------------------------------------------
+ds1 <- ds1 %>% janitor::clean_names()
+#+ table-1 ---------------------------------------------------------------------
+#+ graph-1 ---------------------------------------------------------------------
+#+ graph-2 ---------------------------------------------------------------------
+#+ save-to-disk, eval=eval_chunks-----------------------------------------------
 
-
-# ---- tweak-data, eval=eval_chunks --------------------------------------------------------------
-ds1 <- ds0 %>% janitor::clean_names()
-
-# ---- table-1 -----------------------------------------------------------------
-
-
-# ---- graph-1 -----------------------------------------------------------------
-
-
-# ---- graph-2 -----------------------------------------------------------------
-
-# ---- save-to-disk, eval=eval_chunks ------------------------------------------------------------
-ds1 %>% readr::write_rds("./data-private/derived/0-import.rds",compress = "xz")
-# ---- publish ------------------------------------------------------------
-# path <- "./analysis/.../report-isolated.Rmd"
-# rmarkdown::render(
-#   input = path ,
-#   output_format=c(
-#     "html_document"
-#     # "word_document"
-#     # "pdf_document"
-#   ),
-#   clean=TRUE
-# )
-
+#+ results="asis", echo=echo_chunks
+cat("\n# A. Session Information{#session-info}")
+#' For the sake of documentation and reproducibility, the current report was rendered in the following environment.
+if( requireNamespace("devtools", quietly = TRUE) ) {
+  devtools::session_info()
+} else {
+  sessionInfo()
+}
+report_render_duration_in_seconds <- scales::comma(as.numeric(difftime(Sys.time(), report_render_start_time, units="secs")),accuracy=1)
+report_render_duration_in_minutes <- scales::comma(as.numeric(difftime(Sys.time(), report_render_start_time, units="mins")),accuracy=1)
+#' Report rendered by `r Sys.info()["user"]` at `r strftime(Sys.time(), "%Y-%m-%d, %H:%M %z")` in `r report_render_duration_in_seconds` seconds ( or `r report_render_duration_in_minutes` minutes)
 
 

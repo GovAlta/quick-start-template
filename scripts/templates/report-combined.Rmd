@@ -1,6 +1,7 @@
 ---
 title: "Title"
 author: "First Last"  
+date: "last Updated: `r Sys.Date()`"
 output:
   html_document:
     keep_md: yes
@@ -55,42 +56,28 @@ source("../../scripts/common-functions.R")
 
 <!-- Load packages, or at least verify they're available on the local machine.  Suppress the output when loading packages. -->
 ```{r load-packages, message=message_chunks}
-library(magrittr)  # pipes
-library(dplyr)     # data wrangling
+# Choose to be greedy: load only what's needed
+# Three ways, from least (1) to most(3) greedy:
+# -- 1.Attach these packages so their functions don't need to be qualified: http://r-pkgs.had.co.nz/namespace.html#search-path
 library(ggplot2)   # graphs
-library(janitor)   # tidy data
-library(tidyr)     # data wrangling
 library(forcats)   # factors
 library(stringr)   # strings
 library(lubridate) # dates
+# -- 2.Import only certain functions of a package into the search path.
+import::from("magrittr", "%>%")
+# -- 3. Verify these packages are available on the machine, but their functions need to be qualified: http://r-pkgs.had.co.nz/namespace.html#search-path
+requireNamespace("readr"    )# data import/export
+requireNamespace("readxl"   )# data import/export
+requireNamespace("tidyr"    )# tidy data
+requireNamespace("janitor"  )# tidy data
+requireNamespace("dplyr"    )# Avoid attaching dplyr, b/c its function names conflict with a lot of packages (esp base, stats, and plyr).
+requireNamespace("testit"   )# For asserting conditions meet expected patterns.
 ```
 
 
 <!-- Load any Global functions and variables declared in the R file.  Suppress the output. --> 
 ```{r declare-globals}
-# custom function for HTML tables
-neat <- function(x, output_format = "html"){ 
-  # knitr.table.format = output_format
-  if(output_format == "pandoc"){
-    x_t <- knitr::kable(x, format = "pandoc")
-  }else{
-    x_t <- x %>%
-      # x %>%
-      # neat() %>%
-      knitr::kable(format=output_format) %>%
-      kableExtra::kable_styling(
-        bootstrap_options = c("striped", "hover", "condensed","responsive"),
-        # bootstrap_options = c( "condensed"),
-        full_width = F,
-        position = "left"
-      )
-  } 
-  return(x_t)
-}
-# Note: when printing to Word or PDF use `neat(output_format =  "pandoc")`
 ```
-
-
 
 # Data
 ```{r load-data, results='show', message=FALSE}
