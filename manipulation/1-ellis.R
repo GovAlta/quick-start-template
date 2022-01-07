@@ -14,8 +14,8 @@ rm(list = ls(all.names = TRUE)) # Clear the memory of variables from previous ru
 #This is not called by knitr, because it's above the first chunk.
 #+ results="hide",echo=F -------------------------------------------------------
 cat("\014") # Clear the console
-#+ echo=FALSE, results="show" --------------------------------------------------
-cat("Working directory: ", getwd()) # Must be set to Project Directory
+#+ echo=FALSE, results="asis" --------------------------------------------------
+cat("Report's native working directory: `", getwd(),"`") # Must be set to Project Directory
 #+ echo=F, results="asis" ------------------------------------------------------
 cat("\n# 1.Environment")
 #+ set_options, echo=F ---------------------------------------------------------
@@ -23,6 +23,7 @@ echo_chunks <- TRUE
 eval_chunks <- TRUE
 cache_chunks <- TRUE
 report_render_start_time <- Sys.time()
+options(width=100) # number of characters to display in the output (dflt = 80)
 #+ load-sources ----------------------------------------------------------------
 source("./scripts/common-functions.R")# functions sourced throughout the project
 
@@ -70,11 +71,12 @@ version_date <- "YYYY-MM-DD"
 path_save_dto       <- paste0("./data-private/derived/1-ellis-",version_date,".rds")
 path_save_dto_small <- paste0("./data-private/derived/1-ellis-",version_date,"-small.rds")
 # small version is useful during development and testing
-dto       %>% readr::write_rds(path_save_dto,      compress = "xz")
-dto_small %>% readr::write_rds(path_save_dto_small,compress = "xz")
+# dto       %>% readr::write_rds(path_save_dto,      compress = "xz")
+# dto_small %>% readr::write_rds(path_save_dto_small,compress = "xz")
 
 #+ echo=F, results="asis" ------------------------------------------------------
 cat("\n# A. Session Information{#session-info}")
+#+ echo=F, results="show" ------------------------------------------------------
 #' For the sake of documentation and reproducibility, the current report was rendered in the following environment.
 if( requireNamespace("devtools", quietly = TRUE) ) {
   devtools::session_info()

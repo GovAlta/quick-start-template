@@ -31,7 +31,7 @@ requireNamespace("testit"   )# For asserting conditions meet expected patterns.
 # prints_folder <- paste0("./analysis/.../prints/")
 # if(!file.exists(prints_folder)){dir.create(file.path(prints_folder))}
 
-path_data_input <- "./data-derived/..."
+path_data_input <- "./data-private/derived/..."
 # ---- declare-functions -------------------------------------------------------
 # printed figures will go here:
 prints_folder <- paste0("./analysis/.../prints/")

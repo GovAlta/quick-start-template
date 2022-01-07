@@ -14,8 +14,8 @@ rm(list = ls(all.names = TRUE)) # Clear the memory of variables from previous ru
 #This is not called by knitr, because it's above the first chunk.
 #+ results="hide",echo=F -------------------------------------------------------
 cat("/014") # Clear the console
-#+ echo=FALSE, results="show" --------------------------------------------------
-cat("Working directory: ", getwd()) # Must be set to Project Directory
+#+ echo=FALSE, results="asis" --------------------------------------------------
+cat("Report's native working directory: `", getwd(),"`") # Must be set to Project Directory
 #+ echo=F, results="asis" ------------------------------------------------------
 cat("\n# 1.Environment")
 #+ set_options, echo=F ---------------------------------------------------------
@@ -23,6 +23,7 @@ echo_chunks <- TRUE
 eval_chunks <- TRUE
 cache_chunks <- TRUE
 report_render_start_time <- Sys.time()
+options(width=100) # number of characters to display in the output (dflt = 80)
 #+ load-sources ------------------------------------------------------------
 base::source("./scripts/common-functions.R") # project-level
 #+ load-packages -----------------------------------------------------------
@@ -48,7 +49,7 @@ requireNamespace("lubridate")# dates
 
 #+ declare-functions -----------------------------------------------------------
 
-#+ results="asis", echo=echo_chunks
+#+ results="asis", echo=F ------------------------------------------------------
 cat("\n# 2.Data ")
 #+ load-data, eval=eval_chunks -------------------------------------------------
 ds0 <- readr::readr_csv("./data-private/raw/input-data.csv")
@@ -61,8 +62,9 @@ ds1 <- ds1 %>% janitor::clean_names()
 #+ graph-2 ---------------------------------------------------------------------
 #+ save-to-disk, eval=eval_chunks-----------------------------------------------
 
-#+ results="asis", echo=echo_chunks
+#+ results="asis", echo=F ------------------------------------------------------
 cat("\n# A. Session Information{#session-info}")
+#+ results="show", echo=F ------------------------------------------------------
 #' For the sake of documentation and reproducibility, the current report was rendered in the following environment.
 if( requireNamespace("devtools", quietly = TRUE) ) {
   devtools::session_info()
