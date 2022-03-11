@@ -1,99 +1,77 @@
-# knitr::stitch_rmd(script="manipulation/mlm-scribe.R", output="stitched-output/manipulation/mlm-scribe.md")
-rm(list = ls(all.names = TRUE)) # Clear the memory of variables from previous run. This is not called by knitr, because it's above the first chunk.
-
+#' ---
+#' title: "0-import"
+#' author: "First Last"
+#' date: "YYYY-MM-DD"
+#' ---
+#+ echo=F
+# rmarkdown::render(input = "./manipulation/1-ellis.R") # run to knit, don't uncomment
+#+ echo=F ----------------------------------------------------------------------
+library(knitr)
+# align the root with the project working directory
+opts_knit$set(root.dir='../')  #Don't combine this call with any
+#+ echo=F ----------------------------------------------------------------------
+rm(list = ls(all.names = TRUE)) # Clear the memory of variables from previous run.
+#This is not called by knitr, because it's above the first chunk.
+#+ results="hide",echo=F -------------------------------------------------------
+cat("/014") # Clear the console
+#+ echo=FALSE, results="show" --------------------------------------------------
+cat("Working directory: ", getwd()) # Must be set to Project Directory
+#+ echo=F, results="asis" ------------------------------------------------------
+cat("\n# 1.Environment")
+#+ set_options, echo=F ---------------------------------------------------------
+echo_chunks <- TRUE
+eval_chunks <- TRUE
+cache_chunks <- TRUE
+report_render_start_time <- Sys.time()
 # ---- load-sources ------------------------------------------------------------
-# source("manipulation/osdh/ellis/common-ellis.R")
-# base::source(file="dal/osdh/arch/benchmark-client-program-arch.R") #Load retrieve_benchmark_client_program
+base::source("./scripts/common-functions.R") # project-level
 
 # ---- load-packages -----------------------------------------------------------
+# Prefer to be greedy: load only what's needed
+# Three ways, from least (1) to most(3) greedy:
+# -- 1.Attach these packages so their functions don't need to be qualified: http://r-pkgs.had.co.nz/namespace.html#search-path
+library(ggplot2)   # graphs
+# -- 2.Import only certain functions of a package into the search path.
 import::from("magrittr", "%>%")
-requireNamespace("DBI")
-requireNamespace("odbc")
-requireNamespace("tibble")
-requireNamespace("readr"                      )  # remotes::install_github("tidyverse/readr")
-library("dplyr"                      )
-requireNamespace("checkmate"                  )
-requireNamespace("testit"                     )
-requireNamespace("config"                     )
-requireNamespace("babynames"                  )
-requireNamespace("TeachingDemos"              )
-requireNamespace("OuhscMunge"                 )  # remotes::install_github("OuhscBbmc/OuhscMunge")
+# -- 3. Verify these packages are available on the machine, but their functions need to be qualified: http://r-pkgs.had.co.nz/namespace.html#search-path
+requireNamespace("DBI"         ) # database
+requireNamespace("odbc"        ) # database
+requireNamespace("OuhscMunge"  ) # remotes::install_github("OuhscBbmc/OuhscMunge")
+requireNamespace("dplyr"    )# Avoid attaching dplyr, b/c its function names conflict with a lot of packages (esp base, stats, and plyr).
+requireNamespace("readr"    )# data import/export
+requireNamespace("tidyr"    )# tidy data
+requireNamespace("janitor"  )# tidy data
+requireNamespace("forcats"  )# factors
+requireNamespace("stringr"  )# strings
+requireNamespace("lubridate")# dates
 
 # ---- declare-globals ---------------------------------------------------------
-
 # Constant values that won't change.
-# config      <- config::get()
-# https://github.com/OuhscBbmc/BbmcResources/blob/master/instructions/odbc-dsn.md
-dsn                   <- "EDB1_old_driver" # one per database, typically in config file
-# SQL that will extract the table(s)
-sql <- "
-  SELECT TOP 1000 
-    [FACT_NAME], [SERVICE_FACT_TYPE_ID]
-  FROM [EDB].[dbo].[WORP_FACTS]
-"
-cnn <- DBI::dbConnect(odbc::odbc(),dsn=dsn) # =den --> needs to go into config file
-ds <- DBI::dbGetQuery(cnn, sql) # actual extract
-DBI::dbDisconnect(cnn) # hang up the phone
-rm(dsn, cnn, sql) # clean up
 
 # ---- declare-functions -------------------------------------------------------
-# custom function for HTML tables
-neat <- function(x, output_format = "html"){
-  # knitr.table.format = output_format
-  if(output_format == "pandoc"){
-    x_t <- knitr::kable(x, format = "pandoc")
-  }else{
-    x_t <- x %>%
-      # x %>%
-      # neat() %>%
-      knitr::kable(format=output_format) %>%
-      kableExtra::kable_styling(
-        bootstrap_options = c("striped", "hover", "condensed","responsive"),
-        # bootstrap_options = c( "condensed"),
-        full_width = F,
-        position = "left"
-      )
-  }
-  return(x_t)
-}
-# Note: when printing to Word or PDF use `neat(output_format =  "pandoc")`
 
-
-prints_folder <- paste0("./analysis/.../prints/")
-if(!file.exists(prints_folder)){
-  dir.create(file.path(prints_folder))
-}
-
-ggplot2::theme_set(
-  ggplot2::theme_bw(
-  )+
-    theme(
-      strip.background = element_rect(fill="grey95", color = NA)
-    )
-)
-quick_save <- function(g,name,...){
-  ggplot2::ggsave(
-    filename = paste0(name,".jpg"),
-    plot     = g,
-    device   = "jpg",
-    path     = prints_folder,
-    # width    = width,
-    # height   = height,
-    # units = "cm",
-    dpi      = 'retina',
-    limitsize = FALSE,
-    ...
-  )
-}
-
-# ---- load-data ---------------------------------------------------------------
-
-
+# ---- load-data, eval=eval_chunks ---------------------------------------------------------------
+# config      <- config::get()
+# See ODBC setup guide developed by BBMC of OUHSC
+# https://github.com/OuhscBbmc/BbmcResources/blob/master/instructions/odbc-dsn.md
+# Set up the DSN connection using ODBC tool as described in the guide above
+dsn <- "CONNECTION_NAME_DSN" # one per database, typically in config file
+# SQL that will extract the table(s)
+sql <- "
+  SELECT TOP 10
+    *
+  FROM [CAO_PROD].[dbo].[TEAM_TABLE]
+"
+cnn <- DBI::dbConnect(odbc::odbc(),dsn=dsn) # open the connection
+ds0 <- DBI::dbGetQuery(cnn, sql) # read the data
+DBI::dbDisconnect(cnn) # hang up the phone
+rm(dsn, cnn, sql) # clean up
 # ---- inspect-data ------------------------------------------------------------
+ds0 %>% glimpse()
 
 
-# ---- tweak-data --------------------------------------------------------------
-
+# ---- tweak-data, eval=eval_chunks --------------------------------------------------------------
+ds1 <- ds0 %>% janitor::clean_names()
 
 # ---- table-1 -----------------------------------------------------------------
 
@@ -103,7 +81,9 @@ quick_save <- function(g,name,...){
 
 # ---- graph-2 -----------------------------------------------------------------
 
-# ---- save-to-disk ------------------------------------------------------------
+# ---- save-to-disk, eval=eval_chunks ------------------------------------------------------------
+ds1 %>% readr::write_rds("./data-private/derived/0-import.rds",compress = "xz")
+# ---- publish ------------------------------------------------------------
 # path <- "./analysis/.../report-isolated.Rmd"
 # rmarkdown::render(
 #   input = path ,

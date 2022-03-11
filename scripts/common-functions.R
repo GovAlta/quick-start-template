@@ -1,3 +1,5 @@
+# Functions loaded by EVERY script in the project
+
 library(ggplot2)
 ggplot2::theme_set(
   ggplot2::theme_bw(
@@ -21,27 +23,8 @@ quick_save <- function(g,name,...){
   )
 }
 
-
-# print names and associated lables of variables (if attr(.,"label)) is present
-names_labels <- function(ds){
-  dd <- as.data.frame(ds)
-  
-  nl <- data.frame(matrix(NA, nrow=ncol(dd), ncol=2))
-  names(nl) <- c("name","label")
-  for (i in seq_along(names(dd))){
-    # i = 2
-    nl[i,"name"] <- attr(dd[i], "names")
-    if(is.null(attr(dd[[i]], "label")) ){
-      nl[i,"label"] <- NA}else{
-        nl[i,"label"] <- attr(dd[,i], "label")
-      }
-  }
-  return(nl)
-}
-# names_labels(ds=oneFile)
-
 # adds neat styling to your knitr table
-neat <- function(x, output_format = "html"){ 
+neat <- function(x, output_format = "html"){
   # knitr.table.format = output_format
   if(output_format == "pandoc"){
     x_t <- knitr::kable(x, format = "pandoc")
@@ -56,16 +39,16 @@ neat <- function(x, output_format = "html"){
         full_width = F,
         position = "left"
       )
-  } 
+  }
   return(x_t)
 }
 # ds %>% distinct(id) %>% count() %>% neat(10)
 
 # adds a formated datatable
 neat_DT <- function(x, filter_="top",...){
-  
+
   xt <- x %>%
-    as.data.frame() %>% 
+    as.data.frame() %>%
     DT::datatable(
       class   = 'cell-border stripe'
       ,filter  = filter_
@@ -79,3 +62,21 @@ neat_DT <- function(x, filter_="top",...){
 }
 
 dt <- neat_DT
+
+# print names and associated lables of variables (if attr(.,"label)) is present
+names_labels <- function(ds){
+  dd <- as.data.frame(ds)
+
+  nl <- data.frame(matrix(NA, nrow=ncol(dd), ncol=2))
+  names(nl) <- c("name","label")
+  for (i in seq_along(names(dd))){
+    # i = 2
+    nl[i,"name"] <- attr(dd[i], "names")
+    if(is.null(attr(dd[[i]], "label")) ){
+      nl[i,"label"] <- NA}else{
+        nl[i,"label"] <- attr(dd[,i], "label")
+      }
+  }
+  return(nl)
+}
+# names_labels(ds=oneFile)

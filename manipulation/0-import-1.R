@@ -35,14 +35,7 @@ prints_folder <- paste0("./manipulation/prints/0-import-1/")
 if(!file.exists(prints_folder)){
   dir.create(file.path(prints_folder))
 }
-# Sets the default aesthetic feel for all graphs in the project.
-ggplot2::theme_set(
-  ggplot2::theme_bw(
-  )+
-    theme(
-      strip.background = element_rect(fill="grey95", color = NA)
-    )
-)
+
 
 # define URLs here, so that they can be recycled
 # Note FORWARD SLASHES(!!), copy-pasting from address line WILL need adjustment
