@@ -48,12 +48,6 @@ ggplot2::theme_set(ggplot2::theme_bw()) # common theme for all graphs
 ```
 
 # Environment
-<!-- Load the sources.  Suppress the output when loading sources. --> 
-```{r load-sources}
-source("../../scripts/common-functions.R")
-```
-
-
 <!-- Load packages, or at least verify they're available on the local machine.  Suppress the output when loading packages. -->
 ```{r load-packages, message=message_chunks}
 # Choose to be greedy: load only what's needed
@@ -72,6 +66,11 @@ requireNamespace("tidyr"    )# tidy data
 requireNamespace("janitor"  )# tidy data
 requireNamespace("dplyr"    )# Avoid attaching dplyr, b/c its function names conflict with a lot of packages (esp base, stats, and plyr).
 requireNamespace("testit"   )# For asserting conditions meet expected patterns.
+```
+
+<!-- Load the sources.  Suppress the output when loading sources. --> 
+```{r load-sources}
+source("../../scripts/common-functions.R")
 ```
 
 

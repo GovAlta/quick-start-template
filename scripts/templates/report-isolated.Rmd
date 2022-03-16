@@ -48,21 +48,20 @@ read_chunk("./analysis/report/report-isolated.R") #This allows knitr to call chu
 ```
 
 # Environment
-<!-- Load the sources.  Suppress the output when loading sources. --> 
-```{r load-sources}
-cat("Working directory: ", getwd()) # turn on to test the location
-source("./scripts/common-functions.R")
-```
 
 <!-- Load packages, or at least verify they're available on the local machine.  Suppress the output when loading packages. -->
 ```{r load-packages, message=message_chunks}
+cat("Working directory: ", getwd()) # turn on to test the location
 ```
 
+<!-- Load the sources.  Suppress the output when loading sources. --> 
+```{r load-sources}
+source("./scripts/common-functions.R")
+```
 
 <!-- Load any Global functions and variables declared in the R file.  Suppress the output. --> 
 ```{r declare-globals}
 ```
-
 
 # Data
 
@@ -71,7 +70,6 @@ source("./scripts/common-functions.R")
 
 ```{r tweak-data,echo = echo_chunks, results='show', message=message_chunks}
 ```
-
 
 # Analysis 
 
