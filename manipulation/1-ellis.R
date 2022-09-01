@@ -47,8 +47,8 @@ requireNamespace("testit"   )# For asserting conditions meet expected patterns.
 
 #+ declare-globals -------------------------------------------------------------
 # figures will be printed into the following folder:
-(prints_folder <- paste0("./manipulation/0-ellis-prints/"))
-if(!file.exists(prints_folder)){dir.create(file.path(prints_folder))} # to make sure folder exists
+(prints_folder <- paste0("./manipulation/1-ellis-prints/"))
+if (!fs::dir_exists(prints_folder)) {fs::dir_create(prints_folder)}
 
 #+ echo=F, results="asis" ------------------------------------------------------
 cat("\n# 2.Data ")
