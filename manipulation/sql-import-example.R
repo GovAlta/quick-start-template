@@ -10,12 +10,17 @@ library(knitr)
 # align the root with the project working directory
 opts_knit$set(root.dir='../')  #Don't combine this call with any
 #+ echo=F ----------------------------------------------------------------------
-rm(list = ls(all.names = TRUE)) # Clear the memory of variables from previous run.
-#This is not called by knitr, because it's above the first chunk.
-#+ results="hide",echo=F -------------------------------------------------------
+if(exists("clear_memory")){ # to smooth running from `./flow.R`
+  if(clear_memory){
+    rm(list = ls(all.names = TRUE)) # Clear the memory of variables from previous run.
+  }
+}
 cat("/014") # Clear the console
-#+ echo=FALSE, results="show" --------------------------------------------------
-cat("Working directory: ", getwd()) # Must be set to Project Directory
+#+ echo=F, warning=F, message=F ------------------------------------------------
+library(knitr)
+# align the root with the project working directory
+opts_knit$set(root.dir='../')  #Don't combine this call with any
+
 #+ echo=F, results="asis" ------------------------------------------------------
 cat("\n# 1.Environment")
 #+ set_options, echo=F ---------------------------------------------------------
@@ -29,11 +34,13 @@ base::source("./scripts/common-functions.R") # project-level
 # ---- load-packages -----------------------------------------------------------
 # Prefer to be greedy: load only what's needed
 # Three ways, from least (1) to most(3) greedy:
-# -- 1.Attach these packages so their functions don't need to be qualified: http://r-pkgs.had.co.nz/namespace.html#search-path
+# -- 1.Attach these packages so their functions don't need to be qualified: 
+# http://r-pkgs.had.co.nz/namespace.html#search-path
 library(ggplot2)   # graphs
 # -- 2.Import only certain functions of a package into the search path.
 import::from("magrittr", "%>%")
-# -- 3. Verify these packages are available on the machine, but their functions need to be qualified: http://r-pkgs.had.co.nz/namespace.html#search-path
+# -- 3. Verify these packages are available on the machine, but their functions 
+# need to be qualified: http://r-pkgs.had.co.nz/namespace.html#search-path
 requireNamespace("DBI"         ) # database
 requireNamespace("odbc"        ) # database
 requireNamespace("OuhscMunge"  ) # remotes::install_github("OuhscBbmc/OuhscMunge")

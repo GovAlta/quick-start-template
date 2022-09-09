@@ -4,9 +4,6 @@ cat("\014") # Clear the console
 cat("Working directory: ", getwd()) # Must be set to Project Directory
 # Project Directory should be the root by default unless overwritten
 
-# ---- load-sources ------------------------------------------------------------
-base::source("./scripts/common-functions.R") # project-level
-
 # ---- load-packages -----------------------------------------------------------
 # Choose to be greedy: load only what's needed
 # Three ways, from least (1) to most(3) greedy:
@@ -26,6 +23,9 @@ requireNamespace("janitor"  )# tidy data
 requireNamespace("dplyr"    )# Avoid attaching dplyr, b/c its function names conflict with a lot of packages (esp base, stats, and plyr).
 requireNamespace("testit"   )# For asserting conditions meet expected patterns.
 
+# ---- load-sources ------------------------------------------------------------
+base::source("./scripts/common-functions.R") # project-level
+
 # ---- declare-globals ---------------------------------------------------------
 # printed figures will go here:
 # prints_folder <- paste0("./analysis/.../prints/")
@@ -34,9 +34,8 @@ requireNamespace("testit"   )# For asserting conditions meet expected patterns.
 path_data_input <- "./data-private/derived/..."
 # ---- declare-functions -------------------------------------------------------
 # printed figures will go here:
-(prints_folder <- paste0("./manipulation/1-ellis-prints/"))
+prints_folder <- paste0("./analysis/.../prints/")
 if (!fs::dir_exists(prints_folder)) {fs::dir_create(prints_folder)}
-
 # ---- load-data ---------------------------------------------------------------
 ds0 <- readr::read_rds(path_data_input)
 
