@@ -1,4 +1,6 @@
 # Functions loaded by EVERY script in the project
+baseSize <- 10
+print_all <- function(d){ print(d,n=nrow(d) )}
 
 library(ggplot2)
 ggplot2::theme_set(
@@ -6,6 +8,10 @@ ggplot2::theme_set(
   )+
     theme(
       strip.background = element_rect(fill="grey95", color = NA)
+      ,panel.grid = element_line(color = "grey95")
+      ,panel.border = element_rect(color = "grey80")
+      ,axis.ticks = element_blank()
+      ,text=element_text(size=baseSize)
     )
 )
 quick_save <- function(g,name,...){
@@ -45,15 +51,15 @@ neat <- function(x, output_format = "html"){
 # ds %>% distinct(id) %>% count() %>% neat(10)
 
 # adds a formated datatable
-neat_DT <- function(x, filter_="top",...){
-
+neat_DT <- function(x, filter_="top",nrows=20,...){
+  
   xt <- x %>%
     as.data.frame() %>%
     DT::datatable(
       class   = 'cell-border stripe'
       ,filter  = filter_
       ,options = list(
-        pageLength = 6,
+        pageLength = nrows,
         autoWidth  = FALSE
       )
       , ...
@@ -66,7 +72,7 @@ dt <- neat_DT
 # print names and associated lables of variables (if attr(.,"label)) is present
 names_labels <- function(ds){
   dd <- as.data.frame(ds)
-
+  
   nl <- data.frame(matrix(NA, nrow=ncol(dd), ncol=2))
   names(nl) <- c("name","label")
   for (i in seq_along(names(dd))){

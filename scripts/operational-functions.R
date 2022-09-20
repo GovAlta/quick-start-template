@@ -55,3 +55,18 @@ get_sample <- function(
 # How to use
 # a_sample <- ds2 %>% get_sample_uniques(sample_size =10, "person_oid")
 # a_sample <- ds2 %>% get_sample_uniques(10)
+
+count_total <- function(d){
+  d1 <-
+    d %>% 
+    count() %>% 
+    ungroup() %>% 
+    mutate(
+      pct = (n/sum(n,na.rm = T)) %>% scales::percent(accuracy = .1)
+    )
+  return(d1)
+}
+# How to use
+# ds %>% 
+#   group_by(var1) %>% 
+#   count_total()
