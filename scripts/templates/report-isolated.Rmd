@@ -47,29 +47,74 @@ ggplot2::theme_set(ggplot2::theme_bw()) # common theme for all graphs
 read_chunk("./analysis/report/report-isolated.R") #This allows knitr to call chunks tagged in the underlying *.R file.
 ```
 
+
 # Environment
-<!-- Load the sources.  Suppress the output when loading sources. --> 
-```{r load-sources}
-cat("Working directory: ", getwd()) # turn on to test the location
-source("./scripts/common-functions.R")
-```
 
+<details>
+   <summary> Packages used <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+Packages used in current report
 <!-- Load packages, or at least verify they're available on the local machine.  Suppress the output when loading packages. -->
-```{r load-packages, message=message_chunks}
+```{r load-packages, message=message_chunks, class.source = "fold-show"}
 ```
+</details>
 
 
+<details>
+   <summary> External scripts <span class="glyphicon glyphicon-plus-sign"></span></summary>
+<!-- Load the sources.  Suppress the output when loading sources. --> 
+```{r load-sources, class.source = "fold-show"}
+```
+</details>
+
+
+<details>
+   <summary> Global values <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+Values used throughout the report.
 <!-- Load any Global functions and variables declared in the R file.  Suppress the output. --> 
-```{r declare-globals}
+```{r declare-globals, class.source = "fold-show"}
 ```
+</details>
+
+
+<details>
+   <summary> Functions <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+Custom functions defined for use in this report.
+```{r declare-functions, message=message_chunks, echo=T, results="hide",class.source = "fold-hide"}
+```
+</details>
 
 
 # Data
 
-```{r load-data, results='show', message=FALSE}
+<details>
+   <summary> Click to unfold a more technical description of data origin to help you understand the tables used in the report. However, we encourage to start with `Data Description` section first, and come back here if more details desired "<span class="glyphicon glyphicon-plus-sign"></span></summary>
+  
+```{r load-data, results='show', message=FALSE,class.source = "fold-show"}
+
+```
+</details>
+
+```{r tweak-data, echo = echo_chunks, results='show', message=message_chunks, class.source = "fold-show"}
+
 ```
 
-```{r tweak-data,echo = echo_chunks, results='show', message=message_chunks}
+# What is a Row
+
+Each row of `ds0` represents ...
+
+```{r what-row-means }
+
+```
+
+# Data Description
+
+Each row of `ds0` represents ...
+
+```{r what-row-means }
+
 ```
 
 
