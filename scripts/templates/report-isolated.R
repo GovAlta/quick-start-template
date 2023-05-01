@@ -13,6 +13,7 @@ library(forcats)   # factors
 library(stringr)   # strings
 library(lubridate) # dates
 library(labelled)  # labels
+library(scales)    # format
 # -- 2.Import only certain functions of a package into the search path.
 import::from("magrittr", "%>%")
 # -- 3. Verify these packages are available on the machine, but their functions need to be qualified: http://r-pkgs.had.co.nz/namespace.html#search-path

@@ -7,8 +7,8 @@ output:
     keep_md: yes
     toc: yes
     toc_float: yes
-    code_folding: show
-    theme: simplex
+    code_folding: hide
+    theme: flatly
     highlight: tango
 editor_options: 
   chunk_output_type: console
@@ -22,6 +22,9 @@ Demonstration of the __COMBINED__ template
 cat("Working directory: ", getwd()) # turn on to test the location
 # if the line above generates the project root, re-map by selecting 
 # Session --> Set Working Directory --> To Source File location
+# alternatively, set wd for knitting environment
+library(knitr)
+opts_knit$set(root.dir='../../')  #Don't combine this call with any other chunk -especially one that uses file paths.
 ```
 
 
@@ -37,19 +40,24 @@ knitr::opts_chunk$set(
   tidy         = FALSE,
   # dpi        = 400, # dots per inch,
   # out.width  = "650px", # pixels, this affects only the markdown, not the underlying png file.  The height will be scaled appropriately.
-  fig.width    = 6, # inches
+  fig.width    = 9, # inches
   fig.height   = 4, # inches
   fig.path     = 'figure-png-com/' # where figures are stored
 )
 echo_chunks    <- FALSE #Toggle for debugging.
 message_chunks <- FALSE #Toggle for debugging.
-options(width=100) # number of characters to display in the output (dflt = 80)
+options(width=120) # number of characters to display in the output (dflt = 80)
 ggplot2::theme_set(ggplot2::theme_bw()) # common theme for all graphs
 ```
 
 # Environment
+<details>
+   <summary> Packages used <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+Packages used in current report
+
 <!-- Load packages, or at least verify they're available on the local machine.  Suppress the output when loading packages. -->
-```{r load-packages, message=message_chunks}
+```{r load-packages, message=message_chunks, class.source = "fold-show"}
 # Choose to be greedy: load only what's needed
 # Three ways, from least (1) to most(3) greedy:
 # -- 1.Attach these packages so their functions don't need to be qualified: http://r-pkgs.had.co.nz/namespace.html#search-path
@@ -74,26 +82,87 @@ source("../../scripts/common-functions.R")
 ```
 
 
-<!-- Load any Global functions and variables declared in the R file.  Suppress the output. --> 
-```{r declare-globals}
+</details>
+
+
+<details>
+   <summary> External scripts <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+
+<!-- Load the sources.  Suppress the output when loading sources. --> 
+```{r load-sources, class.source = "fold-show"}
+source("../../scripts/common-functions.R")
 ```
+
+
+</details>
+
+
+<details>
+   <summary> Global values <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+
+Values used throughout the report.
+
+<!-- Load any Global functions and variables declared in the R file.  Suppress the output. --> 
+```{r declare-globals, class.source = "fold-show"}
+```
+
+
+
+</details>
+
+
+<details>
+   <summary> Functions <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+
+Custom functions defined for use in this report.
+
+
+```{r declare-functions, message=message_chunks, echo=T, results="hide",class.source = "fold-hide"}
+```
+</details>
 
 # Data
-```{r load-data, results='show', message=FALSE}
+
+<details>
+   <summary> Click to unfold a more technical description of data origin to help you understand the tables used in the report. However, we encourage to start with `Data Description` section first, and come back here if more details desired "<span class="glyphicon glyphicon-plus-sign"></span></summary>
+  
+```{r load-data, results='show', message=FALSE,class.source = "fold-show"}
+
+```
+</details>
+
+```{r tweak-data,echo = echo_chunks, results='show', message=message_chunks, class.source = "fold-show"}
 
 ```
 
-```{r tweak-data,echo = echo_chunks, results='show', message=message_chunks}
+# What is a Row
+
+Each row of `ds0` represents ...
+
+```{r what-row-means }
 
 ```
+
+# Data Description
+
+Each row of `ds0` represents ...
+
+```{r what-row-means }
+
+```
+
+
 
 # Analysis
 
-```{r table-1, echo = echo_chunks, results='show', message=message_chunks}
+```{r table-1, echo = echo_chunks, results='show', message=message_chunks, class.source = "fold-show"}
 
 ```
 
-```{r graph-1, echo = echo_chunks, results='show', message=message_chunks}
+```{r graph-1, echo=echo_chunks, fig.height=4, fig.width=9, message=FALSE, class.source=, results='show'}
 
 ```
 
