@@ -51,6 +51,9 @@ ggplot2::theme_set(ggplot2::theme_bw()) # common theme for all graphs
 ```
 
 # Environment
+
+This section reviews the components of the working environment of the report. Non-technical readers are welcomed to skip. Come back if you need to understand the origins of custom functions, scripts, or data objects.
+
 <details>
    <summary> Packages used <span class="glyphicon glyphicon-plus-sign"></span></summary>
 
@@ -65,6 +68,8 @@ library(ggplot2)   # graphs
 library(forcats)   # factors
 library(stringr)   # strings
 library(lubridate) # dates
+library(scales)    # formats
+library(dplyr)     # manipulation
 # -- 2.Import only certain functions of a package into the search path.
 import::from("magrittr", "%>%")
 # -- 3. Verify these packages are available on the machine, but their functions need to be qualified: http://r-pkgs.had.co.nz/namespace.html#search-path
@@ -73,87 +78,79 @@ requireNamespace("readxl"   )# data import/export
 requireNamespace("tidyr"    )# tidy data
 requireNamespace("janitor"  )# tidy data
 requireNamespace("dplyr"    )# Avoid attaching dplyr, b/c its function names conflict with a lot of packages (esp base, stats, and plyr).
-requireNamespace("testit"   )# For asserting conditions meet expected patterns.
 ```
-
-<!-- Load the sources.  Suppress the output when loading sources. --> 
-```{r load-sources}
-source("../../scripts/common-functions.R")
-```
-
-
 </details>
 
 
 <details>
    <summary> External scripts <span class="glyphicon glyphicon-plus-sign"></span></summary>
-
-
-<!-- Load the sources.  Suppress the output when loading sources. --> 
-```{r load-sources, class.source = "fold-show"}
+```{r load-sources, class.source = "fold-show" }
 source("../../scripts/common-functions.R")
 ```
-
-
 </details>
+
 
 
 <details>
    <summary> Global values <span class="glyphicon glyphicon-plus-sign"></span></summary>
-
-
 Values used throughout the report.
-
-<!-- Load any Global functions and variables declared in the R file.  Suppress the output. --> 
 ```{r declare-globals, class.source = "fold-show"}
 ```
-
-
-
 </details>
+
 
 
 <details>
    <summary> Functions <span class="glyphicon glyphicon-plus-sign"></span></summary>
-
-
 Custom functions defined for use in this report.
-
-
-```{r declare-functions, message=message_chunks, echo=T, results="hide",class.source = "fold-hide"}
+```{r declare-functions, message=message_chunks, echo=T, results="hide", class.source = "fold-show"}
 ```
 </details>
 
+
 # Data
 
+To better understand the tables used in the report, you can click to expand a more technical description of the data origin. However, we suggest starting with the [What is a Row](#what-is-a-row) and [Data Description](#data-description) sections first. These sections provide a foundation for understanding the data and will help you better navigate the more technical description provided here. If you find that you still need more details, feel free to return to this section.
+
+
 <details>
-   <summary> Click to unfold a more technical description of data origin to help you understand the tables used in the report. However, we encourage to start with `Data Description` section first, and come back here if more details desired "<span class="glyphicon glyphicon-plus-sign"></span></summary>
-  
+   <summary> Load data <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
 ```{r load-data, results='show', message=FALSE,class.source = "fold-show"}
 
 ```
 </details>
 
-```{r tweak-data,echo = echo_chunks, results='show', message=message_chunks, class.source = "fold-show"}
+
+<details>
+   <summary> Inspect data <span class="glyphicon glyphicon-plus-sign"></span></summary>
+```{r inspect-data, results='show', message=FALSE, class.source = "fold-show", cache=TRUE}
 
 ```
+</details>
 
-# What is a Row
+
+<details>
+   <summary> Inspect data <span class="glyphicon glyphicon-plus-sign"></span></summary>
+```{r tweak-data-0, results='show', message=FALSE, class.source = "fold-show", cache=TRUE}
+
+```
+</details>
+
+
+# What is a row {#what-is-a-row} 
 
 Each row of `ds0` represents ...
 
-```{r what-row-means }
+```{r what-is-a-row }
 
 ```
 
-# Data Description
+# Data Description {#data-description}
 
-Each row of `ds0` represents ...
-
-```{r what-row-means }
+```{r}
 
 ```
-
 
 
 # Analysis

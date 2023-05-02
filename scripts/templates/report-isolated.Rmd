@@ -94,31 +94,41 @@ Custom functions defined for use in this report.
 
 # Data
 
+To better understand the tables used in the report, you can click to expand a more technical description of the data origin. However, we suggest starting with the [What is a Row](#what-is-a-row) and [Data Description](#data-description) sections first. These sections provide a foundation for understanding the data and will help you better navigate the more technical description provided here. If you find that you still need more details, feel free to return to this section.
+
 <details>
-   <summary> Click to unfold a more technical description of data origin to help you understand the tables used in the report. However, we encourage to start with `Data Description` section first, and come back here if more details desired "<span class="glyphicon glyphicon-plus-sign"></span></summary>
-  
+   <summary> Load data <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
 ```{r load-data, results='show', message=FALSE,class.source = "fold-show"}
 
 ```
 </details>
 
+<details>
+   <summary> Inspect data <span class="glyphicon glyphicon-plus-sign"></span></summary>
+```{r inspect-data, results='show', message=FALSE, class.source = "fold-show", cache=TRUE}
+
+```
+</details>
+
+<details>
+   <summary> Tweak data <span class="glyphicon glyphicon-plus-sign"></span></summary>
 ```{r tweak-data, echo = echo_chunks, results='show', message=message_chunks, class.source = "fold-show"}
 
 ```
+</details>
 
-# What is a Row
+# What is a row {#what-is-a-row} 
 
 Each row of `ds0` represents ...
 
-```{r what-row-means }
+```{r}
 
 ```
 
-# Data Description
+# Data Description {#data-description}
 
-Each row of `ds0` represents ...
-
-```{r what-row-means }
+```{r}
 
 ```
 
