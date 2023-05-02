@@ -23,11 +23,17 @@ library(RColorBrewer)
 #########################################################
 # Documentation for modifiable theme elements can be found at http://docs.ggplot2.org/current/theme.html
 baseSize <- 10
-main_theme <- theme_bw() +
-  theme(axis.text = element_text(colour="gray40")) +
-  theme(axis.title = element_text(colour="gray40")) +
-  theme(panel.border = element_rect(colour="gray80")) +
-  theme(axis.ticks = element_line(colour="gray80"))
+ggplot2::theme_set(
+  ggplot2::theme_bw(
+  )+
+    theme(
+      strip.background = element_rect(fill="grey95", color = NA)
+      ,panel.grid = element_line(color = "grey95")
+      ,panel.border = element_rect(color = "grey80")
+      ,axis.ticks = element_blank()
+      ,text=element_text(size=baseSize)
+    )
+)
 
 # NoGridOrYLabelsTheme <- main_theme  +
 #   theme(axis.ticks.y = element_blank()) +
@@ -201,7 +207,7 @@ numformat <- function(val, decimal_count = 2){
 
   sub("^(-?)0.", "\\1.", sprintf(format_expression, val))
 
-  }
+}
 
 
 #########################################################

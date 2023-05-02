@@ -55,6 +55,7 @@ read_chunk("./analysis/report/report-isolated.R") #This allows knitr to call chu
 
 Packages used in current report
 <!-- Load packages, or at least verify they're available on the local machine.  Suppress the output when loading packages. -->
+
 ```{r load-packages, message=message_chunks, class.source = "fold-show"}
 ```
 </details>
@@ -63,10 +64,15 @@ Packages used in current report
 <details>
    <summary> External scripts <span class="glyphicon glyphicon-plus-sign"></span></summary>
 <!-- Load the sources.  Suppress the output when loading sources. --> 
+
 ```{r load-sources, class.source = "fold-show"}
 ```
 </details>
 
+<!-- Load the sources.  Suppress the output when loading sources. --> 
+```{r load-sources}
+source("./scripts/common-functions.R")
+```
 
 <details>
    <summary> Global values <span class="glyphicon glyphicon-plus-sign"></span></summary>
@@ -85,7 +91,6 @@ Custom functions defined for use in this report.
 ```{r declare-functions, message=message_chunks, echo=T, results="hide",class.source = "fold-hide"}
 ```
 </details>
-
 
 # Data
 
@@ -116,7 +121,6 @@ Each row of `ds0` represents ...
 ```{r what-row-means }
 
 ```
-
 
 # Analysis 
 
