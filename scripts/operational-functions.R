@@ -72,6 +72,34 @@ count_total <- function(d){
 #   group_by(var1) %>% 
 #   count_total()
 
+
+# remove variables that contain direct and sensitive identifier
+drop_idvars <- function(d,add_name="none"){
+  known <- c("person_oid","edb_service_id","survey_id","sin","sin1","sin2","sin3")
+  added <- add_name
+  d_out <- d %>% select(-any_of(c(known, added)))
+  return(d_out)
+}
+
+# view as single case
+view_one <- function(
+    d
+    ,idvar    = "person_oid" # name of the variable to serve as unique identifier
+    ,case_id  = draw_random_id(d, n = 1)
+    ,add_case = NA # additional cases for review
+  ){
+  
+  known <- c(case_id)
+  added <- add_case
+  subset_cases <- c(known,added) %>% unique() %>% na.omit() %>% as.vector()
+  
+  d_out <- 
+    d %>% 
+    filter(
+      !!rlang::sym(idvar) %in% subset_cases
+    )
+}
+
 compare_freq <- function(d_full, d_sample, group_vars ){
   
   d1f <- d_full %>% 
@@ -115,3 +143,4 @@ compare_freq <- function(d_full, d_sample, group_vars ){
 #   ds
 #   ,ds %>% get_sample(., 1000, idvar="person_oid", uniques=TRUE, seed = 42)
 # )
+
