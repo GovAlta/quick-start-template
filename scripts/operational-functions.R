@@ -144,3 +144,71 @@ compare_freq <- function(d_full, d_sample, group_vars ){
 #   ,ds %>% get_sample(., 1000, idvar="person_oid", uniques=TRUE, seed = 42)
 # )
 
+
+# ---- protecting-ids --------------------------------
+
+df <- tribble(
+  ~person_id, ~event_id, ~event_location,
+  23, 111, "Library",
+  23, 222, "Store",
+  23, 333, "Library",
+  23, 444, "Bank",
+  40, 555, "Library",
+  40, 666, "Bank",
+  40, 777, "Store",
+  51, 888, "Bank",
+  51, 999, "Bank"
+)
+
+# view as single case
+view_one <- function(
+    d
+    ,idvar    = "person_oid" # name of the variable to serve as unique identifier
+    ,case_id  = draw_random_id(idvar=idvar,d, n = 1)
+    ,add_case = NA # additional cases for review
+){
+  
+  known <- c(case_id)
+  added <- add_case
+  subset_cases <- c(known,added) %>% unique() %>% na.omit() %>% as.vector()
+  
+  d_out <- 
+    d %>% 
+    filter(
+      !!rlang::sym(idvar) %in% subset_cases
+    )
+  return(d_out)
+}
+# How to use:
+# df %>% view_one(idvar="person_id")
+# df %>% view_one(idvar="event_id")
+
+
+mask_ids <- function(
+    d_in,
+    idvars = NULL # add more column names if known defaults do not cover
+) {
+  
+  # browser()
+  known_defaults <- c("person_oid", "edb_service_id", "sin", "sin1", "sin2", "sin3")
+  used_in_group <- c(idvars, known_defaults) # to be passed
+  passed_to_group_by <- intersect(names(d_in), used_in_group)
+  
+  passed_to_group_by <- if (length(passed_to_group_by) == 0) {
+    stop("No variables to group by")
+    
+  } else {
+    passed_to_group_by
+  }
+  # browser()
+  d_out <- 
+    d_in %>%
+    mutate(across(any_of(passed_to_group_by), ~ as.integer(factor(.))))
+  return(d_out)
+}
+# How to use
+set.seed(42)
+# df %>%
+#   # mask_ids(idvars = "person_id") %>% # disable to see real IDs
+#   mask_ids(idvars = c("person_id","event_id"))
+rm(df)
