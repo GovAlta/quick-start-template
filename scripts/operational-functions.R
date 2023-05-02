@@ -1,4 +1,5 @@
 # Functions loaded by SOME scripts in the project
+compute_fiscal_year <- function(x)(as.integer(zoo::as.yearmon(x) - 3/12 ))
 
 # Define bottom and right limits when import Excel sheet
 trim_sheet_input <- function(
@@ -6,7 +7,7 @@ trim_sheet_input <- function(
   , skip_n_rows      = 0
   , total_n_rows     = nrow(d)
   , column_positions = 1:ncol(d)
-
+  
 ){
   # browser()
   # d <- dto$EmpButLost
@@ -71,6 +72,7 @@ count_total <- function(d){
 #   group_by(var1) %>% 
 #   count_total()
 
+
 # remove variables that contain direct and sensitive identifier
 drop_idvars <- function(d,add_name="none"){
   known <- c("person_oid","edb_service_id","survey_id","sin","sin1","sin2","sin3")
@@ -97,3 +99,48 @@ view_one <- function(
       !!rlang::sym(idvar) %in% subset_cases
     )
 }
+
+compare_freq <- function(d_full, d_sample, group_vars ){
+  
+  d1f <- d_full %>% 
+    dplyr::group_by(!!!rlang::syms(group_vars)) %>%
+    count() %>% ungroup() %>% 
+    mutate(
+      pct = (n/sum(n,na.rm = T)) #%>% scales::percent(accuracy = .1)
+    )
+  
+  d2f <- d_sample %>%
+    dplyr::group_by(!!!rlang::syms(group_vars)) %>%
+    count() %>% ungroup() %>% 
+    mutate(
+      pct = (n/sum(n,na.rm = T)) #%>% scales::percent(accuracy = .1)
+    ) %>% 
+    rename(n_sample = n, pct_sample = pct) 
+  
+  d_out1 <- 
+    dplyr::left_join(
+      d1f
+      ,d2f
+    ) %>% 
+    mutate(
+      diff = pct - pct_sample
+    )  
+  cat("Total |deviation|: ", scales::percent(sum(abs(d_out1$diff), na.rm =T), accuracy=.001) )
+  
+  d_out2 <- 
+    d_out1 %>% 
+    mutate(
+      across(
+        .cols = c("pct", "pct_sample","diff")
+        ,.fns = ~ scales::percent(., accuracy =.01)
+      )
+    ) %>% 
+    relocate(n_sample, .after = "n")
+  return(d_out2)
+}
+# How to use
+# compare_freq(
+#   ds
+#   ,ds %>% get_sample(., 1000, idvar="person_oid", uniques=TRUE, seed = 42)
+# )
+
