@@ -6,7 +6,7 @@ R Analysis Skeleton
 
 This project contains the files and settings commonly used in analysis projects with R.  A developer can start an analysis repository more quickly by copying these files.  The purpose of each directory is described in its README file.  Some aspects are more thoroughly described in [Collaborative Data Science Practices](https://ouhscbbmc.github.io/data-science-practices-1/).
 
-> GOA Edition <br/> While aiming to replicate [RAnalysisSkeleton](https://github.com/wibeasley/RAnalysisSkeleton), the current repository flavours the template with conventions specific to the Government of Alberta (GOA).
+> GOA Edition <br/> While aiming to replicate [RAnalysisSkeleton](https://github.com/wibeasley/RAnalysisSkeleton), the current repository flavours the template with analytic conventions specific to the Government of Alberta (GOA). 
 
 
 
