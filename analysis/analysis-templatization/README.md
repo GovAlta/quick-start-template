@@ -63,10 +63,10 @@ Project-level templates provide a framework for organizing and structuring the c
 
 One function of project-level templates involves establishing **consistent conventions** for file organization, naming conventions, and folder structures. By adopting standardized practices, researchers can easily navigate and locate specific scripts or sections of code within the project. This organization enhances collaboration and makes it easier for others to understand and reproduce the research.
 
-|                                                                                                                                                                          |                                                       |
-|--------------------------------------------------|----------------------|
-| github.com/GovAlta/quick-start-template                                                                                                                                  | github.com/wibeasley/RAnalysisSkeleton                |
-| [![](images/file-structure-example.png){fig-alt="screen capture of a quick-start-template home directory" width="317"}](https://github.com/GovAlta/quick-start-template) | ![](images/file-structure-example-2.png){width="318"} |
+|                                                     |                                                       |
+|----------------------------------------|--------------------------------|
+| github.com/GovAlta/quick-start-template             | github.com/wibeasley/RAnalysisSkeleton                |
+| ![](images/file-structure-example.png){width="317"} | ![](images/file-structure-example-2.png){width="318"} |
 
 : Table: Two examples of templates for file architecture of reproducible projects
 
