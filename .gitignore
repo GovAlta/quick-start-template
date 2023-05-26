@@ -114,7 +114,7 @@ analysis/*/*/*/*.png
 analysis/*/*/*/*.jpg
 analysis/*/*/*/*.html
 
-
+!analysis/analysis-templatization/README.html
 # ---- Accidentally Added Code -------------------------------
 # The GitHub desktop client makes it easy to right-click a file and select 'ignore'.
 #   This will append the file name to the bottom of `.gitignore`.
