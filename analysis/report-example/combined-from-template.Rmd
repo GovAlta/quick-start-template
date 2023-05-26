@@ -14,10 +14,8 @@ editor_options:
   chunk_output_type: console
 ---
 
-This report (add a brief description and the purpose of the report)
-Demonstration of the __COMBINED__ template
+This report demonstrates a simple report created from an `.Rmd` template from `./scripts/templates/combined.Rmd`
 
-<!--  Set the working directory to the repository's base directory; this assumes the report is nested inside of two directories.-->
 ```{r, echo=F, message=F, results = 'hide'}
 cat("Working directory: ", getwd()) # turn on to test the location
 # if the line above generates the project root, re-map by selecting 
@@ -26,7 +24,6 @@ cat("Working directory: ", getwd()) # turn on to test the location
 library(knitr)
 opts_knit$set(root.dir='../../')  #Don't combine this call with any other chunk -especially one that uses file paths.
 ```
-
 
 ```{r set_options, echo=F}
 # cat("Working directory: ", getwd()) # turn on to test the location
@@ -55,69 +52,81 @@ ggplot2::theme_set(ggplot2::theme_bw()) # common theme for all graphs
 This section reviews the components of the working environment of the report. Non-technical readers are welcomed to skip. Come back if you need to understand the origins of custom functions, scripts, or data objects.
 
 <details>
-   <summary> Packages used <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+<summary>Packages used </summary>
 
 Packages used in current report
 
 <!-- Load packages, or at least verify they're available on the local machine.  Suppress the output when loading packages. -->
+
 ```{r load-packages, message=message_chunks, class.source = "fold-show"}
 library(tidyverse)
 ```
+
 </details>
 
-
 <details>
-   <summary> External scripts <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+<summary>External scripts </summary>
+
 ```{r load-sources, class.source = "fold-show" }
 source("./scripts/common-functions.R")
 source("./scripts/operational-functions.R")
 ```
+
 </details>
 
-
-
 <details>
-   <summary> Global values <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+<summary>Global values </summary>
+
 Values used throughout the report.
+
 ```{r declare-globals, class.source = "fold-show"}
 ```
+
 </details>
-
-
 
 <details>
-   <summary> Functions <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+<summary>Functions </summary>
+
 Custom functions defined for use in this report.
+
 ```{r declare-functions, message=message_chunks, echo=T, results="hide", class.source = "fold-show"}
 ```
-</details>
 
+</details>
 
 # Data
 
 To better understand the tables used in the report, you can click to expand a more technical description of the data origin. However, we suggest starting with the [What is a Row](#what-is-a-row) and [Data Description](#data-description) sections first. These sections provide a foundation for understanding the data and will help you better navigate the more technical description provided here. If you find that you still need more details, feel free to return to this section.
 
-
 <details>
-   <summary> Load data <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+<summary>Load data </summary>
 
 ```{r load-data, results='show', message=FALSE,class.source = "fold-show"}
 ds0 <- readr::read_rds("./data-public/raw/example-prosthetic-1.rds")
 ```
+
 </details>
 
-
 <details>
-   <summary> Inspect data <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+<summary>Inspect data </summary>
+
 ```{r inspect-data, results='show', message=FALSE, class.source = "fold-show", cache=TRUE}
 ds0  %>% explore::describe_all()
 ds0 %>% select(-id,-weight,-date) %>% tableone::CreateTableOne(data=.) %>% summary()
 ```
+
 </details>
 
-
 <details>
-   <summary> Transform data <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+<summary>Transform data </summary>
+
 ```{r tweak-data-1, results='show', message=FALSE, class.source = "fold-show", cache=TRUE}
 ds1 <-
   ds0 %>%
@@ -150,12 +159,12 @@ explore::describe_all(ds0)
 explore::describe_all(ds1)
 # THe point is, must must provide a self-explanatory comparions of analysis rectangle BEFORE and AFTER a meaningful set of transformations. (e.g ds0 --> ds1)
 ```
+
 </details>
 
+# What is a row? {#what-is-a-row}
 
-# What is a row? {#what-is-a-row} 
-
- What is the grain of this data set?
+## Q.1 What is the grain of this data set?
 
 > Grain - the most granular level of the data, answers the question "What is a row?"
 
@@ -175,7 +184,7 @@ ds0 %>% summarize(
 
 # Data Description {#data-description}
 
-What is the period of observation?
+## Q.2 What is the period of observation?
 
 ```{r}
 ds0$date %>% summary() # looks like from [2011 to 2014]
@@ -188,18 +197,32 @@ ds0 %>%
   )
 ```
 
-
 # Analysis
 
-## Table 1
+## Q.3 What is sex ratio?
+
+### Table 1
+
 ```{r table-1, echo = echo_chunks, results='show', message=message_chunks, class.source = "fold-show"}
 ds1 %>% group_by(sex) %>% count()
 ds1 %>% group_by(sex) %>% summarize(row_count = n())
 ds1 %>% group_by(sex) %>% summarize(respondent_count = n_distinct(id))
-ds1 %>% group_by(sex) %>% summarize(client_count = sum(weight)) # accounting for sampling and non-response
+
+ds1 %>% 
+  # mutate(weight = 1L) %>% # to test if weight changes the numbers
+  group_by(sex) %>% 
+  summarize(
+    respondent_count = n()
+    ,client_count    = sum(weight) # account for sampling and non-response weight
+  ) %>% 
+  ungroup() %>% 
+  mutate(
+    respondent_share = respondent_count/sum(respondent_count)
+    ,client_share    = client_count/sum(client_count)
+)
 ```
 
-## Graph 1
+### Graph 1
 
 We can create a graph on the fly...
 
@@ -224,13 +247,14 @@ ggsave("./analysis/report-example/g1.png",plot=g1,width=6,height = 4) # optimize
 ggsave("./analysis/report-example/g1.jpg",plot=g1,width=21,height = 14,units = "cm") # optimize
 ```
 
-Session Information {#session-info}
-===========================================================================
+# Session Information {#session-info}
 
-For the sake of documentation and reproducibility, the current report was rendered in the following environment.  Click the line below to expand.
+For the sake of documentation and reproducibility, the current report was rendered in the following environment. Click the line below to expand.
 
 <details>
-  <summary>Environment <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+<summary>Environment </summary>
+
 ```{r session-info, echo=FALSE}
 if( requireNamespace("devtools", quietly = TRUE) ) {
   devtools::session_info()
@@ -238,6 +262,7 @@ if( requireNamespace("devtools", quietly = TRUE) ) {
   sessionInfo()
 }
 ```
+
 </details>
 
 ```{r session-duration, echo=FALSE}
