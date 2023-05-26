@@ -1,7 +1,7 @@
 ---
 title: "Example: Combined Rmd Template"
 author: "Andriy Koval"  
-date: "last Updated: 2023-05-15"
+date: "last Updated: 2023-05-26"
 output:
   html_document:
     keep_md: yes
@@ -348,7 +348,7 @@ For the sake of documentation and reproducibility, the current report was render
  collate  English_United States.utf8
  ctype    English_United States.utf8
  tz       America/Denver
- date     2023-05-15
+ date     2023-05-26
  pandoc   2.19.2 @ C:/Program Files/RStudio/resources/app/bin/quarto/bin/tools/ (via rmarkdown)
 
 ─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -440,4 +440,4 @@ For the sake of documentation and reproducibility, the current report was render
 
 
 
-Report rendered by Andriy at 2023-05-15, 05:42 -0600 in 5 seconds.
+Report rendered by Andriy at 2023-05-26, 08:36 -0600 in 3 seconds.
