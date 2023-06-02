@@ -4,7 +4,7 @@ author: "Andriy Koval"
 format: html
 editor: visual
 editor_options: 
-  chunk_output_type: console
+  chunk_output_type: inline
 ---
 
 # Data
@@ -13,7 +13,7 @@ Let us assume that the `ds0` represents a set of WORP responses for a given peri
 
 ```{r, warning=F}
 library(tidyverse)
-ds0 <- readr::read_rds("../../data-public/raw/example-prosthetic-1.rds")
+ds0 <- readr::read_rds("../../data-public/raw/example-prosthetic-2.rds")
 ```
 
 What's inside this `analysis rectange`?
