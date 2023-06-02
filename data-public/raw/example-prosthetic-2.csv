@@ -1,0 +1,2001 @@
+id,weight,date,employed,race,age,earnings,gender
+1,21.86,2011-01-01,not employed,visible minority,senior,3683.3333333333335,female
+2,21.86,2011-01-01,not employed,visible minority,middle age,NA,male
+3,21.86,2011-01-01,not employed,visible minority,middle age,NA,male
+4,21.86,2011-01-01,employed,caucasian,middle age,NA,male
+5,26.478,2011-01-01,employed,caucasian,middle age,NA,male
+6,21.86,2011-01-01,not employed,caucasian,senior,NA,female
+7,21.86,2011-01-01,employed,caucasian,middle age,NA,female
+8,30.161,2011-02-01,employed,caucasian,middle age,NA,female
+9,7.838,2011-02-01,employed,caucasian,youth,NA,female
+10,7.838,2011-02-01,not employed,caucasian,senior,NA,male
+11,7.838,2011-02-01,not employed,caucasian,middle age,NA,female
+12,30.388,2011-02-01,employed,caucasian,middle age,NA,female
+13,7.838,2011-02-01,employed,visible minority,middle age,650,male
+14,30.341,2011-02-01,not employed,visible minority,middle age,NA,male
+15,18.26,2011-03-01,NA,NA,middle age,780,male
+16,4.348,2011-03-01,employed,caucasian,middle age,NA,female
+17,18.395,2011-03-01,NA,caucasian,middle age,NA,male
+18,18.395,2011-03-01,employed,visible minority,senior,NA,female
+19,4.348,2011-03-01,employed,aboriginal,youth,NA,female
+20,4.348,2011-03-01,not employed,caucasian,middle age,NA,female
+21,18.348,2011-03-01,not employed,visible minority,middle age,NA,female
+22,4.348,2011-03-01,employed,visible minority,middle age,NA,male
+23,18.59,2011-03-01,employed,caucasian,middle age,NA,female
+24,18.348,2011-03-01,not employed,caucasian,middle age,780,female
+25,17.592,2011-04-01,not employed,caucasian,middle age,NA,female
+26,6.477,2011-04-01,not employed,visible minority,middle age,NA,female
+27,16.918,2011-04-01,employed,NA,senior,NA,female
+28,17.592,2011-04-01,not employed,caucasian,middle age,1950,female
+29,17.592,2011-04-01,not employed,visible minority,middle age,2800,female
+30,16.918,2011-04-01,employed,visible minority,senior,2600,female
+31,16.918,2011-04-01,not employed,aboriginal,middle age,NA,female
+32,17.592,2011-04-01,not employed,visible minority,middle age,NA,male
+33,28.332,2011-05-01,not employed,aboriginal,middle age,NA,female
+34,6.205,2011-05-01,not employed,visible minority,senior,NA,male
+35,28.332,2011-05-01,NA,aboriginal,youth,2392,female
+36,6.205,2011-05-01,not employed,caucasian,middle age,NA,female
+37,28.495,2011-05-01,not employed,visible minority,senior,NA,female
+38,28.243,2011-05-01,employed,caucasian,middle age,3248.2666666666664,male
+39,6.205,2011-05-01,employed,caucasian,middle age,NA,male
+40,32.369,2011-06-01,employed,caucasian,middle age,NA,male
+41,31.938,2011-06-01,employed,visible minority,middle age,1000,male
+42,15.179,2011-06-01,not employed,caucasian,youth,NA,female
+43,4.091,2011-06-01,employed,caucasian,senior,NA,female
+44,3.872,2011-07-01,employed,caucasian,senior,NA,female
+45,24.379,2011-07-01,not employed,aboriginal,middle age,NA,female
+46,8.298,2011-07-01,employed,visible minority,youth,1383.1999999999998,female
+47,51.677,2011-07-01,employed,caucasian,middle age,NA,female
+48,24.115,2011-07-01,employed,caucasian,senior,3120,female
+49,24.379,2011-07-01,not employed,aboriginal,middle age,NA,male
+50,24.115,2011-07-01,employed,NA,middle age,1820,female
+51,52.166,2011-07-01,employed,visible minority,middle age,NA,female
+52,8.298,2011-07-01,not employed,visible minority,youth,NA,female
+53,51.677,2011-07-01,employed,caucasian,middle age,NA,female
+54,56.02,2011-08-01,employed,caucasian,youth,390,female
+55,20.266,2011-08-01,employed,caucasian,middle age,1625.4333333333332,male
+56,46.035,2011-08-01,not employed,caucasian,middle age,2860,male
+57,4.053,2011-08-01,not employed,visible minority,senior,NA,male
+58,56.337,2011-08-01,employed,caucasian,middle age,NA,female
+59,20.201,2011-08-01,not employed,visible minority,senior,NA,male
+60,26.4,2011-09-01,NA,caucasian,middle age,953.3333333333334,male
+61,26.518,2011-09-01,not employed,caucasian,middle age,NA,female
+62,5.117,2011-09-01,employed,aboriginal,senior,NA,male
+63,26.518,2011-09-01,NA,caucasian,middle age,1516.6666666666667,male
+64,7.462,2011-09-01,employed,caucasian,middle age,NA,female
+65,5.117,2011-09-01,employed,caucasian,middle age,NA,female
+66,31.848,2011-10-01,employed,caucasian,youth,NA,female
+67,37.081,2011-10-01,NA,visible minority,middle age,NA,female
+68,20.839,2011-10-01,not employed,visible minority,middle age,NA,female
+69,4.627,2011-10-01,employed,NA,middle age,NA,male
+70,6.103,2011-10-01,not employed,visible minority,senior,NA,female
+71,31.848,2011-10-01,employed,caucasian,senior,NA,male
+72,20.764,2011-10-01,employed,NA,senior,NA,female
+73,4.657,2011-10-01,employed,caucasian,youth,NA,male
+74,20.29,2011-10-01,employed,caucasian,middle age,3484,male
+75,31.848,2011-10-01,not employed,aboriginal,middle age,NA,female
+76,9.245,2011-10-01,not employed,caucasian,middle age,NA,male
+77,10.973,2011-11-01,NA,caucasian,middle age,NA,male
+78,29.795,2011-11-01,employed,aboriginal,senior,392.1666666666667,male
+79,13.502,2011-11-01,employed,visible minority,middle age,5720,female
+80,14.175,2011-11-01,employed,visible minority,middle age,NA,male
+81,14.175,2011-11-01,employed,aboriginal,youth,NA,male
+82,21.959,2011-11-01,employed,caucasian,middle age,3250,female
+83,14.175,2011-11-01,NA,caucasian,senior,NA,male
+84,20.916,2011-11-01,employed,visible minority,middle age,NA,female
+85,16.67,2011-11-01,employed,visible minority,middle age,NA,male
+86,17.267,2011-11-01,not employed,caucasian,youth,754,male
+87,25.51,2011-11-01,employed,NA,middle age,2600,female
+88,16.448,2011-12-01,employed,caucasian,middle age,NA,female
+89,16.475,2011-12-01,employed,caucasian,middle age,2166.6666666666665,female
+90,16.427,2011-12-01,not employed,visible minority,middle age,NA,male
+91,16.368,2011-12-01,NA,visible minority,middle age,1416.6666666666667,male
+92,16.459,2011-12-01,employed,visible minority,senior,NA,male
+93,5.356,2011-12-01,employed,caucasian,middle age,NA,male
+94,16.475,2011-12-01,employed,caucasian,youth,1599.9999999999998,male
+95,4.459,2012-01-01,not employed,caucasian,middle age,NA,male
+96,14.422,2012-01-01,not employed,caucasian,middle age,NA,female
+97,17.609,2012-01-01,not employed,caucasian,senior,3328,female
+98,19.613,2012-01-01,employed,caucasian,middle age,NA,male
+99,4.459,2012-01-01,not employed,visible minority,middle age,NA,male
+100,19.772,2012-01-01,not employed,visible minority,youth,NA,female
+101,14.422,2012-01-01,employed,visible minority,middle age,2535,female
+102,8.566,2012-01-01,not employed,caucasian,middle age,NA,female
+103,48.349,2012-01-01,employed,caucasian,senior,NA,male
+104,14.319,2012-01-01,employed,caucasian,middle age,NA,male
+105,4.459,2012-01-01,employed,caucasian,middle age,NA,female
+106,14.319,2012-01-01,employed,caucasian,middle age,2532.4,male
+107,27.412,2012-01-01,not employed,caucasian,middle age,NA,female
+108,6.983,2012-02-01,not employed,caucasian,middle age,NA,female
+109,27.323,2012-02-01,employed,caucasian,middle age,NA,female
+110,18.881,2012-03-01,not employed,caucasian,senior,NA,female
+111,5.533,2012-03-01,employed,caucasian,youth,NA,female
+112,10.382,2012-03-01,employed,caucasian,youth,NA,female
+113,55.387,2012-03-01,not employed,caucasian,middle age,NA,female
+114,10.468,2012-03-01,not employed,aboriginal,middle age,2080,female
+115,10.382,2012-03-01,employed,visible minority,middle age,NA,male
+116,55.387,2012-03-01,employed,caucasian,youth,NA,male
+117,9.609,2012-04-01,not employed,visible minority,middle age,NA,female
+118,14.665,2012-04-01,not employed,caucasian,senior,NA,male
+119,8.812,2012-04-01,employed,caucasian,middle age,NA,female
+120,9.609,2012-04-01,employed,caucasian,middle age,NA,female
+121,8.812,2012-04-01,NA,aboriginal,middle age,2145,male
+122,2.379,2012-04-01,employed,aboriginal,senior,4000,female
+123,14.665,2012-04-01,not employed,aboriginal,youth,NA,male
+124,14.665,2012-04-01,employed,caucasian,middle age,NA,male
+125,15.084,2012-05-01,not employed,aboriginal,senior,1733.3333333333333,male
+126,12.508,2012-05-01,employed,aboriginal,youth,5200,male
+127,4.123,2012-05-01,not employed,aboriginal,middle age,693.3333333333334,male
+128,4.123,2012-05-01,employed,NA,youth,2860,female
+129,13.747,2012-05-01,employed,visible minority,middle age,2808,female
+130,7.697,2012-05-01,employed,visible minority,youth,1500,male
+131,9.15,2012-05-01,not employed,visible minority,youth,1906.6666666666667,male
+132,9.857,2012-05-01,employed,caucasian,senior,NA,male
+133,13.725,2012-05-01,not employed,NA,middle age,3600,female
+134,9.862,2012-05-01,employed,caucasian,senior,NA,female
+135,7.73,2012-05-01,employed,caucasian,youth,1092,female
+136,7.743,2012-05-01,NA,caucasian,middle age,NA,female
+137,11.226,2012-06-01,employed,aboriginal,middle age,NA,male
+138,9.614,2012-06-01,employed,caucasian,middle age,NA,male
+139,9.614,2012-06-01,employed,visible minority,senior,NA,female
+140,99.193,2012-06-01,NA,caucasian,senior,NA,male
+141,14.685,2012-06-01,employed,caucasian,middle age,2600,female
+142,5.709,2012-06-01,employed,visible minority,youth,NA,female
+143,5.709,2012-06-01,not employed,caucasian,middle age,1400,male
+144,5.709,2012-06-01,employed,aboriginal,youth,NA,male
+145,9.605,2012-06-01,not employed,caucasian,middle age,2634.6666666666665,male
+146,4.358,2012-06-01,not employed,visible minority,youth,NA,male
+147,12.561,2012-06-01,employed,caucasian,senior,NA,male
+148,11.226,2012-06-01,not employed,visible minority,middle age,953.3333333333334,female
+149,5.709,2012-06-01,not employed,caucasian,middle age,780,female
+150,11.226,2012-06-01,not employed,caucasian,senior,3250,female
+151,41.357,2012-07-01,not employed,caucasian,senior,NA,male
+152,10.135,2012-07-01,not employed,aboriginal,middle age,NA,male
+153,3.359,2012-07-01,not employed,caucasian,middle age,NA,male
+154,22.134,2012-07-01,not employed,caucasian,middle age,3120,male
+155,3.359,2012-07-01,not employed,caucasian,middle age,NA,female
+156,6.567,2012-07-01,not employed,caucasian,senior,NA,female
+157,7.583,2012-07-01,not employed,caucasian,middle age,3250,female
+158,6.523,2012-07-01,employed,caucasian,middle age,7267.91,female
+159,22.134,2012-07-01,not employed,visible minority,youth,NA,female
+160,22.271,2012-07-01,not employed,caucasian,youth,2253.3333333333335,male
+161,10.073,2012-07-01,not employed,caucasian,middle age,NA,male
+162,10.073,2012-07-01,employed,caucasian,middle age,NA,male
+163,7.583,2012-07-01,employed,caucasian,senior,NA,female
+164,3.359,2012-07-01,employed,caucasian,senior,NA,female
+165,22.123,2012-07-01,employed,caucasian,senior,5416.666666666667,female
+166,10.068,2012-07-01,NA,caucasian,youth,NA,female
+167,14.97,2012-08-01,employed,caucasian,youth,3466.6666666666665,female
+168,7.725,2012-08-01,NA,caucasian,middle age,2990,male
+169,14.97,2012-08-01,not employed,caucasian,senior,NA,male
+170,17.34,2012-08-01,employed,caucasian,youth,2738.6666666666665,male
+171,14.97,2012-08-01,employed,caucasian,senior,NA,male
+172,14.577,2012-08-01,employed,caucasian,middle age,2080,female
+173,18.242,2012-09-01,employed,visible minority,middle age,NA,female
+174,12.275,2012-09-01,not employed,caucasian,youth,NA,female
+175,20.677,2012-09-01,not employed,caucasian,senior,NA,male
+176,12.275,2012-09-01,not employed,caucasian,senior,NA,female
+177,18.539,2012-09-01,employed,aboriginal,senior,756.5999999999999,female
+178,6.889,2012-09-01,employed,NA,youth,1295.6666666666667,female
+179,21.013,2012-09-01,employed,caucasian,senior,NA,female
+180,6.889,2012-09-01,employed,caucasian,middle age,NA,male
+181,10.157,2012-09-01,not employed,caucasian,middle age,NA,female
+182,18.242,2012-09-01,employed,caucasian,senior,NA,male
+183,32.88,2012-10-01,NA,caucasian,youth,5958.333333333333,female
+184,32.88,2012-10-01,not employed,caucasian,youth,2080,male
+185,20.941,2012-10-01,NA,caucasian,middle age,NA,male
+186,15.724,2012-10-01,employed,aboriginal,senior,NA,male
+187,5.158,2012-10-01,employed,caucasian,middle age,4446,female
+188,4.085,2012-11-01,not employed,caucasian,middle age,650,female
+189,4.344,2012-11-01,not employed,NA,youth,3120,male
+190,13.44,2012-11-01,not employed,aboriginal,middle age,NA,female
+191,4.085,2012-11-01,employed,caucasian,middle age,NA,male
+192,13.44,2012-11-01,employed,caucasian,middle age,NA,male
+193,4.344,2012-11-01,employed,aboriginal,youth,1906.6666666666667,female
+194,4.344,2012-11-01,not employed,caucasian,middle age,NA,female
+195,4.085,2012-11-01,employed,NA,youth,NA,female
+196,4.344,2012-11-01,employed,caucasian,middle age,NA,male
+197,4.085,2012-11-01,not employed,caucasian,middle age,NA,male
+198,4.085,2012-11-01,employed,caucasian,senior,1222,male
+199,4.085,2012-11-01,employed,caucasian,middle age,2405,female
+200,4.344,2012-11-01,employed,caucasian,middle age,NA,male
+201,4.085,2012-11-01,not employed,visible minority,senior,1495,female
+202,4.344,2012-11-01,not employed,caucasian,middle age,4333.333333333333,female
+203,7.441,2012-11-01,employed,caucasian,middle age,NA,female
+204,4.085,2012-11-01,employed,caucasian,senior,2833.3333333333335,female
+205,13.44,2012-11-01,employed,caucasian,senior,NA,female
+206,4.344,2012-11-01,employed,caucasian,middle age,NA,female
+207,5.289,2012-12-01,not employed,aboriginal,middle age,5200,female
+208,8.908,2012-12-01,not employed,visible minority,middle age,NA,male
+209,6.178,2012-12-01,employed,visible minority,middle age,3293.3333333333335,male
+210,10.283,2012-12-01,not employed,caucasian,middle age,NA,male
+211,6.323,2012-12-01,not employed,visible minority,middle age,NA,female
+212,6.323,2012-12-01,not employed,caucasian,middle age,NA,female
+213,10.649,2012-12-01,employed,caucasian,middle age,3488.3333333333335,female
+214,8.528,2012-12-01,employed,aboriginal,senior,2470,male
+215,12.293,2012-12-01,not employed,caucasian,senior,NA,female
+216,10.66,2012-12-01,not employed,visible minority,middle age,NA,female
+217,8.528,2012-12-01,not employed,caucasian,middle age,NA,male
+218,4.942,2012-12-01,not employed,aboriginal,middle age,NA,male
+219,8.528,2012-12-01,not employed,caucasian,middle age,NA,female
+220,10.283,2012-12-01,not employed,caucasian,middle age,2000.0000000000002,male
+221,4.077,2013-01-01,employed,aboriginal,middle age,NA,female
+222,36.315,2013-01-01,employed,visible minority,youth,NA,male
+223,3.913,2013-01-01,employed,caucasian,middle age,NA,female
+224,3.913,2013-01-01,employed,aboriginal,middle age,NA,female
+225,5.593,2013-01-01,not employed,visible minority,middle age,NA,female
+226,3.913,2013-01-01,employed,aboriginal,middle age,NA,male
+227,4.077,2013-01-01,employed,visible minority,senior,NA,female
+228,19.783,2013-01-01,not employed,aboriginal,youth,6066.666666666667,female
+229,3.847,2013-02-01,not employed,caucasian,youth,2253.3333333333335,female
+230,3.847,2013-02-01,employed,visible minority,middle age,1109.3333333333333,male
+231,24.215,2013-02-01,employed,caucasian,senior,487.5,male
+232,3.816,2013-02-01,NA,caucasian,senior,1358.5,male
+233,4.259,2013-02-01,not employed,aboriginal,youth,NA,female
+234,4.293,2013-02-01,employed,caucasian,senior,NA,female
+235,24.215,2013-02-01,employed,caucasian,senior,NA,female
+236,4.259,2013-02-01,employed,aboriginal,middle age,NA,female
+237,3.816,2013-02-01,employed,aboriginal,senior,NA,male
+238,3.816,2013-02-01,not employed,NA,middle age,NA,male
+239,38.098,2013-03-01,not employed,caucasian,youth,NA,female
+240,11.921,2013-03-01,employed,caucasian,middle age,NA,male
+241,4.608,2013-03-01,not employed,caucasian,youth,NA,male
+242,3.771,2013-03-01,not employed,caucasian,middle age,NA,male
+243,8.166,2013-03-01,not employed,caucasian,middle age,1950,female
+244,5.295,2013-03-01,employed,caucasian,middle age,5200,male
+245,9.427,2013-04-01,employed,visible minority,middle age,NA,female
+246,4.067,2013-04-01,employed,aboriginal,senior,NA,female
+247,5.194,2013-04-01,employed,caucasian,middle age,NA,male
+248,6.219,2013-04-01,employed,caucasian,middle age,4810,female
+249,4.498,2013-04-01,employed,caucasian,middle age,2184,male
+250,4.067,2013-04-01,not employed,caucasian,senior,3200,female
+251,7.382,2013-04-01,employed,caucasian,middle age,NA,female
+252,7.942,2013-04-01,not employed,aboriginal,middle age,NA,female
+253,7.382,2013-04-01,not employed,visible minority,middle age,NA,female
+254,15.163,2013-04-01,employed,caucasian,middle age,NA,female
+255,9.031,2013-05-01,not employed,caucasian,middle age,350,male
+256,13.272,2013-05-01,not employed,visible minority,senior,NA,female
+257,5.277,2013-05-01,employed,visible minority,middle age,1765.8333333333333,female
+258,5.517,2013-05-01,employed,caucasian,middle age,NA,female
+259,8.785,2013-05-01,not employed,caucasian,middle age,1456,female
+260,1.121,2013-05-01,not employed,caucasian,youth,NA,female
+261,8.785,2013-05-01,employed,visible minority,middle age,NA,male
+262,9.031,2013-05-01,employed,visible minority,middle age,3033.3333333333335,female
+263,5.517,2013-05-01,not employed,aboriginal,middle age,3000,female
+264,9.545,2013-05-01,employed,aboriginal,senior,NA,female
+265,7.886,2013-05-01,employed,caucasian,middle age,NA,male
+266,5.277,2013-05-01,employed,visible minority,middle age,NA,male
+267,15.198,2013-05-01,employed,caucasian,youth,NA,female
+268,5.517,2013-05-01,not employed,aboriginal,youth,NA,female
+269,5.277,2013-05-01,not employed,caucasian,youth,NA,female
+270,8.785,2013-05-01,not employed,visible minority,middle age,NA,male
+271,10.286,2013-06-01,not employed,caucasian,middle age,2600,female
+272,6.435,2013-06-01,employed,caucasian,senior,49291.666666666664,male
+273,10.286,2013-06-01,employed,visible minority,senior,2600,male
+274,10.294,2013-06-01,employed,visible minority,senior,3033.3333333333335,male
+275,4.965,2013-06-01,not employed,caucasian,middle age,NA,male
+276,6.435,2013-06-01,not employed,aboriginal,senior,NA,male
+277,8.302,2013-06-01,employed,caucasian,middle age,NA,female
+278,4.965,2013-06-01,not employed,caucasian,middle age,NA,female
+279,8.192,2013-06-01,employed,caucasian,middle age,NA,female
+280,4.965,2013-06-01,not employed,caucasian,middle age,NA,female
+281,7.979,2013-06-01,employed,caucasian,middle age,NA,male
+282,8.295,2013-06-01,not employed,caucasian,senior,NA,female
+283,10.485,2013-07-01,not employed,visible minority,youth,NA,female
+284,10.485,2013-07-01,not employed,caucasian,middle age,2708.3333333333335,male
+285,9.178,2013-07-01,employed,caucasian,youth,NA,male
+286,10.485,2013-07-01,not employed,visible minority,middle age,8493.333333333334,male
+287,4.95,2013-07-01,employed,caucasian,middle age,NA,female
+288,4.95,2013-07-01,employed,caucasian,middle age,NA,female
+289,11.181,2013-07-01,employed,visible minority,middle age,NA,female
+290,46.111,2013-07-01,employed,caucasian,middle age,NA,female
+291,6.583,2013-08-01,NA,caucasian,middle age,NA,male
+292,57.611,2013-08-01,not employed,visible minority,middle age,NA,male
+293,8.083,2013-08-01,not employed,caucasian,middle age,NA,female
+294,3.33,2013-08-01,not employed,caucasian,youth,NA,male
+295,5.198,2013-08-01,employed,caucasian,middle age,NA,male
+296,4.368,2013-08-01,NA,caucasian,middle age,16683.333333333332,male
+297,6.557,2013-08-01,employed,visible minority,senior,1430,male
+298,6.33,2013-08-01,employed,caucasian,senior,NA,male
+299,6.583,2013-08-01,not employed,caucasian,middle age,1560,female
+300,6.33,2013-08-01,employed,aboriginal,middle age,NA,female
+301,6.789,2013-08-01,employed,visible minority,middle age,NA,male
+302,5.178,2013-08-01,employed,caucasian,senior,2773.3333333333335,male
+303,3.33,2013-08-01,not employed,visible minority,middle age,3131.9166666666665,male
+304,189.075,2013-08-01,employed,aboriginal,middle age,4000,male
+305,6.557,2013-08-01,employed,caucasian,middle age,NA,female
+306,8.434,2013-09-01,not employed,caucasian,middle age,4160,female
+307,9.637,2013-09-01,not employed,caucasian,middle age,3466.6666666666665,male
+308,4.75,2013-09-01,not employed,caucasian,middle age,715,male
+309,21.391,2013-09-01,not employed,caucasian,middle age,NA,female
+310,8.434,2013-09-01,employed,visible minority,senior,NA,male
+311,11.689,2013-09-01,employed,aboriginal,senior,NA,male
+312,4.75,2013-09-01,NA,visible minority,middle age,NA,female
+313,4.714,2013-09-01,employed,caucasian,middle age,NA,male
+314,3.826,2013-09-01,employed,aboriginal,youth,NA,male
+315,3.826,2013-09-01,not employed,visible minority,senior,1000.0000000000001,male
+316,7.625,2013-09-01,employed,caucasian,youth,3033.3333333333335,female
+317,4.75,2013-09-01,not employed,NA,middle age,NA,female
+318,3.826,2013-09-01,employed,caucasian,middle age,NA,female
+319,11.689,2013-09-01,NA,caucasian,youth,2773.3333333333335,male
+320,4.75,2013-09-01,not employed,caucasian,youth,NA,male
+321,5.175,2013-10-01,employed,caucasian,middle age,NA,female
+322,13.993,2013-10-01,not employed,aboriginal,middle age,NA,male
+323,5.946,2013-10-01,not employed,caucasian,youth,NA,female
+324,15.509,2013-10-01,employed,caucasian,middle age,NA,male
+325,15.509,2013-10-01,employed,caucasian,youth,NA,female
+326,13.993,2013-10-01,employed,caucasian,middle age,NA,female
+327,5.175,2013-10-01,employed,caucasian,middle age,NA,female
+328,15.509,2013-10-01,not employed,aboriginal,senior,NA,male
+329,5.175,2013-10-01,not employed,caucasian,youth,NA,female
+330,5.175,2013-10-01,not employed,caucasian,middle age,1430,male
+331,6.915,2013-10-01,employed,visible minority,middle age,1733.3333333333333,female
+332,6.827,2013-11-01,not employed,caucasian,youth,NA,male
+333,9.861,2013-11-01,employed,caucasian,middle age,NA,female
+334,17.024,2013-11-01,employed,aboriginal,middle age,2600,female
+335,11.715,2013-11-01,not employed,visible minority,youth,NA,female
+336,6.666,2013-11-01,not employed,NA,senior,1895.8333333333333,male
+337,7.458,2013-11-01,employed,caucasian,senior,3466.6666666666665,female
+338,11.349,2013-11-01,employed,caucasian,middle age,NA,male
+339,4.972,2013-11-01,employed,caucasian,middle age,NA,female
+340,5.833,2013-11-01,employed,visible minority,middle age,NA,female
+341,11.715,2013-11-01,employed,aboriginal,middle age,2700,male
+342,4.972,2013-11-01,not employed,visible minority,middle age,1386.6666666666667,female
+343,3.4,2013-11-01,employed,aboriginal,senior,NA,male
+344,3.777,2013-11-01,employed,visible minority,middle age,1352,male
+345,22.34,2013-12-01,not employed,visible minority,middle age,NA,male
+346,7.257,2013-12-01,not employed,caucasian,senior,1700,female
+347,11.125,2013-12-01,not employed,caucasian,youth,NA,female
+348,4.571,2013-12-01,employed,caucasian,middle age,NA,male
+349,4.342,2013-12-01,not employed,caucasian,senior,NA,male
+350,4.342,2013-12-01,employed,caucasian,senior,2600,male
+351,8.679,2013-12-01,employed,caucasian,middle age,780,female
+352,4.1,2013-12-01,employed,visible minority,middle age,NA,male
+353,9.331,2013-12-01,not employed,caucasian,middle age,NA,female
+354,11.125,2013-12-01,employed,caucasian,youth,NA,male
+355,11.811,2013-12-01,not employed,visible minority,middle age,NA,male
+356,4.2,2013-12-01,employed,caucasian,middle age,NA,female
+357,4.342,2013-12-01,employed,visible minority,youth,NA,female
+358,9.865,2014-01-01,not employed,aboriginal,youth,NA,female
+359,20.419,2014-01-01,not employed,caucasian,middle age,NA,male
+360,6.44,2014-01-01,not employed,caucasian,senior,NA,female
+361,9.159,2014-01-01,not employed,aboriginal,senior,NA,female
+362,17.912,2014-01-01,employed,caucasian,middle age,715,female
+363,7.297,2014-01-01,employed,visible minority,senior,2087.7999999999997,female
+364,14.359,2014-01-01,not employed,caucasian,middle age,NA,female
+365,4.297,2014-01-01,NA,caucasian,middle age,NA,male
+366,3,2014-01-01,employed,aboriginal,middle age,NA,female
+367,12.596,2014-01-01,employed,aboriginal,youth,4008.3333333333335,female
+368,16.269,2014-01-01,not employed,caucasian,middle age,NA,female
+369,16.326,2014-01-01,employed,caucasian,middle age,1516.6666666666667,female
+370,9.159,2014-01-01,not employed,visible minority,senior,520,female
+371,9.83,2014-01-01,employed,caucasian,middle age,NA,female
+372,6.111,2014-01-01,employed,visible minority,middle age,5460,female
+373,8.56,2014-02-01,not employed,caucasian,middle age,2253.3333333333335,female
+374,8.56,2014-02-01,not employed,caucasian,senior,450.6666666666667,female
+375,5.718,2014-02-01,not employed,aboriginal,senior,NA,male
+376,5.718,2014-02-01,NA,caucasian,youth,NA,male
+377,8.026,2014-02-01,not employed,caucasian,senior,NA,female
+378,5.718,2014-02-01,employed,caucasian,youth,NA,female
+379,6.027,2014-02-01,not employed,caucasian,senior,NA,male
+380,8.026,2014-02-01,employed,caucasian,youth,NA,female
+381,6.027,2014-02-01,employed,visible minority,senior,NA,male
+382,8.026,2014-02-01,not employed,caucasian,senior,NA,female
+383,8.026,2014-02-01,not employed,caucasian,middle age,NA,female
+384,13.818,2014-02-01,not employed,visible minority,middle age,NA,female
+385,8.56,2014-02-01,employed,visible minority,middle age,NA,male
+386,8.56,2014-02-01,not employed,caucasian,middle age,NA,female
+387,7.295,2014-03-01,not employed,caucasian,senior,NA,male
+388,5.843,2014-03-01,employed,aboriginal,middle age,2253.3333333333335,male
+389,7.295,2014-03-01,not employed,caucasian,senior,NA,male
+390,7.295,2014-03-01,employed,caucasian,middle age,6000,male
+391,7.295,2014-03-01,employed,aboriginal,senior,866.6666666666666,female
+392,7.295,2014-03-01,employed,caucasian,youth,NA,female
+393,5.843,2014-03-01,not employed,caucasian,middle age,1768,female
+394,7.295,2014-03-01,employed,caucasian,middle age,NA,female
+395,7.295,2014-03-01,not employed,caucasian,middle age,NA,male
+396,7.295,2014-03-01,not employed,caucasian,middle age,NA,female
+397,7.295,2014-03-01,employed,caucasian,middle age,2405,male
+398,7.295,2014-03-01,not employed,aboriginal,middle age,NA,female
+399,7.295,2014-03-01,NA,visible minority,middle age,NA,male
+400,7.295,2014-03-01,employed,caucasian,middle age,NA,male
+401,7.295,2014-03-01,employed,aboriginal,middle age,1733.3333333333333,male
+402,7.295,2014-03-01,not employed,caucasian,senior,NA,male
+403,5.626,2014-04-01,employed,caucasian,youth,NA,male
+404,5.626,2014-04-01,employed,visible minority,youth,2652,female
+405,5.626,2014-04-01,employed,caucasian,youth,NA,male
+406,5.626,2014-04-01,employed,caucasian,middle age,3003,female
+407,16.344,2014-04-01,not employed,caucasian,senior,2600,female
+408,16.344,2014-04-01,not employed,caucasian,middle age,NA,male
+409,5.626,2014-04-01,employed,caucasian,senior,NA,male
+410,5.626,2014-04-01,employed,NA,senior,NA,female
+411,7,2014-04-01,employed,caucasian,middle age,NA,male
+412,5.626,2014-04-01,not employed,visible minority,middle age,NA,male
+413,5.626,2014-04-01,employed,visible minority,middle age,4333.333333333333,female
+414,5.626,2014-04-01,not employed,caucasian,middle age,NA,male
+415,16.344,2014-04-01,not employed,caucasian,middle age,NA,male
+416,5.626,2014-04-01,employed,caucasian,middle age,NA,female
+417,16.344,2014-04-01,employed,caucasian,youth,NA,male
+418,7,2014-04-01,not employed,visible minority,senior,1666.6666666666667,male
+419,6.913,2014-05-01,employed,visible minority,senior,2981.3333333333335,female
+420,4.494,2014-05-01,employed,visible minority,middle age,NA,female
+421,4.494,2014-05-01,employed,caucasian,middle age,NA,male
+422,4.494,2014-05-01,not employed,visible minority,middle age,NA,male
+423,6.913,2014-05-01,employed,caucasian,middle age,NA,male
+424,4.494,2014-05-01,employed,visible minority,middle age,1625,female
+425,2.77,2014-05-01,employed,caucasian,middle age,NA,female
+426,4.494,2014-05-01,employed,visible minority,middle age,NA,female
+427,6.913,2014-05-01,employed,caucasian,senior,NA,female
+428,15,2014-05-01,not employed,caucasian,middle age,NA,male
+429,4.494,2014-05-01,employed,caucasian,middle age,8666.666666666666,female
+430,2.77,2014-05-01,employed,caucasian,senior,1638,female
+431,2.77,2014-05-01,not employed,caucasian,senior,1191.6666666666667,male
+432,15,2014-05-01,not employed,caucasian,middle age,NA,female
+433,4.494,2014-05-01,employed,caucasian,middle age,NA,male
+434,4.494,2014-05-01,not employed,visible minority,middle age,NA,female
+435,13.625,2014-06-01,employed,visible minority,middle age,NA,female
+436,4.4,2014-06-01,not employed,caucasian,middle age,NA,female
+437,14.5,2014-06-01,employed,NA,middle age,2340,male
+438,6.5,2014-06-01,not employed,aboriginal,youth,NA,male
+439,2.142,2014-06-01,employed,caucasian,middle age,3986.6666666666665,male
+440,5.478,2014-06-01,employed,NA,youth,1906.6666666666667,male
+441,4.4,2014-06-01,employed,caucasian,middle age,NA,female
+442,5.5,2014-06-01,employed,caucasian,senior,NA,female
+443,6.5,2014-06-01,employed,caucasian,youth,NA,male
+444,6.5,2014-06-01,employed,caucasian,youth,NA,male
+445,2.142,2014-06-01,employed,aboriginal,middle age,NA,male
+446,4.285,2014-06-01,employed,NA,middle age,NA,female
+447,8.142,2014-06-01,employed,caucasian,youth,1786.1999999999998,female
+448,6.5,2014-06-01,employed,caucasian,middle age,NA,female
+449,4.384,2014-07-01,employed,caucasian,senior,2600,female
+450,3.372,2014-07-01,employed,caucasian,middle age,NA,female
+451,10.538,2014-07-01,employed,visible minority,middle age,NA,male
+452,3.372,2014-07-01,employed,caucasian,middle age,NA,female
+453,4.384,2014-07-01,employed,caucasian,middle age,NA,female
+454,6.55,2014-07-01,employed,caucasian,youth,3600,male
+455,3.372,2014-07-01,employed,caucasian,middle age,NA,female
+456,19.6,2014-07-01,employed,caucasian,middle age,NA,male
+457,3.372,2014-07-01,not employed,visible minority,middle age,NA,female
+458,12.333,2014-07-01,not employed,caucasian,middle age,1516.6666666666667,male
+459,5.3,2014-07-01,employed,NA,middle age,NA,male
+460,5.3,2014-07-01,employed,caucasian,middle age,1802.6666666666667,female
+461,10.538,2014-07-01,employed,visible minority,youth,NA,male
+462,3.372,2014-07-01,employed,caucasian,middle age,520,female
+463,4.316,2014-08-01,not employed,caucasian,middle age,NA,female
+464,3.209,2014-08-01,not employed,aboriginal,middle age,2500,male
+465,4.316,2014-08-01,employed,caucasian,middle age,1820,female
+466,4.316,2014-08-01,not employed,visible minority,middle age,NA,female
+467,4.316,2014-08-01,employed,caucasian,senior,NA,male
+468,3.209,2014-08-01,employed,aboriginal,youth,NA,female
+469,4.316,2014-08-01,employed,caucasian,youth,3033.3333333333335,male
+470,4.316,2014-08-01,NA,caucasian,middle age,2860,female
+471,4.316,2014-08-01,not employed,caucasian,middle age,NA,male
+472,4.316,2014-08-01,employed,visible minority,middle age,NA,male
+473,3.285,2014-08-01,employed,caucasian,youth,NA,male
+474,6.68,2014-08-01,employed,visible minority,youth,NA,female
+475,6.68,2014-08-01,employed,aboriginal,youth,5720,male
+476,4.316,2014-08-01,not employed,visible minority,youth,NA,male
+477,4.316,2014-08-01,not employed,aboriginal,middle age,NA,female
+478,33.631,2014-08-01,not employed,caucasian,youth,NA,male
+479,4.316,2014-08-01,NA,visible minority,middle age,NA,male
+480,3.209,2014-08-01,employed,caucasian,youth,NA,female
+481,6.623,2014-09-01,not employed,visible minority,middle age,1800,male
+482,8.45,2014-09-01,not employed,caucasian,middle age,NA,female
+483,5.087,2014-09-01,not employed,aboriginal,middle age,NA,male
+484,7.653,2014-09-01,employed,caucasian,middle age,NA,female
+485,14.781,2014-09-01,employed,aboriginal,middle age,3166.6666666666665,female
+486,6.619,2014-09-01,not employed,aboriginal,middle age,3333.3333333333335,male
+487,10.016,2014-09-01,employed,aboriginal,middle age,NA,female
+488,17.399,2014-09-01,employed,visible minority,middle age,NA,female
+489,10.016,2014-09-01,employed,caucasian,youth,2643.3333333333335,female
+490,10.016,2014-09-01,employed,visible minority,senior,NA,male
+491,5.091,2014-09-01,employed,aboriginal,middle age,NA,male
+492,5.087,2014-09-01,employed,visible minority,senior,2340,female
+493,4.264,2014-10-01,employed,caucasian,senior,1794,female
+494,2.854,2014-10-01,not employed,visible minority,middle age,NA,male
+495,4.264,2014-10-01,employed,caucasian,middle age,NA,male
+496,3.301,2014-10-01,not employed,caucasian,youth,953.3333333333334,female
+497,3.301,2014-10-01,employed,caucasian,middle age,NA,male
+498,4.264,2014-10-01,employed,caucasian,senior,NA,male
+499,2.854,2014-10-01,employed,caucasian,middle age,3380,female
+500,3.301,2014-10-01,employed,visible minority,middle age,NA,female
+501,4.264,2014-10-01,not employed,visible minority,middle age,NA,male
+502,4.264,2014-10-01,employed,caucasian,senior,NA,male
+503,4.264,2014-10-01,not employed,caucasian,middle age,650,male
+504,3.301,2014-10-01,not employed,caucasian,middle age,3900,female
+505,2.854,2014-10-01,employed,caucasian,senior,NA,male
+506,3.301,2014-10-01,not employed,caucasian,senior,NA,male
+507,4.264,2014-10-01,not employed,aboriginal,middle age,NA,female
+508,3.301,2014-10-01,not employed,caucasian,middle age,1040,female
+509,10.055,2014-10-01,not employed,caucasian,senior,2600,male
+510,3.301,2014-10-01,employed,aboriginal,middle age,NA,female
+511,12.545,2014-10-01,not employed,aboriginal,senior,NA,female
+512,2.854,2014-10-01,employed,caucasian,middle age,NA,male
+513,10.055,2014-10-01,employed,aboriginal,youth,1300,female
+514,2.854,2014-10-01,employed,visible minority,middle age,NA,female
+515,4.896,2014-11-01,employed,caucasian,middle age,NA,female
+516,4.896,2014-11-01,not employed,caucasian,middle age,NA,male
+517,6.681,2014-11-01,not employed,caucasian,youth,1744.166666666667,female
+518,31.75,2014-11-01,employed,aboriginal,middle age,NA,female
+519,4.428,2014-11-01,employed,aboriginal,middle age,1950,male
+520,4.896,2014-11-01,not employed,aboriginal,youth,NA,male
+521,3.539,2014-11-01,not employed,caucasian,middle age,NA,female
+522,3.539,2014-11-01,employed,caucasian,middle age,3250,female
+523,3.539,2014-11-01,employed,caucasian,senior,NA,female
+524,13.076,2014-11-01,employed,visible minority,senior,NA,female
+525,4.428,2014-11-01,not employed,caucasian,middle age,2990,female
+526,3.79,2014-11-01,employed,NA,senior,NA,male
+527,4.896,2014-11-01,NA,visible minority,youth,NA,female
+528,6.681,2014-11-01,employed,visible minority,middle age,NA,female
+529,4,2014-12-01,employed,aboriginal,senior,NA,male
+530,5.347,2014-12-01,employed,visible minority,middle age,NA,male
+531,23.909,2014-12-01,not employed,caucasian,senior,NA,male
+532,4,2014-12-01,employed,caucasian,senior,NA,male
+533,5.958,2014-12-01,employed,caucasian,middle age,NA,female
+534,5.789,2014-12-01,employed,caucasian,senior,1560,female
+535,5.347,2014-12-01,not employed,visible minority,middle age,NA,male
+536,5.958,2014-12-01,not employed,visible minority,middle age,NA,female
+537,3.904,2015-01-01,not employed,NA,middle age,393.46666666666664,female
+538,3.904,2015-01-01,employed,caucasian,middle age,NA,female
+539,5.378,2015-01-01,not employed,caucasian,middle age,NA,female
+540,11.454,2015-01-01,not employed,aboriginal,middle age,NA,male
+541,2.8,2015-01-01,not employed,caucasian,middle age,1443,male
+542,5.378,2015-01-01,employed,caucasian,middle age,2454.27,female
+543,5.378,2015-01-01,employed,caucasian,youth,NA,male
+544,5.378,2015-01-01,employed,caucasian,senior,1560,female
+545,4.807,2015-01-01,employed,caucasian,senior,2600,female
+546,11.454,2015-01-01,employed,caucasian,middle age,NA,male
+547,5.4,2015-02-01,employed,aboriginal,youth,4333.333333333333,male
+548,8.363,2015-02-01,not employed,caucasian,middle age,NA,female
+549,14.333,2015-02-01,not employed,visible minority,middle age,NA,female
+550,5.4,2015-02-01,employed,aboriginal,middle age,NA,male
+551,5.4,2015-02-01,not employed,caucasian,middle age,NA,male
+552,3.878,2015-02-01,employed,caucasian,middle age,NA,female
+553,5.666,2015-02-01,employed,caucasian,senior,NA,female
+554,14.666,2015-02-01,NA,aboriginal,youth,NA,male
+555,8.363,2015-02-01,not employed,visible minority,middle age,NA,female
+556,18.142,2015-03-01,not employed,caucasian,middle age,866.6666666666666,male
+557,3.483,2015-03-01,NA,visible minority,middle age,3466.6666666666665,female
+558,3.528,2015-03-01,employed,visible minority,middle age,1083.3333333333335,male
+559,28.5,2015-03-01,not employed,caucasian,middle age,NA,female
+560,3.528,2015-03-01,not employed,visible minority,middle age,NA,female
+561,3.528,2015-03-01,employed,visible minority,youth,468,female
+562,18.142,2015-03-01,not employed,caucasian,middle age,NA,female
+563,4.535,2015-03-01,employed,caucasian,youth,NA,female
+564,4.5,2015-04-01,employed,caucasian,middle age,NA,female
+565,4.727,2015-04-01,employed,visible minority,youth,NA,male
+566,4.5,2015-04-01,employed,caucasian,middle age,2000,female
+567,4.2,2015-04-01,employed,aboriginal,middle age,NA,male
+568,33,2015-04-01,employed,visible minority,middle age,2253.3333333333335,female
+569,4.2,2015-04-01,employed,aboriginal,middle age,NA,male
+570,5.736,2015-04-01,NA,caucasian,middle age,3033.3333333333335,female
+571,7.461,2015-04-01,not employed,caucasian,middle age,NA,female
+572,4.764,2015-05-01,employed,visible minority,middle age,NA,female
+573,5.057,2015-05-01,not employed,caucasian,middle age,NA,female
+574,5.057,2015-05-01,not employed,visible minority,middle age,NA,female
+575,5.057,2015-05-01,employed,caucasian,senior,NA,male
+576,10.642,2015-05-01,not employed,caucasian,middle age,NA,male
+577,4,2015-05-01,employed,caucasian,middle age,NA,female
+578,4.764,2015-05-01,employed,caucasian,senior,1135.68,male
+579,14.272,2015-05-01,not employed,caucasian,middle age,NA,male
+580,7.529,2015-06-01,not employed,aboriginal,senior,NA,male
+581,8.4,2015-06-01,employed,aboriginal,middle age,2773.3333333333335,male
+582,7.529,2015-06-01,employed,visible minority,senior,NA,male
+583,5.487,2015-06-01,employed,visible minority,middle age,NA,male
+584,7.529,2015-06-01,not employed,visible minority,youth,NA,male
+585,3.555,2015-06-01,employed,caucasian,middle age,1560,male
+586,5.487,2015-06-01,not employed,caucasian,middle age,NA,female
+587,8.055,2015-06-01,employed,caucasian,middle age,5200,female
+588,5.487,2015-06-01,NA,visible minority,senior,NA,female
+589,8.055,2015-06-01,employed,caucasian,youth,1950,female
+590,8.055,2015-06-01,not employed,visible minority,senior,NA,female
+591,5.625,2015-06-01,employed,caucasian,middle age,3120,female
+592,4.166,2015-06-01,employed,aboriginal,middle age,2773.3333333333335,female
+593,5.667,2015-07-01,not employed,caucasian,middle age,NA,female
+594,6.088,2015-07-01,employed,caucasian,middle age,NA,female
+595,6.469,2015-07-01,employed,NA,youth,4484.48,female
+596,6.088,2015-07-01,not employed,caucasian,middle age,NA,male
+597,5.059,2015-07-01,not employed,caucasian,middle age,1733.3333333333333,male
+598,6.088,2015-07-01,not employed,caucasian,middle age,NA,male
+599,6.088,2015-07-01,employed,visible minority,middle age,NA,female
+600,13.579,2015-07-01,employed,aboriginal,middle age,2244.6666666666665,female
+601,13.579,2015-07-01,employed,caucasian,senior,NA,male
+602,11.813,2015-07-01,not employed,visible minority,youth,NA,female
+603,13.96,2015-07-01,employed,visible minority,middle age,NA,male
+604,5.667,2015-07-01,employed,visible minority,senior,2200,female
+605,8.141,2015-08-01,employed,NA,middle age,NA,female
+606,8.628,2015-08-01,not employed,caucasian,middle age,1048.6666666666667,female
+607,6.924,2015-08-01,employed,caucasian,youth,NA,male
+608,4.631,2015-08-01,employed,caucasian,senior,NA,female
+609,6.924,2015-08-01,not employed,visible minority,middle age,NA,male
+610,9.191,2015-08-01,not employed,caucasian,middle age,3466.6666666666665,female
+611,8.141,2015-08-01,not employed,caucasian,youth,NA,male
+612,19.287,2015-08-01,employed,caucasian,middle age,2582.6666666666665,male
+613,5.552,2015-08-01,employed,visible minority,youth,NA,female
+614,6.924,2015-08-01,employed,caucasian,middle age,4333.333333333333,male
+615,4.981,2015-09-01,employed,caucasian,middle age,NA,female
+616,10.076,2015-09-01,not employed,aboriginal,middle age,NA,female
+617,8.5,2015-09-01,employed,caucasian,middle age,4033.8999999999996,female
+618,4.981,2015-09-01,employed,visible minority,youth,4788.333333333333,female
+619,5.796,2015-09-01,employed,caucasian,middle age,NA,male
+620,4.981,2015-09-01,employed,visible minority,middle age,3284.6666666666665,female
+621,8.5,2015-09-01,not employed,caucasian,youth,NA,male
+622,4.583,2015-09-01,employed,caucasian,middle age,1733.3333333333333,male
+623,5.796,2015-09-01,employed,aboriginal,middle age,NA,male
+624,5.796,2015-09-01,employed,caucasian,middle age,NA,female
+625,10.076,2015-09-01,not employed,visible minority,youth,NA,female
+626,8.5,2015-09-01,not employed,aboriginal,middle age,728,male
+627,5.796,2015-09-01,employed,visible minority,middle age,2600,male
+628,6.014,2015-10-01,not employed,caucasian,middle age,NA,male
+629,4.219,2015-10-01,employed,caucasian,middle age,1608.533333333333,male
+630,10.612,2015-10-01,employed,NA,middle age,2925,male
+631,3.965,2015-10-01,employed,caucasian,middle age,2708.3333333333335,male
+632,7.929,2015-10-01,employed,caucasian,middle age,NA,male
+633,4.219,2015-10-01,not employed,visible minority,middle age,NA,male
+634,4.219,2015-10-01,not employed,caucasian,middle age,2275,female
+635,4.734,2015-10-01,employed,visible minority,middle age,NA,female
+636,11.714,2015-10-01,not employed,aboriginal,middle age,NA,female
+637,5.647,2015-10-01,not employed,caucasian,senior,1242.15,male
+638,5.318,2015-10-01,employed,visible minority,middle age,NA,female
+639,7.001,2015-10-01,NA,aboriginal,senior,NA,female
+640,4.219,2015-10-01,employed,visible minority,middle age,NA,female
+641,5.318,2015-10-01,employed,caucasian,middle age,NA,male
+642,10.612,2015-10-01,employed,visible minority,middle age,NA,female
+643,5.318,2015-10-01,not employed,caucasian,middle age,NA,male
+644,4.219,2015-10-01,employed,aboriginal,middle age,NA,female
+645,13.186,2015-10-01,employed,caucasian,middle age,3033.3333333333335,female
+646,18.778,2015-10-01,not employed,visible minority,middle age,2166.6666666666665,male
+647,4.219,2015-10-01,employed,caucasian,middle age,NA,male
+648,5.318,2015-10-01,not employed,caucasian,middle age,1200,male
+649,4.219,2015-10-01,employed,visible minority,middle age,NA,female
+650,5.967,2015-10-01,employed,visible minority,middle age,NA,female
+651,11.626,2015-11-01,not employed,caucasian,middle age,3466.6666666666665,female
+652,7.742,2015-11-01,NA,caucasian,youth,NA,male
+653,5.326,2015-11-01,employed,caucasian,middle age,NA,female
+654,3.718,2015-11-01,not employed,caucasian,senior,NA,male
+655,11.626,2015-11-01,employed,visible minority,senior,NA,female
+656,4.043,2015-11-01,employed,aboriginal,middle age,1560,female
+657,4.043,2015-11-01,not employed,caucasian,middle age,NA,female
+658,4.833,2015-11-01,not employed,caucasian,middle age,NA,male
+659,8.846,2015-12-01,employed,caucasian,youth,NA,female
+660,8.35,2015-12-01,not employed,aboriginal,middle age,NA,female
+661,7.03,2015-12-01,employed,caucasian,youth,5384.000000000001,male
+662,8.846,2015-12-01,not employed,caucasian,senior,1386.6666666666667,male
+663,8.846,2015-12-01,NA,visible minority,middle age,NA,female
+664,8.846,2015-12-01,employed,caucasian,middle age,2600,male
+665,4.638,2016-01-01,not employed,aboriginal,middle age,NA,male
+666,6.508,2016-01-01,employed,caucasian,middle age,1072.5,male
+667,8.399,2016-01-01,employed,visible minority,middle age,NA,female
+668,5.868,2016-01-01,not employed,caucasian,middle age,2470,female
+669,7.69,2016-01-01,employed,caucasian,senior,2426.6666666666665,female
+670,5.144,2016-01-01,employed,caucasian,youth,NA,male
+671,4.638,2016-01-01,not employed,caucasian,youth,NA,female
+672,9.315,2016-01-01,employed,aboriginal,middle age,NA,female
+673,6.934,2016-01-01,employed,caucasian,middle age,NA,female
+674,9.315,2016-01-01,NA,caucasian,youth,NA,male
+675,5.042,2016-02-01,employed,aboriginal,middle age,1300,female
+676,8.697,2016-02-01,employed,caucasian,middle age,NA,female
+677,6,2016-02-01,employed,aboriginal,senior,NA,female
+678,4.714,2016-02-01,employed,caucasian,middle age,NA,male
+679,4,2016-02-01,employed,caucasian,middle age,NA,male
+680,5.042,2016-02-01,employed,visible minority,youth,2925,female
+681,5.659,2016-02-01,employed,aboriginal,youth,NA,male
+682,8.697,2016-02-01,not employed,caucasian,middle age,NA,female
+683,5.042,2016-02-01,employed,caucasian,middle age,NA,female
+684,8.697,2016-02-01,employed,visible minority,middle age,2080,female
+685,5.042,2016-02-01,not employed,NA,middle age,NA,male
+686,8.697,2016-02-01,not employed,visible minority,middle age,NA,female
+687,5.659,2016-02-01,employed,aboriginal,youth,NA,female
+688,3.347,2016-02-01,employed,caucasian,senior,NA,male
+689,8.697,2016-02-01,not employed,caucasian,middle age,NA,female
+690,4,2016-02-01,not employed,caucasian,middle age,NA,male
+691,8.697,2016-02-01,employed,caucasian,middle age,NA,female
+692,11.982,2016-03-01,employed,aboriginal,middle age,3500,male
+693,6.715,2016-03-01,employed,NA,middle age,NA,female
+694,4.191,2016-03-01,employed,visible minority,middle age,NA,male
+695,2.5,2016-03-01,not employed,caucasian,senior,NA,female
+696,4.191,2016-03-01,not employed,caucasian,youth,2500,female
+697,6.63,2016-03-01,employed,caucasian,middle age,NA,female
+698,6.273,2016-03-01,employed,visible minority,middle age,NA,male
+699,5.076,2016-03-01,employed,caucasian,youth,NA,female
+700,5.522,2016-03-01,not employed,caucasian,middle age,NA,male
+701,5.096,2016-03-01,employed,caucasian,youth,NA,female
+702,3.73,2016-03-01,not employed,caucasian,middle age,NA,male
+703,3.067,2016-03-01,employed,caucasian,middle age,NA,male
+704,5.522,2016-03-01,employed,caucasian,senior,NA,female
+705,9.795,2016-03-01,not employed,caucasian,middle age,3000,male
+706,4.934,2016-04-01,not employed,visible minority,middle age,554.6666666666666,female
+707,6.461,2016-04-01,not employed,visible minority,middle age,NA,male
+708,3.141,2016-04-01,not employed,aboriginal,middle age,1580.8000000000002,female
+709,4.934,2016-04-01,not employed,caucasian,middle age,NA,female
+710,4.944,2016-04-01,employed,caucasian,youth,NA,female
+711,10.169,2016-04-01,employed,caucasian,middle age,2400,male
+712,3.141,2016-04-01,not employed,caucasian,senior,NA,female
+713,4.934,2016-04-01,employed,caucasian,senior,1885,female
+714,10.169,2016-04-01,employed,visible minority,middle age,NA,male
+715,4.934,2016-04-01,employed,visible minority,middle age,NA,female
+716,6.461,2016-04-01,not employed,caucasian,youth,NA,male
+717,4.402,2016-04-01,employed,caucasian,youth,NA,male
+718,4.934,2016-04-01,not employed,visible minority,youth,NA,male
+719,4.934,2016-04-01,not employed,caucasian,senior,NA,female
+720,4.944,2016-04-01,employed,aboriginal,senior,NA,female
+721,3.141,2016-04-01,employed,caucasian,youth,1600,female
+722,7.767,2016-04-01,employed,caucasian,senior,NA,male
+723,11.648,2016-05-01,employed,caucasian,middle age,NA,male
+724,4.181,2016-05-01,employed,caucasian,middle age,NA,female
+725,19.004,2016-05-01,not employed,caucasian,middle age,2773.3333333333335,female
+726,4.94,2016-05-01,employed,caucasian,youth,NA,female
+727,6.72,2016-05-01,employed,caucasian,middle age,NA,male
+728,4.94,2016-05-01,employed,caucasian,youth,5824,female
+729,4.94,2016-05-01,employed,caucasian,senior,953.3333333333334,female
+730,6.72,2016-05-01,employed,caucasian,middle age,NA,female
+731,8.012,2016-05-01,employed,visible minority,middle age,NA,female
+732,6.72,2016-05-01,employed,aboriginal,middle age,NA,female
+733,8.012,2016-05-01,not employed,caucasian,middle age,NA,male
+734,9.283,2016-05-01,not employed,visible minority,senior,NA,male
+735,5.726,2016-06-01,employed,caucasian,middle age,NA,male
+736,5.961,2016-06-01,employed,caucasian,senior,NA,female
+737,7.376,2016-06-01,employed,visible minority,middle age,1059.5,female
+738,15.531,2016-06-01,employed,caucasian,middle age,NA,female
+739,15.531,2016-06-01,not employed,caucasian,senior,NA,female
+740,5.726,2016-06-01,employed,caucasian,middle age,2058.3333333333335,female
+741,19.215,2016-06-01,not employed,caucasian,middle age,NA,female
+742,19.215,2016-06-01,not employed,caucasian,senior,2500,female
+743,5.961,2016-06-01,not employed,caucasian,middle age,NA,female
+744,7.085,2016-06-01,employed,caucasian,middle age,NA,female
+745,19.215,2016-06-01,NA,NA,middle age,NA,male
+746,13.601,2016-07-01,employed,visible minority,middle age,2366,female
+747,2.611,2016-07-01,not employed,caucasian,youth,1430,female
+748,4.335,2016-07-01,not employed,caucasian,middle age,NA,male
+749,2.611,2016-07-01,employed,caucasian,middle age,NA,male
+750,8.193,2016-07-01,not employed,caucasian,senior,NA,male
+751,2.611,2016-07-01,employed,caucasian,youth,NA,male
+752,2.611,2016-07-01,not employed,aboriginal,youth,2166.6666666666665,male
+753,2.611,2016-07-01,employed,caucasian,middle age,NA,male
+754,13.601,2016-07-01,not employed,caucasian,middle age,6000,male
+755,8.193,2016-07-01,not employed,caucasian,senior,NA,male
+756,2.611,2016-07-01,employed,visible minority,middle age,NA,male
+757,2.611,2016-07-01,employed,visible minority,middle age,NA,female
+758,2.611,2016-07-01,not employed,caucasian,senior,NA,female
+759,2.611,2016-07-01,not employed,caucasian,youth,NA,female
+760,2.611,2016-07-01,employed,NA,middle age,1950,female
+761,8.193,2016-07-01,not employed,aboriginal,senior,3900,female
+762,13.601,2016-07-01,not employed,visible minority,middle age,NA,female
+763,13.601,2016-07-01,employed,caucasian,senior,1600,female
+764,8.193,2016-07-01,employed,caucasian,middle age,NA,male
+765,2.611,2016-07-01,not employed,caucasian,youth,NA,male
+766,8.193,2016-07-01,employed,visible minority,middle age,NA,male
+767,29.63,2016-08-01,employed,visible minority,middle age,NA,male
+768,7.591,2016-08-01,employed,caucasian,middle age,NA,female
+769,4.669,2016-08-01,employed,caucasian,middle age,2773.3333333333335,male
+770,6.217,2016-08-01,not employed,caucasian,middle age,7106.666666666667,male
+771,4.669,2016-08-01,not employed,caucasian,senior,4160,female
+772,4.669,2016-08-01,employed,aboriginal,middle age,1300,male
+773,7.612,2016-08-01,employed,visible minority,middle age,NA,male
+774,29.63,2016-08-01,employed,visible minority,middle age,NA,male
+775,6.217,2016-08-01,not employed,caucasian,senior,NA,female
+776,4.669,2016-08-01,employed,caucasian,middle age,NA,female
+777,6.217,2016-08-01,employed,caucasian,middle age,2773.3333333333335,male
+778,10.133,2016-08-01,employed,visible minority,middle age,563.3333333333334,female
+779,7.612,2016-08-01,employed,caucasian,youth,NA,male
+780,10.133,2016-08-01,employed,visible minority,middle age,NA,female
+781,4.669,2016-08-01,employed,caucasian,senior,2166.666666666667,female
+782,3.236,2016-09-01,employed,caucasian,youth,NA,male
+783,8.143,2016-09-01,employed,caucasian,youth,NA,female
+784,3.126,2016-09-01,not employed,visible minority,youth,3533.8333333333335,female
+785,2.352,2016-09-01,employed,caucasian,middle age,NA,female
+786,2.435,2016-09-01,employed,caucasian,senior,1321.6666666666667,female
+787,3.911,2016-09-01,employed,visible minority,middle age,NA,female
+788,2.435,2016-09-01,not employed,aboriginal,youth,NA,male
+789,10.95,2016-09-01,not employed,caucasian,middle age,NA,female
+790,10.95,2016-09-01,not employed,caucasian,senior,NA,male
+791,13.277,2016-09-01,not employed,aboriginal,middle age,NA,male
+792,3.126,2016-09-01,not employed,visible minority,middle age,NA,male
+793,2.435,2016-09-01,not employed,caucasian,middle age,NA,male
+794,2.352,2016-09-01,not employed,caucasian,middle age,1040,female
+795,3.778,2016-09-01,employed,caucasian,senior,NA,male
+796,3.778,2016-09-01,employed,aboriginal,middle age,2166.6666666666665,female
+797,2.435,2016-09-01,not employed,visible minority,middle age,20.833333333333332,female
+798,10.95,2016-09-01,not employed,caucasian,middle age,650,male
+799,2.435,2016-09-01,employed,caucasian,middle age,NA,female
+800,13.277,2016-09-01,employed,caucasian,senior,NA,female
+801,2.435,2016-09-01,employed,caucasian,middle age,NA,female
+802,2.352,2016-09-01,employed,visible minority,middle age,4680,male
+803,3.911,2016-09-01,employed,aboriginal,middle age,NA,female
+804,4.028,2016-10-01,employed,visible minority,senior,NA,male
+805,4.324,2016-10-01,not employed,caucasian,youth,NA,female
+806,4.324,2016-10-01,not employed,NA,middle age,NA,male
+807,45.121,2016-10-01,not employed,visible minority,youth,NA,female
+808,2.999,2016-10-01,employed,caucasian,senior,NA,female
+809,3.992,2016-10-01,employed,caucasian,youth,2600,female
+810,2.181,2016-10-01,employed,caucasian,middle age,NA,male
+811,16.466,2016-10-01,employed,caucasian,middle age,3250,male
+812,2.181,2016-10-01,employed,visible minority,senior,NA,female
+813,3.992,2016-10-01,employed,caucasian,middle age,3466.6666666666665,male
+814,2.999,2016-10-01,employed,visible minority,middle age,NA,female
+815,2.181,2016-10-01,not employed,NA,middle age,NA,male
+816,2.181,2016-10-01,NA,caucasian,middle age,12896,female
+817,6.682,2016-10-01,employed,visible minority,middle age,NA,male
+818,8.571,2016-10-01,not employed,caucasian,senior,11250,male
+819,16.466,2016-10-01,not employed,NA,senior,NA,female
+820,15.831,2016-10-01,employed,visible minority,senior,NA,male
+821,8.049,2016-11-01,not employed,NA,middle age,2383.3333333333335,male
+822,15.295,2016-11-01,employed,caucasian,middle age,4550,male
+823,3.265,2016-11-01,employed,caucasian,middle age,NA,male
+824,8.049,2016-11-01,employed,NA,youth,NA,female
+825,8.049,2016-11-01,NA,caucasian,middle age,3374.7999999999997,male
+826,3.265,2016-11-01,not employed,aboriginal,middle age,NA,male
+827,15.295,2016-11-01,NA,caucasian,senior,NA,female
+828,15.295,2016-11-01,employed,aboriginal,senior,NA,female
+829,7.519,2016-11-01,not employed,NA,middle age,NA,female
+830,27.359,2016-11-01,employed,visible minority,middle age,NA,male
+831,3.415,2016-11-01,not employed,caucasian,middle age,NA,female
+832,6.641,2016-11-01,not employed,caucasian,middle age,NA,female
+833,3.265,2016-11-01,not employed,aboriginal,middle age,NA,female
+834,6.641,2016-11-01,not employed,caucasian,senior,1733.3333333333333,male
+835,3.265,2016-11-01,not employed,caucasian,senior,9500,female
+836,3.265,2016-11-01,not employed,visible minority,youth,NA,female
+837,5.939,2016-12-01,not employed,caucasian,middle age,NA,male
+838,3.615,2016-12-01,employed,caucasian,senior,NA,male
+839,2.819,2016-12-01,NA,visible minority,middle age,NA,male
+840,12.451,2016-12-01,not employed,aboriginal,middle age,NA,male
+841,2.103,2016-12-01,not employed,NA,middle age,799.9999999999999,female
+842,12.018,2016-12-01,employed,visible minority,senior,NA,male
+843,5.005,2016-12-01,employed,caucasian,middle age,NA,male
+844,3.615,2016-12-01,employed,caucasian,middle age,NA,male
+845,31.338,2016-12-01,employed,visible minority,middle age,NA,male
+846,1.919,2016-12-01,employed,visible minority,middle age,NA,female
+847,20.12,2016-12-01,not employed,caucasian,middle age,NA,male
+848,1.919,2016-12-01,not employed,caucasian,middle age,NA,male
+849,4.993,2016-12-01,employed,caucasian,middle age,NA,female
+850,3.615,2016-12-01,not employed,caucasian,middle age,1596.3999999999999,female
+851,3.615,2016-12-01,not employed,aboriginal,middle age,NA,female
+852,4.993,2016-12-01,employed,visible minority,youth,NA,male
+853,1.919,2016-12-01,employed,visible minority,middle age,NA,female
+854,13.84,2017-01-01,employed,caucasian,youth,NA,female
+855,26.922,2017-01-01,not employed,caucasian,middle age,NA,female
+856,8.459,2017-01-01,not employed,caucasian,middle age,7583.333333333333,female
+857,3.791,2017-01-01,not employed,caucasian,middle age,NA,female
+858,6.707,2017-01-01,not employed,visible minority,middle age,NA,male
+859,34.258,2017-01-01,employed,aboriginal,senior,NA,male
+860,44.045,2017-01-01,employed,caucasian,senior,NA,female
+861,6.588,2017-01-01,not employed,caucasian,senior,2080,female
+862,4.174,2017-01-01,not employed,caucasian,middle age,NA,male
+863,8.459,2017-01-01,employed,caucasian,youth,NA,female
+864,13.84,2017-01-01,employed,caucasian,middle age,3120,female
+865,6.83,2017-01-01,employed,aboriginal,middle age,NA,female
+866,8.459,2017-01-01,employed,caucasian,youth,8909.333333333334,male
+867,5.312,2017-01-01,not employed,caucasian,middle age,NA,female
+868,3.791,2017-01-01,employed,caucasian,middle age,NA,male
+869,6.203,2017-01-01,employed,caucasian,youth,4500.000000000001,female
+870,5.498,2017-01-01,not employed,visible minority,middle age,281.6666666666667,female
+871,5.498,2017-01-01,not employed,NA,middle age,NA,female
+872,3.831,2017-02-01,employed,caucasian,middle age,NA,male
+873,6.912,2017-02-01,employed,aboriginal,senior,1268.8,male
+874,6.094,2017-02-01,employed,caucasian,youth,2700.5333333333333,female
+875,6.912,2017-02-01,employed,caucasian,middle age,2253.3333333333335,male
+876,3.831,2017-02-01,employed,caucasian,senior,NA,female
+877,6.704,2017-02-01,employed,visible minority,middle age,2080,female
+878,3.831,2017-02-01,employed,aboriginal,middle age,581.5333333333333,female
+879,3.95,2017-02-01,employed,NA,middle age,2730,female
+880,7.105,2017-02-01,employed,aboriginal,middle age,NA,female
+881,13.681,2017-02-01,employed,caucasian,senior,NA,female
+882,3.114,2017-02-01,employed,caucasian,middle age,NA,female
+883,5.368,2017-03-01,not employed,caucasian,middle age,NA,female
+884,3.86,2017-03-01,not employed,visible minority,middle age,NA,female
+885,5.368,2017-03-01,not employed,caucasian,middle age,NA,female
+886,5.485,2017-03-01,not employed,caucasian,youth,NA,female
+887,7.96,2017-03-01,employed,aboriginal,youth,845.8666666666667,female
+888,7.96,2017-03-01,not employed,visible minority,youth,NA,female
+889,3.883,2017-03-01,employed,aboriginal,middle age,3120,male
+890,5.485,2017-03-01,employed,visible minority,youth,2275,female
+891,15.217,2017-03-01,NA,caucasian,middle age,NA,male
+892,5.368,2017-03-01,employed,aboriginal,middle age,1988.1333333333334,female
+893,5.485,2017-03-01,not employed,caucasian,middle age,NA,female
+894,5.4,2017-03-01,not employed,aboriginal,youth,1560,female
+895,15.217,2017-03-01,employed,caucasian,middle age,NA,male
+896,3.883,2017-03-01,employed,visible minority,youth,1625,female
+897,9.647,2017-03-01,employed,caucasian,middle age,NA,male
+898,5.368,2017-03-01,not employed,visible minority,middle age,NA,male
+899,15.217,2017-03-01,employed,caucasian,senior,NA,female
+900,15.217,2017-03-01,employed,caucasian,middle age,NA,male
+901,3.883,2017-03-01,not employed,visible minority,middle age,3459.0400000000004,female
+902,5.875,2017-04-01,not employed,caucasian,middle age,13000,male
+903,21.354,2017-04-01,not employed,caucasian,middle age,2114.6666666666665,female
+904,3.501,2017-04-01,employed,NA,youth,1906.6666666666667,female
+905,2.921,2017-04-01,employed,visible minority,middle age,2946.6666666666665,male
+906,2.935,2017-04-01,not employed,visible minority,senior,NA,male
+907,4.405,2017-04-01,employed,visible minority,middle age,NA,female
+908,10.617,2017-04-01,employed,caucasian,middle age,NA,female
+909,2.921,2017-04-01,employed,visible minority,senior,NA,female
+910,6.418,2017-04-01,not employed,caucasian,middle age,1950,female
+911,2.921,2017-04-01,employed,visible minority,middle age,NA,female
+912,10.617,2017-04-01,employed,caucasian,middle age,NA,male
+913,2.921,2017-04-01,employed,aboriginal,senior,NA,male
+914,5.875,2017-04-01,employed,aboriginal,senior,7280,female
+915,2.921,2017-04-01,not employed,caucasian,middle age,NA,male
+916,16.014,2017-04-01,employed,aboriginal,middle age,NA,female
+917,4.405,2017-04-01,employed,caucasian,middle age,NA,female
+918,23.862,2017-05-01,not employed,aboriginal,middle age,2166.6666666666665,female
+919,5.486,2017-05-01,not employed,caucasian,middle age,NA,female
+920,9.007,2017-05-01,employed,caucasian,youth,NA,female
+921,6.913,2017-05-01,employed,caucasian,middle age,NA,female
+922,12.086,2017-05-01,employed,caucasian,middle age,2773.3333333333335,female
+923,10.843,2017-05-01,employed,caucasian,middle age,NA,male
+924,8.888,2017-05-01,employed,aboriginal,middle age,NA,male
+925,5.486,2017-05-01,not employed,NA,middle age,NA,female
+926,26.597,2017-05-01,employed,aboriginal,middle age,1516.6666666666667,male
+927,6.035,2017-05-01,NA,aboriginal,middle age,NA,male
+928,12.086,2017-05-01,employed,caucasian,middle age,NA,female
+929,2.933,2017-06-01,employed,visible minority,senior,4141.41,female
+930,5.021,2017-06-01,NA,caucasian,senior,NA,female
+931,3.368,2017-06-01,employed,aboriginal,middle age,1899.7333333333333,male
+932,7.285,2017-06-01,employed,visible minority,middle age,NA,male
+933,3.408,2017-06-01,not employed,caucasian,senior,NA,male
+934,6.512,2017-06-01,employed,visible minority,middle age,5980,male
+935,33.337,2017-06-01,not employed,caucasian,senior,1040,female
+936,3.103,2017-06-01,employed,visible minority,middle age,NA,male
+937,5.711,2017-06-01,employed,aboriginal,middle age,2773.3333333333335,female
+938,3.103,2017-06-01,employed,caucasian,middle age,NA,female
+939,4.205,2017-06-01,NA,visible minority,senior,NA,female
+940,4.456,2017-06-01,employed,caucasian,senior,1906.6666666666667,female
+941,2.898,2017-06-01,employed,aboriginal,youth,NA,female
+942,4.722,2017-06-01,not employed,NA,senior,NA,female
+943,5.021,2017-06-01,employed,caucasian,middle age,NA,female
+944,2.898,2017-06-01,employed,caucasian,senior,NA,female
+945,2.898,2017-06-01,not employed,caucasian,middle age,NA,male
+946,5.021,2017-06-01,employed,visible minority,middle age,NA,female
+947,4.368,2017-06-01,employed,caucasian,middle age,2166.6666666666665,male
+948,3.408,2017-06-01,employed,caucasian,middle age,1160.25,female
+949,4.456,2017-06-01,not employed,visible minority,youth,1711.6666666666667,male
+950,44.833,2017-07-01,employed,caucasian,middle age,1000,male
+951,6.912,2017-07-01,not employed,visible minority,middle age,3083.6,female
+952,8.942,2017-07-01,employed,aboriginal,middle age,NA,male
+953,4.347,2017-07-01,employed,caucasian,middle age,NA,male
+954,4.347,2017-07-01,NA,aboriginal,middle age,NA,male
+955,4.347,2017-07-01,employed,caucasian,senior,NA,female
+956,14.217,2017-07-01,employed,caucasian,middle age,1615.8999999999999,female
+957,4.347,2017-07-01,not employed,caucasian,middle age,3466.6666666666665,female
+958,14.217,2017-07-01,employed,caucasian,middle age,3466.6666666666665,male
+959,44.833,2017-07-01,not employed,caucasian,senior,4000.0000000000005,female
+960,8.29,2017-07-01,employed,caucasian,middle age,NA,female
+961,4.347,2017-07-01,not employed,caucasian,middle age,4853.333333333333,male
+962,19.019,2017-07-01,employed,visible minority,senior,3120,male
+963,8.29,2017-07-01,employed,aboriginal,middle age,NA,male
+964,4.347,2017-07-01,employed,caucasian,middle age,NA,female
+965,4.347,2017-07-01,employed,visible minority,youth,NA,male
+966,13.525,2017-08-01,not employed,aboriginal,senior,NA,female
+967,12.416,2017-08-01,employed,aboriginal,senior,4000.0000000000005,male
+968,24.287,2017-08-01,not employed,visible minority,youth,NA,male
+969,4.773,2017-08-01,NA,caucasian,senior,NA,female
+970,10.042,2017-08-01,employed,caucasian,senior,NA,male
+971,6.914,2017-08-01,employed,caucasian,middle age,6435,male
+972,24.287,2017-08-01,not employed,caucasian,middle age,NA,female
+973,4.773,2017-08-01,not employed,caucasian,middle age,2470,female
+974,6.659,2017-08-01,employed,caucasian,middle age,NA,female
+975,12,2017-09-01,employed,caucasian,middle age,5416.666666666667,female
+976,3,2017-09-01,employed,visible minority,middle age,3466.6666666666665,female
+977,11,2017-09-01,not employed,caucasian,senior,NA,female
+978,7,2017-09-01,employed,NA,senior,NA,male
+979,15,2017-09-01,employed,caucasian,middle age,NA,female
+980,28,2017-09-01,not employed,caucasian,youth,NA,male
+981,7,2017-09-01,not employed,caucasian,middle age,NA,male
+982,12,2017-09-01,employed,visible minority,middle age,3466.6666666666665,male
+983,28,2017-09-01,employed,aboriginal,senior,3900,female
+984,5,2017-09-01,employed,caucasian,middle age,NA,female
+985,28,2017-09-01,not employed,aboriginal,middle age,NA,female
+986,7.042,2017-10-01,not employed,caucasian,middle age,NA,female
+987,5.013,2017-10-01,NA,caucasian,youth,1820,female
+988,3.249,2017-10-01,employed,caucasian,middle age,NA,female
+989,12.971,2017-10-01,not employed,aboriginal,youth,NA,female
+990,3.249,2017-10-01,employed,visible minority,youth,NA,female
+991,3.249,2017-10-01,employed,caucasian,middle age,NA,female
+992,7.649,2017-10-01,employed,caucasian,middle age,NA,male
+993,11.972,2017-10-01,not employed,aboriginal,middle age,NA,male
+994,30.23,2017-10-01,employed,caucasian,middle age,6500,male
+995,17.826,2017-10-01,employed,caucasian,middle age,399.99999999999994,male
+996,12.971,2017-10-01,employed,NA,middle age,2223,male
+997,30.23,2017-10-01,employed,caucasian,middle age,NA,female
+998,10.866,2017-10-01,employed,caucasian,middle age,NA,female
+999,11.133,2017-10-01,employed,aboriginal,middle age,NA,male
+1000,3.249,2017-10-01,not employed,caucasian,middle age,NA,female
+1001,7.822,2017-11-01,not employed,caucasian,middle age,NA,female
+1002,25.377,2017-11-01,not employed,caucasian,middle age,2340,female
+1003,13.641,2017-11-01,employed,caucasian,middle age,NA,male
+1004,3.421,2017-11-01,employed,visible minority,youth,942.9333333333333,male
+1005,4.876,2017-11-01,employed,aboriginal,middle age,NA,female
+1006,6.923,2017-11-01,employed,caucasian,middle age,884,female
+1007,3.421,2017-11-01,employed,aboriginal,senior,2578.3333333333335,female
+1008,6.923,2017-11-01,not employed,NA,middle age,NA,female
+1009,25.377,2017-11-01,not employed,caucasian,senior,1954.3333333333333,female
+1010,6.741,2017-11-01,employed,aboriginal,youth,NA,male
+1011,6.741,2017-11-01,not employed,caucasian,youth,NA,male
+1012,5.008,2017-11-01,employed,caucasian,middle age,NA,female
+1013,25.377,2017-11-01,not employed,caucasian,youth,NA,female
+1014,5.008,2017-11-01,not employed,aboriginal,youth,2080,male
+1015,6.365,2017-11-01,employed,caucasian,middle age,NA,female
+1016,13.641,2017-11-01,not employed,visible minority,senior,NA,male
+1017,3.421,2017-11-01,not employed,caucasian,middle age,NA,male
+1018,6.741,2017-11-01,employed,caucasian,middle age,NA,male
+1019,3.514,2017-11-01,employed,visible minority,middle age,1560,female
+1020,7.546,2017-12-01,employed,aboriginal,senior,2946.6666666666665,male
+1021,15.772,2017-12-01,not employed,caucasian,middle age,NA,female
+1022,4.764,2017-12-01,employed,caucasian,senior,1950,female
+1023,3.95,2017-12-01,employed,caucasian,middle age,NA,female
+1024,5.12,2017-12-01,employed,visible minority,middle age,7615.833333333333,female
+1025,15.772,2017-12-01,employed,caucasian,middle age,2184,male
+1026,6.174,2017-12-01,employed,visible minority,youth,NA,male
+1027,5.12,2017-12-01,employed,aboriginal,middle age,NA,male
+1028,3.95,2017-12-01,not employed,caucasian,middle age,500,male
+1029,8.077,2017-12-01,employed,caucasian,senior,NA,male
+1030,8.077,2017-12-01,employed,visible minority,youth,NA,female
+1031,4.466,2018-01-01,employed,aboriginal,middle age,NA,male
+1032,14.892,2018-01-01,not employed,visible minority,youth,NA,female
+1033,10.983,2018-01-01,not employed,aboriginal,senior,707.1999999999999,male
+1034,3.604,2018-01-01,employed,visible minority,middle age,2500,male
+1035,4.466,2018-01-01,not employed,caucasian,senior,866.6666666666666,female
+1036,13.15,2018-01-01,employed,NA,middle age,NA,female
+1037,3.293,2018-01-01,employed,caucasian,senior,NA,male
+1038,4.466,2018-01-01,employed,caucasian,middle age,NA,male
+1039,6.61,2018-01-01,employed,visible minority,middle age,NA,female
+1040,13.15,2018-01-01,employed,caucasian,middle age,NA,male
+1041,3.293,2018-01-01,not employed,caucasian,middle age,NA,male
+1042,8.171,2018-01-01,not employed,visible minority,middle age,NA,female
+1043,10.983,2018-01-01,employed,aboriginal,middle age,2357.3333333333335,female
+1044,8.171,2018-01-01,NA,visible minority,middle age,NA,female
+1045,3.293,2018-01-01,employed,caucasian,senior,NA,male
+1046,16.399,2018-01-01,not employed,caucasian,middle age,3206.6666666666665,male
+1047,43.854,2018-01-01,employed,NA,senior,NA,female
+1048,8.171,2018-01-01,not employed,caucasian,senior,NA,male
+1049,16.803,2018-01-01,employed,caucasian,senior,2374.6666666666665,female
+1050,14.892,2018-01-01,employed,visible minority,middle age,NA,male
+1051,13.15,2018-01-01,NA,caucasian,senior,NA,female
+1052,10.983,2018-01-01,employed,caucasian,senior,NA,female
+1053,7.233,2018-01-01,not employed,caucasian,senior,NA,female
+1054,3.293,2018-01-01,employed,caucasian,middle age,NA,female
+1055,4.887,2018-01-01,employed,aboriginal,middle age,NA,male
+1056,14.391,2018-01-01,not employed,visible minority,youth,1183,female
+1057,12.502,2018-01-01,employed,visible minority,middle age,1178.6666666666667,female
+1058,4.208,2018-02-01,not employed,caucasian,middle age,NA,female
+1059,3.242,2018-02-01,employed,visible minority,middle age,2000,female
+1060,4.673,2018-02-01,employed,NA,middle age,3900,female
+1061,16.791,2018-02-01,NA,caucasian,middle age,2218.6666666666665,female
+1062,2.361,2018-02-01,employed,caucasian,middle age,1408.3333333333333,female
+1063,9.435,2018-02-01,employed,caucasian,middle age,NA,female
+1064,6.124,2018-02-01,employed,caucasian,middle age,NA,male
+1065,16.793,2018-02-01,employed,caucasian,middle age,NA,female
+1066,8.286,2018-02-01,not employed,NA,middle age,NA,female
+1067,8.274,2018-02-01,employed,caucasian,middle age,2600,male
+1068,3.403,2018-02-01,not employed,visible minority,middle age,NA,female
+1069,14.766,2018-02-01,not employed,caucasian,middle age,2361.6666666666665,female
+1070,6.375,2018-02-01,employed,caucasian,middle age,1527.5,female
+1071,4.577,2018-03-01,not employed,caucasian,middle age,4333.333333333333,male
+1072,4.577,2018-03-01,employed,aboriginal,middle age,NA,male
+1073,2.883,2018-03-01,employed,aboriginal,senior,3250,male
+1074,5.612,2018-03-01,not employed,caucasian,senior,1300,male
+1075,2.714,2018-03-01,not employed,caucasian,middle age,NA,female
+1076,2.883,2018-03-01,employed,aboriginal,youth,2600,male
+1077,3.192,2018-03-01,employed,visible minority,middle age,NA,female
+1078,4.019,2018-03-01,employed,visible minority,youth,NA,female
+1079,4.577,2018-03-01,NA,caucasian,senior,NA,female
+1080,3.192,2018-03-01,employed,visible minority,middle age,NA,male
+1081,4.019,2018-03-01,not employed,visible minority,senior,NA,female
+1082,3.192,2018-03-01,employed,caucasian,middle age,7083.333333333333,male
+1083,3.192,2018-03-01,employed,caucasian,youth,NA,female
+1084,4.019,2018-03-01,employed,aboriginal,middle age,4506.666666666667,female
+1085,2.883,2018-03-01,not employed,aboriginal,youth,NA,female
+1086,6.769,2018-03-01,employed,NA,middle age,1516.6666666666667,male
+1087,5.612,2018-03-01,employed,aboriginal,middle age,NA,female
+1088,2.714,2018-03-01,employed,caucasian,middle age,NA,male
+1089,5.612,2018-03-01,employed,aboriginal,senior,NA,male
+1090,5.612,2018-03-01,employed,aboriginal,middle age,975,male
+1091,5.612,2018-03-01,employed,caucasian,senior,NA,female
+1092,4.019,2018-03-01,not employed,caucasian,senior,NA,male
+1093,4.019,2018-03-01,employed,caucasian,youth,NA,male
+1094,4.019,2018-03-01,employed,visible minority,senior,1170,female
+1095,4.577,2018-03-01,not employed,visible minority,middle age,NA,male
+1096,2.883,2018-03-01,employed,caucasian,youth,2600,male
+1097,2.883,2018-03-01,employed,caucasian,middle age,5850,male
+1098,6.769,2018-03-01,NA,caucasian,middle age,NA,male
+1099,5.612,2018-03-01,not employed,NA,middle age,NA,female
+1100,4.019,2018-03-01,employed,aboriginal,youth,NA,female
+1101,7.444,2018-03-01,not employed,aboriginal,youth,2600,female
+1102,5.612,2018-03-01,not employed,visible minority,youth,NA,female
+1103,3.192,2018-03-01,not employed,caucasian,middle age,4680,male
+1104,3.192,2018-03-01,not employed,caucasian,middle age,5416.666666666667,male
+1105,4.019,2018-03-01,not employed,caucasian,middle age,NA,male
+1106,3.192,2018-03-01,employed,caucasian,youth,NA,male
+1107,3.192,2018-03-01,employed,caucasian,middle age,2166.6666666666665,male
+1108,3.192,2018-03-01,not employed,caucasian,senior,NA,male
+1109,13.324,2018-04-01,employed,aboriginal,middle age,NA,male
+1110,6.315,2018-04-01,employed,aboriginal,youth,910,male
+1111,6.315,2018-04-01,employed,caucasian,middle age,NA,female
+1112,5.23,2018-04-01,employed,visible minority,senior,NA,male
+1113,2.443,2018-04-01,not employed,aboriginal,youth,NA,female
+1114,5.23,2018-04-01,employed,caucasian,youth,3791.6666666666665,male
+1115,2.443,2018-04-01,not employed,caucasian,senior,NA,female
+1116,6.315,2018-04-01,not employed,caucasian,senior,NA,female
+1117,5.23,2018-04-01,not employed,NA,middle age,NA,female
+1118,2.443,2018-04-01,not employed,visible minority,middle age,3206.6666666666665,female
+1119,5.23,2018-04-01,employed,caucasian,senior,5200,female
+1120,5.23,2018-04-01,not employed,visible minority,middle age,NA,male
+1121,6.315,2018-04-01,employed,aboriginal,middle age,NA,male
+1122,9.064,2018-04-01,employed,caucasian,middle age,NA,male
+1123,6.315,2018-04-01,employed,visible minority,middle age,NA,female
+1124,4.296,2018-04-01,not employed,visible minority,middle age,NA,female
+1125,4.296,2018-04-01,not employed,caucasian,middle age,NA,female
+1126,4.575,2018-05-01,employed,caucasian,youth,5833.333333333333,female
+1127,17.872,2018-05-01,employed,aboriginal,middle age,NA,female
+1128,5.893,2018-05-01,employed,caucasian,middle age,NA,male
+1129,4.688,2018-05-01,not employed,visible minority,senior,3466.6666666666665,male
+1130,18.551,2018-05-01,not employed,caucasian,middle age,NA,male
+1131,6.482,2018-05-01,not employed,NA,middle age,NA,female
+1132,18.551,2018-05-01,employed,visible minority,middle age,NA,female
+1133,4.688,2018-05-01,employed,visible minority,middle age,NA,female
+1134,4.575,2018-05-01,employed,caucasian,senior,14820,male
+1135,4.575,2018-05-01,not employed,caucasian,youth,NA,female
+1136,18.551,2018-05-01,not employed,aboriginal,youth,1820,female
+1137,17.872,2018-05-01,not employed,aboriginal,middle age,2860,female
+1138,36.835,2018-06-01,employed,visible minority,middle age,3466.6666666666665,female
+1139,1.964,2018-06-01,employed,caucasian,middle age,NA,female
+1140,10.233,2018-06-01,NA,NA,middle age,1950,male
+1141,2.594,2018-06-01,not employed,caucasian,middle age,2400.6666666666665,male
+1142,24.097,2018-06-01,not employed,caucasian,middle age,2773.3333333333335,female
+1143,2.566,2018-06-01,not employed,caucasian,youth,1950,male
+1144,9.237,2018-06-01,employed,visible minority,senior,2210,male
+1145,3.137,2018-06-01,not employed,caucasian,middle age,NA,female
+1146,3.137,2018-06-01,employed,caucasian,senior,1495,male
+1147,10.233,2018-06-01,not employed,caucasian,youth,NA,male
+1148,7.832,2018-06-01,NA,aboriginal,middle age,2600,female
+1149,2.566,2018-06-01,employed,caucasian,middle age,NA,female
+1150,2.594,2018-06-01,employed,visible minority,senior,NA,female
+1151,2.594,2018-06-01,not employed,caucasian,middle age,NA,male
+1152,11.771,2018-06-01,not employed,caucasian,middle age,NA,female
+1153,10.233,2018-06-01,not employed,visible minority,middle age,NA,female
+1154,1.964,2018-06-01,employed,caucasian,youth,NA,female
+1155,9.237,2018-06-01,not employed,caucasian,middle age,NA,female
+1156,2.566,2018-06-01,employed,visible minority,middle age,1625,female
+1157,9.338,2018-06-01,employed,visible minority,youth,NA,female
+1158,3.58,2018-06-01,NA,caucasian,middle age,2253.3333333333335,female
+1159,9.338,2018-06-01,NA,caucasian,senior,NA,male
+1160,9.338,2018-06-01,not employed,caucasian,middle age,2357.3333333333335,female
+1161,9.338,2018-06-01,employed,caucasian,senior,11544,male
+1162,2.952,2018-06-01,employed,visible minority,middle age,NA,female
+1163,9.237,2018-06-01,not employed,caucasian,senior,NA,male
+1164,8.919,2018-07-01,not employed,caucasian,middle age,NA,male
+1165,8.919,2018-07-01,not employed,caucasian,middle age,NA,male
+1166,2.664,2018-07-01,employed,NA,middle age,NA,female
+1167,10.168,2018-07-01,employed,visible minority,middle age,NA,male
+1168,8.919,2018-07-01,not employed,caucasian,middle age,NA,male
+1169,8.919,2018-07-01,NA,aboriginal,middle age,NA,male
+1170,2.664,2018-07-01,employed,caucasian,middle age,312,male
+1171,2.664,2018-07-01,employed,caucasian,senior,3833.3333333333335,female
+1172,10.168,2018-07-01,not employed,caucasian,senior,NA,female
+1173,8.919,2018-07-01,employed,visible minority,senior,NA,female
+1174,8.919,2018-07-01,not employed,caucasian,middle age,1473.3333333333333,female
+1175,8.919,2018-07-01,employed,visible minority,middle age,707.1999999999999,female
+1176,8.919,2018-07-01,employed,aboriginal,youth,4333.333333333333,male
+1177,35.677,2018-07-01,employed,caucasian,middle age,3705,female
+1178,8.919,2018-07-01,employed,caucasian,youth,NA,female
+1179,9.031,2018-08-01,not employed,caucasian,youth,NA,male
+1180,2.264,2018-08-01,employed,aboriginal,middle age,NA,female
+1181,2.264,2018-08-01,not employed,aboriginal,middle age,NA,female
+1182,8.934,2018-08-01,employed,aboriginal,middle age,NA,male
+1183,2.247,2018-08-01,employed,caucasian,middle age,NA,female
+1184,8.396,2018-08-01,employed,caucasian,senior,3510,female
+1185,42.553,2018-08-01,employed,caucasian,middle age,NA,male
+1186,3.332,2018-08-01,not employed,caucasian,senior,NA,female
+1187,8.289,2018-08-01,employed,aboriginal,youth,NA,male
+1188,8.962,2018-08-01,not employed,caucasian,middle age,NA,female
+1189,7.79,2018-08-01,employed,caucasian,senior,2634.6666666666665,female
+1190,2.247,2018-08-01,not employed,aboriginal,middle age,NA,female
+1191,10.42,2018-08-01,not employed,caucasian,middle age,707.1999999999999,female
+1192,6.024,2018-08-01,employed,caucasian,youth,NA,male
+1193,10.668,2018-08-01,employed,caucasian,middle age,2600,female
+1194,22.583,2018-08-01,not employed,visible minority,senior,NA,female
+1195,7.433,2018-09-01,employed,NA,middle age,NA,male
+1196,26.224,2018-09-01,employed,visible minority,youth,NA,male
+1197,4.221,2018-09-01,not employed,caucasian,middle age,1733.3333333333333,female
+1198,4.221,2018-09-01,not employed,caucasian,senior,NA,male
+1199,2.235,2018-09-01,employed,caucasian,middle age,NA,female
+1200,3.79,2018-09-01,employed,caucasian,youth,3986.6666666666665,male
+1201,7.433,2018-09-01,not employed,aboriginal,middle age,NA,female
+1202,2.599,2018-09-01,not employed,visible minority,middle age,3250,female
+1203,2.006,2018-09-01,not employed,caucasian,middle age,NA,male
+1204,3.397,2018-09-01,not employed,caucasian,middle age,NA,male
+1205,2.235,2018-09-01,not employed,caucasian,middle age,2816.6666666666665,male
+1206,6.591,2018-09-01,not employed,caucasian,middle age,NA,female
+1207,7.983,2018-09-01,NA,caucasian,middle age,NA,male
+1208,8.644,2018-09-01,employed,caucasian,senior,4333.333333333333,male
+1209,14.04,2018-09-01,employed,aboriginal,middle age,3315,female
+1210,6.591,2018-09-01,employed,caucasian,middle age,NA,male
+1211,7.433,2018-09-01,not employed,caucasian,senior,NA,male
+1212,8.892,2018-09-01,not employed,caucasian,middle age,4680,female
+1213,2.235,2018-09-01,employed,caucasian,middle age,NA,female
+1214,12.583,2018-09-01,employed,caucasian,middle age,NA,female
+1215,7.433,2018-09-01,not employed,visible minority,middle age,NA,female
+1216,2.086,2018-10-01,employed,caucasian,middle age,2795,female
+1217,2.838,2018-10-01,NA,caucasian,middle age,NA,male
+1218,1.903,2018-10-01,not employed,caucasian,middle age,NA,female
+1219,3.746,2018-10-01,employed,visible minority,middle age,NA,female
+1220,37.338,2018-10-01,employed,caucasian,middle age,NA,male
+1221,9.391,2018-10-01,employed,aboriginal,senior,NA,male
+1222,1.903,2018-10-01,employed,caucasian,youth,NA,male
+1223,16.143,2018-10-01,not employed,visible minority,middle age,4333.333333333333,male
+1224,8.666,2018-10-01,NA,caucasian,youth,NA,male
+1225,2.086,2018-10-01,not employed,caucasian,senior,2600,female
+1226,5.528,2018-10-01,employed,caucasian,middle age,NA,male
+1227,14.002,2018-10-01,not employed,caucasian,middle age,NA,female
+1228,2.179,2018-10-01,not employed,aboriginal,middle age,NA,female
+1229,3.25,2018-10-01,not employed,caucasian,middle age,NA,female
+1230,37.338,2018-10-01,employed,visible minority,middle age,NA,female
+1231,9.391,2018-10-01,employed,caucasian,senior,NA,female
+1232,10.292,2018-10-01,employed,caucasian,middle age,2600,male
+1233,2.179,2018-10-01,not employed,aboriginal,youth,NA,female
+1234,3.746,2018-10-01,employed,caucasian,senior,NA,female
+1235,8.666,2018-10-01,not employed,caucasian,middle age,2600,male
+1236,10.292,2018-10-01,employed,caucasian,senior,NA,female
+1237,1.903,2018-10-01,employed,caucasian,middle age,NA,female
+1238,2.086,2018-10-01,not employed,visible minority,youth,5797.653333333333,male
+1239,2.179,2018-10-01,employed,caucasian,middle age,NA,male
+1240,37.338,2018-10-01,NA,visible minority,senior,3241.3333333333335,male
+1241,8.337,2018-11-01,employed,caucasian,middle age,3640,female
+1242,3.989,2018-11-01,NA,caucasian,youth,NA,male
+1243,3.989,2018-11-01,not employed,visible minority,middle age,NA,female
+1244,5.294,2018-11-01,not employed,visible minority,middle age,4398.333333333333,female
+1245,7.179,2018-11-01,not employed,aboriginal,youth,NA,male
+1246,14.989,2018-11-01,NA,aboriginal,middle age,NA,female
+1247,2.864,2018-11-01,employed,caucasian,senior,NA,female
+1248,2.864,2018-11-01,not employed,visible minority,middle age,NA,male
+1249,5.979,2018-11-01,employed,caucasian,middle age,1014,female
+1250,2.864,2018-11-01,employed,caucasian,middle age,3333.3333333333335,male
+1251,7.179,2018-11-01,employed,caucasian,middle age,NA,male
+1252,5.979,2018-11-01,not employed,aboriginal,middle age,NA,female
+1253,5.979,2018-11-01,employed,caucasian,middle age,NA,female
+1254,5.979,2018-11-01,employed,caucasian,middle age,NA,male
+1255,3.989,2018-11-01,employed,caucasian,senior,NA,male
+1256,5.985,2018-11-01,not employed,caucasian,senior,3100,female
+1257,8.936,2018-11-01,employed,caucasian,senior,NA,male
+1258,3.148,2018-12-01,employed,aboriginal,middle age,NA,female
+1259,2.588,2018-12-01,not employed,caucasian,middle age,NA,female
+1260,10.335,2018-12-01,not employed,visible minority,senior,NA,male
+1261,10.335,2018-12-01,not employed,caucasian,senior,1625,male
+1262,6.411,2018-12-01,not employed,caucasian,middle age,1820,female
+1263,10.335,2018-12-01,employed,caucasian,middle age,NA,female
+1264,2.588,2018-12-01,employed,caucasian,middle age,NA,male
+1265,3.295,2018-12-01,employed,visible minority,senior,NA,female
+1266,3.028,2018-12-01,employed,visible minority,middle age,NA,male
+1267,12.57,2018-12-01,not employed,caucasian,middle age,NA,male
+1268,2.588,2018-12-01,not employed,caucasian,senior,NA,male
+1269,12.57,2018-12-01,not employed,NA,middle age,NA,male
+1270,2.588,2018-12-01,employed,visible minority,middle age,NA,female
+1271,4.193,2019-01-01,not employed,visible minority,middle age,NA,female
+1272,4.193,2019-01-01,not employed,caucasian,middle age,1820,female
+1273,4.193,2019-01-01,not employed,visible minority,middle age,NA,female
+1274,4.193,2019-01-01,employed,aboriginal,senior,4875,female
+1275,4.193,2019-01-01,not employed,caucasian,middle age,NA,female
+1276,4.193,2019-01-01,employed,caucasian,middle age,2773.3333333333335,female
+1277,4.193,2019-01-01,employed,visible minority,middle age,NA,female
+1278,4.193,2019-01-01,not employed,caucasian,senior,NA,female
+1279,4.193,2019-01-01,NA,caucasian,middle age,NA,female
+1280,4.193,2019-01-01,not employed,visible minority,middle age,2405,male
+1281,4.193,2019-01-01,not employed,visible minority,middle age,NA,female
+1282,4.193,2019-01-01,employed,visible minority,senior,NA,male
+1283,4.193,2019-01-01,not employed,caucasian,middle age,NA,male
+1284,4.193,2019-01-01,employed,aboriginal,middle age,1300,female
+1285,4.193,2019-01-01,not employed,caucasian,middle age,NA,male
+1286,4.193,2019-01-01,employed,caucasian,youth,NA,female
+1287,4.193,2019-01-01,employed,caucasian,middle age,NA,female
+1288,4.193,2019-01-01,employed,caucasian,middle age,1430,female
+1289,4.193,2019-01-01,employed,caucasian,middle age,NA,female
+1290,4.193,2019-01-01,employed,caucasian,youth,NA,female
+1291,4.193,2019-01-01,not employed,visible minority,senior,6933.333333333333,female
+1292,4.193,2019-01-01,employed,aboriginal,youth,NA,male
+1293,4.193,2019-01-01,not employed,visible minority,middle age,NA,male
+1294,4.193,2019-01-01,not employed,caucasian,middle age,NA,male
+1295,4.193,2019-01-01,employed,caucasian,senior,NA,male
+1296,4.193,2019-01-01,not employed,caucasian,middle age,5000,male
+1297,4.193,2019-01-01,not employed,aboriginal,youth,4000,female
+1298,4.193,2019-01-01,employed,aboriginal,middle age,1950,male
+1299,4.193,2019-01-01,employed,caucasian,senior,3336.6666666666665,male
+1300,4.193,2019-01-01,employed,caucasian,senior,NA,male
+1301,4.193,2019-01-01,employed,aboriginal,middle age,NA,male
+1302,4.193,2019-01-01,employed,visible minority,youth,1690,male
+1303,4.193,2019-01-01,not employed,caucasian,middle age,5026.666666666667,female
+1304,9.025,2019-02-01,employed,visible minority,middle age,NA,female
+1305,3.88,2019-02-01,not employed,caucasian,middle age,NA,male
+1306,3.88,2019-02-01,NA,caucasian,senior,NA,male
+1307,9.025,2019-02-01,not employed,caucasian,youth,3033.3333333333335,female
+1308,3.88,2019-02-01,employed,visible minority,youth,745.3333333333334,male
+1309,3.88,2019-02-01,not employed,caucasian,middle age,NA,female
+1310,3.88,2019-02-01,NA,visible minority,senior,NA,female
+1311,9.025,2019-02-01,employed,caucasian,middle age,NA,male
+1312,3.88,2019-02-01,not employed,visible minority,middle age,NA,male
+1313,3.88,2019-02-01,not employed,caucasian,middle age,3367,female
+1314,3.88,2019-02-01,employed,visible minority,middle age,NA,female
+1315,3.88,2019-02-01,employed,visible minority,middle age,3185,male
+1316,3.88,2019-02-01,employed,caucasian,youth,NA,male
+1317,3.88,2019-02-01,employed,visible minority,middle age,NA,male
+1318,3.88,2019-02-01,not employed,caucasian,middle age,NA,female
+1319,3.88,2019-02-01,employed,visible minority,youth,NA,female
+1320,3.88,2019-02-01,employed,caucasian,middle age,NA,female
+1321,3.88,2019-02-01,not employed,caucasian,senior,2500,female
+1322,3.88,2019-02-01,not employed,caucasian,youth,1430,male
+1323,3.88,2019-02-01,employed,caucasian,middle age,4105.833333333333,female
+1324,3.88,2019-02-01,employed,aboriginal,youth,NA,male
+1325,13.586,2019-03-01,employed,aboriginal,youth,3640,male
+1326,2.546,2019-03-01,employed,aboriginal,senior,2275,male
+1327,13.586,2019-03-01,employed,caucasian,senior,1186.25,female
+1328,2.546,2019-03-01,employed,caucasian,middle age,1516.6666666666667,female
+1329,2.546,2019-03-01,not employed,aboriginal,youth,NA,male
+1330,2.546,2019-03-01,employed,caucasian,middle age,NA,male
+1331,13.586,2019-03-01,not employed,aboriginal,senior,NA,female
+1332,2.546,2019-03-01,not employed,NA,middle age,NA,male
+1333,8.223,2019-03-01,NA,caucasian,senior,2600,male
+1334,2.546,2019-03-01,employed,aboriginal,youth,NA,female
+1335,2.546,2019-03-01,not employed,visible minority,middle age,NA,male
+1336,2.546,2019-03-01,employed,visible minority,youth,NA,female
+1337,8.223,2019-03-01,employed,caucasian,youth,NA,male
+1338,2.546,2019-03-01,not employed,caucasian,middle age,NA,male
+1339,8.223,2019-03-01,employed,visible minority,youth,NA,female
+1340,8.223,2019-03-01,employed,visible minority,middle age,NA,female
+1341,8.223,2019-03-01,not employed,caucasian,middle age,5200,female
+1342,2.546,2019-03-01,not employed,caucasian,middle age,NA,male
+1343,2.546,2019-03-01,employed,aboriginal,middle age,NA,male
+1344,2.546,2019-03-01,not employed,visible minority,middle age,2080,female
+1345,2.546,2019-03-01,employed,caucasian,middle age,2600,male
+1346,2.546,2019-03-01,employed,caucasian,middle age,NA,female
+1347,2.546,2019-03-01,employed,caucasian,middle age,NA,male
+1348,2.546,2019-03-01,employed,caucasian,middle age,2773.3333333333335,male
+1349,2.546,2019-03-01,employed,caucasian,middle age,2773.3333333333335,male
+1350,2.546,2019-03-01,employed,caucasian,middle age,NA,male
+1351,2.546,2019-03-01,employed,visible minority,youth,NA,female
+1352,13.586,2019-03-01,employed,visible minority,middle age,NA,male
+1353,2.546,2019-03-01,not employed,aboriginal,middle age,NA,female
+1354,2.546,2019-03-01,employed,caucasian,middle age,2643.3333333333335,female
+1355,2.078,2019-04-01,not employed,caucasian,middle age,NA,female
+1356,2.525,2019-04-01,not employed,visible minority,middle age,1560,male
+1357,7.469,2019-04-01,not employed,caucasian,youth,1625,female
+1358,2.078,2019-04-01,employed,visible minority,senior,NA,male
+1359,9.075,2019-04-01,not employed,aboriginal,middle age,NA,female
+1360,2.078,2019-04-01,employed,visible minority,youth,416,female
+1361,2.078,2019-04-01,employed,aboriginal,youth,NA,female
+1362,2.525,2019-04-01,employed,visible minority,middle age,3120,female
+1363,7.469,2019-04-01,not employed,caucasian,senior,2426.6666666666665,male
+1364,7.469,2019-04-01,not employed,caucasian,youth,NA,male
+1365,2.525,2019-04-01,employed,caucasian,senior,NA,male
+1366,7.469,2019-04-01,employed,caucasian,middle age,NA,male
+1367,2.525,2019-04-01,employed,caucasian,middle age,1040,male
+1368,2.078,2019-04-01,not employed,caucasian,middle age,2600,female
+1369,9.075,2019-04-01,not employed,visible minority,middle age,NA,male
+1370,7.469,2019-04-01,not employed,caucasian,middle age,NA,male
+1371,7.469,2019-04-01,employed,aboriginal,middle age,2783.0833333333335,female
+1372,6.291,2019-05-01,not employed,caucasian,middle age,NA,female
+1373,8.463,2019-05-01,not employed,visible minority,middle age,NA,male
+1374,6.291,2019-05-01,not employed,caucasian,senior,NA,female
+1375,4.127,2019-05-01,employed,caucasian,youth,NA,female
+1376,10.694,2019-05-01,not employed,caucasian,middle age,5166.666666666667,male
+1377,8.463,2019-05-01,not employed,caucasian,middle age,1625,male
+1378,8.463,2019-05-01,not employed,caucasian,middle age,3293.3333333333335,female
+1379,8.463,2019-05-01,not employed,caucasian,middle age,NA,male
+1380,2.462,2019-05-01,employed,visible minority,middle age,NA,male
+1381,8.463,2019-05-01,employed,caucasian,middle age,10833.333333333334,female
+1382,8.463,2019-05-01,not employed,caucasian,middle age,3120,female
+1383,4.127,2019-05-01,employed,aboriginal,middle age,858,male
+1384,8.463,2019-05-01,employed,visible minority,middle age,NA,male
+1385,21.929,2019-05-01,not employed,caucasian,middle age,2916.6666666666665,male
+1386,2.809,2019-06-01,employed,caucasian,middle age,1690,male
+1387,10.44,2019-06-01,employed,caucasian,youth,NA,female
+1388,11.466,2019-06-01,employed,caucasian,middle age,NA,female
+1389,6.457,2019-06-01,employed,NA,middle age,NA,female
+1390,4.541,2019-06-01,not employed,caucasian,senior,2833.3333333333335,female
+1391,11.466,2019-06-01,not employed,caucasian,middle age,NA,male
+1392,4.541,2019-06-01,not employed,caucasian,senior,3986.6666666666665,male
+1393,4.541,2019-06-01,NA,caucasian,middle age,NA,male
+1394,11.466,2019-06-01,not employed,caucasian,middle age,NA,female
+1395,11.466,2019-06-01,not employed,NA,middle age,NA,female
+1396,4.541,2019-06-01,employed,caucasian,senior,NA,female
+1397,26.359,2019-06-01,not employed,caucasian,youth,NA,male
+1398,4.541,2019-06-01,employed,caucasian,middle age,1516.6666666666667,male
+1399,10.44,2019-06-01,not employed,visible minority,senior,NA,female
+1400,2.809,2019-06-01,not employed,visible minority,middle age,NA,male
+1401,4.541,2019-06-01,employed,caucasian,middle age,NA,female
+1402,11.466,2019-06-01,employed,caucasian,senior,1798.3333333333337,female
+1403,2.809,2019-06-01,employed,caucasian,middle age,1664,male
+1404,4.541,2019-06-01,not employed,caucasian,middle age,NA,male
+1405,9.254,2019-07-01,employed,visible minority,middle age,NA,male
+1406,2.42,2019-07-01,employed,caucasian,middle age,1137.5,male
+1407,9.254,2019-07-01,not employed,caucasian,youth,3900,male
+1408,2.42,2019-07-01,employed,caucasian,middle age,3120,female
+1409,9.254,2019-07-01,not employed,caucasian,senior,3744,male
+1410,2.42,2019-07-01,employed,aboriginal,middle age,NA,male
+1411,2.42,2019-07-01,not employed,caucasian,middle age,NA,female
+1412,9.254,2019-07-01,not employed,caucasian,middle age,1300,female
+1413,6.584,2019-07-01,not employed,caucasian,middle age,NA,male
+1414,9.254,2019-07-01,employed,aboriginal,middle age,NA,male
+1415,2.42,2019-07-01,employed,caucasian,middle age,3500,female
+1416,2.42,2019-07-01,employed,caucasian,middle age,NA,male
+1417,6.584,2019-07-01,employed,aboriginal,middle age,NA,male
+1418,2.42,2019-07-01,employed,caucasian,middle age,NA,male
+1419,2.42,2019-07-01,employed,caucasian,middle age,NA,female
+1420,9.254,2019-07-01,not employed,caucasian,middle age,NA,male
+1421,2.42,2019-07-01,NA,visible minority,middle age,10833.333333333334,male
+1422,9.254,2019-07-01,not employed,visible minority,middle age,2166.6666666666665,female
+1423,25.179,2019-07-01,not employed,visible minority,youth,9100,female
+1424,2.42,2019-07-01,NA,caucasian,middle age,NA,female
+1425,25.179,2019-07-01,NA,caucasian,youth,589.3333333333334,male
+1426,3.309,2019-08-01,not employed,caucasian,middle age,2166.6666666666665,female
+1427,28.173,2019-08-01,employed,caucasian,middle age,6586.666666666667,male
+1428,10.351,2019-08-01,not employed,visible minority,youth,3466.6666666666665,female
+1429,3.309,2019-08-01,employed,aboriginal,senior,NA,female
+1430,3.309,2019-08-01,employed,aboriginal,middle age,NA,female
+1431,9.006,2019-08-01,NA,caucasian,youth,NA,female
+1432,9.006,2019-08-01,NA,caucasian,middle age,900,female
+1433,3.309,2019-08-01,employed,visible minority,middle age,NA,male
+1434,3.309,2019-08-01,not employed,caucasian,middle age,NA,male
+1435,9.006,2019-08-01,not employed,caucasian,middle age,3640,male
+1436,3.309,2019-08-01,employed,caucasian,middle age,NA,male
+1437,28.173,2019-08-01,not employed,caucasian,middle age,NA,female
+1438,3.309,2019-08-01,not employed,visible minority,senior,1027,female
+1439,3.309,2019-08-01,NA,visible minority,senior,3813.3333333333335,male
+1440,3.309,2019-08-01,employed,visible minority,senior,NA,female
+1441,3.309,2019-08-01,employed,aboriginal,middle age,NA,female
+1442,28.173,2019-08-01,NA,caucasian,middle age,NA,male
+1443,17.132,2019-09-01,not employed,caucasian,middle age,NA,female
+1444,5.849,2019-09-01,employed,caucasian,middle age,NA,male
+1445,5.849,2019-09-01,employed,caucasian,middle age,NA,male
+1446,17.132,2019-09-01,not employed,visible minority,middle age,1950,male
+1447,5.849,2019-09-01,employed,caucasian,middle age,NA,male
+1448,5.849,2019-09-01,not employed,caucasian,middle age,NA,male
+1449,17.132,2019-09-01,employed,NA,middle age,2500,female
+1450,17.132,2019-09-01,not employed,caucasian,youth,7800,male
+1451,5.849,2019-09-01,employed,caucasian,middle age,NA,female
+1452,5.849,2019-09-01,employed,visible minority,middle age,NA,female
+1453,5.849,2019-09-01,not employed,caucasian,middle age,NA,female
+1454,17.132,2019-09-01,employed,visible minority,senior,NA,male
+1455,5.849,2019-09-01,NA,aboriginal,middle age,2600,male
+1456,5.849,2019-09-01,employed,visible minority,middle age,2773.3333333333335,male
+1457,5.849,2019-09-01,not employed,caucasian,middle age,2600,male
+1458,5.849,2019-09-01,employed,visible minority,middle age,3000,male
+1459,5.849,2019-09-01,employed,aboriginal,middle age,2210,male
+1460,5.849,2019-09-01,not employed,caucasian,middle age,1100,male
+1461,3.9,2019-10-01,not employed,caucasian,senior,NA,female
+1462,8.767,2019-10-01,NA,aboriginal,senior,NA,male
+1463,3.9,2019-10-01,NA,visible minority,middle age,NA,female
+1464,3.9,2019-10-01,not employed,caucasian,senior,7500,male
+1465,43.131,2019-10-01,employed,caucasian,youth,NA,female
+1466,4.641,2019-10-01,not employed,caucasian,senior,1625,male
+1467,10.81,2019-10-01,employed,NA,middle age,NA,male
+1468,8.328,2019-10-01,not employed,caucasian,middle age,NA,female
+1469,4.13,2019-10-01,not employed,visible minority,middle age,NA,female
+1470,9.911,2019-10-01,employed,caucasian,middle age,NA,male
+1471,10.81,2019-10-01,employed,caucasian,middle age,6240,female
+1472,7.367,2019-10-01,not employed,visible minority,middle age,NA,male
+1473,8.328,2019-10-01,employed,caucasian,youth,NA,male
+1474,8.767,2019-10-01,employed,caucasian,middle age,NA,female
+1475,3.9,2019-10-01,employed,caucasian,middle age,1083.3333333333333,male
+1476,6.594,2019-11-01,not employed,caucasian,youth,NA,female
+1477,6.826,2019-11-01,not employed,caucasian,middle age,4333.333333333333,male
+1478,6.826,2019-11-01,employed,visible minority,youth,3750,male
+1479,6.826,2019-11-01,employed,caucasian,middle age,NA,male
+1480,6.594,2019-11-01,employed,caucasian,middle age,3033.3333333333335,female
+1481,6.594,2019-11-01,employed,caucasian,senior,NA,female
+1482,6.826,2019-11-01,not employed,visible minority,middle age,3250,male
+1483,6.826,2019-11-01,not employed,NA,senior,NA,male
+1484,6.826,2019-11-01,employed,aboriginal,middle age,NA,female
+1485,6.826,2019-11-01,not employed,visible minority,senior,3510,female
+1486,6.594,2019-11-01,employed,caucasian,youth,NA,female
+1487,6.594,2019-11-01,not employed,caucasian,middle age,NA,female
+1488,6.826,2019-11-01,not employed,caucasian,youth,NA,male
+1489,6.826,2019-11-01,not employed,caucasian,middle age,NA,female
+1490,6.826,2019-11-01,NA,visible minority,middle age,1625,female
+1491,6.826,2019-11-01,employed,aboriginal,middle age,NA,male
+1492,6.826,2019-11-01,employed,caucasian,middle age,NA,female
+1493,6.826,2019-11-01,employed,caucasian,middle age,NA,male
+1494,6.826,2019-11-01,employed,caucasian,middle age,NA,male
+1495,6.826,2019-11-01,not employed,caucasian,middle age,NA,male
+1496,6.826,2019-11-01,not employed,caucasian,middle age,3250,male
+1497,19.715,2019-11-01,employed,visible minority,youth,3293.3333333333335,female
+1498,6.594,2019-11-01,not employed,aboriginal,middle age,3813.3333333333335,male
+1499,6.826,2019-11-01,not employed,caucasian,middle age,NA,male
+1500,6.594,2019-11-01,employed,visible minority,senior,NA,male
+1501,20.41,2019-11-01,employed,visible minority,middle age,NA,male
+1502,6.826,2019-11-01,not employed,visible minority,middle age,NA,female
+1503,8.077,2019-12-01,not employed,visible minority,senior,3120,male
+1504,6.363,2019-12-01,employed,visible minority,middle age,NA,male
+1505,6.118,2019-12-01,not employed,caucasian,middle age,NA,male
+1506,8.077,2019-12-01,employed,caucasian,middle age,NA,male
+1507,15.322,2019-12-01,employed,caucasian,youth,NA,female
+1508,10.668,2019-12-01,employed,caucasian,youth,NA,female
+1509,12.071,2019-12-01,employed,caucasian,senior,3250,male
+1510,3.225,2019-12-01,employed,caucasian,middle age,5460,male
+1511,20.237,2019-12-01,employed,caucasian,middle age,NA,female
+1512,15.322,2019-12-01,employed,caucasian,senior,NA,male
+1513,10.668,2019-12-01,employed,visible minority,youth,1950,male
+1514,6.363,2019-12-01,not employed,aboriginal,middle age,NA,female
+1515,3.225,2019-12-01,not employed,caucasian,middle age,NA,male
+1516,6.118,2019-12-01,not employed,caucasian,senior,NA,female
+1517,6.363,2019-12-01,not employed,caucasian,senior,NA,male
+1518,6.363,2019-12-01,employed,caucasian,middle age,NA,male
+1519,6.363,2019-12-01,not employed,caucasian,senior,NA,male
+1520,3.225,2019-12-01,employed,caucasian,middle age,2773.3333333333335,female
+1521,6.363,2019-12-01,employed,caucasian,middle age,1820,male
+1522,8.077,2019-12-01,employed,visible minority,senior,NA,male
+1523,3.225,2019-12-01,not employed,visible minority,middle age,NA,male
+1524,6.363,2019-12-01,employed,visible minority,youth,NA,female
+1525,8.077,2019-12-01,not employed,caucasian,middle age,NA,female
+1526,6.363,2019-12-01,employed,visible minority,middle age,2145,female
+1527,10.668,2019-12-01,employed,caucasian,middle age,NA,male
+1528,6.363,2019-12-01,not employed,visible minority,middle age,NA,male
+1529,20.237,2019-12-01,employed,caucasian,senior,NA,male
+1530,20.237,2019-12-01,NA,caucasian,middle age,NA,female
+1531,15.322,2019-12-01,employed,visible minority,youth,1733.3333333333333,male
+1532,6.363,2019-12-01,not employed,caucasian,middle age,2275,female
+1533,3.225,2019-12-01,employed,visible minority,youth,NA,male
+1534,6.118,2019-12-01,employed,aboriginal,middle age,NA,male
+1535,20.237,2019-12-01,employed,caucasian,middle age,NA,female
+1536,6.118,2019-12-01,not employed,caucasian,middle age,4166.666666666666,male
+1537,18.896,2020-01-01,not employed,caucasian,senior,520,male
+1538,4.203,2020-01-01,employed,visible minority,middle age,NA,female
+1539,2.428,2020-01-01,employed,caucasian,youth,700,male
+1540,18.896,2020-01-01,not employed,caucasian,youth,1755,female
+1541,4.203,2020-01-01,NA,caucasian,middle age,NA,female
+1542,2.428,2020-01-01,not employed,visible minority,middle age,NA,female
+1543,2.428,2020-01-01,employed,caucasian,middle age,NA,female
+1544,2.428,2020-01-01,not employed,caucasian,middle age,NA,male
+1545,10.916,2020-01-01,employed,caucasian,senior,NA,male
+1546,10.916,2020-01-01,not employed,visible minority,middle age,NA,female
+1547,10.916,2020-01-01,employed,caucasian,youth,1586,male
+1548,18.896,2020-01-01,not employed,visible minority,senior,NA,male
+1549,10.916,2020-01-01,employed,caucasian,middle age,3367,female
+1550,2.952,2020-01-01,employed,caucasian,senior,2637.483333333333,male
+1551,2.428,2020-01-01,not employed,NA,middle age,NA,male
+1552,18.896,2020-01-01,employed,visible minority,middle age,NA,male
+1553,4.203,2020-01-01,not employed,caucasian,senior,NA,female
+1554,2.428,2020-01-01,employed,caucasian,middle age,NA,male
+1555,2.428,2020-01-01,not employed,visible minority,middle age,NA,female
+1556,18.896,2020-01-01,not employed,aboriginal,middle age,NA,female
+1557,18.896,2020-01-01,employed,caucasian,middle age,2600,female
+1558,10.916,2020-01-01,not employed,caucasian,middle age,NA,female
+1559,4.203,2020-01-01,NA,caucasian,middle age,NA,female
+1560,10.916,2020-01-01,employed,caucasian,middle age,NA,female
+1561,2.952,2020-01-01,employed,visible minority,youth,NA,male
+1562,2.428,2020-01-01,not employed,visible minority,youth,NA,female
+1563,2.428,2020-01-01,employed,visible minority,middle age,NA,female
+1564,10.916,2020-01-01,NA,aboriginal,middle age,NA,male
+1565,10.916,2020-01-01,not employed,caucasian,middle age,NA,male
+1566,10.916,2020-01-01,employed,caucasian,middle age,NA,male
+1567,3.177,2020-02-01,not employed,caucasian,middle age,NA,male
+1568,15.887,2020-02-01,not employed,visible minority,middle age,4194.666666666667,female
+1569,3.971,2020-02-01,employed,caucasian,senior,NA,male
+1570,3.971,2020-02-01,employed,caucasian,middle age,2400,male
+1571,3.177,2020-02-01,employed,visible minority,middle age,2199.9999999999995,female
+1572,7.943,2020-02-01,employed,caucasian,senior,1850.3333333333333,male
+1573,3.971,2020-02-01,employed,caucasian,middle age,5005,male
+1574,3.971,2020-02-01,employed,caucasian,middle age,NA,female
+1575,7.943,2020-02-01,employed,visible minority,middle age,NA,female
+1576,3.971,2020-02-01,not employed,caucasian,senior,NA,male
+1577,3.971,2020-02-01,employed,caucasian,middle age,NA,female
+1578,7.943,2020-02-01,employed,caucasian,middle age,NA,male
+1579,15.887,2020-02-01,not employed,caucasian,middle age,NA,male
+1580,7.943,2020-02-01,NA,caucasian,youth,1625,female
+1581,15.887,2020-02-01,not employed,aboriginal,middle age,NA,female
+1582,15.887,2020-02-01,employed,caucasian,middle age,3807.9166666666665,male
+1583,7.943,2020-02-01,not employed,caucasian,senior,NA,male
+1584,3.971,2020-02-01,NA,caucasian,senior,NA,male
+1585,15.887,2020-02-01,not employed,visible minority,middle age,2210,female
+1586,7.943,2020-02-01,not employed,visible minority,youth,NA,male
+1587,3.971,2020-02-01,not employed,caucasian,middle age,1040,male
+1588,7.943,2020-02-01,not employed,visible minority,middle age,1820,female
+1589,7.943,2020-02-01,employed,caucasian,youth,NA,female
+1590,15.887,2020-02-01,not employed,caucasian,middle age,NA,male
+1591,3.177,2020-02-01,not employed,visible minority,middle age,2946.6666666666665,female
+1592,3.971,2020-02-01,employed,caucasian,middle age,2730,female
+1593,3.971,2020-02-01,not employed,NA,senior,4333.333333333333,male
+1594,7.943,2020-02-01,not employed,visible minority,senior,NA,female
+1595,7.943,2020-02-01,not employed,visible minority,youth,NA,male
+1596,7.943,2020-02-01,employed,caucasian,middle age,NA,male
+1597,3.971,2020-02-01,not employed,caucasian,middle age,NA,female
+1598,15.887,2020-02-01,employed,aboriginal,senior,4163.856666666667,female
+1599,5.295,2020-02-01,not employed,caucasian,senior,NA,female
+1600,3.971,2020-02-01,not employed,caucasian,middle age,NA,female
+1601,7.943,2020-02-01,employed,caucasian,middle age,NA,male
+1602,7.907,2020-03-01,employed,visible minority,middle age,NA,male
+1603,7.907,2020-03-01,employed,NA,middle age,1083.3333333333333,male
+1604,7.907,2020-03-01,employed,aboriginal,senior,NA,female
+1605,7.907,2020-03-01,employed,caucasian,middle age,NA,female
+1606,7.907,2020-03-01,employed,caucasian,senior,NA,female
+1607,7.907,2020-03-01,employed,aboriginal,middle age,NA,male
+1608,7.907,2020-03-01,not employed,caucasian,middle age,NA,female
+1609,7.907,2020-03-01,NA,caucasian,middle age,NA,male
+1610,7.907,2020-03-01,not employed,caucasian,youth,NA,male
+1611,7.907,2020-03-01,employed,aboriginal,senior,1560,male
+1612,7.907,2020-03-01,employed,caucasian,senior,NA,female
+1613,7.907,2020-03-01,not employed,caucasian,senior,NA,male
+1614,7.907,2020-03-01,not employed,caucasian,middle age,2470,male
+1615,7.907,2020-03-01,employed,caucasian,middle age,2816.6666666666665,male
+1616,7.907,2020-03-01,employed,caucasian,middle age,NA,female
+1617,7.907,2020-03-01,not employed,NA,middle age,3328,female
+1618,7.907,2020-03-01,not employed,aboriginal,youth,2600,female
+1619,7.907,2020-03-01,employed,caucasian,senior,4166.666666666667,male
+1620,7.907,2020-03-01,employed,visible minority,middle age,NA,female
+1621,7.907,2020-03-01,not employed,caucasian,middle age,NA,male
+1622,7.907,2020-03-01,employed,caucasian,senior,NA,male
+1623,7.907,2020-03-01,not employed,visible minority,senior,NA,male
+1624,4.14,2020-04-01,employed,caucasian,middle age,NA,female
+1625,4.14,2020-04-01,employed,aboriginal,middle age,975,male
+1626,5.52,2020-04-01,employed,caucasian,middle age,NA,female
+1627,8.281,2020-04-01,not employed,visible minority,youth,NA,female
+1628,8.281,2020-04-01,not employed,caucasian,middle age,NA,female
+1629,16.562,2020-04-01,employed,visible minority,middle age,NA,female
+1630,7.933,2020-04-01,employed,caucasian,middle age,NA,female
+1631,8.281,2020-04-01,employed,aboriginal,middle age,1213.3333333333333,female
+1632,5.52,2020-04-01,employed,caucasian,youth,1950,male
+1633,8.281,2020-04-01,employed,aboriginal,youth,520,male
+1634,5.52,2020-04-01,employed,visible minority,youth,NA,male
+1635,16.562,2020-04-01,employed,caucasian,senior,NA,male
+1636,8.281,2020-04-01,not employed,caucasian,middle age,2757.733333333333,female
+1637,5.52,2020-04-01,NA,visible minority,senior,NA,male
+1638,16.562,2020-04-01,employed,caucasian,middle age,NA,male
+1639,6.835,2020-05-01,employed,visible minority,middle age,NA,male
+1640,35.761,2020-05-01,not employed,caucasian,middle age,1000,female
+1641,10.252,2020-05-01,employed,caucasian,middle age,4398.333333333333,female
+1642,20.505,2020-05-01,employed,visible minority,middle age,2166.6666666666665,male
+1643,20.505,2020-05-01,not employed,caucasian,middle age,NA,male
+1644,10.252,2020-05-01,employed,caucasian,middle age,NA,male
+1645,6.835,2020-05-01,not employed,caucasian,senior,NA,male
+1646,20.505,2020-05-01,not employed,caucasian,middle age,NA,male
+1647,35.761,2020-05-01,employed,aboriginal,youth,NA,female
+1648,35.761,2020-05-01,not employed,caucasian,middle age,199.99999999999997,female
+1649,17.88,2020-05-01,employed,aboriginal,youth,NA,female
+1650,10.252,2020-05-01,not employed,caucasian,middle age,NA,female
+1651,35.761,2020-05-01,employed,caucasian,youth,5833.333333333333,male
+1652,10.252,2020-05-01,not employed,caucasian,senior,2432.733333333333,female
+1653,17.88,2020-05-01,employed,caucasian,middle age,NA,male
+1654,6.835,2020-05-01,employed,caucasian,middle age,6825,female
+1655,10.252,2020-05-01,NA,caucasian,senior,450,male
+1656,17.88,2020-05-01,not employed,visible minority,middle age,NA,male
+1657,10.092,2020-06-01,not employed,caucasian,middle age,NA,female
+1658,10.092,2020-06-01,employed,visible minority,middle age,3333.3333333333335,female
+1659,10.092,2020-06-01,employed,visible minority,middle age,NA,female
+1660,20.184,2020-06-01,not employed,caucasian,middle age,NA,male
+1661,10.092,2020-06-01,not employed,aboriginal,middle age,NA,female
+1662,10.092,2020-06-01,employed,visible minority,middle age,3466.6666666666665,male
+1663,6.728,2020-06-01,employed,caucasian,middle age,NA,male
+1664,20.184,2020-06-01,employed,aboriginal,middle age,NA,male
+1665,38.754,2020-06-01,employed,visible minority,middle age,NA,female
+1666,20.184,2020-06-01,employed,caucasian,middle age,NA,male
+1667,4.094,2020-07-01,employed,visible minority,middle age,2383.3333333333335,female
+1668,16.379,2020-07-01,employed,aboriginal,senior,NA,female
+1669,4.094,2020-07-01,employed,caucasian,senior,3120,male
+1670,8.189,2020-07-01,employed,caucasian,senior,NA,female
+1671,4.094,2020-07-01,not employed,visible minority,middle age,NA,female
+1672,8.189,2020-07-01,employed,caucasian,middle age,9533.333333333334,male
+1673,16.379,2020-07-01,employed,caucasian,senior,2275,female
+1674,7.054,2020-07-01,not employed,aboriginal,middle age,NA,female
+1675,5.459,2020-07-01,employed,caucasian,youth,866.6666666666666,female
+1676,8.189,2020-07-01,employed,aboriginal,senior,400,female
+1677,16.379,2020-07-01,employed,caucasian,middle age,1560,male
+1678,10.581,2020-07-01,not employed,visible minority,middle age,NA,male
+1679,4.094,2020-07-01,employed,caucasian,middle age,NA,female
+1680,16.379,2020-07-01,not employed,caucasian,middle age,1560,male
+1681,7.054,2020-07-01,not employed,caucasian,middle age,NA,male
+1682,7.054,2020-07-01,not employed,caucasian,senior,2000,female
+1683,8.189,2020-07-01,employed,visible minority,middle age,7150,male
+1684,12.515,2020-08-01,employed,caucasian,middle age,2725.6666666666665,male
+1685,50.06,2020-08-01,employed,caucasian,middle age,2000,female
+1686,76.508,2020-08-01,employed,caucasian,senior,NA,male
+1687,9.575,2020-08-01,not employed,visible minority,middle age,NA,male
+1688,31.082,2020-08-01,not employed,aboriginal,youth,1473.3333333333333,female
+1689,15.541,2020-08-01,employed,aboriginal,middle age,884,female
+1690,76.508,2020-08-01,employed,caucasian,youth,NA,female
+1691,38.254,2020-08-01,employed,caucasian,senior,3250,male
+1692,76.508,2020-08-01,employed,caucasian,middle age,NA,female
+1693,38.254,2020-08-01,NA,caucasian,middle age,NA,male
+1694,16.686,2020-08-01,not employed,aboriginal,middle age,5200,female
+1695,79.887,2020-09-01,not employed,caucasian,middle age,NA,male
+1696,26.629,2020-09-01,employed,visible minority,senior,26,female
+1697,19.971,2020-09-01,not employed,caucasian,senior,NA,female
+1698,19.971,2020-09-01,employed,caucasian,middle age,NA,female
+1699,79.887,2020-09-01,not employed,caucasian,middle age,650,male
+1700,19.971,2020-09-01,employed,caucasian,middle age,2210,female
+1701,19.971,2020-09-01,not employed,caucasian,youth,NA,female
+1702,79.887,2020-09-01,not employed,aboriginal,youth,NA,male
+1703,79.887,2020-09-01,employed,caucasian,youth,NA,male
+1704,79.887,2020-09-01,employed,visible minority,middle age,NA,male
+1705,18.694,2020-10-01,not employed,visible minority,middle age,NA,female
+1706,18.694,2020-10-01,not employed,caucasian,youth,1650,male
+1707,18.694,2020-10-01,not employed,caucasian,middle age,2925,female
+1708,18.694,2020-10-01,not employed,caucasian,middle age,NA,male
+1709,18.694,2020-10-01,not employed,caucasian,middle age,NA,female
+1710,57.093,2020-10-01,not employed,caucasian,senior,1300,male
+1711,9.347,2020-10-01,employed,caucasian,youth,NA,male
+1712,18.694,2020-10-01,not employed,caucasian,middle age,NA,female
+1713,18.694,2020-10-01,not employed,caucasian,middle age,2600,female
+1714,18.694,2020-10-01,not employed,caucasian,middle age,799.9999999999999,female
+1715,18.694,2020-10-01,not employed,caucasian,senior,NA,female
+1716,18.694,2020-10-01,NA,caucasian,middle age,NA,male
+1717,57.093,2020-10-01,NA,visible minority,senior,NA,male
+1718,57.093,2020-10-01,employed,caucasian,youth,NA,male
+1719,18.694,2020-10-01,employed,caucasian,middle age,NA,male
+1720,8.854,2020-11-01,employed,caucasian,senior,2166.666666666667,male
+1721,6.64,2020-11-01,not employed,aboriginal,senior,2578.3333333333335,female
+1722,13.281,2020-11-01,NA,caucasian,middle age,NA,female
+1723,13.281,2020-11-01,not employed,caucasian,middle age,NA,male
+1724,17.672,2020-11-01,not employed,caucasian,middle age,3120,female
+1725,13.281,2020-11-01,NA,visible minority,middle age,NA,female
+1726,17.672,2020-11-01,employed,aboriginal,middle age,NA,male
+1727,8.836,2020-11-01,not employed,aboriginal,middle age,NA,male
+1728,13.281,2020-11-01,employed,visible minority,middle age,NA,male
+1729,8.836,2020-11-01,not employed,caucasian,middle age,NA,female
+1730,8.836,2020-11-01,not employed,caucasian,youth,NA,male
+1731,13.281,2020-11-01,employed,caucasian,middle age,NA,female
+1732,8.836,2020-11-01,employed,caucasian,middle age,NA,female
+1733,4.418,2020-11-01,employed,caucasian,middle age,NA,male
+1734,17.672,2020-11-01,not employed,caucasian,middle age,NA,male
+1735,26.562,2020-11-01,NA,visible minority,senior,NA,female
+1736,7.42,2020-12-01,employed,aboriginal,youth,NA,male
+1737,7.42,2020-12-01,employed,caucasian,youth,NA,male
+1738,4.946,2020-12-01,NA,caucasian,middle age,NA,female
+1739,7.42,2020-12-01,employed,caucasian,youth,NA,male
+1740,14.84,2020-12-01,employed,caucasian,senior,NA,male
+1741,7.42,2020-12-01,employed,visible minority,middle age,NA,female
+1742,4.946,2020-12-01,not employed,caucasian,middle age,NA,male
+1743,7.42,2020-12-01,not employed,caucasian,middle age,NA,female
+1744,6.673,2021-01-01,not employed,caucasian,youth,NA,female
+1745,13.346,2021-01-01,employed,caucasian,middle age,NA,male
+1746,6.673,2021-01-01,employed,caucasian,middle age,NA,female
+1747,4.448,2021-01-01,employed,aboriginal,middle age,1213.3333333333333,male
+1748,13.346,2021-01-01,employed,visible minority,middle age,NA,female
+1749,6.673,2021-01-01,employed,visible minority,senior,NA,female
+1750,6.673,2021-01-01,employed,caucasian,youth,2600,male
+1751,13.346,2021-01-01,not employed,visible minority,middle age,NA,female
+1752,6.673,2021-01-01,employed,NA,senior,NA,male
+1753,13.346,2021-01-01,employed,caucasian,senior,NA,female
+1754,4.448,2021-01-01,employed,caucasian,senior,NA,female
+1755,6.673,2021-01-01,employed,visible minority,youth,NA,female
+1756,13.346,2021-01-01,employed,caucasian,middle age,NA,male
+1757,6.673,2021-01-01,employed,visible minority,middle age,3432,male
+1758,13.346,2021-01-01,employed,caucasian,middle age,NA,female
+1759,4.448,2021-01-01,not employed,caucasian,middle age,NA,male
+1760,4.448,2021-01-01,employed,aboriginal,middle age,NA,male
+1761,6.673,2021-01-01,not employed,caucasian,middle age,2946.6666666666665,female
+1762,7.347,2021-02-01,employed,caucasian,senior,4000.0000000000005,male
+1763,3.673,2021-02-01,not employed,visible minority,middle age,NA,male
+1764,7.347,2021-02-01,NA,caucasian,youth,6500,male
+1765,7.347,2021-02-01,employed,caucasian,senior,NA,male
+1766,4.898,2021-02-01,not employed,visible minority,youth,NA,female
+1767,14.695,2021-02-01,employed,caucasian,middle age,NA,male
+1768,7.347,2021-02-01,not employed,caucasian,senior,NA,male
+1769,2.939,2021-02-01,employed,caucasian,middle age,NA,female
+1770,14.695,2021-02-01,employed,visible minority,middle age,NA,female
+1771,4.898,2021-02-01,not employed,aboriginal,youth,NA,male
+1772,7.347,2021-02-01,employed,caucasian,middle age,NA,female
+1773,7.347,2021-02-01,employed,aboriginal,senior,NA,female
+1774,3.673,2021-02-01,employed,aboriginal,youth,NA,male
+1775,4.898,2021-02-01,not employed,caucasian,youth,NA,female
+1776,14.695,2021-02-01,employed,caucasian,youth,NA,female
+1777,7.347,2021-02-01,employed,caucasian,senior,NA,male
+1778,4.896,2021-03-01,employed,caucasian,senior,NA,female
+1779,7.344,2021-03-01,not employed,caucasian,youth,NA,female
+1780,7.344,2021-03-01,NA,caucasian,middle age,NA,male
+1781,2.937,2021-03-01,employed,caucasian,middle age,NA,male
+1782,7.344,2021-03-01,not employed,caucasian,middle age,NA,female
+1783,7.344,2021-03-01,employed,caucasian,middle age,2275,male
+1784,3.672,2021-03-01,not employed,caucasian,senior,1380,female
+1785,4.896,2021-03-01,employed,caucasian,middle age,NA,female
+1786,7.344,2021-03-01,employed,caucasian,middle age,NA,male
+1787,7.344,2021-03-01,not employed,caucasian,youth,NA,female
+1788,14.689,2021-03-01,employed,caucasian,middle age,1300,male
+1789,3.672,2021-03-01,NA,visible minority,senior,NA,female
+1790,7.344,2021-03-01,employed,caucasian,middle age,NA,female
+1791,12.523,2021-04-01,not employed,visible minority,senior,4333.333333333333,female
+1792,12.523,2021-04-01,employed,caucasian,senior,1560,female
+1793,3.13,2021-04-01,not employed,caucasian,senior,NA,female
+1794,12.523,2021-04-01,employed,caucasian,senior,NA,male
+1795,4.174,2021-04-01,employed,visible minority,middle age,NA,female
+1796,12.523,2021-04-01,employed,visible minority,middle age,NA,female
+1797,4.174,2021-04-01,not employed,caucasian,senior,NA,male
+1798,3.13,2021-04-01,NA,caucasian,middle age,3260.8333333333335,female
+1799,4.174,2021-04-01,employed,visible minority,middle age,1560,male
+1800,12.523,2021-04-01,employed,caucasian,senior,NA,female
+1801,6.261,2021-04-01,not employed,aboriginal,middle age,3033.3333333333335,male
+1802,3.273,2021-05-01,not employed,caucasian,middle age,NA,male
+1803,13.093,2021-05-01,employed,caucasian,youth,1733.3333333333333,female
+1804,3.273,2021-05-01,not employed,caucasian,middle age,NA,female
+1805,6.546,2021-05-01,employed,aboriginal,middle age,NA,male
+1806,4.364,2021-05-01,employed,visible minority,youth,NA,female
+1807,6.546,2021-05-01,employed,caucasian,middle age,NA,female
+1808,13.093,2021-05-01,not employed,visible minority,middle age,NA,female
+1809,4.364,2021-05-01,not employed,caucasian,middle age,NA,female
+1810,13.093,2021-05-01,not employed,visible minority,middle age,2210,female
+1811,3.273,2021-05-01,not employed,visible minority,youth,NA,male
+1812,4.364,2021-05-01,not employed,caucasian,middle age,NA,female
+1813,6.546,2021-05-01,employed,visible minority,middle age,NA,male
+1814,4.364,2021-05-01,not employed,caucasian,senior,NA,male
+1815,6.546,2021-05-01,employed,caucasian,middle age,NA,male
+1816,13.093,2021-05-01,employed,caucasian,middle age,NA,female
+1817,4.364,2021-05-01,employed,aboriginal,middle age,2080,male
+1818,4.364,2021-05-01,not employed,caucasian,middle age,NA,female
+1819,3.273,2021-05-01,employed,caucasian,middle age,NA,male
+1820,6.546,2021-05-01,not employed,visible minority,senior,281.6666666666667,female
+1821,6.546,2021-05-01,not employed,caucasian,middle age,NA,female
+1822,13.093,2021-05-01,employed,caucasian,middle age,NA,male
+1823,4.461,2021-06-01,employed,caucasian,youth,2100,female
+1824,3.345,2021-06-01,not employed,caucasian,middle age,NA,male
+1825,4.461,2021-06-01,employed,caucasian,middle age,NA,male
+1826,4.461,2021-06-01,employed,caucasian,middle age,NA,male
+1827,6.691,2021-06-01,employed,aboriginal,senior,NA,male
+1828,4.461,2021-06-01,not employed,caucasian,middle age,NA,female
+1829,6.691,2021-06-01,employed,caucasian,middle age,NA,female
+1830,13.383,2021-06-01,not employed,caucasian,middle age,NA,male
+1831,13.383,2021-06-01,not employed,aboriginal,senior,NA,female
+1832,4.461,2021-06-01,employed,aboriginal,middle age,NA,female
+1833,13.383,2021-06-01,employed,caucasian,middle age,2383.3333333333335,male
+1834,6.691,2021-06-01,not employed,aboriginal,middle age,5980,female
+1835,6.691,2021-06-01,not employed,visible minority,senior,4000,male
+1836,6.691,2021-06-01,not employed,aboriginal,middle age,NA,female
+1837,7.385,2021-07-01,not employed,NA,middle age,1976,male
+1838,14.771,2021-07-01,employed,caucasian,middle age,NA,male
+1839,7.385,2021-07-01,employed,caucasian,middle age,NA,male
+1840,4.923,2021-07-01,employed,visible minority,middle age,NA,male
+1841,14.771,2021-07-01,not employed,caucasian,middle age,1105,male
+1842,4.923,2021-07-01,employed,caucasian,middle age,NA,male
+1843,4.923,2021-07-01,NA,caucasian,senior,NA,male
+1844,4.923,2021-07-01,not employed,caucasian,middle age,NA,female
+1845,3.692,2021-07-01,not employed,caucasian,middle age,1733.3333333333333,female
+1846,4.923,2021-07-01,employed,aboriginal,middle age,3120,male
+1847,14.771,2021-07-01,not employed,caucasian,middle age,4712.5,male
+1848,4.923,2021-07-01,not employed,caucasian,middle age,NA,male
+1849,4.923,2021-07-01,employed,aboriginal,youth,455,female
+1850,3.692,2021-07-01,not employed,caucasian,middle age,2166.666666666667,female
+1851,4.923,2021-07-01,not employed,visible minority,middle age,NA,female
+1852,4.923,2021-07-01,employed,caucasian,middle age,NA,female
+1853,4.923,2021-07-01,not employed,caucasian,middle age,NA,male
+1854,2.978,2021-08-01,not employed,caucasian,middle age,NA,female
+1855,14.893,2021-08-01,not employed,visible minority,middle age,NA,male
+1856,14.893,2021-08-01,employed,visible minority,senior,NA,female
+1857,2.482,2021-08-01,employed,caucasian,middle age,NA,female
+1858,2.978,2021-08-01,not employed,visible minority,middle age,NA,male
+1859,4.964,2021-08-01,not employed,caucasian,youth,866.6666666666666,male
+1860,7.446,2021-08-01,employed,aboriginal,youth,3120,female
+1861,14.893,2021-08-01,employed,NA,middle age,6760,female
+1862,7.446,2021-08-01,employed,caucasian,middle age,NA,female
+1863,4.964,2021-08-01,employed,NA,middle age,7800,female
+1864,7.446,2021-08-01,not employed,visible minority,senior,NA,female
+1865,14.893,2021-08-01,employed,caucasian,middle age,NA,male
+1866,4.964,2021-08-01,employed,visible minority,middle age,NA,female
+1867,2.978,2021-08-01,not employed,aboriginal,middle age,NA,female
+1868,14.893,2021-08-01,not employed,visible minority,middle age,3000,female
+1869,7.716,2021-09-01,employed,caucasian,youth,NA,female
+1870,15.432,2021-09-01,not employed,caucasian,middle age,4333.333333333333,female
+1871,7.716,2021-09-01,employed,NA,middle age,1516.6666666666667,male
+1872,5.144,2021-09-01,not employed,caucasian,middle age,NA,female
+1873,5.144,2021-09-01,employed,visible minority,senior,NA,male
+1874,5.144,2021-09-01,employed,caucasian,senior,3250,male
+1875,3.858,2021-09-01,employed,caucasian,middle age,NA,male
+1876,5.144,2021-09-01,employed,caucasian,youth,NA,female
+1877,5.144,2021-09-01,employed,caucasian,middle age,NA,female
+1878,5.144,2021-09-01,employed,visible minority,middle age,1300,female
+1879,3.086,2021-09-01,employed,caucasian,youth,NA,female
+1880,5.144,2021-09-01,employed,visible minority,middle age,NA,male
+1881,3.858,2021-09-01,not employed,visible minority,youth,NA,male
+1882,15.432,2021-09-01,employed,caucasian,senior,NA,male
+1883,5.144,2021-09-01,not employed,caucasian,middle age,NA,male
+1884,7.716,2021-09-01,not employed,visible minority,senior,NA,male
+1885,15.432,2021-09-01,not employed,caucasian,senior,NA,female
+1886,7.716,2021-09-01,not employed,caucasian,middle age,1343.9999999999998,female
+1887,7.716,2021-09-01,employed,caucasian,middle age,2166.6666666666665,female
+1888,15.432,2021-09-01,not employed,caucasian,middle age,NA,female
+1889,15.432,2021-09-01,NA,aboriginal,middle age,2000,male
+1890,3.858,2021-09-01,employed,caucasian,middle age,2773.3333333333335,female
+1891,14.2,2021-10-01,not employed,aboriginal,middle age,NA,female
+1892,3.55,2021-10-01,not employed,caucasian,senior,NA,male
+1893,7.1,2021-10-01,employed,caucasian,middle age,NA,female
+1894,7.1,2021-10-01,not employed,visible minority,middle age,NA,female
+1895,2.84,2021-10-01,employed,aboriginal,middle age,NA,female
+1896,7.1,2021-10-01,not employed,visible minority,middle age,NA,male
+1897,7.1,2021-10-01,employed,aboriginal,middle age,4116.666666666667,female
+1898,4.733,2021-10-01,employed,visible minority,middle age,975,female
+1899,14.2,2021-10-01,employed,aboriginal,middle age,NA,male
+1900,14.2,2021-10-01,not employed,caucasian,middle age,8666.666666666666,male
+1901,14.2,2021-10-01,not employed,visible minority,middle age,975,female
+1902,4.733,2021-10-01,not employed,aboriginal,middle age,NA,male
+1903,6.63,2021-11-01,employed,caucasian,middle age,NA,male
+1904,4.42,2021-11-01,not employed,visible minority,middle age,4333.333333333333,male
+1905,3.315,2021-11-01,not employed,caucasian,youth,1083.3333333333335,female
+1906,6.63,2021-11-01,employed,caucasian,senior,NA,female
+1907,13.261,2021-11-01,employed,caucasian,middle age,4766.666666666667,male
+1908,4.42,2021-11-01,employed,aboriginal,middle age,NA,male
+1909,3.315,2021-11-01,employed,visible minority,middle age,1170,female
+1910,13.261,2021-11-01,not employed,visible minority,middle age,NA,female
+1911,4.42,2021-11-01,employed,caucasian,middle age,NA,male
+1912,4.42,2021-11-01,not employed,caucasian,middle age,NA,female
+1913,2.652,2021-11-01,employed,visible minority,senior,NA,female
+1914,4.42,2021-11-01,employed,caucasian,senior,NA,female
+1915,13.261,2021-11-01,employed,visible minority,senior,2842.6666666666665,male
+1916,4.42,2021-11-01,employed,NA,middle age,NA,female
+1917,6.63,2021-11-01,employed,visible minority,senior,1300,female
+1918,6.63,2021-11-01,not employed,visible minority,middle age,6336,female
+1919,6.63,2021-11-01,not employed,caucasian,middle age,NA,female
+1920,4.42,2021-11-01,employed,caucasian,middle age,NA,male
+1921,13.261,2021-11-01,employed,caucasian,middle age,NA,female
+1922,6.63,2021-11-01,employed,caucasian,middle age,NA,male
+1923,4.42,2021-11-01,not employed,visible minority,middle age,900,female
+1924,6.63,2021-11-01,employed,caucasian,middle age,NA,female
+1925,13.261,2021-11-01,employed,caucasian,senior,NA,female
+1926,13.261,2021-11-01,employed,visible minority,middle age,2080,female
+1927,4.84,2021-12-01,employed,visible minority,middle age,NA,female
+1928,4.84,2021-12-01,employed,caucasian,middle age,NA,male
+1929,3.63,2021-12-01,employed,caucasian,middle age,NA,male
+1930,3.63,2021-12-01,employed,caucasian,senior,2600,male
+1931,7.26,2021-12-01,employed,caucasian,senior,NA,male
+1932,4.84,2021-12-01,employed,aboriginal,senior,NA,male
+1933,4.84,2021-12-01,NA,visible minority,middle age,NA,male
+1934,2.5,2022-01-01,not employed,caucasian,youth,1083.3333333333333,male
+1935,2.5,2022-01-01,employed,NA,middle age,NA,female
+1936,4.167,2022-01-01,employed,caucasian,middle age,NA,female
+1937,12.502,2022-01-01,employed,caucasian,middle age,NA,female
+1938,3.125,2022-01-01,employed,caucasian,middle age,NA,male
+1939,6.251,2022-01-01,employed,caucasian,middle age,NA,male
+1940,12.502,2022-01-01,employed,caucasian,middle age,NA,female
+1941,6.251,2022-01-01,employed,caucasian,middle age,13000,female
+1942,4.167,2022-01-01,employed,caucasian,middle age,NA,male
+1943,6.251,2022-01-01,employed,caucasian,middle age,NA,male
+1944,4.167,2022-01-01,not employed,caucasian,middle age,NA,female
+1945,6.251,2022-01-01,not employed,caucasian,middle age,2600,male
+1946,4.167,2022-01-01,not employed,caucasian,senior,3033.3333333333335,male
+1947,4.167,2022-01-01,employed,visible minority,senior,1733.3333333333333,male
+1948,6.251,2022-01-01,not employed,caucasian,middle age,1820,male
+1949,4.167,2022-01-01,not employed,caucasian,middle age,NA,male
+1950,4.167,2022-01-01,employed,aboriginal,senior,NA,female
+1951,12.86,2022-02-01,employed,caucasian,middle age,833.3333333333334,female
+1952,3.215,2022-02-01,not employed,NA,middle age,NA,female
+1953,4.286,2022-02-01,not employed,caucasian,middle age,NA,male
+1954,4.286,2022-02-01,employed,visible minority,youth,NA,male
+1955,12.86,2022-02-01,employed,caucasian,youth,NA,male
+1956,4.286,2022-02-01,employed,caucasian,middle age,NA,male
+1957,4.286,2022-02-01,employed,caucasian,youth,NA,male
+1958,4.286,2022-02-01,employed,caucasian,middle age,NA,male
+1959,3.215,2022-02-01,not employed,caucasian,middle age,NA,female
+1960,3.215,2022-02-01,employed,caucasian,middle age,NA,male
+1961,3.215,2022-02-01,employed,caucasian,senior,NA,male
+1962,3.215,2022-02-01,employed,visible minority,youth,NA,female
+1963,4.286,2022-02-01,employed,caucasian,youth,NA,male
+1964,4.286,2022-02-01,employed,aboriginal,middle age,780,male
+1965,3.215,2022-02-01,employed,aboriginal,middle age,250,female
+1966,3.215,2022-02-01,employed,visible minority,senior,NA,female
+1967,3.208,2022-03-01,NA,visible minority,youth,NA,female
+1968,12.832,2022-03-01,employed,caucasian,youth,NA,female
+1969,6.416,2022-03-01,not employed,caucasian,youth,NA,female
+1970,4.277,2022-03-01,employed,caucasian,middle age,1733.3333333333333,female
+1971,12.832,2022-03-01,not employed,caucasian,middle age,NA,male
+1972,6.416,2022-03-01,employed,caucasian,middle age,NA,female
+1973,4.277,2022-03-01,not employed,caucasian,youth,NA,female
+1974,3.208,2022-03-01,employed,aboriginal,middle age,NA,female
+1975,12.832,2022-03-01,not employed,aboriginal,youth,2600,male
+1976,6.416,2022-03-01,not employed,aboriginal,middle age,NA,male
+1977,4.277,2022-03-01,not employed,aboriginal,middle age,NA,female
+1978,6.416,2022-03-01,employed,visible minority,middle age,NA,female
+1979,4.277,2022-03-01,not employed,visible minority,middle age,NA,male
+1980,15.872,2022-04-01,employed,aboriginal,senior,NA,female
+1981,5.29,2022-04-01,not employed,caucasian,youth,NA,female
+1982,15.872,2022-04-01,employed,caucasian,middle age,NA,female
+1983,5.29,2022-04-01,employed,caucasian,middle age,NA,male
+1984,14.296,2022-05-01,employed,caucasian,middle age,NA,female
+1985,14.296,2022-05-01,employed,aboriginal,senior,3120,female
+1986,14.296,2022-05-01,employed,aboriginal,senior,6066.666666666667,male
+1987,7.148,2022-05-01,employed,caucasian,middle age,7280,female
+1988,14.296,2022-05-01,employed,visible minority,senior,NA,female
+1989,14.296,2022-05-01,not employed,visible minority,middle age,NA,female
+1990,14.296,2022-05-01,not employed,visible minority,senior,2805.8333333333335,female
+1991,13.95,2022-06-01,not employed,caucasian,middle age,1430,male
+1992,13.95,2022-06-01,not employed,caucasian,middle age,NA,male
+1993,6.975,2022-06-01,employed,visible minority,senior,NA,female
+1994,13.95,2022-06-01,employed,caucasian,senior,NA,male
+1995,6.975,2022-06-01,employed,caucasian,senior,NA,male
+1996,13.95,2022-06-01,employed,caucasian,middle age,3293.3333333333335,female
+1997,13.95,2022-06-01,employed,caucasian,middle age,NA,female
+1998,6.975,2022-06-01,employed,visible minority,middle age,NA,male
+1999,6.975,2022-06-01,employed,visible minority,middle age,NA,female
+2000,13.95,2022-06-01,employed,caucasian,senior,NA,male
