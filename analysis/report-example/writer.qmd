@@ -1,5 +1,5 @@
 ---
-title: "Example: Combined Quarto"
+title: "Example: Isolated Quarto"
 author: "Andriy Koval"
 format: html
 editor: visual
@@ -7,12 +7,87 @@ editor_options:
   chunk_output_type: inline
 ---
 
+<!--  Set the working directory to the repository's base directory; this assumes the report is nested inside of two directories.-->
+```{r, echo=F, message=F}
+# cat("Working directory: ", getwd())
+library(knitr)
+opts_knit$set(root.dir='../../')  #Don't combine this call with any other chunk -especially one that uses file paths.
+```
+
+```{r set_options, echo=F}
+# cat("Working directory: ", getwd()) # turn on to test the location
+report_render_start_time <- Sys.time()
+# set options shared by all chunks
+opts_chunk$set(
+  results      = 'show',
+  message      = FALSE,
+  warning      = FALSE,
+  comment      = NA,
+  tidy         = FALSE,
+  # dpi        = 400, # dots per inch,
+  # out.width  = "650px", # pixels, this affects only the markdown, not the underlying png file.  The height will be scaled appropriately.
+  fig.width    = 6, # inches
+  fig.height   = 4, # inches
+  fig.path     = 'figure-png-iso/' # where figures are stored
+)
+echo_chunks    <- FALSE #Toggle for debugging.
+message_chunks <- FALSE #Toggle for debugging.
+options(width=100) # number of characters to display in the output (dflt = 80)
+ggplot2::theme_set(ggplot2::theme_bw()) # common theme for all graphs
+read_chunk("./analysis/report-example/coder.R") #This allows knitr to call chunks tagged in the underlying *.R file.
+```
+
+
+
+# Environment
+
+<details>
+   <summary> Packages used <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+Packages used in current report
+<!-- Load packages, or at least verify they're available on the local machine.  Suppress the output when loading packages. -->
+
+```{r load-packages, message=message_chunks, class.source = "fold-show"}
+```
+</details>
+
+
+<details>
+   <summary> External scripts <span class="glyphicon glyphicon-plus-sign"></span></summary>
+<!-- Load the sources.  Suppress the output when loading sources. --> 
+
+```{r load-sources, class.source = "fold-show"}
+```
+</details>
+
+<!-- Load the sources.  Suppress the output when loading sources. --> 
+```{r load-sources}
+source("./scripts/common-functions.R")
+```
+
+<details>
+   <summary> Global values <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+Values used throughout the report.
+<!-- Load any Global functions and variables declared in the R file.  Suppress the output. --> 
+```{r declare-globals, class.source = "fold-show"}
+```
+</details>
+
+
+<details>
+   <summary> Functions <span class="glyphicon glyphicon-plus-sign"></span></summary>
+
+Custom functions defined for use in this report.
+```{r declare-functions, message=message_chunks, echo=T, results="hide",class.source = "fold-hide"}
+```
+</details>
+
 # Data
 
 Let us assume that the `ds0` represents a set of WORP responses for a given period of time.
 
 ```{r, warning=F}
-library(tidyverse)
 ds0 <- readr::read_rds("../../data-public/raw/example-prosthetic-2.rds")
 ```
 
