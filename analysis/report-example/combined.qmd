@@ -17,6 +17,9 @@ ds0 <- readr::read_rds("../../data-public/raw/example-prosthetic-2.rds")
 ```
 
 What's inside this `analysis rectange`?
+```{r}
+
+```
 
 ```{r}
 # ds0 %>% View() #
