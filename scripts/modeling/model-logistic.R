@@ -1,7 +1,7 @@
 run_logistic_binary <- function(
-  d
-  ,dependent   # Y, the criterion of the system
-  ,explanatory # first chosen as focal, rest are control
+    d
+    ,dependent   # Y, the criterion of the system
+    ,explanatory # first chosen as focal, rest are control
 ){
   # browser()
   # d <- ds1
@@ -20,10 +20,10 @@ run_logistic_binary <- function(
   )
   # Direction of Effect (Significance Level at %)
   # To help with meaningful colors of effect interpretation
-
+  
   # 1 - FORMULA
   eq_formula <- as.formula(paste0(dependent," ~ ", paste(explanatory, collapse = " + ") ) )
-
+  
   # 2 - MODEL
   model <- stats::glm(
     formula = eq_formula
@@ -31,7 +31,7 @@ run_logistic_binary <- function(
     ,family = binomial(link=logit) # alternative way
     ,data   = d
   )
-
+  
   # 3 - PREDICTED
   # generate model prediction for all unique combos of values on all predictors
   d_predicted_unique <- d %>%
@@ -44,9 +44,9 @@ run_logistic_binary <- function(
       ,log_odds = predict(object = model, newdata = .)
       ,probability2 = plogis(log_odds) # same thing, double checks
     )
-
-
-
+  
+  
+  
   # 4 - compute ROC and AUC model performance index
   d_pred <- model %>%
     broom::augment() %>%
@@ -70,7 +70,7 @@ run_logistic_binary <- function(
       )
       ,color =  binary_colors["TRUE"]
     )
-
+  
   # 5 - format and augment the table of coefficients
   # to separate variable name from variable value in the summary(model) table
   pattern_starts_with_explanatory <- paste0("^",explanatory, collapse = "|")
@@ -78,7 +78,8 @@ run_logistic_binary <- function(
   d_estimates  <-   model %>%
     broom::tidy(
       conf.int = TRUE
-      ,exp     = TRUE # converts log-odds into odds-ratios (i.e. =exp(estimate))
+      ,exp     = FALSE  # use exp=FALSE when link="logit" 
+      # default  `family="binomial"` equiv to `binomial(link="logit")`
     ) %>%
     mutate(
       conv_odds    = (estimate-1) # careful, this relies on broom::tidy(exp=TRUE)
@@ -111,10 +112,10 @@ run_logistic_binary <- function(
       ,sign_direction = ifelse(sign_direction %in% c("Increase  ", "Decrease  "), " ", sign_direction)
       ,sign_direction = fct_relevel(sign_direction,names(pal_direction_significance))
     )
-
+  
   # 6 - MODEL FIT
   model_fit <- model %>% get_model_fit(print=F)
-
+  
   # LASTLY - assemble everything into a list object
   ls_out <- list() # create the shell for the object
   ls_out[["equation"]]  <- list(
@@ -134,8 +135,8 @@ run_logistic_binary <- function(
   ls_out[["focal_factor"]] <- list(
     "levels" = levels(d[[explanatory[1]]])
   )
-
-
+  
+  
   return(ls_out)
 }
 # How to use
@@ -158,10 +159,10 @@ run_logistic_binary <- function(
 # ls$model_fit
 
 run_logistic_binary_model_comparison <- function(
-  d # data tibble
-  ,dependent #= "has_ea"
-  ,explanatory #= c("age_group",'sex', "employment_state")
-  # the first will be used as focal
+    d # data tibble
+    ,dependent #= "has_ea"
+    ,explanatory #= c("age_group",'sex', "employment_state")
+    # the first will be used as focal
 ){
   # browser()
   full_model_spec    <- explanatory
@@ -172,7 +173,7 @@ run_logistic_binary_model_comparison <- function(
     "reduced"  = d %>% run_logistic_binary(dependent, reduced_model_spec)
     ,"full"    = d %>% run_logistic_binary(dependent, full_model_spec)
   )
-
+  
   # Model comparison test
   chi_square_diff <- ls_model$full$model_fit$chisquare - ls_model$reduced$model_fit$chisquare
   df_diff         <- ls_model$full$model_fit$df - ls_model$reduced$model_fit$df
@@ -188,7 +189,7 @@ run_logistic_binary_model_comparison <- function(
     ,", R-Square  = ", numformat(r_squared_full, 3),", gained ",
     numformat(r_squared_diff,3)
   )
-
+  
   # Make model comparison table
   t_reduced <- ls_model$reduced$model %>% gtsummary::tbl_regression(exponentiate=T)
   t_full    <- ls_model$full$model %>% tbl_regression(exponentiate=T)
@@ -203,7 +204,7 @@ run_logistic_binary_model_comparison <- function(
     "test" = chi_squared_diff_test
     ,"table" = t_out
   )
-
+  
   return(ls_model)
 }
 # How to use
