@@ -1,0 +1,248 @@
+---
+title: "Rmarkdown Annotation Layer"
+author: "Andriy Koval"
+date: "last Updated: `r Sys.Date()`"
+output:
+  html_document:
+    keep_md: yes
+    toc: yes
+    toc_float: yes
+    code_folding: show
+    theme: simplex
+    highlight: tango
+editor: visual
+editor_options: 
+  chunk_output_type: inline
+---
+
+<!--  Set the working directory to the repository's base directory; this assumes the report is nested inside of two directories.-->
+
+```{r, echo=F, message=F}
+# cat("Working directory: ", getwd())
+library(knitr)
+opts_knit$set(root.dir='../../')  #Don't combine this call with any other chunk -especially one that uses file paths.
+```
+
+```{r set_options, echo=F}
+# cat("Working directory: ", getwd()) # turn on to test the location
+report_render_start_time <- Sys.time()
+# set options shared by all chunks
+opts_chunk$set(
+  results      = 'show',
+  message      = FALSE,
+  warning      = FALSE,
+  comment      = NA,
+  tidy         = FALSE,
+  # dpi        = 400, # dots per inch,
+  # out.width  = "650px", # pixels, this affects only the markdown, not the underlying png file.  The height will be scaled appropriately.
+  fig.width    = 6, # inches
+  fig.height   = 4, # inches
+  fig.path     = 'figure-png-iso/' # where figures are stored
+)
+echo_chunks    <- FALSE #Toggle for debugging.
+message_chunks <- FALSE #Toggle for debugging.
+options(width=100) # number of characters to display in the output (dflt = 80)
+ggplot2::theme_set(ggplot2::theme_bw()) # common theme for all graphs
+read_chunk("./analysis/report-example/coder.R") #This allows knitr to call chunks tagged in the underlying *.R file.
+```
+
+# Environment
+
+<details>
+
+<summary>Packages used</summary>
+
+Packages used in current report <!-- Load packages, or at least verify they're available on the local machine.  Suppress the output when loading packages. -->
+
+```{r load-packages, message=message_chunks, class.source = "fold-show"}
+```
+
+</details>
+
+<details>
+
+<summary>External scripts</summary>
+
+<!-- Load the sources.  Suppress the output when loading sources. -->
+
+```{r load-sources, class.source = "fold-show"}
+```
+
+</details>
+
+<!-- Load the sources.  Suppress the output when loading sources. -->
+
+```{r load-sources}
+source("./scripts/common-functions.R")
+```
+
+<details>
+
+<summary>Global values</summary>
+
+Values used throughout the report. <!-- Load any Global functions and variables declared in the R file.  Suppress the output. -->
+
+```{r declare-globals, class.source = "fold-show"}
+```
+
+</details>
+
+<details>
+
+<summary>Functions</summary>
+
+Custom functions defined for use in this report.
+
+```{r declare-functions, message=message_chunks, echo=T, results="hide",class.source = "fold-hide"}
+```
+
+</details>
+
+# Data
+
+Let us assume that the `ds0` represents a set of WORP responses for a given period of time.
+
+```{r load-data, warning=F}
+
+```
+
+What's inside this `analysis rectange`?
+
+```{r}
+
+```
+
+```{r}
+# ds0 %>% View() #
+# ds0 %>% glimpse()
+explore::describe_all(ds0)
+# labelled::look_for(ds0)
+# tableone::CreateTableOne(data = ds0)
+ds0 %>% select(-id,-weight,-date) %>% tableone::CreateTableOne(data=.)
+```
+
+# Facts about the rectangle
+
+Some facts about our analysis rectangle are good to know before any wrangling takes place.
+
+## Q.1 What is the grain of this data set?
+
+> Grain - the most granular level of the data, answers the question "What is a row?"
+
+```{r}
+ds0 %>% nrow()
+ds0 %>% summarize(row_count=n())
+ds0 %>% summarize(
+  row_count = n()
+  ,id_count = n_distinct(id)
+) %>%
+  mutate(
+    id_is_the_grain = row_count == id_count
+  )
+```
+
+## Q.2 What is the period of observation?
+
+```{r}
+ds0$date %>% summary() # looks like from [2011 to 2014]
+
+ds0 %>% 
+  summarize(
+    earliest_date  = min(date,na.rm=T)
+    ,latest_date   = max(date,na.rm=T)
+    ,span_in_days  = (latest_date-earliest_date)
+  )
+
+```
+
+# Transformations
+
+Wrangle data to assist in analysis
+
+```{r}
+ds1 <-
+  ds0 %>%
+  rename(
+    sex = gender # less biased term
+  ) %>%
+  mutate(
+    male    = sex == "male"
+    ,female = sex == "female"
+    # ,caucasian  = race == "caucasian"
+    # ,minority   = race == "minority"
+    # ,aboriginal = race == "aboriginal"
+    # ,employed_at_survey = employed == "employed"
+  ) %>%
+  mutate(
+    year                = lubridate::year(date) %>% as.integer(),
+    # yearmon             = tsibble::yearmonth, # not supported by look_for()
+    # year_fiscal         = compute_fiscal_year(date),
+    # quarter             = lubridate::quarter(date), # custom function, load from ./scripts/operational-functions.R
+    # quarter_fiscal      = (quarter - 1),
+    # quarter_fiscal      = ifelse(quarter_fiscal==0,4,quarter_fiscal)%>% as.integer(),
+    # year_date           = as.Date(paste0(year,"-01-01")),
+    # year_fiscal_date    = as.Date(paste0(year_fiscal,"-04-01")),
+    # quarter_date        = paste(year,(quarter*3-1),"15", sep="-") %>% as.Date(),
+    # quarter_fiscal_date = quarter_date,
+  )
+ds0 %>% labelled::look_for() # compare the initial state to spot the diff
+ds1 %>%  labelled::look_for()
+# some summaries are more useful for various comparisons
+explore::describe_all(ds0)
+explore::describe_all(ds1)
+# THe point is, must must provide a self-explanatory comparions of analysis rectangle BEFORE and AFTER a meaningful set of transformations. (e.g ds0 --> ds1)
+
+ds1  %>%
+  dplyr::distinct() %>%
+  dplyr::arrange(desc(date)) # inspection of date variables
+ds1 %>% tableone::CreateTableOne(data=.) %>% summary()
+```
+
+# Analysis
+
+## Q.3 What is sex ratio?
+
+```{r}
+ds1 %>% group_by(sex) %>% count()
+ds1 %>% group_by(sex) %>% summarize(row_count = n())
+ds1 %>% group_by(sex) %>% summarize(respondent_count = n_distinct(id))
+
+ds1 %>% 
+  # mutate(weight = 1L) %>% 
+  group_by(sex) %>% 
+  summarize(
+    respondent_count = n()
+    ,client_count    = sum(weight)
+  ) %>% 
+  ungroup() %>% 
+  mutate(
+    respondent_share = respondent_count/sum(respondent_count)
+    ,client_share    = client_count/sum(client_count)
+)
+# quick graph
+ds1 %>% 
+  group_by(sex) %>% 
+  summarize(client_count = sum(weight)) %>%
+  ggplot(aes(y = client_count, x = sex)) +
+  geom_col()
+```
+
+Alternatively, organizing as sequence of objects (i.e. rectangle `ds1` begets plot `g1`) allows to be more versatile:
+
+```{r}
+g1 <-
+  ds1 %>%
+  group_by(sex) %>%
+  summarize(client_count = sum(weight)) %>%
+  ggplot(data=., aes(y = client_count, x = sex)) +
+  geom_col()
+g1 %>% print()
+ggsave("../../analysis/report-example/g1.png",plot=g1)
+ggsave("../../analysis/report-example/g1.png",plot=g1,width=6,height = 4) # optimize
+ggsave("../../analysis/report-example/g1.jpg",plot=g1,width=21,height = 14,units = "cm") # optimize
+```
+
+## Q.4 Sex difference in the outcome
+
+Is the outcome (employment) related to the sex of the client? Who is more likely to report being employed after the program?
+

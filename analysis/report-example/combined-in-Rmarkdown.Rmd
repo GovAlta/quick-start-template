@@ -14,7 +14,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-This report demonstrates a simple report created from an `.Rmd` template from `./scripts/templates/combined.Rmd`
+This report exemplifies a workflow in which executable script (source code layer) and information displays for humans (annotation layer) are composed and managed in the a single `.Rmd` document, as opposed to a pair of linked `.R`-- `.Rmd` files.
 
 ```{r, echo=F, message=F, results = 'hide'}
 cat("Working directory: ", getwd()) # turn on to test the location
