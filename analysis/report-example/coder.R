@@ -32,14 +32,12 @@ base::source("./scripts/common-functions.R") # project-level
 # prints_folder <- paste0("./analysis/.../prints/")
 # if(!file.exists(prints_folder)){dir.create(file.path(prints_folder))}
 
-path_data_input <- "./data-private/derived/..."
 # ---- declare-functions -------------------------------------------------------
 # printed figures will go here:
-prints_folder <- paste0("./analysis/.../prints/")
+prints_folder <- paste0("./analysis/report-example/prints/")
 if (!fs::dir_exists(prints_folder)) {fs::dir_create(prints_folder)}
 # ---- load-data ---------------------------------------------------------------
-ds0 <- readr::read_rds(path_data_input)
-
+ds0 <- readr::read_rds("../../data-public/raw/example-prosthetic-2.rds")
 # ---- inspect-data ------------------------------------------------------------
 
 
