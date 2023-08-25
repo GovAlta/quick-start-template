@@ -1,7 +1,7 @@
 ---
 title: "Rmarkdown Annotation Layer"
 author: "Andriy Koval"
-date: "last Updated: 2023-08-24"
+date: "last Updated: 2023-08-25"
 output:
   html_document:
     keep_md: yes
@@ -10,12 +10,13 @@ output:
     code_folding: show
     theme: simplex
     highlight: tango
+    self-contained: true
 editor: visual
 editor_options: 
   chunk_output_type: inline
 ---
 
-<!--  Set the working directory to the repository's base directory; this assumes the report is nested inside of two directories.-->
+This report exemplifies a workflow in which executable script (source code layer) is coupled with the annotation layer to produce a dynamic document (e.g. html, pdf): `.R` + `.Rmd` = `.hmtl` files.
 
 
 
@@ -69,7 +70,6 @@ base::source("./scripts/common-functions.R") # project-level
 ```
 
 </details>
-
 
 <details>
 
