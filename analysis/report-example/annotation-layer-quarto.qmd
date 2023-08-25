@@ -1,22 +1,41 @@
 ---
-title: "Example: Isolated Quarto"
+title: "Quarto Annotation Layer"
 author: "Andriy Koval"
-format: html
+format:
+  html:
+    page-layout: full
+    toc: true
+    toc-location: right
+    code-fold: show
+    theme: simplex
+    highlight-style: github
+    colde-line-numbers: true
+    css: styles.css
+    self-contained: true
 editor: visual
 editor_options: 
-  chunk_output_type: inline
+  chunk_output_type: console
 ---
 
 <!--  Set the working directory to the repository's base directory; this assumes the report is nested inside of two directories.-->
 
-```{r, echo=F, message=F}
-# cat("Working directory: ", getwd())
+```{r}
+#| code-summary: Reconciles working directory between execution modes
+#| echo: false
+#| results: hide
+#| message: false 
+cat("Working directory: ", getwd())
 library(knitr)
-opts_knit$set(root.dir='../../')  #Don't combine this call with any other chunk -especially one that uses file paths.
+opts_knit$set(root.dir='../../') # keep this chunk isolated  
 ```
 
-```{r set_options, echo=F}
-# cat("Working directory: ", getwd()) # turn on to test the location
+```{r}
+#| label: set_options
+#| code-summary: report-wide formatting options
+#| echo: false
+#| results: hide
+#| message: false 
+cat("Working directory: ", getwd()) # turn on to test the location
 report_render_start_time <- Sys.time()
 # set options shared by all chunks
 opts_chunk$set(
@@ -35,93 +54,77 @@ echo_chunks    <- FALSE #Toggle for debugging.
 message_chunks <- FALSE #Toggle for debugging.
 options(width=100) # number of characters to display in the output (dflt = 80)
 ggplot2::theme_set(ggplot2::theme_bw()) # common theme for all graphs
-read_chunk("./analysis/report-example/coder.R") #This allows knitr to call chunks tagged in the underlying *.R file.
+read_chunk("./analysis/report-example/source-code-layer.R") #This allows knitr to call chunks tagged in the underlying *.R file.
 ```
 
 # Environment
 
-<details>
+> Reviews the components of the working environment of the report. Non-technical readers are welcomed to skip. Come back if you need to understand the origins of custom functions, scripts, or data objects.
 
-<summary>Packages used </summary>
-
-Packages used in current report <!-- Load packages, or at least verify they're available on the local machine.  Suppress the output when loading packages. -->
-
-```{r load-packages, message=message_chunks, class.source = "fold-show"}
+```{r}
+#| label: load-packages
+#| code-summary: Packages used in the current report
+#| echo: true
+#| results: hide
+#| message: false
+#| code-fold: true
 ```
 
-</details>
-
-<details>
-
-<summary>External scripts </summary>
-
-<!-- Load the sources.  Suppress the output when loading sources. -->
-
-```{r load-sources, class.source = "fold-show"}
+```{r}
+#| label: load-sources
+#| code-summary: Collection of custom functions used in current repository 
+#| echo: true
+#| results: hide
+#| message: false
+#| code-fold: true
 ```
 
-</details>
-
-<!-- Load the sources.  Suppress the output when loading sources. -->
-
-```{r load-sources}
-source("./scripts/common-functions.R")
+```{r}
+#| label: declare-globals
+#| code-summary: Values used throughout the report.
+#| echo: true
+#| results: hide
+#| message: false 
+#| code-fold: true
 ```
 
-<details>
-
-<summary>Global values </summary>
-
-Values used throughout the report. <!-- Load any Global functions and variables declared in the R file.  Suppress the output. -->
-
-```{r declare-globals, class.source = "fold-show"}
+```{r}
+#| label: declare-functions
+#| code-summary: Custom functions defined for use in this report.
+#| echo: true
+#| results: hide
+#| message: false 
+#| code-fold: true
 ```
-
-</details>
-
-<details>
-
-<summary>Functions </summary>
-
-Custom functions defined for use in this report.
-
-```{r declare-functions, message=message_chunks, echo=T, results="hide",class.source = "fold-hide"}
-```
-
-</details>
 
 # Data
 
-Let us assume that the `ds0` represents a set of WORP responses for a given period of time.
+Consider a scenario in which rectangle `ds0` contains a set of survey responses
 
-```{r load-data, warning=F}
-
-```
-
-What's inside this `analysis rectange`?
-
-```{r}
+```{r }
+#| label: load-data
+#| code-summary: Load data rectangles to be used in the report
+#| warning: false
 
 ```
 
+What is inside our main *analysis rectangle*?
+
 ```{r}
-# ds0 %>% View() #
-# ds0 %>% glimpse()
-explore::describe_all(ds0)
-# labelled::look_for(ds0)
-# tableone::CreateTableOne(data = ds0)
-ds0 %>% select(-id,-weight,-date) %>% tableone::CreateTableOne(data=.)
+#| label: inspect-data-0
+#| code-summary: A few ways to summarize a data rectangle
 ```
 
 # Facts about the rectangle
 
-Some facts about our analysis rectangle are good to know before any wrangling takes place.
+Let us ask a few fundamental questions about our rectangle and demonstrate how to verify the answers to them.
 
 ## Q.1 What is the grain of this data set?
 
 > Grain - the most granular level of the data, answers the question "What is a row?"
 
 ```{r}
+#| code-fold: false
 ds0 %>% nrow()
 ds0 %>% summarize(row_count=n())
 ds0 %>% summarize(
@@ -129,13 +132,14 @@ ds0 %>% summarize(
   ,id_count = n_distinct(id)
 ) %>%
   mutate(
-    id_is_the_grain = row_count == id_count
+    id_is_the_grain = (row_count == id_count)
   )
 ```
 
 ## Q.2 What is the period of observation?
 
 ```{r}
+#| code-fold: false
 ds0$date %>% summary() # looks like from [2011 to 2014]
 
 ds0 %>% 
@@ -147,36 +151,16 @@ ds0 %>%
 
 ```
 
-# Transformations
+# Data Transformations
 
 Wrangle data to assist in analysis
 
 ```{r}
-ds1 <-
-  ds0 %>%
-  rename(
-    sex = gender # less biased term
-  ) %>%
-  mutate(
-    male    = sex == "male"
-    ,female = sex == "female"
-    # ,caucasian  = race == "caucasian"
-    # ,minority   = race == "minority"
-    # ,aboriginal = race == "aboriginal"
-    # ,employed_at_survey = employed == "employed"
-  ) %>%
-  mutate(
-    year                = lubridate::year(date) %>% as.integer(),
-    # yearmon             = tsibble::yearmonth, # not supported by look_for()
-    # year_fiscal         = compute_fiscal_year(date),
-    # quarter             = lubridate::quarter(date), # custom function, load from ./scripts/operational-functions.R
-    # quarter_fiscal      = (quarter - 1),
-    # quarter_fiscal      = ifelse(quarter_fiscal==0,4,quarter_fiscal)%>% as.integer(),
-    # year_date           = as.Date(paste0(year,"-01-01")),
-    # year_fiscal_date    = as.Date(paste0(year_fiscal,"-04-01")),
-    # quarter_date        = paste(year,(quarter*3-1),"15", sep="-") %>% as.Date(),
-    # quarter_fiscal_date = quarter_date,
-  )
+#| label: tweak-data-1
+#| code-summary: Organize data into the form `ds0`
+```
+
+```{r inspect-data-1}
 ds0 %>% labelled::look_for() # compare the initial state to spot the diff
 ds1 %>%  labelled::look_for()
 # some summaries are more useful for various comparisons
