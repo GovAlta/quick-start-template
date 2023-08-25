@@ -1,1 +1,3 @@
-combined_files/*
+*.md
+*.hthml
+*.pdf
