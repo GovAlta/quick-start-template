@@ -48,12 +48,14 @@ explore::describe_all(ds0)
 # labelled::look_for(ds0)
 # tableone::CreateTableOne(data = ds0)
 ds0 %>% select(-id,-weight,-date) %>% tableone::CreateTableOne(data=.)
+ds0 %>% select(-id,-weight,-date) %>% tableone::CreateTableOne(data=., strata = c("employed","gender"))
 
 # ---- inspect-data-local -----------------------------------------------------
 # this chunk is not sourced by the annotation layer, use a scratch pad
 ds0 %>% glimpse() # notice it does not show up in the report
 
 # ---- tweak-data-1 --------------------------------------------------------------
+# derive data of state `ds1`
 ds1 <-
   ds0 %>%
   rename(
@@ -81,19 +83,37 @@ ds1 <-
   )
 
 # ---- inspect-data-1 ----------------------------------------------------------
+ds1 %>% select(sex) %>% labelled::lookfor()
 
+# ---- tweak-data-2 ------------------------------------------------------------
+ds2 <- 
+  ds1 %>% 
+  mutate(
+    sex = factor(sex,c("male","female"),c("Men","Women"))
+  )
+
+labelled::var_label(ds2$sex) <- "Sex"
+
+# ---- inspect-data-2 ----------------------------------------------------------
+ds2 %>% select(sex) %>% labelled::lookfor()
 # ---- table-1 -----------------------------------------------------------------
-
+ds2 %>% 
+  select(sex, employed) %>% 
+  tableone::CreateTableOne(data=.,strata = "sex")
 
 # ---- graph-1 -----------------------------------------------------------------
-
+ds2 %>% 
+  ggplot(aes(x=date,y = earnings, color=sex)) +
+  geom_point()
 
 # ---- graph-2 -----------------------------------------------------------------
-
+ds2 %>% 
+  ggplot(aes(x=employed,fill=sex)) +
+  geom_bar()
 # ---- save-to-disk ------------------------------------------------------------
 
 # ---- publish ------------------------------------------------------------
-path <- "./analysis/.../report-isolated.Rmd"
+path <- "./analysis/report-example/annotation-layer-Rmarkdown.Rmd"
 rmarkdown::render(
   input = path ,
   output_format=c(
