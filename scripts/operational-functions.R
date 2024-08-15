@@ -1,6 +1,9 @@
 # Functions loaded by SOME scripts in the project
 compute_fiscal_year <- function(x)(as.integer(zoo::as.yearmon(x) - 3/12 ))
 
+# Negation in vector selection
+`%not in%` <- Negate(`%in%`)
+
 # Define bottom and right limits when import Excel sheet
 trim_sheet_input <- function(
   d
