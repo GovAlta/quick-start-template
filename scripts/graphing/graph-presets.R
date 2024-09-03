@@ -94,10 +94,11 @@ pal_direction_significance <-  c(
 #
 # transformColor <- function( palette ) {
 #   return( palette )
-# #   return( dichromat(palette, "deutan") )
-# #   return( dichromat(palette, "protan") )
-# #   return( dichromat(palette, "tritan") )
-# # Also see The Color Oracle application (http://colororacle.org/)
+#   # https://en.wikipedia.org/wiki/Color_blindness
+#   # return( dichromat(palette, "deutan") ) # Deuteranopia 
+#   #   return( dichromat(palette, "protan") )# Protanopia Red-Green 
+#   #   return( dichromat(palette, "tritan") )# Tritanopia
+#   # Also see The Color Oracle application (http://colororacle.org/)
 # }
 #
 # PalettePregancyDelivery <- transformColor(adjustcolor(brewer.pal(3, "Accent"), alpha.f=1)[1:2])
