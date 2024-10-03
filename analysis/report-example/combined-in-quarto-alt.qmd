@@ -1,0 +1,189 @@
+---
+title: "FIESTA subpopulations: Disability"
+subtitle: "Distribution of annual reported earnings before and after the first Income Support spell"
+author: "ROD"
+format:
+  html:
+    page-layout: full
+    toc: true
+    toc-location: right
+    code-fold: show
+    theme: yeti
+    highlight-style: breeze
+    colde-line-numbers: true
+    css: styles.css
+    self-contained: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| code-summary: Reconciles working directory between execution modes
+#| echo: false
+#| results: hide
+#| message: false 
+#| warning: false
+cat("Working directory: ", getwd())
+library(knitr)
+opts_knit$set(root.dir='../../') # keep this chunk isolated  
+```
+
+```{r}
+#| label: set_options
+#| code-summary: report-wide formatting options
+#| echo: false
+#| results: hide
+#| message: false 
+cat("Working directory: ", getwd()) # turn on to test the location
+report_render_start_time <- Sys.time()
+# set options shared by all chunks
+opts_chunk$set(
+  results      = 'show',
+  message      = FALSE,
+  warning      = FALSE,
+  comment      = NA,
+  tidy         = FALSE,
+  # dpi        = 400, # dots per inch,
+  # out.width  = "650px", # pixels, this affects only the markdown, not the underlying png file.  The height will be scaled appropriately.
+  fig.width    = 6, # inches
+  fig.height   = 4, # inches
+  fig.path     = 'figure-png-iso/' # where figures are stored
+)
+echo_chunks    <- FALSE #Toggle for debugging.
+message_chunks <- FALSE #Toggle for debugging.
+options(width=100) # number of characters to display in the output (dflt = 80)
+ggplot2::theme_set(ggplot2::theme_bw()) # common theme for all graphs
+
+```
+
+# Environment
+
+> Reviews the components of the working environment of the report. Non-technical readers are welcomed to skip. Come back if you need to understand the origins of custom functions, scripts, or data objects.
+
+```{r}
+#| label: load-packages
+#| code-summary: Packages used in the current report
+#| echo: true
+#| results: hide
+#| message: false
+#| code-fold: true
+cat("Working directory: ", getwd())
+
+library(ggplot2)   # graphs
+library(forcats)   # factors
+library(stringr)   # strings
+library(lubridate) # dates
+library(labelled)  # labels
+library(scales)    # format
+library(dplyr)     # loading dplyr explicitly is my guilty pleasure
+library(broom)     # for model
+library(emmeans)   # for interpreting model results
+library(magrittr)
+library(tidyverse)
+library(arrow)
+library(glue)
+library(scales)
+library(kableExtra)
+```
+
+```{r}
+#| label: load-sources
+#| code-summary: Collection of custom functions used in current repository
+#| echo: true
+#| results: hide
+#| message: false
+#| code-fold: true
+base::source("./scripts/common-functions.R") # project-level
+base::source("./scripts/operational-functions.R") # project-level
+base::source("./scripts/graphing/graph-presets.R") # project-level
+```
+
+```{r}
+#| label: declare-globals
+#| code-summary: Values used throughout the report.
+#| echo: true
+#| results: hide
+#| message: false
+#| code-fold: true
+
+# printed figures will go here:
+prints_folder <- paste0("./analysis/fiesta-disability/prints/")
+if(!file.exists(prints_folder)){dir.create(file.path(prints_folder))}
+
+# printed figures will go here:
+local_root <- "./analysis/fiesta-disability/"
+
+local_data <- paste0(local_root, "data-private/") # if need explicit hide
+if (!fs::dir_exists(local_data)) {fs::dir_create(local_data)}
+
+# serialized propensity score models are stored here:
+twang_folder <- paste0(local_root,"twang/")
+# serialized twang diagnostic graphs and tables are stored here
+twang_diagnostics <- paste0(local_root,"twang-diagnostics/")
+# serialized model estimates are stored here
+solution_folder  <- paste0(local_root,"model-solution/")
+
+```
+
+```{r}
+#| label: declare-functions
+#| code-summary: Custom functions defined for use in this report.
+#| echo: true
+#| results: hide
+#| message: false
+#| code-fold: true
+
+
+```
+
+```{r}
+#| label: declare-varaible-groups
+#| code-summary: Defining groups of variables for easier navigation
+#| code-fold: true
+
+
+```
+
+# Data
+
+```{r }
+#| label: load-data
+#| code-summary: Load data objects 
+#| warning: false
+#| code-fold: show
+#| cache: false
+
+
+```
+
+```{r}
+#| label: tweak-data-0
+#| code-summary: Organize variable for use in current report
+#| code-fold: false
+ds0 <-
+  ds_cohort %>% # each row is a spell, clients may have multiples
+  select(
+    all_of(
+      c(
+        design # ids, dates, spell properties
+        ,outcomes # spell duration, return within 12 months
+        ,intervention_assessment # any employability assessment events
+        ,intervention_ceis # CEIS
+        ,intervention_wtr # Training for Work, Work Foundations, English as Second
+        ,covariates # collected at the start of the spell
+        ,intervention_count # tally over the Window of Intervention
+        ,intervention_flag # at least one in the window of Intervention
+      )
+    ), everything()
+  ) 
+```
+
+```{r}
+#| label: inspect-data-1
+#| code-summary: Inspect
+#| code-fold: false
+#| eval: false
+
+ds0 %>% glimpse() 
+```
