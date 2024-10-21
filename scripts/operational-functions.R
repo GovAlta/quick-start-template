@@ -1,6 +1,14 @@
 # Functions loaded by SOME scripts in the project
-compute_fiscal_year <- function(x)(as.integer(zoo::as.yearmon(x) - 3/12 ))
+compute_fiscal_year <- function(x)(
+  # expects a date
+  as.integer(zoo::as.yearmon(x) - 3/12 )
+)
 
+compute_fiscal_quarter <- function(x){
+  # expects a date
+  q <- lubridate::quarter(x)
+  if_else(x == 1L ~ 4L,TRUE ~ x-1)
+}
 # Negation in vector selection
 `%not in%` <- Negate(`%in%`)
 
