@@ -2,6 +2,8 @@
 baseSize <- 10
 print_all <- function(d){ print(d,n=nrow(d) )}
 
+`%not in%` <- Negate(`%in%`)
+
 library(ggplot2)
 ggplot2::theme_set(
   ggplot2::theme_bw(
@@ -61,6 +63,7 @@ neat_DT <- function(x, filter_="top",nrows=20,...){
       ,options = list(
         pageLength = nrows,
         autoWidth  = FALSE
+        # autoWidth  = TRUE
       )
       , ...
     )
