@@ -1,25 +1,24 @@
 # Dialectical Epistemology in AI-Augmented Data Practice
+
 © 2025 Andriy Koval
+
+![dialects](images/dialects.jpg)
 # Introduction: The Problem of Flattened Knowing
 
 In the era of AI-augmented analysis, we risk reducing data science to a mechanical exercise—an over-reliance on efficiency, automation, and output without anchoring our inquiry in epistemic depth. The analyst is no longer just a modeler or coder but a meaning-maker across symbolic systems. Yet as AI becomes more capable of expressing and executing code, rendering graphs, and simulating narrative, we must ask: What is the human’s role in this process? What is lost when analysis is divorced from the dimensionality of real-world understanding?
 
 This essay proposes a dialectical epistemology for human–AI collaboration—one that restores the analyst’s role as a conductor of meaning and positions AI as an agile translator across modes of data expression.
 
-
 # Data as the Fabric of Reality
 
-![Dialects of Data Expression](dialects.jpg) 
-
 Rather than treating data as inert inputs to be manipulated, we begin with the idea that data is the fabric of reality—a structured presence that can be made manifest across different dimensions or cross-sections. These are not just formats; they are epistemic dialects, each revealing something different:
-
-- **Tabular**: The raw grammar of structure.
-- **Algebraic**: The syntax of models and relationships.
-- **Graphical**: Intuition through visualization.
-- **Schematic**: Theory embodied in form (e.g., DAGs, SEMs).
-- **Syntactic**: Operationalized logic via code.
-- **Numeric**: Inference and confidence.
-- **Semantic**: Meaning rendered in human language. 
+	•	Tabular: The raw grammar of structure.
+	•	Algebraic: The syntax of models and relationships.
+	•	Graphical: Intuition through visualization.
+	•	Schematic: Theory embodied in form (e.g., DAGs, SEMs).
+	•	Syntactic: Operationalized logic via code.
+	•	Numeric: Inference and confidence.
+	•	Semantic: Meaning rendered in human language.
 
 Each dialect is a way of knowing. Each offers a slice of a multidimensional reality.
 
@@ -78,7 +77,7 @@ In this view, analysis is not just a sequence of tasks—it is a multidimensiona
 - AI is tasked with enabling swift, accurate traversal and auditable implementation of analytic processes — not as decision-maker, but as amplifier and translator of the narrative arc produced by human analysts.
 
 
-# Usefule metaphors
+# Usefull metaphors
 
 ## Data as a Multidimensional Fabric of Reality 
 - In the universe of a research project, for the purposes of collaboration with AI, it is useful to think of observed data as the fabric of reality, a structured presence that can be made manifest across different dimensions or cross-sections. These are not just formats; they are epistemic dialects, each revealing something different:
@@ -111,7 +110,7 @@ Dialectical Data Practice in Multidimensional Space
 
 I approach data not just as numbers, but as the fabric of reality—a richly textured structure that can be made manifest in multiple dimensions or cross-sections. The human analyst conducts the dynamic shifts across these cross-sections, shaping an analytic narrative that reveals new patterns, relationships, and meanings. AI enables swift, accurate traversal across these views, and helps ground them in auditable, reproducible code.
 
-The attached image illustrates this mindset. It shows how a single empirical phenomenon can be expressed through multiple dialects:
+The attached image — ![Dialects of Data Expression](images/dialects.jpg) — illustrates this mindset. It shows how a single empirical phenomenon can be expressed through multiple dialects:
 
 - Tabular (raw observations),
 - Algebraic (formal modeling),
