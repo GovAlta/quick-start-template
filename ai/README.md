@@ -1,4 +1,4 @@
-# Creative Symbiosis Analytic Framework
+# Bringing AI to Research Analytics
 
 ## 🧠 Purpose
 
@@ -12,6 +12,8 @@ It establishes a project foundation rooted in:
 - Domain-aligned semantics and logic
 
 ## 📂 Included Files
+
+The following files and their contents should serve as a starting point for your specific project.
 
 | File              | Purpose |
 |-------------------|---------|
