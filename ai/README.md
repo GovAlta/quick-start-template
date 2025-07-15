@@ -15,6 +15,7 @@ It establishes a project foundation rooted in:
 
 | File              | Purpose |
 |-------------------|---------|
+| `./ai/FIDES.md`   | Gives and overview of the framework |  
 | `./ai/mission.md`     | Declares axioms, epistemic stance, allowed reasoning methods, and analytic goals |
 | `./ai/onboarding-ai.md`| Instructs AI agents how to interpret the project’s logic, ask for clarification, and translate modalities |
 | `./ai/glossary.md`     | Defines critical domain terms to prevent semantic drift |
