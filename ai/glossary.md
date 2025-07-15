@@ -1,5 +1,7 @@
 # glossary.md
 
+> Current content is an example. Please replace with project-sepcific material. 
+
 ## Domain Terms
 
 - **Caseload**: The administratively defined population actively receiving services during a reference period.
