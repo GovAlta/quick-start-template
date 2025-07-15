@@ -1,5 +1,4 @@
 # teleology-mission-why.md
-====
 
 > Current content is an example. Please replace with project-sepcific material. 
 
