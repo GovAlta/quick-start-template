@@ -1,5 +1,7 @@
 # logbook.md
 
+> Current content is an example. Please replace with project-sepcific material. 
+
 ## Project Logbook
 Use this to document key decisions, model revisions, and reasoning transitions across modalities.
 
