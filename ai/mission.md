@@ -1,6 +1,8 @@
 # teleology-mission-why.md
 # =========================
 
+> Current content is an example. Please replace with project-sepcific material. 
+
 Refer to `./data-private/raw/research_request.md` for the language that humans used to articulate this  research request. Based on this inital request, we articulated the following epistemic aims (i.e. what we want to learn). The language of these aims may evolve as we refine our understanding of the research problem and the data available.
 
 
