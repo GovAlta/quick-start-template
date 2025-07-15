@@ -15,11 +15,11 @@ It establishes a project foundation rooted in:
 
 | File              | Purpose |
 |-------------------|---------|
-| `./ai/mission.txt`     | Declares axioms, epistemic stance, allowed reasoning methods, and analytic goals |
-| `./ai/onboarding_ai.md`| Instructs AI agents how to interpret the project’s logic, ask for clarification, and translate modalities |
+| `./ai/mission.md`     | Declares axioms, epistemic stance, allowed reasoning methods, and analytic goals |
+| `./ai/onboarding-ai.md`| Instructs AI agents how to interpret the project’s logic, ask for clarification, and translate modalities |
 | `./ai/glossary.md`     | Defines critical domain terms to prevent semantic drift |
 | `./ai/logbook.md`      | Maintains a chronological, epistemic trace of decisions, model changes, and human–AI exchanges |
-| `./ai/dialectical_epistemology.md`      | Outlines the philosophical foundation for human–AI analytic collaboration, framing analysis as a movement across epistemic dialects guided by the human as conductor of meaning |
+| `./ai/semiology.md`      | Outlines the philosophical foundation for human–AI analytic collaboration, framing analysis as a movement across epistemic dialects guided by the human as conductor of meaning |
 
 ## 🔁 Use Case
 
@@ -35,7 +35,7 @@ Use this framework to launch any project that aims to:
 2. Customize `./ai/mission.md` to define your project's purpose, axioms, and logic.
 3. Tailor `./ai/glossary.md` to your domain.
 4. Begin logging analytic moves in `./ai/logbook.md`.
-5. Ensure AI agents are prompted using the `./ai/onboarding_ai.md` structure.
+5. Ensure AI agents are prompted using the `./ai/onboarding-ai.md` structure.
 
 ## 📜 Attribution
 
