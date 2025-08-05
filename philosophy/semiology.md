@@ -2,7 +2,7 @@
 
 © 2025 Andriy Koval
 
-![dialects](images/dialects.jpg)
+![dialects](../philosophy/images/dialects.jpg)
 # Introduction: The Problem of Flattened Knowing
 
 In the era of AI-augmented analysis, we risk reducing data science to a mechanical exercise—an over-reliance on efficiency, automation, and output without anchoring our inquiry in epistemic depth. The analyst is no longer just a modeler or coder but a meaning-maker across symbolic systems. Yet as AI becomes more capable of expressing and executing code, rendering graphs, and simulating narrative, we must ask: What is the human’s role in this process? What is lost when analysis is divorced from the dimensionality of real-world understanding?

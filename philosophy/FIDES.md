@@ -6,8 +6,6 @@ This guide orients data analysts and research writers (DAs, RWs) to the principl
 ---
 
 ## 🔤 What is FIDES?
-FIDES is a collection of documents authors by humans to organize collaboration with AI in a reproducible research project. It provides a response to the question: **How do I communicate the context of my research project to an AI collaborator?**
-
 
 **FIDES** stands for:
 
@@ -28,18 +26,18 @@ It is designed to support:
 
 ## 🧭 How to Use This Framework
 
-FIDES is organized as a modular folder of living documents. Each file plays a specific role in articulating *why*, *what*, *how*, and *for whom* analytic work is done. The template provides a starting points, but each project should adapt it to its own needs.
+FIDES is organized as a modular folder of living documents. Each file plays a specific role in articulating *why*, *what*, *how*, and *for whom* analytic work is done.
 
-| File in `./ai/` | Function |
+| File in `./philosophy/` | Function |
 |------|----------|
-| `onboarding-ai.md` | Guides how AI should behave and support the human |
-| `semiology-expression-which.md` | Maps how meaning is expressed across dialects |
 | `teleology-mission-why.md` | Declares purpose and impact goals |
 | `ontology-glossary-what.md` | Defines key terms and constructs |
 | `epistemology-method-how.md` | Articulates valid methods and inference rules |
-| `praxeology-action-who.md` | Clarifies actor roles and responsibilities |
 | `axiology-values-should.md` | Surfaces ethical commitments and consequences |
+| `praxeology-action-who.md` | Clarifies actor roles and responsibilities |
+| `semiology-expression-which.md` | Maps how meaning is expressed across dialects |
 | `metaphysics-context-where.md` | Situates analysis in time, place, and institution |
+| `onboarding-ai.md` | Guides how AI should behave and support the human |
 | `validation-tests.md` | Specifies checks and epistemic safeguards |
 | `logbook.md` | Captures all major analytic decisions over time |
 | `quick_start_template.qmd` | Launchpad for doing analytic work within FIDES |
@@ -61,13 +59,11 @@ FIDES is organized as a modular folder of living documents. Each file plays a sp
    Only people decide what matters, what questions to ask, and how results are used.
 
 5. **Knowledge is a conversation.**  
-   FIDES supports dialectical movement—between modalities, between actors, and over time.
+   FIDES assists in dialectical movement — between modalities, between actors, and over time.
 
 ---
 
 ## 🧰 Getting Started
-
-The files in the template directory provide a starting point for your analysis. Please modify them to fit your specific project needs. Here’s how to begin:
 
 1. Read `teleology-mission-why.md` and `axiology-values-should.md` to understand the purpose.
 2. Explore the data and definitions in `ontology-glossary-what.md`.
@@ -75,3 +71,10 @@ The files in the template directory provide a starting point for your analysis. 
 4. Use `quick_start_template.qmd` to launch your analysis.
 5. Log your major decisions in `logbook.md` — what you did, why you did it, and what modes you used.
 
+---
+
+## 🤝 Welcome to FIDES
+
+By working within this framework, you are joining a project that values rigor, clarity, humility, and purpose. You are not just writing code or fitting models—you are contributing to **interpretive dialogue** that shapes how we understand the world.
+
+FIDES exists to help you do that well.
