@@ -1,5 +1,6 @@
 # teleology-mission-why.md
-# =========================
+
+> Current content is an example. Please replace with project-sepcific material. 
 
 This files serves as a compass for AI collaborators, articulating the project's purpose, epistemic stance, and analytic goals. It ensures that all AI agents operate within a shared framework of understanding, aligned with the human analyst's intentions.
 
