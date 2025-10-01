@@ -10,9 +10,9 @@ To use the results of a data analysis as evidence in support of our views and de
 
 [Shadish, Cook, and Campbell (2002)](https://psycnet.apa.org/record/2002-17373-000) described four broad categories of validity threats:
 
-[![Fig.1](threats-to-validity.jpg)](images/threats-to-validity.jpg)
+[![Fig.1](images/threats-to-validity.jpg)](images/threats-to-validity.jpg)
 
-Each of these broad categories can be further divided into specific threats, which we invite you to review [here](../../analysis/analysis-templatization/threats-to-validity.htm) or with the following prompt:
+Each of these broad categories can be further divided into specific threats, which we invite you to review in `./philosophy/threats-to-validity.md` or with the following prompt:
 
 > Prompt: List specific threats to validity within each broad category described by (Shadish, Cook, and Campbell, 2002) .
 
@@ -52,12 +52,12 @@ Script-level templates codify and embody various techniques and practices for au
 
 Project-level templates provide a framework for organizing and structuring the collection of interconnected literate scripts, facilitating the management and dissemination of the project as a whole.
 
-One function of project-level templates involves establishing **consistent conventions** for file organization, naming conventions, and folder structures. By adopting standardized practices, researchers can easily navigate and locate specific scripts or sections of code within the project. This organization enhances collaboration and makes it easier for others to understand and reproduce the research.
+One function of project-level templates involves establishing **consistent conventions** for file organization, naming conventions, and folder structures. By adopting standardized practices, researchers can easily navigate and locate specific scripts or sections of code within the project. This organization enhances collaboration and makes it easier for others to understand and reproduce the research. While preserving flexibility to be uniquely tailored to a project, structural similarities makes it easier to navigate and understand new projects.
 
 |                                                     |                                                       |
 |----------------------------------------|--------------------------------|
 | github.com/GovAlta/quick-start-template             | github.com/wibeasley/RAnalysisSkeleton                |
-| ![](images/file-structure-example.png){width="317"} | ![](images/file-structure-example-2.png){width="318"} |
+| ![](images/file-structure-example.png) | ![](images/file-structure-example-2.png) |
 
 : Table: Two examples of templates for file architecture of reproducible projects
 

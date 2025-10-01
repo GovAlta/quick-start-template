@@ -1,45 +1,49 @@
-# FIDES: Framework for Interpretive Dialogue and Epistemic Symbiosis
+# ./philosophy/README.md
 
-Welcome to **FIDES** — a organizational framework for human–AI collaboration in research analytics. This guide familiarizes data analysts (DA) and research writers (RW) with the principles, structure, and practice of FIDES.
+This folder contains the **project-generic** library of documents describing the foundational philosophy behind the human–AI collaborative research framework implemented in the project-specific `./ai/` folder. 
 
-------------------------------------------------------------------------
-
-## 🔤 What is FIDES?
-
-**FIDES** stands for:
-
-> **F**ramework for\
-> **I**nterpretive\
-> **D**ialogue and\
-> **E**pistemic\
-> **S**ymbiosis
-
-It is designed to support:
+This document overviews **FIDES** (Framework for Interpretive Dialogue and Epistemic Symbiosis) - an organizational framework for human–AI collaboration in research analytics designed to support:
 
 -   Transparent, trustworthy analytic workflows
 -   Reflexive and ethical use of AI in research
 -   Modal fluency across tables, models, plots, and language
 -   Institutional memory and philosophical accountability
 
-------------------------------------------------------------------------
+----
 
-## 🧭 How to Use This Framework
-
-FIDES is organized as a modular folder of living documents. Each file plays a specific role in articulating *why*, *what*, *how*, and *for whom* analytic work is done. Below is an example of how to modularize communication of human intent and mental context. For smaller projects, documenting intent in the \[\[mission\]\] file may be sufficient. Larger or more complex projects can benefit from additional sub-documents for deeper exploration (not shown here).
+## Project-generic philosophy 
 
 | File in `./philosophy/`         | Function                                          |
+|---------------------------|---------------------------------------------|
+| `analysis-templatization.md` | Philosophy of template-based analysis for reproducibility |
+| `causal-inference.md` | Guide to causal inference concepts in social sciences |
+| `FIDES-example.md` | Example implementation of FIDES framework |
+| `semiology.md` | Dialectical epistemology for AI-augmented research |
+| `threats-to-validity.md` | Framework for addressing validity threats in research |
+| `zagrozy-validnosti.md` | Ukrainian version of validity threats framework |
+
+## Project-specific implementation 
+| File in `./ai/`         | Function                                          |
 |---------------------------|---------------------------------------------|
 | `teleology-mission-why.md`      | Declares purpose and impact goals                 |
 | `ontology-glossary-what.md`     | Defines key terms and constructs                  |
 | `epistemology-method-how.md`    | Articulates valid methods and inference rules     |
 | `axiology-values-should.md`     | Surfaces ethical commitments and consequences     |
 | `praxeology-action-who.md`      | Clarifies actor roles and responsibilities        |
-| `semiology-expression-which.md` | Maps how meaning is expressed across dialects     |
 | `metaphysics-context-where.md`  | Situates analysis in time, place, and institution |
 
-------------------------------------------------------------------------
+
+## 🧭 How to Use This Framework
+
+Think of FIDES as a toolkit of living documents—each file serves a purpose in helping you communicate the *why*, *what*, *how*, and *for whom* of your research. Start simple: for smaller projects, you might only need the [[mission]] file to capture your main goals. As your work grows more complex, you can add specialized documents to explore different aspects in greater depth.
+
+**Why Two Folders?** We've split things into two main areas: `./philosophy/` contains the big-picture concepts that apply to any research project using AI, while `./ai/` holds the specific details for your current project. Think of it like having a reference library (philosophy) and a project workspace (ai). This way, you can reuse the foundational ideas across different research projects while keeping each project's specific context organized separately.
+
+-----
 
 Note: The user should feel welcome to tweak the specifics of the provided template, and, with time, should be expected to customize it to better fit their needs.
+
+
 
 ## 🧠 Key Principles
 

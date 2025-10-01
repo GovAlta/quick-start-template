@@ -1,4 +1,4 @@
-# onboarding_ai.md
+# ./philosophy/FIDES-example.md
 
 ## Purpose
 
@@ -53,7 +53,7 @@ Always make the **reasoning process explicit**. Invite the human to:
 - Review assumptions, choices, or thresholds
 - Suggest alternative framings or dialects
 
-Document this process in the `./ai/logbook.md` using timestamped entries with both human and AI perspectives, when possible.
+Document this process in the `./ai/memory-human.md` using timestamped entries with both human and AI perspectives, when possible.
 
 ---
 
@@ -71,7 +71,7 @@ Document this process in the `./ai/logbook.md` using timestamped entries with bo
 - Don’t collapse epistemic ambiguity into technical certainty too quickly.
 - Avoid over-simplifying domain concepts when responding to RWs.
 - Avoid code-generation without explaining assumptions and validating output.
-- Don’t lose track of prior reasoning steps — consult `./ai/logbook.md`.
+- Don’t lose track of prior reasoning steps — consult `./ai/memory-human.md`.
 
 ---
 

@@ -6,13 +6,13 @@ To use the results of a data analysis as evidence in support of our views and de
 
 **Threats to validity** refer to factors or issues that can compromise the accuracy, credibility, or generalizability of research findings. These threats can introduce biases or errors into the research process, leading to flawed conclusions or limited applicability of the results.
 
-[![Fig.1](threats-to-validity.jpg)](images/threats-to-validity.jpg)
+[![Fig.1](images/threats-to-validity.jpg)](images/threats-to-validity.jpg)
 
 [Shadish, Cook, and Campbell (2002)](https://psycnet.apa.org/record/2002-17373-000) distinguish four broad categories, each of which can be further divided into specific threats, which we invite you to review with the following prompt:
 
 > List specific threats to validity within each broad category described by (Shadish, Cook, and Campbell, 2002) .
 
-[![Fig.2](threats-to-validity-specific.jpg)](images/threats-to-validity-specific.jpg)
+[![Fig.2](images/threats-to-validity-specific.jpg)](images/threats-to-validity-specific.jpg)
 
 # Threats to Validity
 
@@ -72,7 +72,7 @@ Threats to external validity include:
 
 Since 2002 researchers and analysts expanded on these, proposing new threats to validity that reflected and addressed concerns in the emerging environment of big data and cheap computing. To list a few examples:
 
-![](threats-to-validity-since-2002.jpg) 
+![](images/threats-to-validity-since-2002.jpg) 
 # Data-Related Threats
 
 1.  *Data Quality*: With the rise of big data, the quality of data can be a significant threat to validity. This includes issues like missing data, inconsistent data, and inaccurate data.
