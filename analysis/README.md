@@ -1,6 +1,6 @@
 # `./analysis/` Directory
 
-Contains reproducible reports narrating the engagement with the data of choice
+Contains reproducible reports narrating the engagement with the data of choice. See `./scripts/templates/` for report templates.
 
 # Rules
 
