@@ -8,22 +8,25 @@
 #
 # Author: GitHub Copilot (with human analyst)
 # Created: 2025-07-16
-# Updated: 2025-07-25 - Added KOG functionality and improvements
+# Updated: 2025-08-15 - Modernized based on SDA-CEIS-Impact implementation
 
 update_copilot_instructions <- function(file_list) {
-  # Map friendly names to actual file paths (SDA-specific)
+  # Map friendly names to actual file paths (Books of Ukraine - updated)
   file_map <- list(
     "onboarding-ai" = "./ai/onboarding-ai.md",
     "mission" = "./ai/mission.md", 
     "method" = "./ai/method.md",
     "glossary" = "./ai/glossary.md",
-    "semiology" = "./ai/semiology.md",
+  "semiology" = "./philosophy/semiology.md",
     "pipeline" = "./pipeline.md",
-    "research-request" = "./data-private/raw/research_request.md",
-    "rdb-manifest" = "./ai/RDB-manifest.md",
-    "cache-manifest" = "./ai/CACHE-manifest.md",
     "fides" = "./ai/FIDES.md",
-    "logbook" = "./ai/logbook.md"
+    "handoff" = "./analysis/handoff.md",
+    "memory-hub" = "./ai/memory-hub.md",
+    "memory-human" = "./ai/memory-human.md",
+    "memory-ai" = "./ai/memory-ai.md",
+    "project-map" = "./ai/project-map.md",
+    "input-manifest" = "./data-public/metadata/INPUT-manifest.md",
+    "ua-admin-manifest" = "./data-public/metadata/ua-admin-manifest.md"
   )
   
   instructions_path <- ".github/copilot-instructions.md"
@@ -43,7 +46,6 @@ update_copilot_instructions <- function(file_list) {
   if (length(start_marker) == 0 || length(end_marker) == 0) {
     stop("Dynamic content markers not found in copilot instructions. Please add:\n<!-- DYNAMIC CONTENT START -->\n<!-- DYNAMIC CONTENT END -->")
   }
-  
   
   # Build new content section with summary
   component_list <- paste(file_list, collapse=", ")
@@ -75,8 +77,6 @@ update_copilot_instructions <- function(file_list) {
     }
   }
   
-  # Don't add the closing marker here - we'll use the existing one
-  
   # Replace the section (including both markers)
   updated_content <- c(
     current_content[1:(start_marker-1)],
@@ -106,13 +106,16 @@ add_to_instructions <- function(...) {
       "mission" = "./ai/mission.md", 
       "method" = "./ai/method.md",
       "glossary" = "./ai/glossary.md",
-      "semiology" = "./ai/semiology.md",
+  "semiology" = "./philosophy/semiology.md",
       "pipeline" = "./pipeline.md",
-      "research-request" = "./data-private/raw/research_request.md",
-      "rdb-manifest" = "./ai/RDB-manifest.md",
-      "cache-manifest" = "./ai/CACHE-manifest.md",
       "fides" = "./ai/FIDES.md",
-      "logbook" = "./ai/logbook.md"
+    "handoff" = "./analysis/handoff.md",
+      "memory-hub" = "./ai/memory-hub.md",
+      "memory-human" = "./ai/memory-human.md",
+      "memory-ai" = "./ai/memory-ai.md",
+      "project-map" = "./ai/project-map.md",
+      "input-manifest" = "./ai/INPUT-manifest.md",
+      "ua-admin-manifest" = "./ai/ua-admin-manifest.md"
     )
     for (alias in names(file_map)) {
       exists_marker <- if (file.exists(file_map[[alias]])) "✓" else "✗"
@@ -133,13 +136,13 @@ add_full_context <- function() {
   add_to_instructions("onboarding-ai", "mission", "method", "glossary", "pipeline")
 }
 
-# SDA-specific context combinations
+# Books of Ukraine specific context combinations
 add_data_context <- function() {
-  add_to_instructions("rdb-manifest", "cache-manifest", "pipeline")
+  add_to_instructions("cache-manifest", "pipeline")
 }
 
-add_compass_context <- function() {
-  add_to_instructions("logbook")
+add_memory_context <- function() {
+  add_to_instructions("memory-hub", "memory-human", "memory-ai")
 }
 
 remove_all_dynamic_instructions <- function() {
@@ -191,10 +194,6 @@ remove_all_dynamic_instructions <- function() {
 # CONTEXT MANAGEMENT COMMANDS
 # ==============================================================================
 
-# ==============================================================================
-# CONTEXT MANAGEMENT COMMANDS
-# ==============================================================================
-
 # Helper operator for string repetition
 `%r%` <- function(str, times) paste(rep(str, times), collapse = "")
 
@@ -239,20 +238,16 @@ context_refresh <- function() {
   message("\n🚀 QUICK REFRESH OPTIONS:")
   message("1️⃣  Core context: add_core_context()")
   message("2️⃣  Data context: add_data_context()")  
-  message("3️⃣  Compass context: add_compass_context()")
+  message("3️⃣  Memory context: add_memory_context()")
   message("4️⃣  Full context: add_full_context()")
   message("5️⃣  Custom phase: suggest_context('phase')")
   message("🗑️  Reset: remove_all_dynamic_instructions()")
   message("\n🔧 TROUBLESHOOTING & ANALYSIS:")
-  message("�  Check CACHE status: check_cache_manifest()")
-  message("�  Full project analysis: analyze_project_status()")
-  message("�  Get command help: get_command_help()")
+  message("📊  Check CACHE status: check_cache_manifest()")
+  message("🔍  Full project analysis: analyze_project_status()")
+  message("💡  Get command help: get_command_help()")
   message("\n💡 Or specify custom files: add_to_instructions('file1', 'file2')")
 }
-
-# ==============================================================================
-# PROPOSED IMPROVEMENTS
-# ==============================================================================
 
 # 1. Context Validation - Check if loaded content is still current
 validate_context <- function() {
@@ -283,13 +278,14 @@ validate_context <- function() {
     "mission" = "./ai/mission.md", 
     "method" = "./ai/method.md",
     "glossary" = "./ai/glossary.md",
-    "semiology" = "./ai/semiology.md",
+  "semiology" = "./philosophy/semiology.md",
     "pipeline" = "./pipeline.md",
-    "research-request" = "./data-private/raw/research_request.md",
-    "rdb-manifest" = "./ai/RDB-manifest.md",
-    "cache-manifest" = "./ai/CACHE-manifest.md",
     "fides" = "./ai/FIDES.md",
-    "logbook" = "./ai/logbook.md"
+     "handoff" = "./analysis/handoff.md",
+    "memory-hub" = "./ai/memory-hub.md",
+    "memory-human" = "./ai/memory-human.md",
+    "memory-ai" = "./ai/memory-ai.md",
+    "project-map" = "./ai/project-map.md"
   )
   
   message("🔍 Checking context freshness...")
@@ -328,16 +324,16 @@ suggest_context <- function(analysis_phase = NULL) {
     message("  📊 'data-setup' - Focus on data assembly and pipeline")
     message("  🔍 'exploration' - Focus on EDA and initial findings") 
     message("  📈 'modeling' - Focus on analysis and reporting")
-    message("  🚀 'compass' - Focus on compass_Assessment_ID updates")
+    message("  🧠 'memory' - Focus on project memory and documentation")
     message("\nUsage: suggest_context('data-setup')")
     return()
   }
   
   suggestions <- switch(analysis_phase,
-    "data-setup" = c("onboarding-ai", "pipeline", "rdb-manifest", "cache-manifest"),
+    "data-setup" = c("onboarding-ai", "pipeline", "cache-manifest", "input-manifest"),
     "exploration" = c("onboarding-ai", "mission", "method", "glossary"),
     "modeling" = c("mission", "method", "semiology", "fides"),
-    "compass" = c("logbook", "rdb-manifest"),
+    "memory" = c("memory-hub", "memory-human", "memory-ai"),
     c("onboarding-ai", "mission", "method")
   )
   
@@ -345,9 +341,11 @@ suggest_context <- function(analysis_phase = NULL) {
   message("   add_to_instructions(", paste0('"', paste(suggestions, collapse='", "'), '"'), ")")
   
   # Auto-load option
-  response <- readline("🤖 Load this context automatically? (y/n): ")
-  if (tolower(trimws(response)) %in% c("y", "yes")) {
-    do.call(add_to_instructions, as.list(suggestions))
+  if (interactive()) {
+    response <- readline("🤖 Load this context automatically? (y/n): ")
+    if (tolower(trimws(response)) %in% c("y", "yes")) {
+      do.call(add_to_instructions, as.list(suggestions))
+    }
   }
 }
 
@@ -381,132 +379,53 @@ check_context_size <- function() {
   }
 }
 
-# ==============================================================================
-# CACHE MANIFEST MANAGEMENT
+# ============================================================================== 
+# CACHE MANIFEST MANAGEMENT (DECOMMISSIONED AUTOMATION)
 # ==============================================================================
 
-# Function to check and update CACHE-manifest.md based on actual data outputs
-check_cache_manifest <- function(update_if_needed = TRUE) {
-  cache_manifest_path <- "./ai/CACHE-manifest.md"
-  
-  message("🔍 Analyzing data outputs for CACHE manifest...")
-  
-  # Check if CACHE manifest exists and get its timestamp
-  manifest_exists <- file.exists(cache_manifest_path)
-  manifest_timestamp <- if (manifest_exists) file.mtime(cache_manifest_path) else NULL
-  
-  message("📋 CACHE Manifest Status:")
-  if (manifest_exists) {
-    message("   ✅ File exists: ", cache_manifest_path)
-    message("   📅 Last updated: ", format(manifest_timestamp, "%Y-%m-%d %H:%M:%S"))
-  } else {
-    message("   ❌ File missing: ", cache_manifest_path)
-  }
-  
-  # Check for common data directories
-  data_paths <- c(
-    "data-private/derived",
-    "data-private/derived/manipulation", 
-    "data-public/derived"
-  )
-  
-  existing_data <- c()
-  for (path in data_paths) {
-    if (dir.exists(path)) {
-      files <- list.files(path, pattern = "\\.(rds|csv|xlsx)$", recursive = TRUE, full.names = TRUE)
-      existing_data <- c(existing_data, files)
-    }
-  }
-  
-  message("\n📊 Data File Analysis:")
-  message("   📁 Total data files found: ", length(existing_data))
-  
-  if (length(existing_data) == 0) {
-    message("   ❌ No data files found. Run data processing scripts first.")
-    return(list(status = "no_data", datasets = 0, manifest_current = FALSE))
-  }
-  
-  # Check which files are newer than manifest
-  new_files <- c()
-  if (manifest_exists) {
-    for (file in existing_data) {
-      if (file.mtime(file) > manifest_timestamp) {
-        new_files <- c(new_files, file)
-      }
-    }
-  }
-  
-  # Determine if update is needed
-  needs_update <- !manifest_exists || length(new_files) > 0
-  
-  if (!needs_update) {
-    message("\n🎉 CACHE manifest is up-to-date! No action needed.")
-    return(list(status = "current", datasets = length(existing_data), manifest_current = TRUE))
-  }
-  
-  if (!update_if_needed) {
-    message("\n💡 CACHE manifest needs updating but update_if_needed = FALSE")
-    message("    Run check_cache_manifest(update_if_needed = TRUE) to update")
-    return(list(status = "needs_update", datasets = length(existing_data), manifest_current = FALSE))
-  }
-  
-  message("\n🔄 Updating CACHE manifest...")
-  
-  # Create manifest content
-  manifest_content <- c(
-    "# CACHE Manifest",
-    "",
-    "This document serves as a comprehensive guide to the data structure and organization of the CACHE for this project.",
-    "",
-    "---",
-    "",
-    "## CACHE Overview",
-    "",
-    paste("**Last Updated**: ", Sys.Date(), " (", length(existing_data), " files)"),
-    "",
-    "## Data Files",
-    ""
-  )
-  
-  # Group files by directory
-  for (path in data_paths) {
-    if (dir.exists(path)) {
-      files <- list.files(path, pattern = "\\.(rds|csv|xlsx)$", recursive = TRUE, full.names = TRUE)
-      if (length(files) > 0) {
-        manifest_content <- c(manifest_content,
-          paste("### Files in", path),
-          ""
-        )
-        
-        for (file in files) {
-          file_size <- round(file.size(file) / 1024, 1)
-          file_date <- format(file.mtime(file), "%Y-%m-%d")
-          rel_path <- gsub(paste0("^", path, "/"), "", file)
-          
-          manifest_content <- c(manifest_content,
-            paste("- **", basename(file), "** (", file_size, " KB, ", file_date, ")")
-          )
-        }
-        manifest_content <- c(manifest_content, "")
-      }
-    }
-  }
-  
-  # Write the manifest
-  writeLines(manifest_content, cache_manifest_path)
-  
-  message("✅ Updated CACHE-manifest.md")
-  message("📊 Total files documented: ", length(existing_data))
-  
-  return(list(status = "updated", datasets = length(existing_data), manifest_current = TRUE))
+# New canonical manifest location (human-authored)
+cache_manifest_canonical_path <- function() {
+  file.path("data-public", "metadata", "CACHE-MANIFEST.md")
 }
+
+# Backwards compatible stub (old signature). Never auto-writes now.
+check_cache_manifest <- function(update_if_needed = TRUE) {
+  path <- cache_manifest_canonical_path()
+  exists <- file.exists(path)
+  message("📋 CACHE Manifest (manual mode)")
+  if (exists) {
+    message("   ✅ Present at: ", path)
+    message("   📅 Last modified: ", format(file.mtime(path), "%Y-%m-%d %H:%M:%S"))
+    if (isTRUE(update_if_needed)) {
+      message("   ℹ️ Automation disabled: no update attempted.")
+    }
+    return(list(status = "present", path = path, manifest_current = TRUE))
+  } else {
+    warning("   ❌ Missing expected manifest at: ", path,
+            "\n   Create or copy a human-authored manifest before proceeding.")
+    return(list(status = "missing", path = path, manifest_current = FALSE))
+  }
+}
+
+# Deprecated writer: inform user and do nothing.
+update_cache_manifest <- function(...) {
+  path <- cache_manifest_canonical_path()
+  message("� update_cache_manifest() is deprecated. Manual maintenance only.")
+  if (file.exists(path)) {
+    message("✅ Existing manifest detected at: ", path)
+  } else {
+    warning("❌ No manifest found at expected path: ", path,
+            "\nCreate it manually (see README or data documentation template).")
+  }
+  invisible(path)
+}
+
+# Alias retained for any legacy calls
+build_cache_manifest <- function(...) update_cache_manifest(...)
 
 # ==============================================================================
 # PROJECT ANALYSIS & COMMAND OVERVIEW SYSTEM  
 # ==============================================================================
-
-# Helper operator for string repetition
-`%r%` <- function(str, times) paste(rep(str, times), collapse = "")
 
 # Comprehensive project analysis and command recommendations
 analyze_project_status <- function() {
@@ -654,14 +573,14 @@ analyze_project_status <- function() {
   cat("├─ context_refresh()         │ Complete status scan + context options\n")
   cat("├─ add_core_context()        │ Load essential context (onboarding, mission, method)\n")
   cat("├─ add_data_context()        │ Load data-focused context (cache-manifest, pipeline)\n")
-  cat("├─ add_compass_context()     │ Load compass-specific context (logbook)\n")
+  cat("├─ add_memory_context()      │ Load memory-focused context (memory-hub, memory-human, memory-ai)\n")
   cat("├─ add_full_context()        │ Load comprehensive context set\n")
   cat("├─ suggest_context('phase')  │ Smart context suggestions by analysis phase\n")
   cat("├─ add_to_instructions()     │ Manual context loading with custom file selection\n")
   cat("├─ remove_all_dynamic_instructions() │ Reset/clear all dynamic context\n")
   cat("├─ validate_context()        │ Check if loaded context files are current\n")
   cat("├─ check_context_size()      │ Monitor context file size and performance impact\n")
-  cat("└─ check_cache_manifest()    │ Check CACHE manifest status and update if needed\n")
+  cat("└─ check_cache_manifest()    │ Verify manual CACHE manifest presence (no auto-update)\n")
   
   cat("\n📊 PROJECT ANALYSIS:\n")
   cat("├─ analyze_project_status()  │ THIS COMMAND - Complete project analysis\n")
@@ -778,7 +697,7 @@ get_command_help <- function(command_name = NULL) {
 
 # Log file changes to logbook with timestamp, user, and change description
 log_file_change <- function(file_path, change_description = NULL) {
-  logbook_path <- "./ai/logbook.md"
+  logbook_path <- "./ai/memory-human.md"
   
   # Validate inputs
   if (missing(file_path)) {
@@ -825,7 +744,7 @@ log_file_change <- function(file_path, change_description = NULL) {
   if (!file.exists(logbook_path)) {
     # Create basic logbook structure
     initial_content <- paste0(
-      "# logbook.md\n\n",
+      "# memory-human.md\n\n",
       "## Project Logbook\n",
       "Use this to document key decisions, model revisions, and reasoning transitions across modalities.\n"
     )
@@ -857,7 +776,9 @@ log_change <- function(file_path, description = NULL) {
 # ==============================================================================
 
 # Load AI Memory System
-if (file.exists("./scripts/ai-memory-functions.R")) {
+if (file.exists("./scripts/ai-memory-functions-core.R")) {
+  source("./scripts/ai-memory-functions-core.R")
+} else if (file.exists("./scripts/ai-memory-functions.R")) {
   source("./scripts/ai-memory-functions.R")
 }
 
@@ -868,8 +789,8 @@ if (!exists("copilot_context_initialized")) {
   cat("  - analyze_project_status() # 🆕 COMPREHENSIVE project analysis + recommendations\n")
   cat("  - context_refresh()     # Quick status + refresh options\n")
   cat("  - add_core_context()    # onboarding-ai, mission, method\n")
-  cat("  - add_data_context()    # rdb-manifest, cache-manifest, pipeline\n")
-  cat("  - add_compass_context() # logbook\n")
+  cat("  - add_data_context()    # cache-manifest, pipeline\n")
+  cat("  - add_memory_context()  # memory-hub, memory-human, memory-ai\n")
   cat("  - add_full_context()    # comprehensive set\n")
   cat("  - suggest_context()     # smart suggestions by phase\n")
   cat("  - add_to_instructions() # manual component selection\n")
