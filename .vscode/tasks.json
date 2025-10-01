@@ -1,0 +1,128 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Render EDA-3 Report (Quarto)",
+      "type": "shell",
+      "command": "quarto",
+      "args": ["render", "analysis/eda-3/eda-3.qmd", "--to", "html"],
+      "group": { "kind": "build", "isDefault": false },
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": [],
+      "options": { "cwd": "${workspaceFolder}" }
+    },
+    {
+      "label": "Check Quarto Availability",
+      "type": "shell",
+      "command": "quarto",
+      "args": ["--version"],
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": [],
+      "options": { "cwd": "${workspaceFolder}" }
+    },
+    {
+      "label": "Memory System Status Check",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-NoProfile",
+        "-Command",
+        "Write-Host 'Memory System Status:'; Get-ChildItem ai/*.md | ForEach-Object { Write-Host \"$($_.Name): $(Get-Date $_.LastWriteTime -Format 'yyyy-MM-dd HH:mm')\" }"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Load Memory Functions (R)",
+      "type": "process",
+      "command": "Rscript",
+      "args": ["scripts/wrappers/run-ai-memory-check.R"],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Project Files Overview",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-NoProfile",
+        "-Command",
+        "Write-Host 'Complete Project Structure:'; tree /F /A"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Project Files Overview (Directories Only)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-NoProfile",
+        "-Command",
+        "Write-Host 'Project Directory Structure:'; tree /A"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Project Status Check",
+      "type": "shell",
+      "command": "powershell",
+      "args": ["-ExecutionPolicy", "Bypass", "-NoProfile", "-File", "${workspaceFolder}/project-status.ps1", "-Detailed"],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": [],
+      "options": { "cwd": "${workspaceFolder}" }
+    },
+    {
+      "label": "Setup Node.js Environment",
+      "type": "shell",
+      "command": "powershell",
+      "args": ["-ExecutionPolicy", "Bypass", "-NoProfile", "-File", "${workspaceFolder}/setup-nodejs.ps1"],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": [],
+      "options": { "cwd": "${workspaceFolder}" }
+    },
+    {
+      "label": "Add Core Context (R)",
+      "type": "process",
+      "command": "Rscript",
+      "args": ["scripts/wrappers/run-add-core-context.R"],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run flow.R",
+      "type": "process",
+      "command": "Rscript",
+      "args": ["${workspaceFolder}/flow.R"],
+      "group": { "kind": "build", "isDefault": false },
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Test Silent Mini-EDA System",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('./scripts/silent-mini-eda.R'); cat('Testing silent mini-EDA...\\n'); result <- silent_mini_eda('mtcars', verbose=TRUE); cat('✅ System operational\\n')"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    }
+  ]
+}
