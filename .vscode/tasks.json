@@ -2,10 +2,10 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Render EDA-3 Report (Quarto)",
+      "label": "Render EDA-1 Report (Quarto)",
       "type": "shell",
       "command": "quarto",
-      "args": ["render", "analysis/eda-3/eda-3.qmd", "--to", "html"],
+      "args": ["render", "analysis/eda-1/eda-1.qmd", "--to", "html"],
       "group": { "kind": "build", "isDefault": false },
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
       "problemMatcher": [],
