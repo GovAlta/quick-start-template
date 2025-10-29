@@ -1,0 +1,205 @@
+# AI Support System Configuration
+# Exportable AI-augmented research infrastructure
+# Version: 1.0.0
+# Compatible with: RAnalysisSkeleton-style mixed-language research repos
+
+system:
+  name: "AI Support System"
+  version: "1.0.0"
+  description: "Exportable AI-augmented research infrastructure"
+  author: "Research Infrastructure Team"
+  created: "2024-10-29"
+  
+  # Core philosophy: Separate AI support from research reproducibility
+  # Memory storage is project-specific, memory logic is portable
+  storage_logic_separation: true
+  minimal_target_disruption: true
+
+# Exportable Components (Priority Order)
+components:
+  # 1. PERSONA SYSTEM (Highest Priority)
+  personas:
+    enabled: true
+    exportable: true
+    storage_path: "personas/"
+    dependencies: 
+      - "scripts/ai-context-management.R"
+      - "core/base-instructions.md"
+    personas_available:
+      - developer
+      - project_manager
+      - data_engineer
+      - research_scientist
+      - devops_engineer
+      - frontend_architect
+      - prompt_engineer
+      - reporter
+      - default
+      - analyst
+      - researcher
+    integration_points:
+      - ".github/copilot-instructions.md"
+      - ".copilot-persona"
+      - "VSCode tasks"
+
+  # 2. CONTEXT MANAGEMENT (High Priority)  
+  context_management:
+    enabled: true
+    exportable: true
+    storage_path: "core/"
+    dependencies:
+      - "scripts/update-copilot-context.R"
+      - ".github/copilot-instructions.md"
+    features:
+      - "Dynamic persona switching"
+      - "Context status monitoring"
+      - "Automated instruction updates"
+    integration_points:
+      - "GitHub Copilot"
+      - "VSCode workspace"
+
+  # 3. MEMORY SYSTEM (Medium Priority)
+  memory:
+    enabled: true
+    exportable: true
+    logic_path: "scripts/"
+    storage_path: "memory/"  # Project-specific, not exported
+    dependencies:
+      - "scripts/ai-memory-functions.R"
+    features:
+      - "Project memory tracking"
+      - "Context preservation"
+      - "Memory status validation"
+    storage_logic_separation:
+      exportable_logic: 
+        - "memory management functions"
+        - "memory validation"
+        - "memory integration"
+      project_specific_storage:
+        - "memory-ai.md"
+        - "memory-human.md"
+        - "memory-hub.md"
+        - "memory-guide.md"
+
+  # 4. VSCODE INTEGRATION (Medium Priority)
+  vscode_tasks:
+    enabled: true
+    exportable: true
+    storage_path: "vscode/"
+    dependencies:
+      - ".vscode/tasks.json"
+    features:
+      - "Persona switching tasks"
+      - "Memory system tasks"
+      - "Context status tasks"
+    task_categories:
+      - "Persona activation"
+      - "Memory management"
+      - "Context monitoring"
+      - "System validation"
+
+# Migration Configuration
+migration:
+  # Target repository requirements
+  target_requirements:
+    repository_type: "mixed_language_research"
+    base_structure: "RAnalysisSkeleton"
+    required_files:
+      - "config.yml"
+      - "flow.R"
+      - "README.md"
+    optional_files:
+      - ".vscode/tasks.json"
+      - ".github/"
+
+  # Migration impact categories
+  impact_assessment:
+    file_modifications:
+      - ".github/copilot-instructions.md"
+      - ".vscode/tasks.json"
+      - "config.yml (minimal additions)"
+    new_directories:
+      - "ai-support-system/"
+      - "ai/ (if not exists)"
+    new_files:
+      - ".copilot-persona"
+      - "scripts/ai-*"
+    potential_conflicts:
+      - "Existing AI support files"
+      - "VSCode task namespace conflicts"
+      - "R script dependencies"
+
+  # Migration options
+  migration_modes:
+    manual:
+      enabled: true
+      requires_assessment: true
+      assessment_mandatory: true
+      steps:
+        - "Pre-migration compatibility check"
+        - "Impact assessment generation"
+        - "Manual review and approval"
+        - "Guided installation"
+        - "Post-migration validation"
+    
+    ai_assisted:
+      enabled: true
+      features:
+        - "Automatic compatibility detection"
+        - "Smart conflict resolution"
+        - "Adaptive integration"
+        - "Rollback capability"
+
+# Integration Guidelines
+integration:
+  # Minimal disruption principles
+  target_repo_modifications:
+    config_yml:
+      additions_only: true
+      section: "ai_support"
+    flow_r:
+      modifications: "minimal"
+      additions: "optional"
+    vscode_workspace:
+      task_additions: true
+      setting_modifications: "minimal"
+
+  # Dependency management
+  dependencies:
+    r_packages:
+      required:
+        - "yaml"
+        - "config"
+      optional:
+        - "here"
+    system_requirements:
+      - "R (>= 4.0)"
+      - "VSCode"
+      - "GitHub Copilot (optional)"
+
+# Validation and Testing
+validation:
+  pre_migration:
+    - "Target repo structure validation"
+    - "Dependency availability check"
+    - "Conflict detection"
+  
+  post_migration:
+    - "Persona system functionality"
+    - "Context management integration"
+    - "Memory system operation"
+    - "VSCode task execution"
+    - "GitHub Copilot integration"
+
+# Export/Import Utilities
+utilities:
+  export:
+    - "Component selection tool"
+    - "Dependency packaging"
+    - "Migration template generation"
+  
+  import:
+    - "Compatibility assessment"
+    - "Guided installation wizard"
+    - "Post-installation validation"
+    - "Rollback mechanism"

@@ -49,4 +49,4 @@ Links to relevant files, documentation, or resources
 ---
 
 *This template is part of the AI Support System v1.0.0*  
-*For more information, see: ./ai-support-system/README.md* 
+*For more information, see: ./ai-support-system/README.md*

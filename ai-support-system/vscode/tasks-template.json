@@ -1,0 +1,311 @@
+{
+  "version": "2.0.0",
+  "_comment": "AI Support System VSCode Tasks Template - v1.0.0",
+  "_description": "Exportable VSCode tasks for AI-augmented research workflows",
+  "_usage": "Merge these tasks into existing .vscode/tasks.json or create new file",
+  "tasks": [
+    {
+      "_section": "PERSONA_ACTIVATION_TASKS",
+      "label": "AI: Activate Developer Persona",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); activate_developer(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "AI: Activate Project Manager Persona",
+      "type": "process", 
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); activate_project_manager(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always", 
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "AI: Activate Data Engineer Persona",
+      "type": "process",
+      "command": "Rscript", 
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); activate_data_engineer(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false, 
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "AI: Activate Research Scientist Persona",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e", 
+        "source('ai-support-system/scripts/ai-context-management.R'); activate_research_scientist(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared", 
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+
+    {
+      "label": "AI: Activate Prompt Engineer Persona", 
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); activate_prompt_engineer(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "AI: Activate Reporter Persona",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); activate_reporter(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true, 
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "AI: Activate Default Persona",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); activate_default(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "_section": "CONTEXT_MANAGEMENT_TASKS",
+      "label": "AI: Show Context Status",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "_section": "MEMORY_SYSTEM_TASKS", 
+      "label": "AI: Memory System Check",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-memory-functions.R'); ai_memory_check()"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "AI: Memory Status",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-memory-functions.R'); memory_status()"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "_section": "SYSTEM_VALIDATION_TASKS",
+      "label": "AI: Validate AI Support System",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "cat('🔍 Validating AI Support System...\\n'); source('ai-support-system/scripts/ai-context-management.R'); source('ai-support-system/scripts/ai-memory-functions.R'); show_context_status(); cat('\\n'); ai_memory_check(); cat('✅ Validation complete\\n')"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "_section": "MIGRATION_HELPER_TASKS",
+      "label": "AI: Generate Migration Assessment",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); cat('Enter target repository path: '); target <- readLines('stdin', n=1); generate_migration_assessment(target_path = target)"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "_section": "LEGACY_COMPATIBILITY_TASKS",
+      "label": "AI: Legacy Context Management (Fallback)",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "if(file.exists('scripts/ai-context-management.R')) { source('scripts/ai-context-management.R'); show_context_status() } else { cat('❌ Legacy context management not found\\n💡 Use AI Support System tasks instead\\n') }"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "AI: Legacy Memory Check (Fallback)",
+      "type": "process", 
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "if(file.exists('scripts/ai-memory-functions.R')) { source('scripts/ai-memory-functions.R'); ai_memory_check() } else { cat('❌ Legacy memory functions not found\\n💡 Use AI Support System tasks instead\\n') }"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    }
+  ],
+  "_migration_notes": {
+    "description": "Instructions for integrating these tasks into existing VSCode setup",
+    "manual_integration": [
+      "1. Open existing .vscode/tasks.json in target repository",
+      "2. Copy desired tasks from this template",
+      "3. Ensure no task label conflicts exist", 
+      "4. Update script paths if ai-support-system is in different location",
+      "5. Test tasks after integration"
+    ],
+    "ai_assisted_integration": [
+      "Use ai_assisted_migration() function which handles task merging automatically",
+      "Provides conflict resolution and rollback capability",
+      "Adapts task commands based on target repository structure"
+    ],
+    "customization": [
+      "Update script paths if using legacy structure (scripts/ instead of ai-support-system/scripts/)",
+      "Modify task labels to match team conventions",
+      "Add project-specific persona tasks as needed",
+      "Adjust presentation settings based on workflow preferences"
+    ]
+  },
+  "_compatibility": {
+    "vscode_version": "1.60+",
+    "r_version": "4.0+", 
+    "required_packages": ["yaml", "config"],
+    "script_dependencies": [
+      "ai-support-system/scripts/ai-context-management.R",
+      "ai-support-system/scripts/ai-memory-functions.R" 
+    ]
+  }
+}

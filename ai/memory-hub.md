@@ -1,24 +1,33 @@
 # Memory Hub
 
-*Central navigation point for simplified project memory system*
+*Central navigation point for project memory system*
 
 ---
 
-## 🧠 **Core Memory Components** (Five-Component Design)
+## 🧠 **Memory System Overview**
 
-### **Human-AI Memory System**
-- **[[memory-human]]** 📝 - Human thoughts, priorities, and decision reasoning (recent first)
-- **[[memory-ai]]** 🤖 - AI technical status and implementation notes (recent first)  
+This template provides a comprehensive memory system for AI-augmented research projects. The memory system helps maintain continuity across work sessions and enables both human researchers and AI assistants to track project evolution.
+
+### **Core Memory Components**
+
+- **[[memory-human]]** 📝 - Human decisions, reasoning, and project evolution
+- **[[memory-ai]]** 🤖 - AI-maintained technical status and implementation notes  
 - **[[memory-hub]]** 🧭 - Navigation center (this file)
-- **[[memory-guide]]** 📖 - System structure, usage tips, and AI optimization rules
+- **[[memory-guide]]** 📖 - System usage guide and optimization tips
 
-### **Detailed Documentation System**
-- **`ai/log/`** 📋 - Comprehensive reports, detailed analyses, and implementation documentation
+### **Extended Documentation**
+
+- **`ai/log/`** 📋 - Detailed reports and comprehensive documentation
+  - Use for: Step-by-step processes, technical deep-dives, meeting notes
   - Naming: `YYYY-MM-DD-description.md`
-  - Content: Step-by-step processes, technical deep-dives, provisional documents
+- **Project context files**: `mission.md`, `method.md`, `glossary.md` - High-level project definition
 
-### **Dynamic Memory Systems**
-- **Memory MCP** 🔗 - Dynamic knowledge graphs for complex relationships and semantic connections
+### **Getting Started**
+
+1. **Review the memory guide**: See `memory-guide.md` for detailed usage instructions
+2. **Customize project context**: Update `mission.md`, `method.md`, and `glossary.md` for your project
+3. **Start documenting**: Use `memory-human.md` for decisions and reasoning
+4. **Let AI assist**: The AI system will automatically update `memory-ai.md` as work progresses
 
 ---
 
