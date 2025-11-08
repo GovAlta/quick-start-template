@@ -88,8 +88,20 @@ ds1 <- ds0 %>% janitor::clean_names()
 
 # ---- graph-2 -----------------------------------------------------------------
 
+# ---- save-to-db --------------------------------------------------------------
+
+OuhscMunge::upload_sqls_odbc(
+  d = ds1,
+  schema_name = "P20250821", # project-specific schema, typcially date of launch
+  table_name = "ds_event", # lowercase snake case implies derived table, ALLCAPS - RAW TABLE
+  dsn_name = "RESEARCH_PROJECT_CACHE_UAT", # db on 10479
+  clear_table = TRUE, # TRUE = delete if exisits
+  create_table = TRUE # TRUE = create if not exists
+)
+
 # ---- save-to-disk, eval=eval_chunks ------------------------------------------------------------
-ds1 %>% readr::write_rds("./data-private/derived/0-import.rds",compress = "xz")
+ds1 %>% arrow::write_parquet("./data-private/derived/0-import.parquet")
+
 # ---- publish ------------------------------------------------------------
 # path <- "./analysis/.../report-isolated.Rmd"
 # rmarkdown::render(

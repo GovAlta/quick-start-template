@@ -1,0 +1,233 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Render EDA-1 Report (Quarto)",
+      "type": "shell",
+      "command": "quarto",
+      "args": ["render", "analysis/eda-1/eda-1.qmd", "--to", "html"],
+      "group": { "kind": "build", "isDefault": false },
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": [],
+      "options": { "cwd": "${workspaceFolder}" }
+    },
+    {
+      "label": "Check Quarto Availability",
+      "type": "shell",
+      "command": "quarto",
+      "args": ["--version"],
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": [],
+      "options": { "cwd": "${workspaceFolder}" }
+    },
+    {
+      "label": "Project Status Check",
+      "type": "shell",
+      "command": "powershell",
+      "args": ["-ExecutionPolicy", "Bypass", "-NoProfile", "-File", "${workspaceFolder}/project-status.ps1", "-Detailed"],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": [],
+      "options": { "cwd": "${workspaceFolder}" }
+    },
+    {
+      "label": "Setup Node.js Environment",
+      "type": "shell",
+      "command": "powershell",
+      "args": ["-ExecutionPolicy", "Bypass", "-NoProfile", "-File", "${workspaceFolder}/setup-nodejs.ps1"],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": [],
+      "options": { "cwd": "${workspaceFolder}" }
+    },
+    {
+      "label": "Project Files Overview",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-NoProfile",
+        "-Command",
+        "Write-Host 'Complete Project Structure:'; tree /F /A"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Project Files Overview (Directories Only)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-NoProfile",
+        "-Command",
+        "Write-Host 'Project Directory Structure:'; tree /A"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run flow.R",
+      "type": "process",
+      "command": "Rscript",
+      "args": ["${workspaceFolder}/flow.R"],
+      "group": { "kind": "build", "isDefault": false },
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Test Silent Mini-EDA System",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('./scripts/silent-mini-eda.R'); cat('Testing silent mini-EDA...\\n'); result <- silent_mini_eda('mtcars', verbose=TRUE); cat('✅ System operational\\n')"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Activate Developer Persona",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); activate_developer(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Activate Project Manager Persona",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); activate_project_manager(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Activate Data Engineer Persona",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); activate_data_engineer(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Activate Research Scientist Persona",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); activate_research_scientist(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Activate DevOps Engineer Persona",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); activate_devops_engineer(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Activate Frontend Architect Persona",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); activate_frontend_architect(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Activate Prompt Engineer Persona",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); activate_prompt_engineer(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Activate Reporter Persona",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); activate_reporter(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Show AI Context Status",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/ai-context-management.R'); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Load Memory Functions (R)",
+      "type": "process",
+      "command": "Rscript",
+      "args": ["scripts/wrappers/run-ai-memory-check.R"],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Add Core Context (R)",
+      "type": "process",
+      "command": "Rscript",
+      "args": ["scripts/wrappers/run-add-core-context.R"],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Test AI Support System",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai-support-system/scripts/tests/run-all-tests.R')"
+      ],
+      "group": "test",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    }
+  ]
+}

@@ -73,8 +73,8 @@ Desktop.ini
 .DS_Store
 
 # ---- Visual Studio Code (text editor) ----------------------
-.vscode/
-!.vscode/settings.json
+.vscode/*
+.vscode/settings.json
 !.vscode/launch.json
 
 # ---- Locks ----------------------
@@ -121,15 +121,7 @@ analysis/*/*/*/*.html
 #   So the lines below should either be
 #     1. removed (because they were added unintentionally), or
 #     2. reorganized and moved above this chunk (so it won't be confused with files added unintentionally).
-quick-start.Rproj
-analysis/analysis-templatization/README_files/libs/bootstrap/bootstrap-icons.css
-analysis/analysis-templatization/README_files/libs/bootstrap/bootstrap-icons.woff
-analysis/analysis-templatization/README_files/libs/bootstrap/bootstrap.min.css
-analysis/analysis-templatization/README_files/libs/bootstrap/bootstrap.min.js
-analysis/analysis-templatization/README_files/libs/clipboard/clipboard.min.js
-analysis/analysis-templatization/README_files/libs/quarto-html/anchor.min.js
-analysis/analysis-templatization/README_files/libs/quarto-html/popper.min.js
-analysis/analysis-templatization/README_files/libs/quarto-html/quarto-syntax-highlighting.css
-analysis/analysis-templatization/README_files/libs/quarto-html/quarto.js
-analysis/analysis-templatization/README_files/libs/quarto-html/tippy.css
-analysis/analysis-templatization/README_files/libs/quarto-html/tippy.umd.min.js
+
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/settings.json.example

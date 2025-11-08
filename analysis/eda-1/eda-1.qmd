@@ -1,0 +1,206 @@
+---
+title: "Publishing Trends in Ukraine: Exploratory Data Analysis"
+subtitle: "EDA 3 - Books of Ukraine Dataset"
+author: "Research Group FIDES"
+format:
+  html:
+    page-layout: full
+    toc: true
+    toc-location: right
+    code-fold: show
+    theme: yeti
+    highlight-style: breeze
+    code-line-numbers: true
+    self-contained: true
+    embed-resources: true
+    keep-md: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+# Mission
+
+This document explores publishing trends in Ukraine since 2005, focusing on:
+
+-   **Temporal patterns**: How publication volumes have changed over time
+-   **Language dynamics**: Ukrainian vs Russian language publishing trends\
+-   **Regional differences**: Geographic variations in publishing activity
+-   **Genre patterns**: Subject matter evolution across time and regions
+
+Following the **FIDES framework**, we develop analytical insights iteratively in the companion `.R` script before publishing them here for broader consumption.
+
+# **Definition of Terms**
+
+```{r}
+#| code-summary: Reconciles working directory between execution modes
+#| echo: false
+#| results: hide
+#| message: false 
+#| warning: false
+cat("Working directory: ", getwd())
+library(knitr)
+opts_knit$set(root.dir='../../') # keep this chunk isolated
+```
+
+```{r}
+#| label: set_options
+#| code-summary: report-wide formatting options
+#| echo: false
+#| results: hide
+#| message: false 
+cat("Working directory: ", getwd()) # turn on to test the location
+report_render_start_time <- Sys.time()
+# set options shared by all chunks
+opts_chunk$set(
+  results      = 'show',
+  message      = FALSE,
+  warning      = FALSE,
+  comment      = NA,
+  tidy         = FALSE,
+  # dpi        = 400, # dots per inch,
+  out.width  = "960px", # pixels, this affects only the markdown, not the underlying png file.  The height will be scaled appropriately.
+  fig.width    = 10, # inches - larger for publication trends
+  fig.height   = 6, # inches - good for time series
+  fig.path     = 'figure-png-iso/' # where figures are stored
+  
+)
+echo_chunks    <- FALSE #Toggle for debugging.
+message_chunks <- FALSE #Toggle for debugging.
+options(width=100) # number of characters to display in the output (dflt = 80)
+ggplot2::theme_set(ggplot2::theme_minimal()) # clean theme for publications
+read_chunk("analysis/eda-1/eda-1.R") #This allows knitr to call chunks from R script
+```
+
+# Environment
+
+> Reviews the components of the working environment of the report. Non-technical readers are welcomed to skip. Come back if you need to understand the origins of custom functions, scripts, or data objects.
+
+```{r}
+#| label: load-packages
+#| code-summary: Packages used in the current report
+#| echo: true
+#| results: hide
+#| message: false
+#| code-fold: true
+```
+
+```{r}
+#| label: load-sources
+#| code-summary: Collection of custom functions used in current repository
+#| echo: true
+#| results: hide
+#| message: false
+#| code-fold: true
+
+```
+
+```{r}
+#| label: declare-globals
+#| code-summary: Values used throughout the report.
+#| echo: true
+#| results: hide
+#| message: false
+#| code-fold: true
+```
+
+```{r}
+#| label: declare-functions
+#| code-summary: Custom functions defined for use in this report.
+#| echo: true
+#| results: hide
+#| message: false
+#| code-fold: true
+```
+
+# Data
+
+This report operates with the **Books of Ukraine analytical database** - the final, analysis-ready dataset created by the Ellis pipeline.
+
+```{r }
+#| label: load-data
+#| code-summary: Load data objects from Books of Ukraine database
+#| warning: false
+#| code-fold: true
+#| cache: true
+```
+
+```{r}
+#| label: inspect-data-0
+#| code-summary: Inspect loaded data tables structure
+#| code-fold: false
+#| eval: true
+#| cache: true
+# Summary of available tables will be shown here
+```
+
+```{r}
+#| label: inspect-data-1
+#| code-summary: Examine data dimensions and key variables
+#| code-fold: false
+#| eval: true
+#| cache: true
+```
+
+```{r}
+#| label: inspect-data-2
+#| code-summary: Quick data quality checks
+#| code-fold: false
+#| eval: true
+#| cache: true
+```
+
+# Analysis
+
+## Publishing Volume Trends
+
+### Overall Publication Patterns
+
+```{r}
+#| label: g1
+#| code-summary: Annual publication volume trends
+#| code-fold: true
+#| eval: true
+#| cache: true
+#| fig-cap: "Total number of unique books published in Ukraine by year (2005-2023)"
+```
+
+<!-- As we develop more graphs in the R script, we'll add corresponding chunks here -->
+
+````{=html}
+<!-- Example pattern:
+### Language Dynamics
+
+```{r}
+#| label: g2
+#| code-summary: Ukrainian vs Russian language publication trends
+#| code-fold: false
+#| eval: true
+#| cache: true
+#| fig-cap: "Publishing trends by language: Ukrainian and Russian books over time"
+```
+
+### Regional Patterns
+
+```{r}
+#| label: g3
+#| code-summary: Regional distribution of publishing activity
+#| code-fold: false
+#| eval: true
+#| cache: true
+#| fig-cap: "Publishing activity by Ukrainian oblast/territory"
+```
+-->
+````
+
+# Session Info
+
+```{r}
+#| label: session-info
+#| code-summary: R session information for reproducibility
+#| echo: false
+#| code-fold: true
+cat("Report completed at:", as.character(Sys.time()), "\n")
+cat("Total runtime:", round(difftime(Sys.time(), report_render_start_time, units = "mins"), 2), "minutes\n")
+sessionInfo()
+```

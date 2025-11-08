@@ -1,0 +1,20 @@
+{
+  "mcp": {
+    "servers": {
+      "context7": {
+        "type": "http",
+        "url": "https://mcp.example.com/mcp"
+      },
+      "filesystem": {
+        "type": "process",
+        "command": "C:\\Program Files\\nodejs\\node.exe",
+        "args": [
+          "${workspaceFolder}\\path\\to\\@modelcontextprotocol\\server-filesystem\\dist\\index.js",
+          "${workspaceFolder}\\data-public",
+          "${workspaceFolder}\\analysis",
+          "${workspaceFolder}\\ai"
+        ]
+      }
+    }
+  }
+}
