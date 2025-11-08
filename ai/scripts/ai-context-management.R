@@ -6,14 +6,26 @@
 # Detects the AI support system configuration in the current project
 
 detect_ai_config <- function(project_root = ".") {
-  # Look for ai-support-system configuration
-  config_path <- file.path(project_root, "ai-support-system", "ai-support-config.yml")
-  legacy_config <- file.path(project_root, "config.yml")
+  # Look for main config.yml file
+  config_path <- file.path(project_root, "config.yml")
   
   if (file.exists(config_path)) {
-    return(list(type = "ai-support-system", path = config_path, root = project_root))
-  } else if (file.exists(legacy_config)) {
-    return(list(type = "legacy", path = legacy_config, root = project_root))
+    # Try to read and check if it has AI support section
+    tryCatch({
+      if (requireNamespace("yaml", quietly = TRUE)) {
+        config_content <- yaml::yaml.load_file(config_path)
+        has_ai_support <- !is.null(config_content$default$ai_support)
+        config_type <- ifelse(has_ai_support, "ai-support-enabled", "basic")
+      } else {
+        # Fallback if yaml package not available - check for ai_support text
+        config_text <- readLines(config_path, warn = FALSE)
+        has_ai_support <- any(grepl("ai_support:", config_text, fixed = TRUE))
+        config_type <- ifelse(has_ai_support, "ai-support-enabled", "basic")
+      }
+      return(list(type = config_type, path = config_path, root = project_root))
+    }, error = function(e) {
+      return(list(type = "basic", path = config_path, root = project_root))
+    })
   } else {
     return(list(type = "none", path = NULL, root = project_root))
   }
@@ -25,50 +37,70 @@ detect_ai_config <- function(project_root = ".") {
 get_available_personas <- function(project_root = ".") {
   config <- detect_ai_config(project_root)
   
-  if (config$type == "ai-support-system") {
-    persona_dir <- file.path(project_root, "ai-support-system", "personas")
-  } else {
-    persona_dir <- file.path(project_root, "ai", "personas")
-  }
+  # For both ai-support-enabled and basic configs, personas are in ai/personas
+  persona_dir <- file.path(project_root, "ai", "personas")
   
   if (!dir.exists(persona_dir)) {
+    cat("⚠️  Personas directory not found:", persona_dir, "\n")
+    cat("💡 To enable AI personas, create the directory and add persona definition files (.md)\n")
+    cat("   Example: Create files like 'developer.md', 'analyst.md' with persona instructions\n")
     return(character(0))
   }
   
   personas <- list.files(persona_dir, pattern = "\\.md$", full.names = FALSE)
+  
+  if (length(personas) == 0) {
+    cat("⚠️  No persona files found in:", persona_dir, "\n")
+    cat("💡 Add persona definition files (.md) to enable AI role switching\n")
+  }
+  
   return(gsub("\\.md$", "", personas))
 }
 
 # Set persona with automatic path detection
 set_persona_with_autodetect <- function(persona_name, project_root = ".") {
-  config <- detect_ai_config(project_root)
-  
   # Update copilot instructions
   instructions_path <- file.path(project_root, ".github", "copilot-instructions.md")
-  
   if (!file.exists(instructions_path)) {
     cat("❌ Copilot instructions file not found:", instructions_path, "\n")
     return(invisible(FALSE))
   }
-  
-  # Update persona tracking file
+
+  # Track active persona (simple marker file)
   persona_file <- file.path(project_root, ".copilot-persona")
   writeLines(persona_name, persona_file)
-  
-  # Source the context update script if available
-  context_script <- file.path(project_root, "ai-support-system", "scripts", "update-copilot-context.R")
-  if (!file.exists(context_script)) {
-    context_script <- file.path(project_root, "scripts", "update-copilot-context.R")
-  }
-  
+
+  # Try to use dynamic-context-builder if available; fall back to simple insert
+  context_script <- file.path(project_root, "ai", "scripts", "dynamic-context-builder.R")
   if (file.exists(context_script)) {
     source(context_script, local = TRUE)
+    # Some versions expose set_persona_with_defaults; if not present we proceed with lightweight update.
     if (exists("set_persona_with_defaults")) {
-      set_persona_with_defaults(persona_name)
+      fn <- get("set_persona_with_defaults")
+      tryCatch({
+        fn(persona_name)
+        return(invisible(TRUE))
+      }, error = function(e) {
+        cat("⚠️  Failed enhanced persona load, using fallback minimal update.\n")
+      })
     }
   }
-  
-  return(invisible(TRUE))
+
+  # Fallback: prepend simple persona header (non-destructive) if dynamic builder not used
+  current <- readLines(instructions_path, warn = FALSE)
+  header <- c(
+    "<!-- ACTIVE PERSONA (fallback) START -->",
+    paste0("Currently active persona: ", persona_name),
+    "<!-- ACTIVE PERSONA (fallback) END -->"
+  )
+  # Remove previous fallback header if present
+  start_idx <- grep("<!-- ACTIVE PERSONA (fallback) START -->", current, fixed = TRUE)
+  end_idx <- grep("<!-- ACTIVE PERSONA (fallback) END -->", current, fixed = TRUE)
+  if (length(start_idx) == 1 && length(end_idx) == 1 && end_idx >= start_idx) {
+    current <- current[-c(start_idx:end_idx)]
+  }
+  writeLines(c(header, current), instructions_path)
+  invisible(TRUE)
 }
 
 # === PERSONA ACTIVATION FUNCTIONS (EXPORTABLE) ===
@@ -86,8 +118,6 @@ activate_developer <- function(project_root = ".") {
   set_persona_with_autodetect("developer", project_root)
   cat("✅ Switched to Developer persona with minimal context\n")
 }
-
-# Removed: Case Note Analyst persona (domain-specific, not suitable for generic template)
 
 # Function to activate data engineer persona with minimal context
 activate_data_engineer <- function(project_root = ".") {
@@ -145,7 +175,7 @@ show_context_status <- function(project_root = ".") {
   config <- detect_ai_config(project_root)
   instructions_path <- file.path(project_root, ".github", "copilot-instructions.md")
   
-  cat("🏗️  AI Support System:", config$type, "\n")
+  cat("🏗️  Configuration Type:", config$type, "\n")
   
   if (!file.exists(instructions_path)) {
     cat("❌ Copilot instructions file not found\n")
@@ -191,7 +221,6 @@ show_context_status <- function(project_root = ".") {
   cat("  activate_research_scientist() - Statistical analysis & methodology specialist (minimal context)\n")
   cat("  activate_devops_engineer() - Production deployment & operations specialist (minimal context)\n")
   cat("  activate_project_manager() - Strategic oversight (full context)\n")
-  # Removed: activate_casenote_analyst() - Domain-specific, not suitable for generic template
   cat("  activate_prompt_engineer() - RICECO framework specialist (specialized context)\n")
   cat("  activate_reporter()        - Analytical storytelling (on-demand context)\n")
   cat("  show_context_status()      - Show this status\n")
@@ -226,7 +255,6 @@ check_migration_compatibility <- function(target_path) {
   # Check for existing AI support
   ai_indicators <- c(
     ".copilot-persona",
-    "ai-support-system",
     "ai/personas",
     ".github/copilot-instructions.md"
   )
@@ -269,9 +297,9 @@ generate_migration_assessment <- function(source_path = ".", target_path, compon
   
   # Files to be created
   new_files <- c()
-  if ("personas" %in% components) new_files <- c(new_files, "ai-support-system/personas/")
+  if ("personas" %in% components) new_files <- c(new_files, "ai/personas/")
   if ("context" %in% components) new_files <- c(new_files, ".github/copilot-instructions.md", ".copilot-persona")
-  if ("memory" %in% components) new_files <- c(new_files, "ai-support-system/scripts/ai-memory-functions.R")
+  if ("memory" %in% components) new_files <- c(new_files, "ai/scripts/ai-memory-functions.R")
   if ("vscode" %in% components) new_files <- c(new_files, ".vscode/tasks.json (additions)")
   
   cat("New files/directories:\n")

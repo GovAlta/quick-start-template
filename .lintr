@@ -1,0 +1,13 @@
+# Disable all R linting
+linters: list()
+
+# Alternative: Disable specific linters while keeping others
+# linters: with_defaults(
+#   line_length_linter = NULL,
+#   object_name_linter = NULL,
+#   camel_case_linter = NULL,
+#   snake_case_linter = NULL,
+#   multiple_dots_linter = NULL,
+#   trailing_whitespace_linter = NULL,
+#   trailing_blank_lines_linter = NULL
+# )

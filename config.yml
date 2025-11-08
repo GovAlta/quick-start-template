@@ -1,15 +1,25 @@
 default:
-  project_name: "aim-2025-sandbox"
+  project_name: "quick-start-template"
+  
+  # AI Support Configuration
+  ai_support:
+    personas_dir: "./ai/personas/"
+    default_persona: "default"
+    context_components:
+      - "mission"
+      - "method"
+      - "glossary"
+    memory_enabled: true
   
   # !!! This is an example !!! Replace with project-specific details
-  # Database Configuration - Access to prepared data from books-of-ukraine
-  # Available databases:
-  # - main: Final analytical database (optimized for analysts)
-  # - stage_2: Comprehensive database with custom additions
+  # Database Configuration - Generic SQLite database connection example
+  # Configure your database connections here
   database:
-    books_of_ukraine:
-      main: "./data-public/derived/manipulation/SQLite/books-of-ukraine.sqlite"
-      stage_2: "./data-public/derived/manipulation/SQLite/books-of-ukraine-2.sqlite"
+    example_project:
+      main: "./data-public/derived/database/main-database.sqlite"
+      staging: "./data-public/derived/database/staging-database.sqlite"
+      # Add connection string if using external database:
+      # connection_string: "sqlite:///path/to/your/database.sqlite"
 
   # Basic project configuration
   directories:
