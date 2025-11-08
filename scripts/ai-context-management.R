@@ -23,7 +23,7 @@ update_context_overview_persona <- function(instructions_lines, persona_label) {
 activate_project_manager <- function() {
   cat("🔄 Switching to Project Manager persona...\n")
   # Delegate to the dynamic context builder to ensure the Context Overview is accurate
-  source("ai-support-system/scripts/dynamic-context-builder.R")
+  source("ai/scripts/dynamic-context-builder.R")
   set_persona_with_defaults("project-manager")
   cat("✅ Switched to Project Manager persona with full project context\n")
 }
@@ -31,7 +31,7 @@ activate_project_manager <- function() {
 # Function to activate developer persona with minimal context
 activate_developer <- function() {
   cat("🔄 Switching to Developer persona...\n")
-  source("ai-support-system/scripts/dynamic-context-builder.R")
+  source("ai/scripts/dynamic-context-builder.R")
   set_persona_with_defaults("developer")
   cat("✅ Switched to Developer persona with minimal context\n")
 }

@@ -52,7 +52,7 @@ This template now includes a **complete AI Support System** with:
    - **In VS Code**: `Ctrl+Shift+P` → "Tasks: Run Task" → "Show AI Context Status"
    - **In R Console**: 
    ```r
-   source('ai-support-system/scripts/ai-context-management.R')
+   source('ai/scripts/ai-context-management.R')
    show_context_status()
    ```
 
@@ -66,7 +66,7 @@ This template now includes a **complete AI Support System** with:
    - **In VS Code**: Run "Test AI Support System" task
    - **In R Console**: 
    ```r
-   source('ai-support-system/scripts/tests/run-all-tests.R')
+   source('ai/scripts/tests/run-all-tests.R')
    ```
 
 ## 🎭 Using AI Personas
@@ -92,7 +92,7 @@ The template includes 11 specialized AI personas, each optimized for different r
 
 **In R Console:**
 ```r
-source('ai-support-system/scripts/ai-context-management.R')
+source('ai/scripts/ai-context-management.R')
 
 # Technical focus (minimal context)
 activate_developer()
@@ -119,7 +119,7 @@ The template includes an intelligent memory system that maintains project contin
 ### **Memory Commands**
 ```r
 # Check memory status
-source('ai-support-system/scripts/ai-memory-functions.R')
+source('ai/scripts/ai-memory-functions.R')
 memory_status()
 
 # Quick memory check with intent detection

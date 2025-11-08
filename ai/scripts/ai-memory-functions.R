@@ -4,17 +4,53 @@
 # Storage: project-specific memory files (memory-ai.md, memory-human.md, etc.)
 # Logic: portable functions that work across projects
 
+# === CONFIGURATION READING ===
+
+read_ai_config <- function(project_root = ".") {
+  config_file <- file.path(project_root, "config.yml")
+  
+  if (!file.exists(config_file)) {
+    return(list(memory_dir = "./ai/memory/"))  # fallback default
+  }
+  
+  tryCatch({
+    if (requireNamespace("yaml", quietly = TRUE)) {
+      config_content <- yaml::read_yaml(config_file)
+      if (!is.null(config_content$default$ai_support$memory_dir)) {
+        return(list(memory_dir = config_content$default$ai_support$memory_dir))
+      }
+    }
+    # Fallback to default if yaml package not available or config not found
+    return(list(memory_dir = "./ai/memory/"))
+  }, error = function(e) {
+    return(list(memory_dir = "./ai/memory/"))  # fallback on error
+  })
+}
+
 # === MEMORY SYSTEM DETECTION ===
 
 detect_memory_system <- function(project_root = ".") {
-  # Look for ai-support-system memory configuration
-  new_memory_dir <- file.path(project_root, "ai-support-system", "memory")
-  legacy_memory_dir <- file.path(project_root, "ai")
+  # Read configuration for memory directory
+  ai_config <- read_ai_config(project_root)
+  memory_path <- ai_config$memory_dir
   
-  if (dir.exists(new_memory_dir)) {
-    return(list(type = "ai-support-system", path = new_memory_dir, root = project_root))
-  } else if (dir.exists(legacy_memory_dir)) {
-    return(list(type = "legacy", path = legacy_memory_dir, root = project_root))
+  # Remove leading "./" if present to normalize path
+  memory_path <- gsub("^\\./", "", memory_path)
+  
+  # Build full path
+  if (project_root == ".") {
+    memory_dir <- memory_path
+  } else {
+    memory_dir <- file.path(project_root, memory_path)
+  }
+  
+  # Also check for ai directory as fallback
+  ai_dir <- file.path(project_root, "ai")
+  
+  if (dir.exists(memory_dir)) {
+    return(list(type = "ai", path = memory_dir, root = project_root))
+  } else if (dir.exists(ai_dir)) {
+    return(list(type = "ai", path = ai_dir, root = project_root))
   } else {
     return(list(type = "none", path = NULL, root = project_root))
   }
@@ -228,9 +264,21 @@ ai_memory_check <- function(project_root = ".") {
 #' Initialize Memory System
 #' 
 #' Creates basic memory system structure for new projects
-initialize_memory_system <- function(project_root = ".", system_type = "ai-support-system") {
-  if (system_type == "ai-support-system") {
-    memory_dir <- file.path(project_root, "ai-support-system", "memory")
+initialize_memory_system <- function(project_root = ".", system_type = "ai") {
+  # Read configuration for memory directory
+  ai_config <- read_ai_config(project_root)
+  
+  if (system_type == "ai") {
+    memory_path <- ai_config$memory_dir
+    # Remove leading "./" if present and normalize path
+    memory_path <- gsub("^\\./", "", memory_path)
+    
+    # Build full path
+    if (project_root == ".") {
+      memory_dir <- memory_path
+    } else {
+      memory_dir <- file.path(project_root, memory_path)
+    }
   } else {
     memory_dir <- file.path(project_root, "ai")
   }
@@ -283,8 +331,8 @@ context_refresh <- function(project_root = ".") {
   
   # Look for context management scripts
   context_scripts <- c(
-    file.path(project_root, "ai-support-system", "scripts", "update-copilot-context.R"),
-    file.path(project_root, "scripts", "update-copilot-context.R")
+    file.path(project_root, "ai", "scripts", "ai-context-management.R"),
+    file.path(project_root, "scripts", "ai-context-management.R")
   )
   
   available_script <- NULL
@@ -317,16 +365,19 @@ context_refresh <- function(project_root = ".") {
 #' 
 #' Package memory management functions for export (without storage)
 export_memory_logic <- function(target_path) {
-  source_script <- system.file("ai-support-system/scripts/ai-memory-functions.R", package = getwd())
-  target_script <- file.path(target_path, "ai-support-system", "scripts", "ai-memory-functions.R")
+  source_script <- file.path(getwd(), "ai", "scripts", "ai-memory-functions.R")
+  target_script <- file.path(target_path, "ai", "scripts", "ai-memory-functions.R")
   
   # Create target directory
   dir.create(dirname(target_script), recursive = TRUE, showWarnings = FALSE)
   
   # Copy this script
-  file.copy(system.file(package = "base"), target_script, overwrite = TRUE)
-  
-  cat("✅ Exported memory logic to:", target_script, "\n")
+  if (file.exists(source_script)) {
+    file.copy(source_script, target_script, overwrite = TRUE)
+    cat("✅ Exported memory logic to:", target_script, "\n")
+  } else {
+    cat("❌ Source script not found at:", source_script, "\n")
+  }
   cat("💡 Initialize memory storage with initialize_memory_system() in target project\n")
 }
 

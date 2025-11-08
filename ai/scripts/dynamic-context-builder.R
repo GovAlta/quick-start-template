@@ -25,9 +25,9 @@ update_copilot_instructions <- function(file_list) {
     "pipeline" = "./pipeline.md",
     "fides" = "./ai/FIDES.md",
     "handoff" = "./analysis/handoff.md",
-    "memory-hub" = "./ai/memory-hub.md",
-    "memory-human" = "./ai/memory-human.md",
-    "memory-ai" = "./ai/memory-ai.md",
+    "memory-hub" = "./ai/memory/memory-hub.md",
+    "memory-human" = "./ai/memory/memory-human.md",
+    "memory-ai" = "./ai/memory/memory-ai.md",
     "project-map" = "./ai/project-map.md",
     "input-manifest" = "./data-public/metadata/INPUT-manifest.md",
     "ua-admin-manifest" = "./data-public/metadata/ua-admin-manifest.md"
@@ -123,9 +123,9 @@ add_to_instructions <- function(...) {
       "pipeline" = "./pipeline.md",
       "fides" = "./ai/FIDES.md",
     "handoff" = "./analysis/handoff.md",
-      "memory-hub" = "./ai/memory-hub.md",
-      "memory-human" = "./ai/memory-human.md",
-      "memory-ai" = "./ai/memory-ai.md",
+      "memory-hub" = "./ai/memory/memory-hub.md",
+      "memory-human" = "./ai/memory/memory-human.md",
+      "memory-ai" = "./ai/memory/memory-ai.md",
       "project-map" = "./ai/project-map.md",
       "input-manifest" = "./ai/INPUT-manifest.md",
       "ua-admin-manifest" = "./ai/ua-admin-manifest.md"
@@ -311,9 +311,9 @@ validate_context <- function() {
     "pipeline" = "./pipeline.md",
     "fides" = "./ai/FIDES.md",
      "handoff" = "./analysis/handoff.md",
-    "memory-hub" = "./ai/memory-hub.md",
-    "memory-human" = "./ai/memory-human.md",
-    "memory-ai" = "./ai/memory-ai.md",
+    "memory-hub" = "./ai/memory/memory-hub.md",
+    "memory-human" = "./ai/memory/memory-human.md",
+    "memory-ai" = "./ai/memory/memory-ai.md",
     "project-map" = "./ai/project-map.md"
   )
   
@@ -932,9 +932,9 @@ get_file_map <- function() {
     "pipeline" = "./pipeline.md",
     "fides" = "./ai/FIDES.md",
     "handoff" = "./analysis/handoff.md",
-    "memory-hub" = "./ai/memory-hub.md",
-    "memory-human" = "./ai/memory-human.md",
-    "memory-ai" = "./ai/memory-ai.md",
+    "memory-hub" = "./ai/memory/memory-hub.md",
+    "memory-human" = "./ai/memory/memory-human.md",
+    "memory-ai" = "./ai/memory/memory-ai.md",
     "project-map" = "./ai/project-map.md",
     "input-manifest" = "./data-public/metadata/INPUT-manifest.md",
     "ua-admin-manifest" = "./data-public/metadata/ua-admin-manifest.md"
@@ -1519,7 +1519,7 @@ load_persona_from_file <- function(file_path, persona_name = NULL) {
 
 # Log file changes to logbook with timestamp, user, and change description
 log_file_change <- function(file_path, change_description = NULL) {
-  logbook_path <- "./ai/memory-human.md"
+  logbook_path <- "./ai/memory/memory-human.md"
   
   # Validate inputs
   if (missing(file_path)) {

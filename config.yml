@@ -4,6 +4,7 @@ default:
   # AI Support Configuration
   ai_support:
     personas_dir: "./ai/personas/"
+    memory_dir: "./ai/memory/"
     default_persona: "default"
     context_components:
       - "mission"

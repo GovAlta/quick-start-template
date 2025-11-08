@@ -2,7 +2,7 @@
 
 ## Overview
 
-The AI Support System includes comprehensive testing and verification components to ensure system integrity and functionality. All testing components are located in `ai-support-system/scripts/tests/` and are fully exportable with the rest of the system.
+The AI Support System includes comprehensive testing and verification components to ensure system integrity and functionality. All testing components are located in `ai/scripts/tests/` and are fully exportable with the rest of the system.
 
 ## Test Components
 
@@ -63,7 +63,7 @@ Provides automated execution of all test components with:
 #### Usage
 ```r
 # Run all tests
-source('ai-support-system/scripts/tests/run-all-tests.R')
+source('ai/scripts/tests/run-all-tests.R')
 
 # Run specific test categories
 run_ai_support_tests(individual_tests = TRUE, integration_tests = FALSE)
@@ -106,7 +106,7 @@ The testing suite integrates with VSCode through a dedicated task:
   "label": "Test AI Support System",
   "type": "process", 
   "command": "Rscript",
-  "args": ["-e", "source('ai-support-system/scripts/tests/run-all-tests.R')"],
+  "args": ["-e", "source('ai/scripts/tests/run-all-tests.R')"],
   "group": "test"
 }
 ```

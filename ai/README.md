@@ -125,7 +125,7 @@ Pre-configured VSCode tasks for:
 - `config.yml`: Additions only (new `ai_support` section)
 - `flow.R`: Optional minimal modifications
 - `.vscode/tasks.json`: Task additions only
-- New directories: `ai-support-system/`, `ai/` (if needed)
+- New directories: `ai/` (enhanced structure)
 
 ## Usage Examples
 
@@ -161,7 +161,7 @@ migrate_ai_support(
 ## File Structure
 
 ```
-ai-support-system/
+ai/
 ├── ai-support-config.yml      # Main configuration
 ├── README.md                  # This file
 ├── core/                      # Context management
