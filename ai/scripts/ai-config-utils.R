@@ -121,9 +121,6 @@ get_ai_file_path <- function(file_type, project_root = ".") {
     "glossary" = file.path(project_root, config$project_dir, "glossary.md"),
     "copilot-instructions" = file.path(project_root, config$copilot_instructions),
     "copilot-persona" = file.path(project_root, config$copilot_persona),
-    # Additional files used by dynamic context builder
-    "FIDES.md" = file.path(project_root, config$ai_dir, "FIDES.md"),
-    "project-map.md" = file.path(project_root, config$ai_dir, "project-map.md"),
     # Handle direct filename requests (for backward compatibility)
     {
       if (grepl("\\.md$", file_type)) {

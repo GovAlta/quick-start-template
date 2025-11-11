@@ -32,7 +32,7 @@ The AI context management system provides structured control over AI assistant c
 ### Basic Persona Switching
 ```r
 # Load system
-source('ai/scripts/ai-context-management.R')
+source('ai/scripts/ai-migration-toolkit.R')
 
 # Activate personas with their defaults
 activate_developer()         # Technical focus, minimal context

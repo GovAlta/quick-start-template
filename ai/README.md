@@ -172,7 +172,7 @@ ai/
 │   └── ...
 ├── scripts/                   # Portable logic
 │   ├── dynamic-context-builder.R   # Core context building engine
-│   ├── ai-context-management.R     # Persona switching with auto-detection
+│   ├── ai-migration-toolkit.R      # Portable persona switching & migration tools
 │   ├── ai-memory-functions.R       # Memory system with storage/logic separation
 │   ├── migration-utilities.R       # Export/import tools
 │   ├── tests/                      # Testing & verification

@@ -10,7 +10,7 @@ Switch between AI assistant personas with different expertise areas:
 
 ```r
 # Load the system
-source('ai/scripts/ai-context-management.R')
+source('ai/scripts/ai-migration-toolkit.R')
 
 # Switch personas
 activate_project_manager()   # Strategic oversight + full project context
@@ -69,7 +69,7 @@ log_file_change('scripts/common-functions.R', 'Updated data loading functions')
 ## 🚀 Quick Start
 
 **New to the project?**
-1. `source('ai/scripts/ai-context-management.R')`
+1. `source('ai/scripts/ai-migration-toolkit.R')`
 2. `show_context_status()` - See current configuration
 3. `activate_project_manager()` - Load full project context
 4. Start working with complete project understanding

@@ -11,7 +11,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); activate_developer(); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_developer(); show_context_status()"
       ],
       "group": "build",
       "presentation": {
@@ -30,7 +30,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); activate_project_manager(); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_project_manager(); show_context_status()"
       ],
       "group": "build",
       "presentation": {
@@ -49,7 +49,7 @@
       "command": "Rscript", 
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); activate_data_engineer(); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_data_engineer(); show_context_status()"
       ],
       "group": "build",
       "presentation": {
@@ -68,7 +68,7 @@
       "command": "Rscript",
       "args": [
         "-e", 
-        "source('ai/scripts/ai-context-management.R'); activate_research_scientist(); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_research_scientist(); show_context_status()"
       ],
       "group": "build",
       "presentation": {
@@ -88,7 +88,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); activate_prompt_engineer(); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_prompt_engineer(); show_context_status()"
       ],
       "group": "build",
       "presentation": {
@@ -107,7 +107,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); activate_reporter(); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_reporter(); show_context_status()"
       ],
       "group": "build",
       "presentation": {
@@ -126,7 +126,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); activate_default(); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_default(); show_context_status()"
       ],
       "group": "build",
       "presentation": {
@@ -146,7 +146,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); show_context_status()"
       ],
       "group": "build",
       "presentation": {
@@ -205,7 +205,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "cat('🔍 Validating AI Support System...\\n'); source('ai/scripts/ai-context-management.R'); source('ai/scripts/ai-memory-functions.R'); show_context_status(); cat('\\n'); ai_memory_check(); cat('✅ Validation complete\\n')"
+        "cat('🔍 Validating AI Support System...\\n'); source('ai/scripts/ai-migration-toolkit.R'); source('ai/scripts/ai-memory-functions.R'); show_context_status(); cat('\\n'); ai_memory_check(); cat('✅ Validation complete\\n')"
       ],
       "group": "build",
       "presentation": {
@@ -225,7 +225,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); cat('Enter target repository path: '); target <- readLines('stdin', n=1); generate_migration_assessment(target_path = target)"
+        "source('ai/scripts/ai-migration-toolkit.R'); cat('Enter target repository path: '); target <- readLines('stdin', n=1); generate_migration_assessment(target_path = target)"
       ],
       "group": "build",
       "presentation": {
@@ -245,7 +245,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "if(file.exists('scripts/ai-context-management.R')) { source('scripts/ai-context-management.R'); show_context_status() } else { cat('❌ Legacy context management not found\\n💡 Use AI Support System tasks instead\\n') }"
+        "if(file.exists('scripts/ai-migration-toolkit.R')) { source('scripts/ai-migration-toolkit.R'); show_context_status() } else { cat('❌ Legacy context management not found\\n💡 Use AI Support System tasks instead\\n') }"
       ],
       "group": "build",
       "presentation": {
@@ -304,8 +304,9 @@
     "r_version": "4.0+", 
     "required_packages": ["yaml", "config"],
     "script_dependencies": [
-      "ai/scripts/ai-context-management.R",
+      "ai/scripts/ai-migration-toolkit.R",
       "ai/scripts/ai-memory-functions.R" 
     ]
   }
 }
+

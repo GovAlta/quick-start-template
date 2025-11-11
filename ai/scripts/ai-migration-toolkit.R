@@ -1,6 +1,6 @@
-# Portable AI Context Management Functions
-# Exportable logic for persona switching and context management
-# Version: 1.0.0 - Designed for storage/logic separation
+# Portable AI Migration Toolkit
+# Exportable logic for persona switching and repository migration
+# Version: 1.0.0 - Designed for portability and cross-repository deployment
 
 # === CONFIGURATION DETECTION ===
 # Detects the AI support system configuration in the current project

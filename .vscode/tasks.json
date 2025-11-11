@@ -7,7 +7,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); activate_default(); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_default(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -19,7 +19,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); activate_developer(); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_developer(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -31,7 +31,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); activate_data_engineer(); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_data_engineer(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -43,7 +43,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); activate_research_scientist(); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_research_scientist(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -55,7 +55,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); activate_devops_engineer(); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_devops_engineer(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -67,7 +67,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); activate_frontend_architect(); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_frontend_architect(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -79,7 +79,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); activate_project_manager(); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_project_manager(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -91,7 +91,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); activate_prompt_engineer(); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_prompt_engineer(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -103,7 +103,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); activate_reporter(); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_reporter(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -115,7 +115,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-context-management.R'); show_context_status()"
+        "source('ai/scripts/ai-migration-toolkit.R'); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },

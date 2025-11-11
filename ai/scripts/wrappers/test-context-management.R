@@ -4,7 +4,7 @@
 cat("🧪 Testing AI Context Management System\n\n")
 
 # Load context management functions
-source("./ai/scripts/ai-context-management.R")
+source("./ai/scripts/ai-migration-toolkit.R")
 
 # Show initial status
 cat("🔍 Initial Context Status:\n")
@@ -23,3 +23,4 @@ cat("  • Developer - Technical focus with minimal context\n")
 cat("  • Project Manager - Strategic oversight with full project context\n")
 cat("  • Case Note Analyst - Domain expertise with specialized context\n")
 cat("\n💡 Use show_context_status() anytime to check current configuration\n")
+

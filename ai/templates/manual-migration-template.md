@@ -38,7 +38,7 @@ target-repo/
 │   │   ├── project-manager.md
 │   │   └── [other selected personas]
 │   ├── scripts/                        # Portable logic
-│   │   ├── ai-context-management.R     # Context switching
+│   │   ├── ai-migration-toolkit.R     # Context switching
 │   │   ├── ai-memory-functions.R       # Memory management
 │   │   └── update-copilot-context.R    # Context updates
 │   ├── memory/                         # Memory system templates
@@ -67,7 +67,7 @@ target-repo/
 ### Step 1: Pre-Migration Validation
 ```r
 # In source repository
-source("ai-support-system/scripts/ai-context-management.R")
+source("ai-support-system/scripts/ai-migration-toolkit.R")
 assessment <- generate_migration_assessment(
   source_path = ".",
   target_path = "/path/to/target/repo",
@@ -126,7 +126,7 @@ Copy-Item "ai-support-system\personas\project-manager.md" "target-repo\ai-suppor
 ### Step 5: Scripts and Logic Migration
 ```powershell
 # Copy portable logic
-Copy-Item "ai-support-system\scripts\ai-context-management.R" "target-repo\ai-support-system\scripts\"
+Copy-Item "ai-support-system\scripts\ai-migration-toolkit.R" "target-repo\ai-support-system\scripts\"
 Copy-Item "ai-support-system\scripts\ai-memory-functions.R" "target-repo\ai-support-system\scripts\"
 Copy-Item "ai-support-system\scripts\update-copilot-context.R" "target-repo\ai-support-system\scripts\"
 ```
@@ -156,7 +156,7 @@ New-Item -ItemType File -Path ".copilot-persona" -Force
 
 ```r
 # Initialize context system
-source("ai-support-system/scripts/ai-context-management.R")
+source("ai-support-system/scripts/ai-migration-toolkit.R")
 activate_default()  # Sets up initial context
 ```
 
@@ -197,7 +197,7 @@ ai_support:
 ### Functionality Tests
 ```r
 # Test persona system
-source("ai-support-system/scripts/ai-context-management.R")
+source("ai-support-system/scripts/ai-migration-toolkit.R")
 show_context_status()
 
 # Test different personas
@@ -230,7 +230,7 @@ human_memory_update("Migration completed successfully")
 ### Integration Tests
 ```r
 # Test full system integration
-source("ai-support-system/scripts/ai-context-management.R")
+source("ai-support-system/scripts/ai-migration-toolkit.R")
 source("ai-support-system/scripts/ai-memory-functions.R")
 
 show_context_status()

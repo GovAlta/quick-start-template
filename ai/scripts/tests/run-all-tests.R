@@ -77,8 +77,8 @@ run_ai_support_tests <- function(individual_tests = TRUE, integration_tests = TR
       "Context Management Integration",
       function() {
         # Test AI context management loading
-        if (file.exists('././ai/scripts/ai-context-management.R')) {
-          source('././ai/scripts/ai-context-management.R')
+        if (file.exists('././ai/scripts/ai-migration-toolkit.R')) {
+          source('././ai/scripts/ai-migration-toolkit.R')
         } else {
           stop("AI context management script not found")
         }
@@ -160,3 +160,4 @@ if (interactive() || !exists(".test_mode")) {
   # Run all tests by default
   run_ai_support_tests()
 }
+

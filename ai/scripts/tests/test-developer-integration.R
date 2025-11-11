@@ -3,10 +3,10 @@
 
 # ---- load-system ----
 # Auto-detect AI support system location
-if (file.exists('././ai/scripts/ai-context-management.R')) {
-  source('././ai/scripts/ai-context-management.R')
-} else if (file.exists('./scripts/ai-context-management.R')) {
-  source('./scripts/ai-context-management.R')
+if (file.exists('././ai/scripts/ai-migration-toolkit.R')) {
+  source('././ai/scripts/ai-migration-toolkit.R')
+} else if (file.exists('./scripts/ai-migration-toolkit.R')) {
+  source('./scripts/ai-migration-toolkit.R')
 } else {
   stop("Cannot locate AI context management system")
 }
@@ -89,3 +89,4 @@ if (interactive() || !exists(".test_mode")) {
   # Only run test if called interactively or not in test mode
   test_developer_integration()
 }
+

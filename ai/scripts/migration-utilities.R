@@ -146,9 +146,9 @@ export_context_management <- function(source_path, export_path) {
   
   # Context management script
   script_files <- c(
-    "./ai/scripts/ai-context-management.R",
+    "./ai/scripts/ai-migration-toolkit.R",
     "./ai/scripts/update-copilot-context.R",
-    "scripts/ai-context-management.R",
+    "scripts/ai-migration-toolkit.R",
     "scripts/update-copilot-context.R"
   )
   
@@ -506,3 +506,4 @@ cat("📦 Export Functions: export_ai_components()\n")
 cat("📥 Import Functions: import_ai_components()\n")
 cat("🔍 Assessment Functions: generate_import_assessment()\n")
 cat("💡 Use dry_run=TRUE to test migrations safely\n")
+

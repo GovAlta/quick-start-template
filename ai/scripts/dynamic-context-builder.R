@@ -890,12 +890,10 @@ get_file_map <- function() {
     "glossary" = file.path(config$project_dir, "glossary.md"), # Legacy alias
     "semiology" = "./philosophy/semiology.md",
     "pipeline" = "./pipeline.md",
-    "fides" = get_ai_file_path("FIDES.md"),
     "handoff" = "./analysis/handoff.md",
     "memory-hub" = file.path(config$memory_dir, "memory-hub.md"),
     "memory-human" = file.path(config$memory_dir, "memory-human.md"),
     "memory-ai" = file.path(config$memory_dir, "memory-ai.md"),
-    "project-map" = get_ai_file_path("project-map.md"),
     "input-manifest" = "./data-public/metadata/INPUT-manifest.md",
     "ua-admin-manifest" = "./data-public/metadata/ua-admin-manifest.md"
   )

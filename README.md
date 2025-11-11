@@ -52,7 +52,7 @@ This template now includes a **complete AI Support System** with:
    - **In VS Code**: `Ctrl+Shift+P` → "Tasks: Run Task" → "Show AI Context Status"
    - **In R Console**: 
    ```r
-   source('ai/scripts/ai-context-management.R')
+   source('ai/scripts/ai-migration-toolkit.R')
    show_context_status()
    ```
 
@@ -92,7 +92,7 @@ The template includes 11 specialized AI personas, each optimized for different r
 
 **In R Console:**
 ```r
-source('ai/scripts/ai-context-management.R')
+source('ai/scripts/ai-migration-toolkit.R')
 
 # Technical focus (minimal context)
 activate_developer()

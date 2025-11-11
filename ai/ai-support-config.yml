@@ -23,7 +23,7 @@ components:
     exportable: true
     storage_path: "personas/"
     dependencies: 
-      - "scripts/ai-context-management.R"
+      - "scripts/ai-migration-toolkit.R"
       - "core/base-instructions.md"
     personas_available:
       - developer
@@ -203,3 +203,4 @@ utilities:
     - "Guided installation wizard"
     - "Post-installation validation"
     - "Rollback mechanism"
+
