@@ -107,7 +107,7 @@ export_component <- function(component, source_path, export_path) {
 
 #' Export Personas
 export_personas <- function(source_path, export_path) {
-  personas_source <- file.path(source_path, "ai-support-system", "personas")
+  personas_source <- file.path(source_path, "./ai", "personas")
   personas_export <- file.path(export_path, "personas")
   
   if (!dir.exists(personas_source)) {
@@ -139,15 +139,15 @@ export_context_management <- function(source_path, export_path) {
   dir.create(context_export, recursive = TRUE, showWarnings = FALSE)
   
   # Core instructions
-  core_source <- file.path(source_path, "ai-support-system", "core")
+  core_source <- file.path(source_path, "./ai", "core")
   if (dir.exists(core_source)) {
     file.copy(core_source, context_export, recursive = TRUE, overwrite = TRUE)
   }
   
   # Context management script
   script_files <- c(
-    "ai-support-system/scripts/ai-context-management.R",
-    "ai-support-system/scripts/update-copilot-context.R",
+    "./ai/scripts/ai-context-management.R",
+    "./ai/scripts/update-copilot-context.R",
     "scripts/ai-context-management.R",
     "scripts/update-copilot-context.R"
   )
@@ -173,7 +173,7 @@ export_memory_system <- function(source_path, export_path) {
   
   # Memory functions script
   script_files <- c(
-    "ai-support-system/scripts/ai-memory-functions.R",
+    "./ai/scripts/ai-memory-functions.R",
     "scripts/ai-memory-functions.R"
   )
   
@@ -211,7 +211,7 @@ export_vscode_integration <- function(source_path, export_path) {
   dir.create(vscode_export, recursive = TRUE, showWarnings = FALSE)
   
   # Task template
-  task_template <- file.path(source_path, "ai-support-system", "vscode", "tasks-template.json")
+  task_template <- file.path(source_path, "./ai", "vscode", "tasks-template.json")
   if (file.exists(task_template)) {
     file.copy(task_template, file.path(vscode_export, "tasks-template.json"), overwrite = TRUE)
     return(list(success = TRUE, files = c("tasks-template.json")))
@@ -413,9 +413,9 @@ confirm_import_after_assessment <- function() {
 #' Validate Source Structure
 validate_source_structure <- function(source_path) {
   required_indicators <- c(
-    "ai-support-system",
-    "ai-support-system/ai-support-config.yml",
-    "ai-support-system/personas"
+    "./ai",
+    "./ai/ai-support-config.yml",
+    "./ai/personas"
   )
   
   for (indicator in required_indicators) {
@@ -455,7 +455,7 @@ analyze_target_structure <- function(target_path) {
   }
   
   # Check for existing AI support
-  ai_indicators <- c(".copilot-persona", "ai-support-system", "ai/personas")
+  ai_indicators <- c(".copilot-persona", "./ai", "ai/personas")
   for (indicator in ai_indicators) {
     if (file.exists(file.path(target_path, indicator)) || 
         dir.exists(file.path(target_path, indicator))) {

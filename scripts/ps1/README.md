@@ -15,7 +15,7 @@ This directory contains PowerShell scripts used for **workflow automation** in t
 ## Standards
 
 ⚠️ **IMPORTANT**: All `.ps1` files must follow ASCII-only standards (no emojis/Unicode). 
-See `ai/onboarding-ai.md` → "PowerShell Scripting Standards" for complete guidelines.
+See `.github/copilot-instructions.md` → "PowerShell Scripting Standards" for complete guidelines.
 
 ## Usage
 

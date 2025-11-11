@@ -8,30 +8,19 @@
 #
 # Author: GitHub Copilot (with human analyst)
 # Created: 2025-07-16
-# Updated: 2025-10-29 - Moved to ai-support-system structure and renamed from update-copilot-context.R
-# Location: ai-support-system/scripts/dynamic-context-builder.R
+# Updated: 2025-11-08 - Configuration-driven paths for portability
+# Location: ai/scripts/dynamic-context-builder.R
+
+# Load configuration utilities
+if (file.exists("ai/scripts/ai-config-utils.R")) {
+  source("ai/scripts/ai-config-utils.R")
+} else if (file.exists("./ai/scripts/ai-config-utils.R")) {
+  source("./ai/scripts/ai-config-utils.R")
+}
 
 update_copilot_instructions <- function(file_list) {
-  # Map friendly names to actual file paths
-  file_map <- list(
-    "onboarding-ai" = "./ai/onboarding-ai.md",
-    "project/mission" = "./ai/project/mission.md", 
-    "project/method" = "./ai/project/method.md",
-    "project/glossary" = "./ai/project/glossary.md",
-    "mission" = "./ai/project/mission.md",  # Legacy alias
-    "method" = "./ai/project/method.md",    # Legacy alias  
-    "glossary" = "./ai/project/glossary.md", # Legacy alias
-  "semiology" = "./philosophy/semiology.md",
-    "pipeline" = "./pipeline.md",
-    "fides" = "./ai/FIDES.md",
-    "handoff" = "./analysis/handoff.md",
-    "memory-hub" = "./ai/memory/memory-hub.md",
-    "memory-human" = "./ai/memory/memory-human.md",
-    "memory-ai" = "./ai/memory/memory-ai.md",
-    "project-map" = "./ai/project-map.md",
-    "input-manifest" = "./data-public/metadata/INPUT-manifest.md",
-    "ua-admin-manifest" = "./data-public/metadata/ua-admin-manifest.md"
-  )
+  # Map friendly names to actual file paths (configuration-driven)
+  file_map <- get_file_map()
   
   # Add agent persona if one is active
   active_persona_file <- get_active_persona_file()
@@ -111,25 +100,7 @@ add_to_instructions <- function(...) {
   file_list <- c(...)
   if (length(file_list) == 0) {
     message("Available file aliases:")
-    file_map <- list(
-      "onboarding-ai" = "./ai/onboarding-ai.md",
-      "project/mission" = "./ai/project/mission.md", 
-      "project/method" = "./ai/project/method.md",
-      "project/glossary" = "./ai/project/glossary.md",
-      "mission" = "./ai/project/mission.md",  # Legacy alias
-      "method" = "./ai/project/method.md",    # Legacy alias  
-      "glossary" = "./ai/project/glossary.md", # Legacy alias
-  "semiology" = "./philosophy/semiology.md",
-      "pipeline" = "./pipeline.md",
-      "fides" = "./ai/FIDES.md",
-    "handoff" = "./analysis/handoff.md",
-      "memory-hub" = "./ai/memory/memory-hub.md",
-      "memory-human" = "./ai/memory/memory-human.md",
-      "memory-ai" = "./ai/memory/memory-ai.md",
-      "project-map" = "./ai/project-map.md",
-      "input-manifest" = "./ai/INPUT-manifest.md",
-      "ua-admin-manifest" = "./ai/ua-admin-manifest.md"
-    )
+    file_map <- get_file_map()
     
     # Add agent persona if one is active
     active_persona_file <- get_active_persona_file()
@@ -140,7 +111,7 @@ add_to_instructions <- function(...) {
       exists_marker <- if (file.exists(file_map[[alias]])) "✓" else "✗"
       message("  ", exists_marker, " ", alias, " -> ", file_map[[alias]])
     }
-    message("\nUsage: add_to_instructions('onboarding-ai','mission', 'glossary')")
+    message("\nUsage: add_to_instructions('mission', 'method', 'glossary')")
   } else {
     update_copilot_instructions(file_list)
   }
@@ -148,11 +119,11 @@ add_to_instructions <- function(...) {
 
 # Quick alias for common combinations
 add_core_context <- function() {
-  add_to_instructions("onboarding-ai", "mission", "method")
+  add_to_instructions("mission", "method")
 }
 
 add_full_context <- function() {
-  add_to_instructions("onboarding-ai", "mission", "method", "glossary", "pipeline")
+  add_to_instructions("mission", "method", "glossary", "pipeline")
 }
 
 # Books of Ukraine specific context combinations
@@ -302,20 +273,7 @@ validate_context <- function() {
   component_list <- trimws(strsplit(components, ",")[[1]])
   
   # Map to file paths and check if files have been modified recently
-  file_map <- list(
-    "onboarding-ai" = "./ai/onboarding-ai.md",
-    "mission" = "./ai/mission.md", 
-    "method" = "./ai/method.md",
-    "glossary" = "./ai/glossary.md",
-  "semiology" = "./philosophy/semiology.md",
-    "pipeline" = "./pipeline.md",
-    "fides" = "./ai/FIDES.md",
-     "handoff" = "./analysis/handoff.md",
-    "memory-hub" = "./ai/memory/memory-hub.md",
-    "memory-human" = "./ai/memory/memory-human.md",
-    "memory-ai" = "./ai/memory/memory-ai.md",
-    "project-map" = "./ai/project-map.md"
-  )
+  file_map <- get_file_map()
   
   message("🔍 Checking context freshness...")
   stale_files <- c()
@@ -359,11 +317,11 @@ suggest_context <- function(analysis_phase = NULL) {
   }
   
   suggestions <- switch(analysis_phase,
-    "data-setup" = c("onboarding-ai", "pipeline", "cache-manifest", "input-manifest"),
-    "exploration" = c("onboarding-ai", "mission", "method", "glossary"),
+    "data-setup" = c("pipeline", "cache-manifest", "input-manifest"),
+    "exploration" = c("mission", "method", "glossary"),
     "modeling" = c("mission", "method", "semiology", "fides"),
     "memory" = c("memory-hub", "memory-human", "memory-ai"),
-    c("onboarding-ai", "mission", "method")
+    c("mission", "method")
   )
   
   message("💡 Suggested context for '", analysis_phase, "' phase:")
@@ -724,7 +682,7 @@ get_command_help <- function(command_name = NULL) {
 # PERSONA MANAGEMENT SYSTEM
 # ==============================================================================
 
-# Get the currently active persona file path
+# Get the currently active persona file path (configuration-driven)
 get_active_persona_file <- function() {
   persona_config <- "./.copilot-persona"
   
@@ -825,11 +783,12 @@ list_personas <- function(scan_directory = NULL) {
   message("")
   message("📁 DISCOVERED PERSONA FILES:")
   
-  # Scan for personas in the dedicated personas directory
-  personas_dir <- "./ai/personas/"
+  # Scan for personas in the dedicated personas directory (configuration-driven)
+  config <- read_ai_config()
+  personas_dir <- config$personas_dir
   legacy_dirs <- c(
     "./analysis/eda-2-casenote/",
-    "./ai/",
+    config$ai_dir,
     "./guides/",
     if (!is.null(scan_directory)) scan_directory
   )
@@ -901,7 +860,7 @@ deactivate_persona <- function() {
     message("🎭 Persona deactivated - returning to default context")
     
     # Load default context
-    add_to_instructions("onboarding-ai", "mission", "method")
+    add_to_instructions("mission", "method")
     return(invisible(TRUE))
   } else {
     message("ℹ️ No active persona to deactivate")
@@ -918,24 +877,25 @@ deactivate_persona <- function() {
 # Section 2: Active Persona (dynamic)  
 # Section 3: Additional Context (dynamic)
 
-# Get file mapping for context resolution
+# Get file mapping for context resolution (configuration-driven)
 get_file_map <- function() {
+  config <- read_ai_config()
+  
   list(
-    "onboarding-ai" = "./ai/onboarding-ai.md",
-    "project/mission" = "./ai/project/mission.md", 
-    "project/method" = "./ai/project/method.md",
-    "project/glossary" = "./ai/project/glossary.md",
-    "mission" = "./ai/project/mission.md",  # Legacy alias
-    "method" = "./ai/project/method.md",    # Legacy alias  
-    "glossary" = "./ai/project/glossary.md", # Legacy alias
+    "project/mission" = file.path(config$project_dir, "mission.md"), 
+    "project/method" = file.path(config$project_dir, "method.md"),
+    "project/glossary" = file.path(config$project_dir, "glossary.md"),
+    "mission" = file.path(config$project_dir, "mission.md"),  # Legacy alias
+    "method" = file.path(config$project_dir, "method.md"),    # Legacy alias  
+    "glossary" = file.path(config$project_dir, "glossary.md"), # Legacy alias
     "semiology" = "./philosophy/semiology.md",
     "pipeline" = "./pipeline.md",
-    "fides" = "./ai/FIDES.md",
+    "fides" = get_ai_file_path("FIDES.md"),
     "handoff" = "./analysis/handoff.md",
-    "memory-hub" = "./ai/memory/memory-hub.md",
-    "memory-human" = "./ai/memory/memory-human.md",
-    "memory-ai" = "./ai/memory/memory-ai.md",
-    "project-map" = "./ai/project-map.md",
+    "memory-hub" = file.path(config$memory_dir, "memory-hub.md"),
+    "memory-human" = file.path(config$memory_dir, "memory-human.md"),
+    "memory-ai" = file.path(config$memory_dir, "memory-ai.md"),
+    "project-map" = get_ai_file_path("project-map.md"),
     "input-manifest" = "./data-public/metadata/INPUT-manifest.md",
     "ua-admin-manifest" = "./data-public/metadata/ua-admin-manifest.md"
   )
@@ -973,7 +933,7 @@ generate_context_overview <- function(persona_name, additional_context,
     persona_configs <- list(
       "developer" = c(),
       "project-manager" = c("project/mission", "project/method", "project/glossary"), 
-      "casenote-analyst" = c("onboarding-ai")
+      "casenote-analyst" = c()
     )
     
     default_for_persona <- if (!is.null(persona_name)) persona_configs[[persona_name]] else c()
@@ -1033,47 +993,49 @@ generate_context_overview <- function(persona_name, additional_context,
   return(overview)
 }
 
-# Available personas with their context loading configurations
+# Available personas with their context loading configurations (configuration-driven)
 get_persona_configs <- function() {
+  config <- read_ai_config()
+  
   list(
     "default" = list(
-      file = "./ai/personas/default.md",
+      file = get_persona_path("default.md"),
       default_context = c()  # No default additional context
     ),
     "developer" = list(
-      file = "./ai/personas/developer.md",
+      file = get_persona_path("developer.md"),
       default_context = c()  # No default additional context
     ),
     "data-engineer" = list(
-      file = "./ai/personas/data-engineer.md",
+      file = get_persona_path("data-engineer.md"),
       default_context = c()  # No default additional context for focused data work
     ),
     "research-scientist" = list(
-      file = "./ai/personas/research-scientist.md",
+      file = get_persona_path("research-scientist.md"),
       default_context = c()  # No default additional context for focused analytical work
     ),
     "devops-engineer" = list(
-      file = "./ai/personas/devops-engineer.md",
+      file = get_persona_path("devops-engineer.md"),
       default_context = c()  # No default additional context for focused operational work
     ),
     "frontend-architect" = list(
-      file = "./ai/personas/frontend-architect.md",
+      file = get_persona_path("frontend-architect.md"),
       default_context = c()  # No default additional context for focused visualization work
     ),
     "project-manager" = list(
-      file = "./ai/personas/project-manager.md", 
+      file = get_persona_path("project-manager.md"), 
       default_context = c("project/mission", "project/method", "project/glossary")
     ),
     "casenote-analyst" = list(
-      file = "./ai/personas/casenote-analyst.md",
-      default_context = c("onboarding-ai")
+      file = get_persona_path("casenote-analyst.md"),
+      default_context = c()  # No default additional context
     ),
     "prompt-engineer" = list(
-      file = "./ai/personas/prompt-engineer.md",
+      file = get_persona_path("prompt-engineer.md"),
       default_context = c()  # Minimal context for focused prompt work
     ),
     "reporter" = list(
-      file = "./ai/personas/reporter.md",
+      file = get_persona_path("reporter.md"),
       default_context = c()  # On-demand context loading as needed
     )
   )
@@ -1519,7 +1481,8 @@ load_persona_from_file <- function(file_path, persona_name = NULL) {
 
 # Log file changes to logbook with timestamp, user, and change description
 log_file_change <- function(file_path, change_description = NULL) {
-  logbook_path <- "./ai/memory/memory-human.md"
+  config <- read_ai_config()
+  logbook_path <- file.path(config$memory_dir, "memory-human.md")
   
   # Validate inputs
   if (missing(file_path)) {
@@ -1617,7 +1580,7 @@ if (!exists("copilot_context_initialized")) {
   cat("📚 Available functions:\n")
   cat("  - analyze_project_status() # 🆕 COMPREHENSIVE project analysis + recommendations\n")
   cat("  - context_refresh()     # Quick status + refresh options\n")
-  cat("  - add_core_context()    # onboarding-ai, mission, method\n")
+  cat("  - add_core_context()    # mission, method\n")
   cat("  - add_data_context()    # cache-manifest, pipeline\n")
   cat("  - add_memory_context()  # memory-hub, memory-human, memory-ai\n")
   cat("  - add_full_context()    # comprehensive set\n")

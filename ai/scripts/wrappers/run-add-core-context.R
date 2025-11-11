@@ -3,7 +3,7 @@
 
 # Source the script that defines add_core_context()
 suppressPackageStartupMessages({
-  source("ai-support-system/scripts/dynamic-context-builder.R")
+  source("./ai/scripts/dynamic-context-builder.R")
 })
 
 if (!exists("add_core_context")) {

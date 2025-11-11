@@ -38,8 +38,8 @@ run_ai_support_tests <- function(individual_tests = TRUE, integration_tests = TR
     cat("\n>>> INDIVIDUAL COMPONENT TESTS <<<\n")
     
     # Test 1: Developer Integration
-    if (file.exists("./ai-support-system/scripts/tests/test-developer-integration.R")) {
-      source("./ai-support-system/scripts/tests/test-developer-integration.R")
+    if (file.exists("././ai/scripts/tests/test-developer-integration.R")) {
+      source("././ai/scripts/tests/test-developer-integration.R")
       test_results[["developer"]] <- run_test_safely(
         "Developer Integration Test", 
         test_developer_integration
@@ -47,8 +47,8 @@ run_ai_support_tests <- function(individual_tests = TRUE, integration_tests = TR
     }
     
     # Test 2: Project Manager Integration  
-    if (file.exists("./ai-support-system/scripts/tests/test-project-manager-integration.R")) {
-      source("./ai-support-system/scripts/tests/test-project-manager-integration.R")
+    if (file.exists("././ai/scripts/tests/test-project-manager-integration.R")) {
+      source("././ai/scripts/tests/test-project-manager-integration.R")
       test_results[["project_manager"]] <- run_test_safely(
         "Project Manager Integration Test",
         test_project_manager_integration
@@ -56,12 +56,12 @@ run_ai_support_tests <- function(individual_tests = TRUE, integration_tests = TR
     }
     
     # Test 3: Mini-EDA System
-    if (file.exists("./ai-support-system/scripts/tests/test-mini-eda-system.R")) {
-      source("./ai-support-system/scripts/tests/test-mini-eda-system.R")
+    if (file.exists("././ai/scripts/tests/test-mini-eda-system.R")) {
+      source("././ai/scripts/tests/test-mini-eda-system.R")
       test_results[["mini_eda"]] <- run_test_safely(
         "Mini-EDA System Test",
         function() {
-          source("./ai-support-system/scripts/tests/test-mini-eda-system.R")
+          source("././ai/scripts/tests/test-mini-eda-system.R")
           return(TRUE)
         }
       )
@@ -77,8 +77,8 @@ run_ai_support_tests <- function(individual_tests = TRUE, integration_tests = TR
       "Context Management Integration",
       function() {
         # Test AI context management loading
-        if (file.exists('./ai-support-system/scripts/ai-context-management.R')) {
-          source('./ai-support-system/scripts/ai-context-management.R')
+        if (file.exists('././ai/scripts/ai-context-management.R')) {
+          source('././ai/scripts/ai-context-management.R')
         } else {
           stop("AI context management script not found")
         }
@@ -102,8 +102,8 @@ run_ai_support_tests <- function(individual_tests = TRUE, integration_tests = TR
       "Memory System Integration",
       function() {
         # Test memory functions loading
-        if (file.exists('./ai-support-system/scripts/ai-memory-functions.R')) {
-          source('./ai-support-system/scripts/ai-memory-functions.R')
+        if (file.exists('././ai/scripts/ai-memory-functions.R')) {
+          source('././ai/scripts/ai-memory-functions.R')
         } else {
           stop("AI memory functions script not found")
         }

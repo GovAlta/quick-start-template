@@ -15,7 +15,7 @@ context_refresh()
 **Output**:
 ```
 🧠 Project Memory Status: Last updated 2025-08-02
-📁 Currently loaded: onboarding-ai, mission, method
+📁 Currently loaded: mission, method
 🔄 Quick actions available: add_core_context(), memory_status()
 ```
 
@@ -96,7 +96,7 @@ memory_status()
 **Output**:
 ```
 Currently loaded components:
-✅ onboarding-ai (updated 2025-08-01)
+✅ mission (updated 2025-08-01)
 ✅ mission (updated 2025-07-30)  
 ✅ method (updated 2025-08-02)
 ❌ Not loaded: dialects, semiology

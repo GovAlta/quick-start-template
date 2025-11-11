@@ -82,7 +82,6 @@ show_context_status()
 - `project/mission` - Project objectives and strategic vision
 - `project/method` - Research methodology and analytical approach  
 - `project/glossary` - Domain terminology and definitions
-- `onboarding-ai` - AI system introduction and orientation
 
 ### Analysis & Methodology
 - `philosophy/analysis-templatization.md` - Analysis framework and templates

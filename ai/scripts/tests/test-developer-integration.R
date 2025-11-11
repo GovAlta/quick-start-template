@@ -3,8 +3,8 @@
 
 # ---- load-system ----
 # Auto-detect AI support system location
-if (file.exists('./ai-support-system/scripts/ai-context-management.R')) {
-  source('./ai-support-system/scripts/ai-context-management.R')
+if (file.exists('././ai/scripts/ai-context-management.R')) {
+  source('././ai/scripts/ai-context-management.R')
 } else if (file.exists('./scripts/ai-context-management.R')) {
   source('./scripts/ai-context-management.R')
 } else {
