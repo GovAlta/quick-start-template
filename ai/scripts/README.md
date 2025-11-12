@@ -72,47 +72,51 @@ Lightweight, portable toolkit for activating AI personas and migrating AI suppor
 ---
 
 ### dynamic-context-builder.R
-**Comprehensive Context Management Engine**
+**3-Section Context Management System**
 
-The full-featured AI context management system for the current repository. Provides rich functionality for loading project files into AI context, managing personas with a 3-section system (Core Instructions + Active Persona + Additional Context), validating context freshness, and analyzing project status. This is the daily workflow tool with extensive features for context optimization.
+Clean, simplified AI context management system implementing a pure 3-section architecture:
+
+**Section 1:** Core AI Instructions (from `ai/core/base-instructions.md`) - manually edited in copilot-instructions.md  
+**Section 2:** Active Persona (from `ai/personas/*.md`) - loaded verbatim on activation  
+**Section 3:** Additional Context (project docs) - A) default per persona OR B) manually added
 
 **Key Functions:**
 
-*Context Loading:*
-- `add_to_instructions()` - Load specific context files
-- `add_core_context()` - Load mission + method
-- `add_full_context()` - Load comprehensive context set
-- `add_data_context()` - Load data pipeline context
-- `add_memory_context()` - Load memory system context
-- `remove_all_dynamic_instructions()` - Reset all dynamic content
+*Persona Management (Primary Interface):*
+- `activate_developer()` - Minimal context
+- `activate_project_manager()` - Full project context (mission, method, glossary)
+- `activate_data_engineer()` - Data pipeline specialist
+- `activate_research_scientist()` - Statistical analysis specialist
+- `activate_devops_engineer()` - Production deployment focus
+- `activate_frontend_architect()` - Visualization specialist
+- `activate_prompt_engineer()` - Prompt engineering specialist
+- `activate_reporter()` - Analytical storytelling
+- `activate_casenote_analyst()` - Domain-specific analyst
+- `activate_default()` - General assistance
 
 *Context Management:*
-- `context_refresh()` - Complete status scan with refresh options
-- `validate_context()` - Check if loaded files are current
-- `check_context_size()` - Monitor file size and performance impact
-- `suggest_context()` - Smart suggestions by analysis phase
+- `show_context_status()` - View current 3-section state
+- `add_context_file('path/file.md')` - Add document to Section 3
+- `remove_context_file('path/file.md')` - Remove document from Section 3
+- `list_available_md_files('pattern')` - Discover available markdown files
 
-*Persona System:*
+*Core Engine (Internal):*
+- `build_3_section_instructions()` - Assemble complete instruction file
 - `set_persona_with_defaults()` - Activate persona with default context
-- `set_persona()` - Custom persona activation
-- `list_personas()` - Show available personas and status
-- `get_current_persona()` - Check active persona
-- `deactivate_persona()` - Return to default
-- `build_3_section_instructions()` - Build complete instruction file
+- `get_file_map()` - File path resolution mapping
+- `get_persona_configs()` - Persona registry with defaults
+- `get_general_instructions()` - Read Section 1 from base-instructions.md
 
-*Project Analysis:*
-- `analyze_project_status()` - Comprehensive project health check
-- `get_command_help()` - Detailed command documentation
-
-*File Management:*
-- `log_file_change()` - Track file modifications in logbook
-- `add_context_file()` - Add file to Section 3 context
-- `remove_context_file()` - Remove file from Section 3
-- `list_available_md_files()` - Discover available context files
-
-**Version:** Configuration-driven paths for portability (Updated 2025-11-08)
+**Version:** 2.0.0 - Simplified pure 3-section architecture (2025-11-11)
 
 **Author:** GitHub Copilot (with human analyst)
+
+**Breaking Changes from v1.x:**
+- Removed OLD context management system (update_copilot_instructions, add_to_instructions, etc.)
+- Removed CACHE manifest functions (deprecated)
+- Removed project analysis functions (analyze_project_status, get_command_help)
+- Removed old persona system (set_persona, list_personas)
+- Section 1 now reads from ai/core/base-instructions.md instead of being hard-coded
 
 ---
 
