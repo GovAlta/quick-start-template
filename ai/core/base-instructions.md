@@ -24,6 +24,23 @@
 
 **When You Detect These**: Ask "Should I capture this intention/decision in the project memory?" and offer to use available memory management functions.
 
+## Quick Commands Reference
+
+**Common Operations - Direct Execution**
+| User Request | Command | Notes |
+|--------------|---------|-------|
+| Switch to [persona] | `Rscript -e "source('ai/scripts/ai-migration-toolkit.R'); activate_[persona]()"` | Replace [persona] with: developer, project_manager, data_engineer, research_scientist, devops_engineer, frontend_architect, prompt_engineer, reporter |
+| Add context file | `Rscript -e "source('ai/scripts/dynamic-context-builder.R'); add_context_file('[path/file]')"` | Use path relative to ai/ directory, omit .md extension |
+| Remove context file | `Rscript -e "source('ai/scripts/dynamic-context-builder.R'); remove_context_file('[path/file]')"` | Idempotent - safe to run even if file not present |
+| Check context status | `Rscript -e "source('ai/scripts/dynamic-context-builder.R'); show_context_status()"` | Shows Section 1-3 content summary |
+| List available files | `Rscript -e "source('ai/scripts/dynamic-context-builder.R'); list_available_md_files()"` | Discovers all .md files in ai/ directory |
+| Combined operation | `Rscript -e "source('ai/scripts/dynamic-context-builder.R'); activate_X(); add_context_file('path/file')"` | Chain multiple operations with semicolons |
+
+**File Path Conventions**
+- Files in `ai/` directory: reference without `ai/` prefix (e.g., `'project/glossary'` → `ai/project/glossary.md`)
+- Extension optional: both `'project/glossary'` and `'project/glossary.md'` work
+- Common paths: `project/mission`, `project/glossary`, `project/method`, `docs/commands`, `docs/context-system`, `docs/testing-guide`, `personas/[name]`
+
 ## Context & Automation Management
 
 **KEYPHRASE TRIGGERS**:
@@ -32,10 +49,30 @@
 - "**switch persona**" → Show persona switching options
 - When discussing new project areas → Suggest relevant context loading
 
+## Operation Efficiency Guidelines
+
+**Trust Idempotent Operations**
+- Functions like `add_context_file()`, `remove_context_file()`, and persona activation are idempotent
+- Execute directly without pre-checking existence or current state
+- Verify only after execution if needed for user confirmation
+
+**Minimize Verification Steps**
+- VS Code tasks automatically report success/failure - no need to check output separately
+- After running persona activation tasks, proceed immediately to next operation
+- Use single `show_context_status()` call post-operation rather than multiple pre-checks
+
+**When to Research vs Execute**
+- **Execute directly**: When command syntax is documented in Quick Commands Reference
+- **Research needed**: Only for truly novel operations not covered in documentation
+- **Exploration allowed**: When user explicitly asks "what files are available?" or similar discovery questions
+
 ## Response Guidelines
 
 - **Clarity**: Provide clear, actionable guidance appropriate to the user's expertise level
 - **Completeness**: Address the full scope of requests while staying focused
+- **Direct Execution**: When user requests match documented commands in Quick Commands Reference, execute immediately without preliminary research or verification
+- **Single-Step Operations**: Combine related operations (persona switch + context add) into single R command when possible
+- **Post-Operation Verification**: Use `show_context_status()` once after operation completion, not before
 - **Options**: Offer multiple approaches when appropriate ("Would you like a diagram?", "Should I show the code?")
 - **Traceability**: Surface uncertainties with evidence and suggest verification approaches
 - **Tool Usage**: Leverage available tools effectively rather than providing manual instructions
@@ -105,9 +142,14 @@ ai_memory_check()  # Review current memory state
 
 ### Context Management
 ```r
-# Dynamic context switching based on needs
-show_context_status()  # Current AI context state
-# Context automatically adapts based on active persona
+# Quick Actions (Execute These Directly)
+activate_developer()                    # Switch to Developer persona
+add_context_file('project/glossary')    # Add glossary to Section 3
+remove_context_file('project/mission')  # Remove mission from Section 3
+show_context_status()                   # Verify current state
+
+# Discovery (Use When Exploring)
+list_available_md_files()              # See all available context files
 ```
 
 ## Quality Assurance
