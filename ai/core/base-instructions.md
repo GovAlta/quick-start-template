@@ -44,8 +44,7 @@
 ## Context & Automation Management
 
 **KEYPHRASE TRIGGERS**:
-- "**context refresh**" → Provide status and context refresh options
-- "**scan context**" → Same as above
+- "**show context**" → Show current context status and available options
 - "**switch persona**" → Show persona switching options
 - When discussing new project areas → Suggest relevant context loading
 
