@@ -23,6 +23,7 @@ library(emmeans)   # for interpreting model results
 library(ggalluvial)
 library(janitor)  # tidy data
 library(testit)   # For asserting conditions meet expected patterns.
+library(fs)       # file system operations
 
 
 # ---- httpgd (VS Code interactive plots) ------------------------------------
@@ -71,61 +72,121 @@ if (!fs::dir_exists(prints_folder)) {fs::dir_create(prints_folder)}
 
 # ---- load-data --------------------------------------
 
-# Connect to the default Books of Ukraine database using custom functions
-# Note: Using 'main' database which contains analysis-ready tables created by Ellis pipeline
-# Note: The complete optimized database (books + ua admin + extra) 
-# Note: wide tables (those with a _wide suffix) are good for getting to know the data, but tables (without _wide suffix) are better for analysis.
-db <- connect_books_db("main")  # connects to the final analytical database
-# now let's inspect what data tables are available in the database
-db_tables_all <- DBI::dbListTables(db)
+# Load built-in datasets for template demonstration
+# In a real project, replace this with your data loading logic:
+# - Database connections using connect_books_db() or similar functions
+# - CSV/Excel file imports using read.csv(), readxl::read_xlsx(), etc.
+# - API data pulls using httr2, jsonlite, etc.
 
-# Keep only tables that do NOT end with the `_wide` suffix (we'll import these)
-db_tables <- db_tables_all[!grepl("_wide$", db_tables_all)]
+# MAIN DATASET: ds0 - Original data (the foundation of our analysis)
+ds0 <- mtcars
+ds0$car_name <- rownames(mtcars)  # Add car names as a column
+ds0$transmission <- factor(ds0$am, labels = c("Automatic", "Manual"))
+ds0$engine_type <- factor(ds0$vs, labels = c("V-shaped", "Straight"))
 
-# Read selected tables into a named list (tbls) and also assign sanitized names
-# into the global environment for convenience. This keeps the connection open
-# while we read data, then disconnects.
-message("Reading ", length(db_tables), " non-_wide tables from DB: ", paste(db_tables, collapse = ", "))
-tbls <- lapply(db_tables, function(t) {
-	message(" - ", t)
-	DBI::dbReadTable(db, t)
-})
-names(tbls) <- db_tables
+message("📊 Data loaded:")
+message("  - ds0 (original): mtcars with ", nrow(ds0), " observations")
+message("  - Additional datasets will be prepared in analysis chunks")
 
-# helper to convert table names into safe R object names
-sanitize_name <- function(x) {
-	nm <- gsub("[^A-Za-z0-9_]+", "_", x)
-	nm <- gsub("^([0-9])", "_\\1", nm)
-	nm
-}
-
-# assign into global env using sanitized names
-for (nm in db_tables) {
-	obj_name <- sanitize_name(nm)
-	assign(obj_name, tbls[[nm]], envir = .GlobalEnv)
-}
-# Close the database connection
-DBI::dbDisconnect(db)
-
-# Print concise summary of loaded tables
-cat("📊 Loaded tables (name: rows):\n")
-for (nm in db_tables) {
-	df <- tbls[[nm]]
-	rows <- if (is.data.frame(df)) nrow(df) else NA
-	cat("   -", nm, ":", rows, "rows\n")
-}
-
-# ---- inspect-data -------------------------------------
-ds_year %>% glimpse()
-source("./scripts/silent-mini-eda.R")
-silent_mini_eda("ds_year")
+# Optional: Use silent-mini-eda to get an overview of the main dataset
+# source("./scripts/silent-mini-eda.R")
+# silent_mini_eda("ds_year")
 
 # ---- tweak-data-0 -------------------------------------
+# Any additional data cleaning or transformation would go here
 
 # ---- inspect-data-0 -------------------------------------
+# Basic structure of loaded datasets
+cat("📊 Data Overview:\n")
+cat("  - ds0 (original):", nrow(ds0), "observations of", ncol(ds0), "variables\n")
+cat("  - Ready for analysis and derived dataset creation\n")
 
 # ---- inspect-data-1 -------------------------------------
+# Quick glimpse of the original data structure (ds0)
+cat("\n📋 DS0 Structure (Original Data):\n")
+ds0 %>% glimpse()
+
 
 # ---- inspect-data-2 -------------------------------------
+# Summary of key variables from ds0
+cat("\n📋 DS0 Key Variables Summary:\n")
+ds0 %>% 
+  select(mpg, hp, wt, cyl, transmission) %>%
+  summary() %>%
+  print()
 
 # ---- g1 -----------------------------------------------------
+# Visualization using original data (ds0) - individual vehicle relationships
+g1_weight_vs_mpg <- ds0 %>%
+  ggplot(aes(x = wt, y = mpg, color = factor(cyl), size = hp)) +
+  geom_point(alpha = 0.7) +
+  geom_smooth(method = "lm", se = FALSE, color = "gray30", linetype = "dashed") +
+  scale_color_manual(
+    values = c("4" = "steelblue", "6" = "forestgreen", "8" = "firebrick"),
+    name = "Cylinders"
+  ) +
+  scale_size_continuous(name = "Horsepower", range = c(2, 6)) +
+  labs(
+    title = "Vehicle Weight vs Fuel Efficiency",
+    subtitle = "Original data (ds0) - individual vehicle observations", 
+    x = "Weight (1000 lbs)",
+    y = "Miles per Gallon (MPG)"
+  ) +
+  theme_minimal()
+
+# Save to prints folder (following template protocol)
+ggsave(paste0(prints_folder, "g1_weight_vs_mpg.png"), 
+       g1_weight_vs_mpg, width = 8.5, height = 5.5, dpi = 300)
+# Note: R script saves to disk - print() added for Quarto display
+print(g1_weight_vs_mpg)
+
+
+# ---- g2-data-prep -------------------------------------------
+# Prepare data for g2 visualization - cylinder performance summary
+g2_data <- ds0 %>%
+  group_by(cyl) %>%
+  summarise(
+    # Key performance averages by cylinder count
+    avg_hp = mean(hp, na.rm = TRUE),
+    avg_mpg = mean(mpg, na.rm = TRUE),
+    avg_wt = mean(wt, na.rm = TRUE),
+    avg_disp = mean(disp, na.rm = TRUE),
+    
+    # Count of cars in each cylinder group
+    n_cars = n(),
+    
+    # Additional context
+    min_hp = min(hp),
+    max_hp = max(hp),
+    min_mpg = min(mpg),
+    max_mpg = max(mpg),
+    
+    .groups = "drop"
+  ) %>%
+  arrange(cyl)
+
+message("📊 g2_data prepared: ", nrow(g2_data), " cylinder groups")
+
+# ---- g2 -----------------------------------------------------
+# Visualization using g2_data - cylinder performance summary
+g2_cylinder_performance <- g2_data %>%
+  ggplot(aes(x = factor(cyl), y = avg_hp, fill = factor(cyl))) +
+  geom_col(alpha = 0.8) +
+  geom_text(aes(label = paste0(round(avg_hp, 0), " hp")), 
+            vjust = -0.3, size = 3.5) +
+  scale_fill_manual(values = c("4" = "steelblue", "6" = "forestgreen", "8" = "firebrick")) +
+  labs(
+    title = "Average Horsepower by Cylinder Count",
+    subtitle = "Data from g2_data - aggregated performance metrics", 
+    x = "Number of Cylinders",
+    y = "Average Horsepower",
+    fill = "Cylinders"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+# Save to prints folder (following template protocol)
+ggsave(paste0(prints_folder, "g2_cylinder_performance.png"), 
+       g2_cylinder_performance, width = 8.5, height = 5.5, dpi = 300)
+# Note: R script saves to disk - print() added for Quarto display
+print(g2_cylinder_performance)

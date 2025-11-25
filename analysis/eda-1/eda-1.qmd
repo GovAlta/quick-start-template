@@ -1,7 +1,7 @@
 ---
-title: "Publishing Trends in Ukraine: Exploratory Data Analysis"
-subtitle: "EDA 3 - Books of Ukraine Dataset"
-author: "Research Group FIDES"
+title: "Vehicle Performance Analysis: Exploratory Data Analysis"
+subtitle: "EDA 1 - Motor Trend Car Road Tests Dataset"
+author: "Analysis Team"
 format:
   html:
     page-layout: full
@@ -13,7 +13,7 @@ format:
     code-line-numbers: true
     self-contained: true
     embed-resources: true
-    keep-md: true
+    keep-md: false
 editor: visual
 editor_options: 
   chunk_output_type: console
@@ -21,14 +21,15 @@ editor_options:
 
 # Mission
 
-This document explores publishing trends in Ukraine since 2005, focusing on:
+This document demonstrates **data genealogy** within analytical workflows using the Motor Trend Car Road Tests dataset. We track data transformations through a clear lineage:
 
--   **Temporal patterns**: How publication volumes have changed over time
--   **Language dynamics**: Ukrainian vs Russian language publishing trends\
--   **Regional differences**: Geographic variations in publishing activity
--   **Genre patterns**: Subject matter evolution across time and regions
+-   **ds0 (Original)**: Raw mtcars data with 32 individual vehicle observations
+-   **g2_data (Derived)**: Cylinder-based performance summaries created in g2-data-prep chunk
+-   **Analytical Focus**: How engine cylinder count affects vehicle performance characteristics
 
-Following the **FIDES framework**, we develop analytical insights iteratively in the companion `.R` script before publishing them here for broader consumption.
+**Key Analytical Questions:** - How does cylinder count relate to horsepower and fuel efficiency? - What performance patterns emerge when we aggregate individual vehicles by engine configuration? - How can we track data transformations to maintain analytical transparency?
+
+Following the **template workflow**, we develop analytical insights iteratively in the companion `.R` script before publishing them here for broader consumption.
 
 # **Definition of Terms**
 
@@ -115,11 +116,16 @@ read_chunk("analysis/eda-1/eda-1.R") #This allows knitr to call chunks from R sc
 
 # Data
 
-This report operates with the **Books of Ukraine analytical database** - the final, analysis-ready dataset created by the Ellis pipeline.
+This report demonstrates **data genealogy** using the Motor Trend Car Road Tests dataset:
+
+-   **ds0**: Original `mtcars` data - 32 automobile performance measurements from 1973-74 Motor Trend magazine
+-   **g2_data**: Derived cylinder summary created in `g2-data-prep` chunk - aggregated performance metrics by engine cylinder count (4, 6, 8 cylinders)
+
+**Transformation Pipeline:** ds0 → g2-data-prep → g2_data → g2 visualization
 
 ```{r }
 #| label: load-data
-#| code-summary: Load data objects from Books of Ukraine database
+#| code-summary: Load original data (ds0) - g2_data will be created in g2-data-prep chunk
 #| warning: false
 #| code-fold: true
 #| cache: true
@@ -127,16 +133,15 @@ This report operates with the **Books of Ukraine analytical database** - the fin
 
 ```{r}
 #| label: inspect-data-0
-#| code-summary: Inspect loaded data tables structure
+#| code-summary: Data overview - ds0 structure
 #| code-fold: false
 #| eval: true
 #| cache: true
-# Summary of available tables will be shown here
 ```
 
 ```{r}
 #| label: inspect-data-1
-#| code-summary: Examine data dimensions and key variables
+#| code-summary: Original dataset structure (ds0)
 #| code-fold: false
 #| eval: true
 #| cache: true
@@ -144,7 +149,7 @@ This report operates with the **Books of Ukraine analytical database** - the fin
 
 ```{r}
 #| label: inspect-data-2
-#| code-summary: Quick data quality checks
+#| code-summary: Key variables summary from ds0
 #| code-fold: false
 #| eval: true
 #| cache: true
@@ -152,17 +157,44 @@ This report operates with the **Books of Ukraine analytical database** - the fin
 
 # Analysis
 
-## Publishing Volume Trends
+## Data Genealogy Visualization
 
-### Overall Publication Patterns
+### Individual Vehicle Analysis (ds0)
+
+This visualization uses our **original dataset (ds0)** to explore relationships between individual vehicle characteristics:
 
 ```{r}
 #| label: g1
-#| code-summary: Annual publication volume trends
+#| code-summary: Weight vs MPG scatter plot using original data (ds0)
 #| code-fold: true
 #| eval: true
 #| cache: true
-#| fig-cap: "Total number of unique books published in Ukraine by year (2005-2023)"
+#| fig-cap: "Scatter plot of vehicle weight vs fuel efficiency - original data (ds0) with individual observations"
+```
+
+### Data Preparation for Aggregated Analysis
+
+First, we prepare the data for our cylinder analysis:
+
+```{r}
+#| label: g2-data-prep
+#| code-summary: Prepare g2_data - cylinder-based performance summary
+#| code-fold: true
+#| eval: true
+#| cache: true
+```
+
+### Aggregated Performance Analysis (g2_data)
+
+This visualization uses our **derived dataset (g2_data)** created above to show summarized performance metrics:
+
+```{r}
+#| label: g2
+#| code-summary: Average horsepower by cylinder count using g2_data
+#| code-fold: true
+#| eval: true
+#| cache: true
+#| fig-cap: "Bar chart showing average horsepower by engine cylinder count - g2_data aggregation"
 ```
 
 <!-- As we develop more graphs in the R script, we'll add corresponding chunks here -->
