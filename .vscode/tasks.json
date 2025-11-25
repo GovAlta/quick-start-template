@@ -7,7 +7,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-migration-toolkit.R'); activate_default(); show_context_status()"
+        "source('ai/scripts/dynamic-context-builder.R'); activate_default(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -19,7 +19,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-migration-toolkit.R'); activate_developer(); show_context_status()"
+        "source('ai/scripts/dynamic-context-builder.R'); activate_developer(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -31,7 +31,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-migration-toolkit.R'); activate_data_engineer(); show_context_status()"
+        "source('ai/scripts/dynamic-context-builder.R'); activate_data_engineer(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -43,7 +43,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-migration-toolkit.R'); activate_research_scientist(); show_context_status()"
+        "source('ai/scripts/dynamic-context-builder.R'); activate_research_scientist(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -55,7 +55,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-migration-toolkit.R'); activate_devops_engineer(); show_context_status()"
+        "source('ai/scripts/dynamic-context-builder.R'); activate_devops_engineer(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -67,7 +67,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-migration-toolkit.R'); activate_frontend_architect(); show_context_status()"
+        "source('ai/scripts/dynamic-context-builder.R'); activate_frontend_architect(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -79,7 +79,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-migration-toolkit.R'); activate_project_manager(); show_context_status()"
+        "source('ai/scripts/dynamic-context-builder.R'); activate_project_manager(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -91,7 +91,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-migration-toolkit.R'); activate_prompt_engineer(); show_context_status()"
+        "source('ai/scripts/dynamic-context-builder.R'); activate_prompt_engineer(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -103,7 +103,19 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-migration-toolkit.R'); activate_reporter(); show_context_status()"
+        "source('ai/scripts/dynamic-context-builder.R'); activate_reporter(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Activate Grapher Persona",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai/scripts/dynamic-context-builder.R'); activate_grapher(); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -115,7 +127,7 @@
       "command": "Rscript",
       "args": [
         "-e",
-        "source('ai/scripts/ai-migration-toolkit.R'); show_context_status()"
+        "source('ai/scripts/dynamic-context-builder.R'); show_context_status()"
       ],
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
@@ -130,6 +142,19 @@
         "source('ai/scripts/tests/run-all-tests.R')"
       ],
       "group": "test",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Render EDA-1 Quarto Report",
+      "detail": "Render EDA-1 analysis report (eda-1.qmd) with chunk integration",
+      "type": "process",
+      "command": "quarto",
+      "args": [
+        "render",
+        "analysis/eda-1/eda-1.qmd"
+      ],
+      "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
       "problemMatcher": []
     }

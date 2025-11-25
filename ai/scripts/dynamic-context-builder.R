@@ -114,6 +114,10 @@ get_persona_configs <- function() {
     "reporter" = list(
       file = get_persona_path("reporter.md"),
       default_context = c()
+    ),
+    "grapher" = list(
+      file = get_persona_path("grapher.md"),
+      default_context = c("project/glossary", "project/mission", "project/method")
     )
   )
 }
@@ -196,7 +200,7 @@ generate_context_overview <- function(persona_name, additional_context,
                 "",
                 "**Personas Available:**",
                 "developer, project_manager, data_engineer, research_scientist,",
-                "devops_engineer, frontend_architect, prompt_engineer, reporter",
+                "devops_engineer, frontend_architect, prompt_engineer, reporter, grapher",
                 "",
                 "---",
                 ""
@@ -625,6 +629,10 @@ activate_prompt_engineer <- function() {
 
 activate_reporter <- function() {
   set_persona_with_defaults("reporter")
+}
+
+activate_grapher <- function() {
+  set_persona_with_defaults("grapher")
 }
 
 # ==============================================================================
