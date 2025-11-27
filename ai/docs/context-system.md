@@ -6,6 +6,14 @@ The AI context management system provides structured control over AI assistant c
 
 ## 📋 System Architecture
 
+Context management comes down to controlling the text in the .github/copilot-instructions.md file (system prompt), so that you chat input (user prompt) has sufficient context to generate high-quality responses. The copilot-instructions.md file is divided into three main sections:
+
+- Section 1: Fundamentals of AI behavior (conductor)
+- Section 2: Current active persona (soloist)
+- Section 3: Custom context files (orchestra)
+
+When switching personas or adding/removing context files, the copilot-instructions.md file is automatically regenerated to reflect the new configuration. We also create a context overview header to see current configuration at a glance when we open the file. 
+
 ### Context Overview Header
 - **Purpose**: Real-time visibility into loaded context and file sizes
 - **Content**: Section breakdown with KB/token counts, active files, management commands
@@ -27,54 +35,42 @@ The AI context management system provides structured control over AI assistant c
 - **Content**: Persona default files + manually added files
 - **Examples**: Project documentation, analysis workflows, methodology files
 
-## 🚀 Quick Start
+## 🎭 AI Persona System
 
-### Basic Persona Switching
-```r
-# Load system
-source('ai/scripts/ai-migration-toolkit.R')
+This project template includes 9 specialized AI personas, each optimized for different research tasks:
 
-# Activate personas with their defaults
-activate_developer()         # Technical focus, minimal context
-activate_project_manager()   # Strategic oversight + mission/method/glossary  
+### **Core Personas**
+- **🔧 Developer** - Technical infrastructure and reproducible code
+- **📊 Project Manager** - Strategic oversight and coordination
+- **🔬 Research Scientist** - Statistical analysis and methodology
 
-# Check current status
-show_context_status()
-```
+### **Specialized Personas**  
+- **💡 Prompt Engineer** - AI optimization and prompt design
+- **⚡ Data Engineer** - Data pipelines and quality assurance
+- **📈 Grapher** - Data visualization and display of informatioin
+- **📝 Reporter** - Analysis communication and storytelling
+- **🚀 DevOps Engineer** - Deployment and operational excellence
+- **🎨 Frontend Architect** - User interfaces and visualization
 
-### Context File Management
-```r
-# Add specific context files
-add_context_file('./ai/project/mission.md')
-add_context_file('./analysis/eda-1/README.md')
+Every time you switch persona, the copilot-instructions.md file is regenerated to load the new persona file into Section 2, along with that persona's default context files in Section 3.
 
-# Remove context files
-remove_context_file('./ai/project/mission.md')
+You can switch between personas in VSCode:
+- `Ctrl+Shift+P` → "Tasks: Run Task" → "Activate [Persona Name] Persona"  
+- Instruct the chat agent to switch to the specific persona you name  
 
-# Discover available files
-list_available_md_files()           # All .md files
-list_available_md_files('guide')    # Files matching pattern
+You can define persona's default context in `get_persona_configs()` function of `ai/scripts/dynamic-context-builder.R`:
 
-# Remove context files
-remove_context_file('philosophy/analysis-templatization.md')
+You can define what context files get a shortcut alias, so they can be integrated into the chat calls easily. See `get_file_map()` function in `ai/scripts/dynamic-context-builder.R`.
 
-# Check what's loaded
-show_context_status()
-```
+### Built-In Context Overview
+Every copilot-instructions.md file starts with a **Context Configuration Overview** that provides:
 
-## 🎭 Available Personas
+- **Real-time metrics**: Total size (KB), line counts, generation timestamp
+- **Section breakdown**: Individual size and status for each section
+- **File inventory**: Detailed listing of all loaded context files with individual sizes
 
-### Developer (Default)
-- **Focus**: Technical implementation, system architecture, reproducible research
-- **Default Context**: None (minimal context for focused technical work)
-- **Use For**: Backend development, R programming, system maintenance
-- **Activation**: `activate_developer()`
+This overview updates automatically every time you change persona or context, giving you immediate visibility into your current configuration without needing to run separate commands.
 
-### Project Manager
-- **Focus**: Strategic oversight, project alignment, stakeholder coordination
-- **Default Context**: Project mission, methodology, glossary
-- **Use For**: Planning, requirements analysis, project coordination
-- **Activation**: `activate_project_manager()`
 
 ## 📚 Context File Categories
 
@@ -83,121 +79,19 @@ show_context_status()
 - `project/method` - Research methodology and analytical approach  
 - `project/glossary` - Domain terminology and definitions
 
-### Analysis & Methodology
+You can name any specific file in the projec to the dynamic context (Section 3) by specifying its path (e.g., `add_context_file('project/mission')`) or by looking it by with `list_available_md_files()` request. 
+
+
+### Research Design 
+
 - `philosophy/analysis-templatization.md` - Analysis framework and templates
-- `philosophy/semiology.md` - Methodological foundations
 - `philosophy/causal-inference.md` - Causal analysis principles
+- `philosophy/semiology.md` - Methodological foundations
+- `philosophy/threats-to-validity.md` - research design for quasi-experimental studies
 
-### Implementation Documentation
-- `simulation/implementation.md` - System implementation and architecture
-- `simulation/README.md` - Synthetic data generation overview
-- `analysis/*/README.md` - Analysis-specific documentation
-
-### Memory & Documentation
-- `memory-hub` - Central memory coordination
+### Memory 
 - `memory-human` - Human project memory
 - `memory-ai` - AI learning and insights
 
-## 🔧 Advanced Features
 
-### File Discovery and Search
-```r
-# Find all guides
-list_available_md_files('guide')
 
-# Find philosophy files  
-list_available_md_files('philosophy')
-
-# Find analysis documentation
-list_available_md_files('analysis')
-```
-
-### Context Status Monitoring
-```r
-show_context_status()
-# Shows:
-# - Section 1: Always present (general instructions) 
-# - Section 2: Current active persona
-# - Section 3: All additional context files with paths
-# - Total file size and line count
-```
-
-### Built-In Context Overview
-Every copilot-instructions.md file starts with a **Context Configuration Overview** that provides:
-
-- **Real-time metrics**: Total size (KB), line counts, generation timestamp
-- **Section breakdown**: Individual size and status for each section
-- **File inventory**: Detailed listing of all loaded context files with individual sizes
-- **Quick commands**: Ready-to-use R commands for context management
-
-This overview updates automatically every time you change persona or context, giving you immediate visibility into your current configuration without needing to run separate commands.
-
-### Persona Defaults Configuration
-Each persona defines its default context in `get_persona_configs()`:
-```r
-"project-manager" = list(
-  file = "./ai/personas/project-manager.md",
-  default_context = c("project/mission", "project/method", "project/glossary")
-)
-```
-
-## 🎯 Usage Patterns
-
-### Planning Session
-```r
-activate_project_manager()  # Strategic oversight
-add_context_file('philosophy/analysis-templatization.md')  # Analysis framework
-add_context_file('analysis/README.md')  # Implementation guidance
-```
-
-### System Development Session  
-```r
-activate_developer()  # Technical focus
-add_context_file('simulation/README.md')  # System overview
-# Keep context minimal for focused technical work
-```
-
-### Cross-Functional Coordination
-```r
-activate_project_manager()  # Strategic oversight (loads mission/method/glossary automatically)
-add_context_file('memory-human')  # Project history
-add_context_file('philosophy/semiology.md')  # Methodological foundation
-```
-
-### Right-sizing Context
-
-Use `show_context_status()` to monitor size vs. relevance. Generally:
-- Smaller context → faster, more focused technical work
-- Larger context → broader understanding for planning and coordination
-
-## 🛠️ System Integration
-
-### VS Code Integration
-- Context changes update `.github/copilot-instructions.md` automatically
-- GitHub Copilot reads updated instructions immediately
-- No restart required; changes take effect instantly
-
-### Backward Compatibility
-- All existing `activate_*()` functions continue to work
-- Legacy file aliases maintained (e.g., `mission` → `project/mission`)
-- Gradual migration supported without breaking workflows
-
-### File Organization
-The system respects the project's organized structure:
-```
-ai/
-├── personas/     # Section 2 content
-├── project/      # Strategic context for Section 3
-└── [memory & other files]  # Available for Section 3
-
-philosophy/       # Methodological context for Section 3
-simulation/       # Implementation context for Section 3  
-analysis/         # Analysis workflow context for Section 3
-```
-
-## 📖 Next Steps
-
-1. **Experiment with combinations**: Try different persona + context combinations for your tasks
-2. **Create presets**: Save frequently used context combinations
-3. **Monitor performance**: Use `show_context_status()` to optimize context size
-4. **Extend personas**: Create custom personas for specialized workflows

@@ -40,21 +40,13 @@ get_file_map <- function() {
     "project/mission" = file.path(config$project_dir, "mission.md"), 
     "project/method" = file.path(config$project_dir, "method.md"),
     "project/glossary" = file.path(config$project_dir, "glossary.md"),
-    
-    # Legacy aliases
-    "mission" = file.path(config$project_dir, "mission.md"),
-    "method" = file.path(config$project_dir, "method.md"),  
-    "glossary" = file.path(config$project_dir, "glossary.md"),
-    
-    # Memory system files
-    "memory-hub" = file.path(config$memory_dir, "memory-hub.md"),
+      
+    # Memory system files (ai/memory/)
     "memory-human" = file.path(config$memory_dir, "memory-human.md"),
     "memory-ai" = file.path(config$memory_dir, "memory-ai.md"),
     
-    # Other project files
+    # Other project files (examples)
     "semiology" = "./philosophy/semiology.md",
-    "pipeline" = "./pipeline.md",
-    "handoff" = "./analysis/handoff.md",
     "input-manifest" = "./data-public/metadata/INPUT-manifest.md",
     "ua-admin-manifest" = "./data-public/metadata/ua-admin-manifest.md"
   )
@@ -102,10 +94,6 @@ get_persona_configs <- function() {
     "project-manager" = list(
       file = get_persona_path("project-manager.md"), 
       default_context = c("project/mission", "project/method", "project/glossary")
-    ),
-    "casenote-analyst" = list(
-      file = get_persona_path("casenote-analyst.md"),
-      default_context = c()
     ),
     "prompt-engineer" = list(
       file = get_persona_path("prompt-engineer.md"),
@@ -186,26 +174,7 @@ generate_context_overview <- function(persona_name, additional_context,
     }
   }
   
-  overview <- c(overview, "",
-                "## 📁 Available Context Files",
-                "**Project Documentation:**",
-                "- `project/mission` - Project objectives and scope",
-                "- `project/glossary` - Terminology definitions",
-                "- `project/method` - Methodological approach",
-                "",
-                "**Technical Documentation:**",
-                "- `docs/commands` - Command reference guide",
-                "- `docs/context-system` - Context management details",
-                "- `docs/testing-guide` - Testing procedures",
-                "",
-                "**Personas Available:**",
-                "developer, project_manager, data_engineer, research_scientist,",
-                "devops_engineer, frontend_architect, prompt_engineer, reporter, grapher",
-                "",
-                "---",
-                ""
-  )
-  
+ 
   return(overview)
 }
 

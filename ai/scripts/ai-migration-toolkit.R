@@ -161,6 +161,12 @@ activate_reporter <- function(project_root = ".") {
   cat("✅ Switched to Reporter persona with analytical storytelling focus\n")
 }
 
+activate_grapher <- function(project_root = ".") {
+  cat("🔄 Switching to Grapher persona...\n")
+  set_persona_with_autodetect("grapher", project_root)
+  cat("✅ Switched to Grapher persona with data visualization focus\n")
+}
+
 # Function to activate default persona (minimal context)
 activate_default <- function(project_root = ".") {
   cat("🔄 Switching to Default persona...\n")
