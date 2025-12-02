@@ -229,6 +229,7 @@ show_context_status <- function(project_root = ".") {
   cat("  activate_project_manager() - Strategic oversight (full context)\n")
   cat("  activate_prompt_engineer() - RICECO framework specialist (specialized context)\n")
   cat("  activate_reporter()        - Analytical storytelling (on-demand context)\n")
+  cat("  activate_grapher()         - Data visualization focus\n")
   cat("  show_context_status()      - Show this status\n")
 }
 
