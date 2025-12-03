@@ -48,8 +48,8 @@ get_file_map <- function() {
     # Other project files (examples)
     "semiology" = "./philosophy/semiology.md",
     "input-manifest" = "./data-public/metadata/INPUT-manifest.md",
-    "ua-admin-manifest" = "./data-public/metadata/ua-admin-manifest.md"
-  )
+    "rdb-manifest" = "./data-public/metadata/RDB-manifest.md",
+    "cache-manifest" = "./data-public/metadata/CACHE-manifest.md"  )
 }
 
 # Resolve file path using file map or direct path
@@ -77,7 +77,7 @@ get_persona_configs <- function() {
     ),
     "data-engineer" = list(
       file = get_persona_path("data-engineer.md"),
-      default_context = c()
+      default_context = c("cache-manifest","project/glossary")
     ),
     "research-scientist" = list(
       file = get_persona_path("research-scientist.md"),
@@ -316,6 +316,10 @@ set_persona_with_defaults <- function(persona_name) {
   if (length(content) > 0 && !endsWith(content[length(content)], "\n")) {
     cat("\n", file = instructions_path, append = TRUE)
   }
+  
+  # Update .copilot-persona file to track active persona
+  persona_file <- ".copilot-persona"
+  writeLines(persona_name, persona_file)
   
   message("✅ Persona activated: ", persona_name)
   message("📄 Total lines: ", length(content), " | Size: ", round(sum(nchar(content))/1024, 1), " KB")
