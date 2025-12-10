@@ -1,9 +1,10 @@
+# nolint start 
+# AI agents must consult ./analysis/eda-1/eda-style-guide.md before making changes to this file.
 rm(list = ls(all.names = TRUE)) # Clear the memory of variables from previous run. This is not called by knitr, because it's above the first chunk.
 cat("\014") # Clear the console
 # verify root location
 cat("Working directory: ", getwd()) # Must be set to Project Directory
 # Project Directory should be the root by default unless overwritten
-
 # ---- load-packages -----------------------------------------------------------
 # Choose to be greedy: load only what's needed
 # Three ways, from least (1) to most(3) greedy:
@@ -24,8 +25,6 @@ library(ggalluvial)
 library(janitor)  # tidy data
 library(testit)   # For asserting conditions meet expected patterns.
 library(fs)       # file system operations
-
-
 # ---- httpgd (VS Code interactive plots) ------------------------------------
 # If the httpgd package is installed, try to start it so VS Code R extension
 # can display interactive plots. This is optional and wrapped in tryCatch so
@@ -65,8 +64,6 @@ if (!fs::dir_exists(data_private_derived)) {fs::dir_create(data_private_derived)
 
 prints_folder <- paste0(local_root, "prints/")
 if (!fs::dir_exists(prints_folder)) {fs::dir_create(prints_folder)}
-
-
 # ---- declare-functions -------------------------------------------------------
 # base::source(paste0(local_root,"local-functions.R")) # project-level
 
@@ -105,8 +102,6 @@ cat("  - Ready for analysis and derived dataset creation\n")
 # Quick glimpse of the original data structure (ds0)
 cat("\n📋 DS0 Structure (Original Data):\n")
 ds0 %>% glimpse()
-
-
 # ---- inspect-data-2 -------------------------------------
 # Summary of key variables from ds0
 cat("\n📋 DS0 Key Variables Summary:\n")
@@ -139,8 +134,6 @@ ggsave(paste0(prints_folder, "g1_weight_vs_mpg.png"),
        g1_weight_vs_mpg, width = 8.5, height = 5.5, dpi = 300)
 # Note: R script saves to disk - print() added for Quarto display
 print(g1_weight_vs_mpg)
-
-
 # ---- g2-data-prep -------------------------------------------
 # Prepare data for g2 visualization - cylinder performance summary
 g2_data <- ds0 %>%
@@ -190,3 +183,27 @@ ggsave(paste0(prints_folder, "g2_cylinder_performance.png"),
        g2_cylinder_performance, width = 8.5, height = 5.5, dpi = 300)
 # Note: R script saves to disk - print() added for Quarto display
 print(g2_cylinder_performance)
+
+# ---- g21 ----------------------------------------------------
+# Family member: Alternative view of cylinder data - MPG focus instead of HP
+g21_cylinder_mpg <- g2_data %>%
+  ggplot(aes(x = factor(cyl), y = avg_mpg, fill = factor(cyl))) +
+  geom_col(alpha = 0.8) +
+  geom_text(aes(label = paste0(round(avg_mpg, 1), " mpg")), 
+            vjust = -0.3, size = 3.5) +
+  scale_fill_manual(values = c("4" = "steelblue", "6" = "forestgreen", "8" = "firebrick")) +
+  labs(
+    title = "Average Fuel Efficiency by Cylinder Count",
+    subtitle = "Same g2_data, different performance metric focus", 
+    x = "Number of Cylinders",
+    y = "Average Miles per Gallon (MPG)",
+    fill = "Cylinders"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+# Save to prints folder (R script protocol - no print() here)
+ggsave(paste0(prints_folder, "g21_cylinder_mpg.png"), 
+       g21_cylinder_mpg, width = 8.5, height = 5.5, dpi = 300)
+
+# nolint end

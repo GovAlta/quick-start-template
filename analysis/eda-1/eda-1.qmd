@@ -21,13 +21,18 @@ editor_options:
 
 # Mission
 
-This document demonstrates **data genealogy** within analytical workflows using the Motor Trend Car Road Tests dataset. We track data transformations through a clear lineage:
+This document demonstrates **data genealogy** and **graph families** within analytical workflows using the Motor Trend Car Road Tests dataset. We track data transformations through a clear lineage:
 
 -   **ds0 (Original)**: Raw mtcars data with 32 individual vehicle observations
 -   **g2_data (Derived)**: Cylinder-based performance summaries created in g2-data-prep chunk
--   **Analytical Focus**: How engine cylinder count affects vehicle performance characteristics
+-   **Graph Family g2x**: Multiple visualizations (g2, g21, g22...) that all build from the same g2_data ancestor
+-   **Analytical Focus**: How engine cylinder count affects different aspects of vehicle performance
 
-**Key Analytical Questions:** - How does cylinder count relate to horsepower and fuel efficiency? - What performance patterns emerge when we aggregate individual vehicles by engine configuration? - How can we track data transformations to maintain analytical transparency?
+**Key Analytical Questions:** 
+- How does cylinder count relate to horsepower? (g2 visualization)
+- How does cylinder count relate to fuel efficiency? (g21 visualization) 
+- What other performance patterns emerge from the same cylinder-based data preparation?
+- How does the graph family pattern help isolate data preparation while enabling multiple analytical perspectives?
 
 Following the **template workflow**, we develop analytical insights iteratively in the companion `.R` script before publishing them here for broader consumption.
 
@@ -116,12 +121,14 @@ read_chunk("analysis/eda-1/eda-1.R") #This allows knitr to call chunks from R sc
 
 # Data
 
-This report demonstrates **data genealogy** using the Motor Trend Car Road Tests dataset:
+This report demonstrates **data genealogy** and **graph families** using the Motor Trend Car Road Tests dataset:
 
 -   **ds0**: Original `mtcars` data - 32 automobile performance measurements from 1973-74 Motor Trend magazine
 -   **g2_data**: Derived cylinder summary created in `g2-data-prep` chunk - aggregated performance metrics by engine cylinder count (4, 6, 8 cylinders)
 
-**Transformation Pipeline:** ds0 → g2-data-prep → g2_data → g2 visualization
+**Graph Family Pattern:** 
+- ds0 → g2-data-prep → g2_data → **multiple visualizations** (g2, g21, g22...)
+- **Key insight**: All family members share the same data preparation but explore different aspects of cylinder-based performance
 
 ```{r }
 #| label: load-data
@@ -195,6 +202,22 @@ This visualization uses our **derived dataset (g2_data)** created above to show 
 #| eval: true
 #| cache: true
 #| fig-cap: "Bar chart showing average horsepower by engine cylinder count - g2_data aggregation"
+```
+
+## Graph Family g2x: Different Perspectives on Cylinder Performance
+
+### Alternative View: Fuel Efficiency Focus (g21)
+
+This visualization uses the **same g2_data** as the previous chart, but focuses on fuel efficiency instead of horsepower. This demonstrates the graph family concept - same data preparation, different analytical perspectives:
+
+```{r}
+#| label: g21
+#| code-summary: Average fuel efficiency by cylinder count using g2_data
+#| code-fold: true
+#| eval: true
+#| cache: true
+#| fig-cap: "Fuel efficiency by cylinder count - same g2_data ancestor, different performance metric focus"
+print(g21_cylinder_mpg)  # Print for HTML rendering in Quarto
 ```
 
 <!-- As we develop more graphs in the R script, we'll add corresponding chunks here -->
