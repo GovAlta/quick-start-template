@@ -1,6 +1,6 @@
-How to enable interactive plotting for EDA-3
+How to enable interactive plotting for EDA-1
 
-This folder contains the EDA-3 analysis script and Quarto document. For interactive plotting in VS Code we recommend using the `httpgd` device.
+This folder contains the EDA-1 analysis script and Quarto document. For interactive plotting in VS Code we recommend using the `httpgd` device. (Note: on enterprise machines, where you need admin rights to install software, httpgd will not work - it requeres Rtools to compile from source.)
 
 Quick steps (Windows)
 

@@ -28,11 +28,11 @@ This document demonstrates **data genealogy** and **graph families** within anal
 -   **Graph Family g2x**: Multiple visualizations (g2, g21, g22...) that all build from the same g2_data ancestor
 -   **Analytical Focus**: How engine cylinder count affects different aspects of vehicle performance
 
-**Key Analytical Questions:** 
-- How does cylinder count relate to horsepower? (g2 visualization)
-- How does cylinder count relate to fuel efficiency? (g21 visualization) 
-- What other performance patterns emerge from the same cylinder-based data preparation?
-- How does the graph family pattern help isolate data preparation while enabling multiple analytical perspectives?
+**Key Analytical Questions:**
+ - How does cylinder count relate to horsepower? (g2 visualization) 
+ - How does cylinder count relate to fuel efficiency? (g21 visualization) 
+ - What other performance patterns emerge from the same cylinder-based data preparation? 
+ - How does the graph family pattern help isolate data preparation while enabling multiple analytical perspectives?
 
 Following the **template workflow**, we develop analytical insights iteratively in the companion `.R` script before publishing them here for broader consumption.
 
@@ -127,8 +127,8 @@ This report demonstrates **data genealogy** and **graph families** using the Mot
 -   **g2_data**: Derived cylinder summary created in `g2-data-prep` chunk - aggregated performance metrics by engine cylinder count (4, 6, 8 cylinders)
 
 **Graph Family Pattern:** 
-- ds0 → g2-data-prep → g2_data → **multiple visualizations** (g2, g21, g22...)
-- **Key insight**: All family members share the same data preparation but explore different aspects of cylinder-based performance
+- ds0 → g2-data-prep → g2_data → **multiple visualizations** (g2, g21, g22...) 
+- **Key insight**: All family members share the same data preparation but explore different aspects of monothematic idea (e.g  cylinder-based performance)
 
 ```{r }
 #| label: load-data
