@@ -157,6 +157,30 @@
       "group": "build",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
       "problemMatcher": []
+    },
+    {
+      "label": "Run Ferry Pattern Example",
+      "detail": "Execute ferry-lane-example.R to transport mtcars from WAREHOUSE to CACHE",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "manipulation/ferry-lane-example.R"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Ellis Pattern Example",
+      "detail": "Execute ellis-lane-example.R to transform mtcars into analysis-ready dataset",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "manipulation/ellis-lane-example.R"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
     }
   ]
 }
