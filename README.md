@@ -2,8 +2,9 @@
 
 > [No one beginning a data science project should start from a blinking cursor.](https://towardsdatascience.com/better-collaborative-data-science-d2006b9c0d39) <br/>...Templatization is a best practice for things like using common directory structure across projects...<br/> -[Megan Risdal](https://towardsdatascience.com/@meganrisdal) Kaggle Product Lead.
 
-This template provides a comprehensive foundation for **AI-augmented reproducible research projects**. It combines the best practices of reproducible research with  AI support infrastructure, which levereges generative LLMs and agent customization to construct and manage analytic pipelines.
+This template provides a comprehensive foundation for **AI-augmented reproducible research projects**. It combines the best practices of reproducible research with  AI support infrastructure, which levereges generative LLMs and agent customization to construct and manage analytic pipelines. 
 
+Refer to [RAnalysisSkeleton](https://github.com/wibeasley/RAnalysisSkeleton) for a deeper dive into reproducible research best practices.
 
 ## 🎭 AI Persona System
 
