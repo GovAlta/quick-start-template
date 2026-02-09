@@ -64,6 +64,59 @@ abcol <- c(
   ,"yellow"     = "#edb700" # prairie - yellow
 )
 
+# Government of Alberta visual identity (edition 27) palettes
+# Based on cpe-visual-identity-27-colors
+
+# Default palette: Core neutrals (Stone Dark + Stone)
+abcol_default <- c(
+  "stone_dark" = "#000000"  # Black
+  ,"stone"     = "#aca4a3"  # Warm Grey 5C
+)
+
+# Primary palette: Main brand colors (second row - standard intensity)
+abcol_primary <- c(
+  "stone"   = "#aca4a3"  # Warm Grey 5C
+  ,"sky"    = "#00b6ed"  # Pantone 306 CP - blue
+  ,"dawn"   = "#ef4b80"  # Pantone 1915 CP - pink/magenta
+  ,"sunset" = "#ed8c00"  # Pantone 144 CP - orange
+  ,"prairie"= "#ffc836"  # Pantone 123 CP - yellow
+  ,"pasture"= "#78bf26"  # Pantone 368 CP - green
+)
+
+# Full palette: All brand colors organized by intensity (light, standard, mid, dark)
+abcol_full <- c(
+  # Stone family
+  "stone_light" = "#d0d1db"  # Stone Light - Cool Grey 2C
+  ,"stone"      = "#aca4a3"  # Stone - Warm Grey 5C
+  ,"stone_mid"  = "#545860"  # Stone Mid - PMS Cool Grey 11 C
+  ,"stone_dark" = "#000000"  # Stone Dark - Black
+  # Sky family (blue)
+  ,"sky_light"  = "#9ad7f9"  # Sky Light - 2975 CP
+  ,"sky"        = "#00b6ed"  # Sky - Pantone 306 CP
+  ,"sky_mid"    = "#0077cd"  # Sky Mid - 3005 CP
+  ,"sky_dark"   = "#002c4e"  # Sky Dark - 7463 CP
+  # Dawn family (pink/magenta)
+  ,"dawn_light" = "#f6cee0"  # Dawn Light - 706 CP
+  ,"dawn"       = "#ef4b80"  # Dawn - Pantone 1915 CP
+  ,"dawn_mid"   = "#730067"  # Dawn Mid - 2356 CP
+  ,"dawn_dark"  = "#3d0f69"  # Dawn Dark - 2627 CP
+  # Sunset family (orange)
+  ,"sunset_light"= "#ddcdae" # Sunset Light - 468 CP
+  ,"sunset"     = "#ed8c00"  # Sunset - Pantone 144 CP
+  ,"sunset_mid" = "#d45d00"  # Sunset Mid - 717 CP
+  ,"sunset_dark"= "#9e2b33"  # Sunset Dark - 704 CP
+  # Prairie family (yellow)
+  ,"prairie_light"= "#f8e19a" # Prairie Light - 1205 CP
+  ,"prairie"     = "#ffc836"  # Prairie - Pantone 123 CP
+  ,"prairie_mid" = "#d19000"  # Prairie Mid - 7550 CP
+  ,"prairie_dark"= "#47372a"  # Prairie Dark - 7533 CP
+  # Pasture family (green)
+  ,"pasture_light"= "#d3da5f" # Pasture Light - 584 CP
+  ,"pasture"     = "#78bf26"  # Pasture - Pantone 368 CP
+  ,"pasture_mid" = "#007044"  # Pasture Mid - 7733 CP
+  ,"pasture_dark"= "#174c38"  # Pasture Dark - 8161 CP
+)
+
 # standard palette to be used across IHACRU reports
 # qualitative, 9 categories (max), printer friendly
 # http://colorbrewer2.org/#type=qualitative&scheme=Set1&n=7
@@ -94,11 +147,10 @@ pal_direction_significance <-  c(
 #
 # transformColor <- function( palette ) {
 #   return( palette )
-#   # https://en.wikipedia.org/wiki/Color_blindness
-#   # return( dichromat(palette, "deutan") ) # Deuteranopia 
-#   #   return( dichromat(palette, "protan") )# Protanopia Red-Green 
-#   #   return( dichromat(palette, "tritan") )# Tritanopia
-#   # Also see The Color Oracle application (http://colororacle.org/)
+# #   return( dichromat(palette, "deutan") )
+# #   return( dichromat(palette, "protan") )
+# #   return( dichromat(palette, "tritan") )
+# # Also see The Color Oracle application (http://colororacle.org/)
 # }
 #
 # PalettePregancyDelivery <- transformColor(adjustcolor(brewer.pal(3, "Accent"), alpha.f=1)[1:2])
