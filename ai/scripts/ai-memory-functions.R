@@ -115,10 +115,10 @@ simple_memory_update <- function(entry, project_root = ".") {
   }
   
   timestamp <- format(Sys.time(), "%Y-%m-%d")
-  new_entry <- paste("**", timestamp, "**:", entry)
+  new_entry <- paste("#", timestamp)
   
   # Simple append to end of file
-  cat(paste("\n---\n\n", new_entry, "\n"), file = memory_paths$ai, append = TRUE)
+  cat(paste("\n---\n\n", new_entry, "\n\n", entry, "\n"), file = memory_paths$ai, append = TRUE)
   
   cat("Added to [[memory-ai]]\n")
   return(invisible(TRUE))
@@ -137,10 +137,10 @@ human_memory_update <- function(entry, project_root = ".") {
   }
   
   timestamp <- format(Sys.time(), "%Y-%m-%d")
-  new_entry <- paste("**", timestamp, "**:", entry)
+  new_entry <- paste("#", timestamp)
   
   # Simple append to end of file
-  cat(paste("\n---\n\n", new_entry, "\n"), file = memory_paths$human, append = TRUE)
+  cat(paste("\n---\n\n", new_entry, "\n\n", entry, "\n"), file = memory_paths$human, append = TRUE)
   
   cat("Added to [[memory-human]]\n")
   return(invisible(TRUE))
