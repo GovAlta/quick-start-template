@@ -33,3 +33,16 @@
 - **Direct**: When syntax documented in commands reference (./ai/docs/commands.md)
 - **Research**: Only for novel operations not covered in docs
 
+## MD Style Guide
+
+When generating or editing markdown, always follow these rules to prevent linting errors:
+
+- **MD025 / single-h1**: Every file has exactly one `#` (H1) heading — the document title. Use `##` and below for all sections, including date entries in log/memory files.
+- **MD022 / blanks-around-headings**: Always add a blank line before and after every heading (`#`, `##`, `###`, etc.).
+- **MD032 / blanks-around-lists**: Always add a blank line before and after every list block (bulleted or numbered).
+- **MD031 / blanks-around-fences**: Always add a blank line before and after fenced code blocks (` ``` `).
+- **MD012 / no-multiple-blanks**: Never use more than one consecutive blank line.
+- **MD009 / no-trailing-spaces**: No trailing whitespace at the end of lines.
+- **MD010 / no-hard-tabs**: Use spaces, not tab characters, for indentation.
+- **MD041 / first-line-heading**: The first line of every file must be a `#` H1 heading.
+
