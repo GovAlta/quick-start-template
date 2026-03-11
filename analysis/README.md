@@ -2,7 +2,7 @@
 
 Contains reproducible reports narrating the engagement with the data of choice. See `./scripts/templates/` for report templates.
 
-# Rules
+## Rules
 
 1.  A folder contains a monothematic engagement with an Analysis-Ready Rectangle
 

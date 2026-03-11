@@ -23,7 +23,7 @@ This system provides a portable, modular AI support infrastructure designed for 
 Specialized AI personas for different research roles:
 - `developer.md` - Backend systems and reproducible infrastructure
 - `project_manager.md` - Strategic oversight and coordination  
-# Removed: casenote_analyst.md - Domain-specific, not suitable for generic template
+<!-- Removed: casenote_analyst.md - Domain-specific, not suitable for generic template -->
 - `data_engineer.md` - Data pipeline architecture
 - `research_scientist.md` - Scientific methodology and analysis
 - And 7 more specialized personas...

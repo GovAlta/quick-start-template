@@ -2,7 +2,7 @@
 
 Modern data analysis must rely on template to scale up operations and ensure reproducibility, understandability, and scalability of research projects. This document provides an overview of the philosophy behind analysis templatization, its goals, and its components.
 
-# Threats to Validity
+## Threats to Validity
 
 To use the results of a data analysis as evidence in support of our views and decisions, we must address various **threats to validity** of conclusions drawn from the data.
 
@@ -18,7 +18,7 @@ Each of these broad categories can be further divided into specific threats, whi
 
 Overall, the primary goal in a research study is to minimize these threats to ensure that the study's findings are both meaningful and applicable.
 
-# Literate Programming
+## Literate Programming
 
 Since 2002 researchers and analysts expanded on this taxonomy, proposing new threats to validity that reflected and addressed concerns in the emerging environment of **big data** and **cheap computing**. Missing and inaccurate data, for example, became more relevant in analyses relying on *big observational data*, as opposed to those \[analyses\] working with neat data structures of randomized experiments. Other such threats included concerns related to data provenance (origin and collection), model overfitting, algorithm bias, reproducibility, and version control, to name a few. Big data also brought new challenges to the implementattion of data analysis.
 
@@ -30,7 +30,7 @@ One of the responses to new challenges was popularization of **literate programm
 
 A popular tool for practicing literate programming is the "literate programming system" (e.g.,Jupyter Notebook, RStudio, noweb) that supports the integration of code and documentation. These tools allow data analysts and statisticians to write a document that combines code, mathematical formulas, explanatory text, and visualizations, all in a single coherent format. The challenges of this approach, however, include managing and organizing programming scripts of various lengths and purposes. This is what **templatization** aims to address.
 
-# Templatization
+## Templatization
 
 Faced with the necessity to manage literate scripts to provide the evidence for analytic conclusions we encounter new conceptual and technical challenges related to reproducibility, version control, documentation structure, tooling, and collaboration in our research enterprise. We can distinguish two broad classes/levels of templates aimed to assist us in facing these challenges:
 
@@ -38,7 +38,7 @@ Faced with the necessity to manage literate scripts to provide the evidence for 
 
 -   **Project-level**: These approaches and methods focus on packaging literate scripts to ensure reproducibility, understandability, and scalability of research projects.
 
-## Script-Level
+### Script-Level
 
 Script-level templates codify and embody various techniques and practices for authoring self-standing, monothematic analytic narratives. They encompass several aspects, including the mechanics of using the tool, chunk management, story composition, and the sequence of programming steps.
 
@@ -48,7 +48,7 @@ Script-level templates codify and embody various techniques and practices for au
 
 **Report Dramaturgy**: Report Dramaturgy refers to the structuring and composition of the report in a way that engages the reader, effectively communicates the analysis process, and conveys the significance of the findings. It involves applying principles of storytelling and narrative techniques to present the data analysis in a compelling and coherent manner. It is an art of arranging and organizing the elements of a analytic report to create a meaningful and impactful experience for the audience.
 
-## Project-Level
+### Project-Level
 
 Project-level templates provide a framework for organizing and structuring the collection of interconnected literate scripts, facilitating the management and dissemination of the project as a whole.
 

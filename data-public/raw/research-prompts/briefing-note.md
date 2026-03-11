@@ -1,3 +1,5 @@
+# Briefing Note Prompt
+
 I work for the Government of Alberta in the Ministry of Technology and Innovation. My Deputy Minister and Minister are scheduled to meet with [Company Name].
  
 Please:

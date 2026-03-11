@@ -1,6 +1,7 @@
-# AI-Assisted Migration Template  
-# Intelligent Migration for AI Support System
-# Version: 1.0.0 - Smart adaptation to target repository structure
+# AI-Assisted Migration Template
+
+> Intelligent Migration for AI Support System
+> Version: 1.0.0 - Smart adaptation to target repository structure
 
 ## Overview
 

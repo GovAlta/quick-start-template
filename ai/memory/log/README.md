@@ -1,1 +1,3 @@
-The folder `./ai/memory/log/` contains md log files authored by the AI in response to human request. 
+# Memory Log
+
+The folder `./ai/memory/log/` contains md log files authored by the AI in response to human request.

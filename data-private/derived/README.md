@@ -1,5 +1,4 @@
-`data-public/derived/` Directory
-=========
+# `data-private/derived/` Directory
 
 This directory should contain only data files that can be derived from the raw data files (*i.e.*, those in [`data-public/raw/`](../../data-public/raw/))) **using code contained in this repository**.  Unlike the raw data files, proprietary & binary formats are acceptable, since the repository's code should be able to reproduce them.
 

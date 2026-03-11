@@ -1,5 +1,4 @@
-`data-public/derived/` Directory
-=========
+# `data-public/derived/` Directory
 
 This directory should contain only data files that can be derived from the raw data files (*i.e.*, those in [`data-public/raw/`](../../data-public/raw/))) **using code contained in this repository**.  Unlike the raw data files, proprietary & binary formats are acceptable, since the repository's code should be able to reproduce them.
 
@@ -9,7 +8,6 @@ the processed raw, unmodified files that serve as an input to the project.  In t
 
 For the sake of long-term reproducibility, these files are ideally in a nonproprietary format that is human readable.  Plain text files (*e.g.*, CSVs & XML) are preferred. Binary & proprietary formats (*e.g.*, Excel & SAS) may not be readable if certain software is missing from the user's computer; or they might be able to be read by only old versions of software (*e.g.*, Excel 97).
 
-No PHI
----------
+## No PHI
 
 Files with PHI should **not** be stored in a GitHub repository, even a private GitHub repository.  We recommend using an enterprise database (such as MySQL or SQL Server) to store the data, and read & write the information to/from the software right before and after it's used.  If a database isn't feasible, consider storing the files in [`data-private/`](../../data-private/), whose contents are not committed to the repository; a line in [`.gitignore`](../../.gitignore) keeps the files uncommitted/unstaged.  However, there could be some information that is sensitive enough that it shouldn't even be stored locally without encryption (such as PHI).

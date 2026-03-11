@@ -48,9 +48,9 @@ The template includes an intelligent memory system that maintains project contin
 - **`ai/memory/memory-ai.md`** - AI-maintained technical status, only AI can edit
 - **`ai/memory/log/YYYY-MM-DD.md** - dedicated folder in which one file = one log entry. Helps to isolate large changes to a single file for easier tracking.
 
-# 🚀 Quick Start Guide
+## Quick Start Guide
 
-## Step 1: Standard Setup
+### Step 1: Standard Setup
 
 1. **Install Prerequisites**
    - [R (4.0+)](https://cran.r-project.org/)
@@ -92,7 +92,7 @@ The template includes an intelligent memory system that maintains project contin
    conda activate quick-start-template
    ```
 
-## Step 2: AI Support System Setup
+### Step 2: AI Support System Setup
 
 4. **Initialize AI System**
    - **In VS Code**: `Ctrl+Shift+P` → "Tasks: Run Task" → "Show AI Context Status"

@@ -1,6 +1,6 @@
-# Threats to Validity"
+# Threats to Validity
 
-# Overview
+## Overview
 
 To use the results of a data analysis as evidence in support of our views and decisions, we must address various **threats to validity** of conclusions drawn from the data.
 
@@ -14,7 +14,7 @@ To use the results of a data analysis as evidence in support of our views and de
 
 [![Fig.2](images/threats-to-validity-specific.jpg)](images/threats-to-validity-specific.jpg)
 
-# Threats to Validity
+## Threats to Validity
 
 [Shadish, Cook, and Campbell (2002)](https://psycnet.apa.org/record/2002-17373-000) describe four broad categories of validity threats:
 
@@ -34,7 +34,7 @@ To use the results of a data analysis as evidence in support of our views and de
 
     Example: A study finds that a new teaching method works well in a private school with small class sizes, but the method might not be as effective in a public school with larger classes.
 
-# **Statistical Conclusion**
+## **Statistical Conclusion**
 
 Threats to the validity of statistical conclusions include:
 
@@ -42,7 +42,7 @@ Threats to the validity of statistical conclusions include:
 
 2.  *Violated Assumptions of Statistical Tests*: Using parametric tests when data don't meet these tests' assumptions, like normal distribution.
 
-# **Internal**
+## **Internal**
 
 Threats to internal validity include:
 
@@ -52,7 +52,7 @@ Threats to internal validity include:
 
 3.  *Testing*: The effects of taking a test upon the scores of a second testing. For instance, participants getting better on a test due to their familiarity from the first test.
 
-# **Construct**
+## **Construct**
 
 Threats to construct validity include:
 
@@ -60,7 +60,7 @@ Threats to construct validity include:
 
 2.  *Mono-Operation Bias*: Relying on a single method or measure. For instance, assessing depression only through self-report rather than using multiple measures.
 
-# **External**
+## **External**
 
 Threats to external validity include:
 
@@ -68,12 +68,12 @@ Threats to external validity include:
 
 2.  *Interaction of Setting and Treatment*: The effect is not generalizable to other settings or environments. For instance, a therapy technique works only in clinical settings.
 
-# Since 2002
+## Since 2002
 
 Since 2002 researchers and analysts expanded on these, proposing new threats to validity that reflected and addressed concerns in the emerging environment of big data and cheap computing. To list a few examples:
 
 ![](images/threats-to-validity-since-2002.jpg) 
-# Data-Related Threats
+## Data-Related Threats
 
 1.  *Data Quality*: With the rise of big data, the quality of data can be a significant threat to validity. This includes issues like missing data, inconsistent data, and inaccurate data.
 
@@ -81,7 +81,7 @@ Since 2002 researchers and analysts expanded on these, proposing new threats to 
 
 3.  *Data Provenance*: The origin and process of data collection can impact its validity. This includes issues like sampling bias and non-response bias.
 
-# Methodological Threats
+## Methodological Threats
 
 4.  *Algorithm Bias:* Algorithms used in data analysis can introduce bias, especially in machine learning where the algorithm may "learn" from biased data.
 
@@ -89,7 +89,7 @@ Since 2002 researchers and analysts expanded on these, proposing new threats to 
 
 6.  *Overfitting*: In machine learning, models can become too complex and fit too closely to the training data, reducing their ability to generalize to new data.
 
-# Contextual Threats
+## Contextual Threats
 
 7.  *Temporal Validity:* The validity of findings may decrease over time, especially in fast-changing fields.
 

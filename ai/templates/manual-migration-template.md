@@ -1,6 +1,7 @@
 # Manual Migration Template
-# AI Support System Migration for Mixed-Language Research Repositories
-# Compatible with: RAnalysisSkeleton-style projects
+
+> AI Support System Migration for Mixed-Language Research Repositories
+> Compatible with: RAnalysisSkeleton-style projects
 
 ## Pre-Migration Checklist
 

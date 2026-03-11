@@ -1,4 +1,4 @@
-INPUT-manifest.md
+# INPUT Manifest
 
 ---
 

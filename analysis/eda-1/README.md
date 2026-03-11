@@ -1,8 +1,8 @@
-How to enable interactive plotting for EDA-1
+# How to Enable Interactive Plotting for EDA-1
 
 This folder contains the EDA-1 analysis script and Quarto document. For interactive plotting in VS Code we recommend using the `httpgd` device. (Note: on enterprise machines, where you need admin rights to install software, httpgd will not work - it requeres Rtools to compile from source.)
 
-Quick steps (Windows)
+## Quick Steps (Windows)
 
 1. Install `httpgd` (CRAN binary recommended):
 
@@ -20,7 +20,7 @@ plot(1:10)             # quick test
 httpgd::hgd_browse()   # open interactive viewer in browser
 ```
 
-Notes
+## Notes
 
 - The EDA script (`eda-1.R`) will automatically start `httpgd` only when it detects an interactive VS Code session. This prevents Quarto/CI from attempting to start a server during non-interactive renders.
 - For reproducible reports, the script still saves static PNGs via `ggsave()`; interactive plotting is strictly for development and exploration.

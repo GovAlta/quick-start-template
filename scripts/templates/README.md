@@ -1,5 +1,4 @@
-`./scripts/templates` Directory
-=========
+# `./scripts/templates` Directory
 
 Contains prototypical `.R` and `.qmd` scripts for fast launching of analytic reports
 

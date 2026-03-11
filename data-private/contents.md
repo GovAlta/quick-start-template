@@ -1,5 +1,4 @@
-Contents of `data-private/` Directory
-=========
+# Contents of `data-private/` Directory
 Since files in this directory are not staged/committed, it's tough to communicate with collaborators what the files should look like on their computers.  Try to keep this list updated.
 
 ### Files in `data-private/raw/`

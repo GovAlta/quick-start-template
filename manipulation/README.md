@@ -18,7 +18,7 @@ We may want to explore county-level characteristics (`te.rds`) separtely from pe
 
 The resulting "derived" datasets produce less friction when analyzing. By centralizing most (and ideally all) of the manipulation code in one place, it's easier to determine how the data was changed before analyzing. It also reduces duplication of manipulation code, so analyses in different files are more consistent and understandable.
 
-# GOA example 
+## GOA Example 
 
 It might be easier to think in terms of an example more relevant to our substantive focus:
 
@@ -26,7 +26,7 @@ It might be easier to think in terms of an example more relevant to our substant
 
 ---
 
-# Ferry and Ellis Patterns: Philosophy and Implementation Guide
+## Ferry and Ellis Patterns: Philosophy and Implementation Guide
 
 This directory contains two core data manipulation patterns that form the backbone of reproducible research data pipelines: **Ferry** and **Ellis**. These patterns provide structured, scalable approaches to data transport and transformation.
 

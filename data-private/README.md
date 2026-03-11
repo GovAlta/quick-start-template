@@ -1,5 +1,4 @@
-`data-private/` Directory
-=========
+# `data-private/` Directory
 
 Files in this directory are stored locally, but not staged/committed and sent to the central GitHub repository.  A line in the `.gitignore` file keeps the files uncommitted/unstaged.
 

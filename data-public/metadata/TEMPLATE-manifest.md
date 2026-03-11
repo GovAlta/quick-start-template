@@ -13,13 +13,13 @@ This template provides a standardized structure for creating INPUT and CACHE man
 
 ---
 
-# [DATA SOURCE NAME] Manifest
+## [DATA SOURCE NAME] Manifest
 
 [Brief description of the data source, its purpose, and scope. Explain how this data source fits into the broader research ecosystem and what specific research questions it addresses.]
 
 While other data sources may be used in the project ([list other relevant sources]) as the need requires, the [DATA SOURCE NAME] was designed to [explain the specific purpose and value proposition].
 
-# [DATA SOURCE NAME] Overview
+## [DATA SOURCE NAME] Overview
 
 [Provide a comprehensive description of the data source, including:]
 - Main purpose and research applications
@@ -27,7 +27,7 @@ While other data sources may be used in the project ([list other relevant source
 - Key entities and relationships
 - Integration with other data sources
 
-## Summary Table
+### Summary Table
 
 | **Server**           | **Database**                       | **Table Name**            | **Purpose**                                                                | **Primary Key**        |
 |----------------------|------------------------------------|----------------------------|----------------------------------------------------------------------------|------------------------|
@@ -35,7 +35,7 @@ While other data sources may be used in the project ([list other relevant source
 | `[SERVER-NAME]`      | `[DATABASE-NAME]`                  | `[TABLE-NAME-2]`           | [Brief description of table purpose]                                      | `[PRIMARY-KEY-COLS]`   |
 | `[SERVER-NAME]`      | `[DATABASE-NAME]`                  | `[TABLE-NAME-3]`           | [Brief description of table purpose]                                      | `[PRIMARY-KEY-COLS]`   |
 
-# [DOMAIN/CATEGORY NAME]
+## [DOMAIN/CATEGORY NAME]
 
 [If your data source has multiple domains/categories, create a section for each. Examples: Taxonomy, Financial Support, Assessment, Training, Client Demographics, etc.]
 
@@ -44,66 +44,66 @@ While other data sources may be used in the project ([list other relevant source
 - Key business concepts and definitions
 - Relationships between tables in this domain
 
-## [TABLE-NAME] Table Metadata Guide for AI SQL Query Generation
+### [TABLE-NAME] Table Metadata Guide for AI SQL Query Generation
 
-### Table Overview
+#### Table Overview
 - **Database**: `[FULL-DATABASE-PATH]`
 - **Table Name**: `[TABLE-NAME]`
 - **Purpose**: [Detailed description of what this table contains and its role in research]
 - **Coverage**: [Scope of data - time periods, populations, completeness]
 - **Relationship**: [How this table relates to other tables - parent/child, lookup, etc.]
 
-### Column Reference
+#### Column Reference
 
-#### [COLUMN GROUP 1 - e.g., Identifiers]
+##### [COLUMN GROUP 1 - e.g., Identifiers]
 - **[COLUMN-NAME-1]**: [Description, data type, special notes]
 - **[COLUMN-NAME-2]**: [Description, data type, special notes]
 - **[COLUMN-NAME-3]**: [Description, data type, special notes]
 
-#### [COLUMN GROUP 2 - e.g., Temporal Fields]
+##### [COLUMN GROUP 2 - e.g., Temporal Fields]
 - **[COLUMN-NAME-4]**: [Description, data type, special notes]
 - **[COLUMN-NAME-5]**: [Description, data type, special notes]
 
-#### [COLUMN GROUP 3 - e.g., Classification Fields]
+##### [COLUMN GROUP 3 - e.g., Classification Fields]
 - **[COLUMN-NAME-6]**: [Description, data type, special notes]
 - **[COLUMN-NAME-7]**: [Description, data type, special notes]
 
-#### [COLUMN GROUP 4 - e.g., Demographics]
+##### [COLUMN GROUP 4 - e.g., Demographics]
 - **[COLUMN-NAME-8]**: [Description, data type, special notes]
 - **[COLUMN-NAME-9]**: [Description, data type, special notes]
 
-#### [COLUMN GROUP 5 - e.g., Geographic/Service Delivery]
+##### [COLUMN GROUP 5 - e.g., Geographic/Service Delivery]
 - **[COLUMN-NAME-10]**: [Description, data type, special notes]
 - **[COLUMN-NAME-11]**: [Description, data type, special notes]
 
-#### [COLUMN GROUP 6 - e.g., Outcome/Status Fields]
+##### [COLUMN GROUP 6 - e.g., Outcome/Status Fields]
 - **[COLUMN-NAME-12]**: [Description, data type, special notes]
 - **[COLUMN-NAME-13]**: [Description, data type, special notes]
 
-### Key Business Rules for Queries
+#### Key Business Rules for Queries
 - **[RULE-1]**: [Description of important business rule]
 - **[RULE-2]**: [Description of important business rule]
 - **[RULE-3]**: [Description of important business rule]
 - **[RULE-4]**: [Description of important business rule]
 - **[RULE-5]**: [Description of important business rule]
 
-### [CLASSIFICATION/HIERARCHY SECTION - if applicable]
+#### [CLASSIFICATION/HIERARCHY SECTION - if applicable]
 [If the table contains classification systems or hierarchies, document them here]
 
-#### [Category 1]
+##### [Category 1]
 - **[Sub-category 1a]**: [Description]
 - **[Sub-category 1b]**: [Description]
 
-#### [Category 2]
+##### [Category 2]
 - **[Sub-category 2a]**: [Description]
 - **[Sub-category 2b]**: [Description]
 
-### Linking Notes
+#### Linking Notes
 - Use `[KEY-FIELD-1]` to link with [OTHER-TABLE-1], [OTHER-TABLE-2]
 - Use `[KEY-FIELD-2]` to link with [OTHER-TABLE-3] for [specific purpose]
 - Use `[KEY-FIELD-3]` to link with [OTHER-TABLE-4] when [specific condition]
 
-### Usage Notes for AI Queries
+#### Usage Notes for AI Queries
 - [Guidance on filtering strategies]
 - [Notes on data quality or completeness issues]
 - [Recommendations for common analysis patterns]
@@ -113,49 +113,49 @@ While other data sources may be used in the project ([list other relevant source
 
 ---
 
-## [ADDITIONAL-TABLE] Table Metadata Guide for AI SQL Query Generation
+### [ADDITIONAL-TABLE] Table Metadata Guide for AI SQL Query Generation
 
 [Repeat the table structure above for each additional table in your data source]
 
 ---
 
-# Cross-Table Relationships and Integration
+## Cross-Table Relationships and Integration
 
-## Primary Linking Keys
+### Primary Linking Keys
 - **[KEY-1]**: Links [TABLE-A] with [TABLE-B], [TABLE-C] for [purpose]
 - **[KEY-2]**: Links [TABLE-D] with [TABLE-E] for [purpose]
 - **[KEY-3]**: Cross-domain linking between [DOMAIN-1] and [DOMAIN-2]
 
-## Data Quality Considerations
+### Data Quality Considerations
 - **Completeness**: [Notes on data completeness across tables]
 - **Consistency**: [Notes on consistency checks between related tables]
 - **Temporal alignment**: [Notes on time-based relationships]
 
-## Common Analysis Patterns
+### Common Analysis Patterns
 - **[PATTERN-1]**: [Description of common analytical approach]
 - **[PATTERN-2]**: [Description of common analytical approach]
 - **[PATTERN-3]**: [Description of common analytical approach]
 
-# Research Applications
+## Research Applications
 
-## Primary Use Cases
+### Primary Use Cases
 - **[USE-CASE-1]**: [Description of research application]
 - **[USE-CASE-2]**: [Description of research application]
 - **[USE-CASE-3]**: [Description of research application]
 
-## Analytical Considerations
+### Analytical Considerations
 - **Sample sizes**: [Guidance on expected sample sizes for different analyses]
 - **Time windows**: [Recommended time windows for different types of analysis]
 - **Cohort definitions**: [Standard approaches for defining analytical cohorts]
 
-## Integration with Other Data Sources
+### Integration with Other Data Sources
 - **[OTHER-SOURCE-1]**: [How this data source integrates with other sources]
 - **[OTHER-SOURCE-2]**: [Cross-validation opportunities]
 - **[OTHER-SOURCE-3]**: [Complementary data for enriched analysis]
 
 ---
 
-## AI Copilot Notes
+### AI Copilot Notes
 
 **When using this manifest:**
 1. Always verify table and column names against the actual database schema
