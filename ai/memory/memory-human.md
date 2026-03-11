@@ -1,6 +1,6 @@
 # Human Memory
 
-Human decisions and reasoning.
+Human decisions and reasoning. AI agents are not allowed to edit this file without express permission of human user.
 
 ---
 
