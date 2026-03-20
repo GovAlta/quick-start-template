@@ -59,18 +59,19 @@ get_available_personas <- function(project_root = ".") {
 
 # Set persona with automatic path detection
 set_persona_with_autodetect <- function(persona_name, project_root = ".") {
-  # Update copilot instructions
   instructions_path <- file.path(project_root, ".github", "copilot-instructions.md")
-  if (!file.exists(instructions_path)) {
-    cat("❌ Copilot instructions file not found:", instructions_path, "\n")
-    return(invisible(FALSE))
+
+  # Ensure .github directory exists so dynamic builder can write the file
+  github_dir <- file.path(project_root, ".github")
+  if (!dir.exists(github_dir)) {
+    dir.create(github_dir, recursive = TRUE)
   }
 
   # Track active persona (simple marker file)
   persona_file <- file.path(project_root, ".copilot-persona")
   writeLines(persona_name, persona_file)
 
-  # Try to use dynamic-context-builder if available; fall back to simple insert
+  # Try to use dynamic-context-builder first — it creates the file if missing
   context_script <- file.path(project_root, "ai", "scripts", "dynamic-context-builder.R")
   if (file.exists(context_script)) {
     source(context_script, local = TRUE)
@@ -87,6 +88,11 @@ set_persona_with_autodetect <- function(persona_name, project_root = ".") {
   }
 
   # Fallback: prepend simple persona header (non-destructive) if dynamic builder not used
+  if (!file.exists(instructions_path)) {
+    cat("❌ Copilot instructions file not found:", instructions_path, "\n")
+    cat("💡 Create .github/copilot-instructions.md or ensure dynamic-context-builder.R is available.\n")
+    return(invisible(FALSE))
+  }
   current <- readLines(instructions_path, warn = FALSE)
   header <- c(
     "<!-- ACTIVE PERSONA (fallback) START -->",
