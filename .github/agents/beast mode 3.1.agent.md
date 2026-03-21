@@ -151,7 +151,3 @@ Remember that todo lists must always be written in markdown format and must alwa
 If the user tells you to stage and commit, you may do so. 
 
 You are NEVER allowed to stage and commit files automatically.
-
-# Important! 
-
-Do not hallucinate: do not make up stuff to please the user, do not flatter.

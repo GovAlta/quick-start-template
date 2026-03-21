@@ -1,0 +1,318 @@
+---
+title: "Data Primer — {NAME}"
+subtitle: "Canonical data documentation: Ellis outputs, schemas, variable reference"
+author: "Report Composer (Composing Orchestra)"
+date: last-modified
+format:
+  html:
+    page-layout: full
+    toc: true
+    toc-location: right
+    code-fold: show
+    theme: yeti
+    highlight-style: breeze
+    code-line-numbers: true
+    self-contained: true
+    embed-resources: true
+editor: visual
+editor_options:
+  chunk_output_type: console
+---
+
+<!-- Composing Orchestra data primer template.
+     Used for analysis/data-primer-1/ — the CENTRALIZED data reference for the project.
+     Composed once via @report-composer, verified by humans, linked by all EDAs and Reports.
+     Customize {PLACEHOLDERS} and populate sections from Ellis metadata + CACHE manifest. -->
+
+# Purpose
+
+This is the **canonical data primer** for the project. It provides the foundational documentation of all data assets produced by the Ellis lane. Every EDA and presentation Report in `analysis/` links here for data context.
+
+This primer answers: *What data do we have? What does it look like? What do the variables mean?*
+
+For domain terminology, see `ai/project/glossary.md`.
+
+```{r}
+#| code-summary: Reconciles working directory
+#| echo: false
+#| results: hide
+#| message: false
+#| warning: false
+cat("Working directory: ", getwd())
+library(knitr)
+opts_knit$set(root.dir='../../')
+```
+
+```{r}
+#| label: setup
+#| code-summary: Environment setup
+#| echo: false
+#| results: hide
+#| message: false
+library(magrittr)
+library(dplyr)
+library(tidyr)
+library(arrow)
+library(knitr)
+library(scales)
+
+opts_chunk$set(
+  results   = 'show',
+  message   = FALSE,
+  warning   = FALSE,
+  comment   = NA,
+  tidy      = FALSE,
+  out.width = "960px"
+)
+options(width = 100)
+```
+
+# Pipeline Architecture
+
+The data assets used in this project follow a three-stage provenance chain:
+
+```
+Batch-91 source data (M:/.../batch-91/)
+  → Ellis lane (manipulation/0-ellis.R)
+    → R-friendly parquet files (data-private/derived/manipulation/)
+```
+
+**Ellis** imports the batch-91 CACHE tables, applies R-friendly type conversions (factors for categoricals, dates, integers for IDs), validates against the CACHE manifest, and outputs optimized parquet files.
+
+# Data Assets Inventory
+
+```{r}
+#| label: inventory
+#| code-summary: List available parquet files from Ellis output
+#| code-fold: true
+
+# List Ellis outputs
+ellis_path <- "./data-private/derived/manipulation/"
+if (dir.exists(ellis_path)) {
+  parquet_files <- list.files(ellis_path, pattern = "\\.parquet$", full.names = TRUE)
+  inventory <- data.frame(
+    File = basename(parquet_files),
+    stringsAsFactors = FALSE
+  )
+  # Read schema info for each file
+  inventory$Rows <- NA_integer_
+  inventory$Columns <- NA_integer_
+  for (i in seq_along(parquet_files)) {
+    tryCatch({
+      ds_temp <- arrow::read_parquet(parquet_files[i])
+      inventory$Rows[i] <- nrow(ds_temp)
+      inventory$Columns[i] <- ncol(ds_temp)
+    }, error = function(e) {
+      message("Could not read: ", parquet_files[i])
+    })
+  }
+  kable(inventory, caption = "Ellis Output: Analysis-Ready Parquet Files")
+} else {
+  cat("Ellis output directory not found at:", ellis_path, "\n")
+  cat("Run the Ellis lane first: manipulation/0-ellis.R\n")
+}
+```
+
+# Table Schemas
+
+## Client Roster
+
+```{r}
+#| label: schema-client-roster
+#| code-summary: Client roster structure
+#| code-fold: true
+
+path_client <- paste0(ellis_path, "client_roster.parquet")
+if (file.exists(path_client)) {
+  ds_client <- arrow::read_parquet(path_client)
+  cat("Grain: person_oid (one row per individual)\n")
+  cat("Rows:", scales::comma(nrow(ds_client)), "| Columns:", ncol(ds_client), "\n\n")
+  glimpse(ds_client)
+} else {
+  cat("File not found:", path_client, "\n")
+}
+```
+
+## Support by Year (Financial Support)
+
+```{r}
+#| label: schema-support
+#| code-summary: Support by year structure
+#| code-fold: true
+
+path_support <- paste0(ellis_path, "support_by_year.parquet")
+if (file.exists(path_support)) {
+  ds_support <- arrow::read_parquet(path_support)
+  cat("Grain: person_oid × year (one row per person per year of financial support)\n")
+  cat("Rows:", scales::comma(nrow(ds_support)), "| Columns:", ncol(ds_support), "\n\n")
+  glimpse(ds_support)
+} else {
+  cat("File not found:", path_support, "\n")
+}
+```
+
+## Training by Year
+
+```{r}
+#| label: schema-training
+#| code-summary: Training by year structure
+#| code-fold: true
+
+path_training <- paste0(ellis_path, "training_by_year.parquet")
+if (file.exists(path_training)) {
+  ds_training <- arrow::read_parquet(path_training)
+  cat("Grain: person_oid × year (one row per person per year of training services)\n")
+  cat("Rows:", scales::comma(nrow(ds_training)), "| Columns:", ncol(ds_training), "\n\n")
+  glimpse(ds_training)
+} else {
+  cat("File not found:", path_training, "\n")
+}
+```
+
+## Assessment by Year
+
+```{r}
+#| label: schema-assessment
+#| code-summary: Assessment by year structure
+#| code-fold: true
+
+path_assessment <- paste0(ellis_path, "assessment_by_year.parquet")
+if (file.exists(path_assessment)) {
+  ds_assessment <- arrow::read_parquet(path_assessment)
+  cat("Grain: person_oid × assessment event\n")
+  cat("Rows:", scales::comma(nrow(ds_assessment)), "| Columns:", ncol(ds_assessment), "\n\n")
+  glimpse(ds_assessment)
+} else {
+  cat("File not found:", path_assessment, "\n")
+}
+```
+
+# Grain Demonstration
+
+```{r}
+#| label: grain-check
+#| code-summary: Verify the grain of each table
+#| code-fold: true
+
+if (exists("ds_client") && is.data.frame(ds_client)) {
+  cat("--- Client Roster ---\n")
+  n_total <- nrow(ds_client)
+  n_unique <- ds_client %>% distinct(person_oid) %>% nrow()
+  cat("Total rows:", scales::comma(n_total), "\n")
+  cat("Unique person_oid:", scales::comma(n_unique), "\n")
+  cat("Grain holds (1:1):", n_total == n_unique, "\n\n")
+}
+
+if (exists("ds_support") && is.data.frame(ds_support)) {
+  cat("--- Support by Year ---\n")
+  n_total <- nrow(ds_support)
+  n_unique <- ds_support %>% distinct(person_oid, year) %>% nrow()
+  cat("Total rows:", scales::comma(n_total), "\n")
+  cat("Unique person_oid × year:", scales::comma(n_unique), "\n")
+  cat("Grain holds (1:1):", n_total == n_unique, "\n\n")
+}
+```
+
+# Single Person View
+
+```{r}
+#| label: single-person
+#| code-summary: What the data looks like for one individual
+#| code-fold: true
+
+# Select one person who appears in multiple tables for a rich example
+if (exists("ds_support") && is.data.frame(ds_support)) {
+  example_oid <- ds_support %>%
+    count(person_oid) %>%
+    filter(n >= 3, n <= 10) %>%  # someone with moderate history
+    slice_sample(n = 1) %>%
+    pull(person_oid)
+
+  cat("=== Example person_oid:", example_oid, "===\n\n")
+
+  if (exists("ds_client") && is.data.frame(ds_client)) {
+    cat("--- Client Roster record ---\n")
+    ds_client %>% filter(person_oid == example_oid) %>% glimpse()
+    cat("\n")
+  }
+
+  cat("--- Financial Support history ---\n")
+  ds_support %>% filter(person_oid == example_oid) %>% print()
+  cat("\n")
+
+  if (exists("ds_training") && is.data.frame(ds_training)) {
+    training_records <- ds_training %>% filter(person_oid == example_oid)
+    if (nrow(training_records) > 0) {
+      cat("--- Training history ---\n")
+      print(training_records)
+      cat("\n")
+    } else {
+      cat("--- No training records for this individual ---\n\n")
+    }
+  }
+
+  if (exists("ds_assessment") && is.data.frame(ds_assessment)) {
+    assessment_records <- ds_assessment %>% filter(person_oid == example_oid)
+    if (nrow(assessment_records) > 0) {
+      cat("--- Assessment history ---\n")
+      print(assessment_records)
+    } else {
+      cat("--- No assessment records for this individual ---\n")
+    }
+  }
+} else {
+  cat("Support data not loaded. Run Ellis lane first.\n")
+}
+```
+
+# Variable Reference
+
+Key variables across Ellis tables, sourced from `data-public/metadata/CACHE-manifest.md`:
+
+## Identifiers
+| Variable | Type | Description |
+|----------|------|-------------|
+| `person_oid` | integer | Unique person identifier across all tables |
+| `year` | integer | Calendar year of the service event |
+
+## Demographics (available in support, training, assessment tables)
+| Variable | Type | Levels | Notes |
+|----------|------|--------|-------|
+| `age_category3` | factor | 3 levels | Age bracket (coarse) |
+| `sex2` | factor | 2 levels | Male/Female |
+| `marital2` | factor | 2 levels | Married/Not married |
+| `disability2` | factor | 2 levels | Yes/No |
+| `dependent2` | factor | 2 levels | Has dependents: Yes/No |
+| `education3` | factor | 3 levels | Education level (coarse) |
+| `ethnicity` | factor | varies | Ethnic background |
+| `immigration` | factor | varies | Immigration status |
+
+## Financial Support Specific
+| Variable | Type | Description |
+|----------|------|-------------|
+| `client_type_code` | integer | Program classification code (see glossary) |
+| `program_class0` | factor | FS (Financial Support) |
+| `program_class1` | factor | IS / OTI / AISH / DRES |
+| `program_class2` | factor | ETW / BFE / OTI / AISH |
+| `program_class3` | factor | Detailed program description |
+
+## Program Taxonomy Quick Reference
+
+| PC1 | PC2 | Description |
+|-----|-----|-------------|
+| IS | ETW | Income Support — Expected to Work |
+| IS | BFE | Income Support — Barriers to Full Employment |
+| OTI | OTI | One Time Issues |
+| AISH | AISH | Assured Income for Severely Handicapped |
+
+For the full taxonomy with client type codes, see `ai/project/glossary.md`.
+
+# CACHE Manifest Summary
+
+For complete documentation of data coverage, quality metrics, and variable availability, see `data-public/metadata/CACHE-manifest.md`.
+
+Key coverage facts:
+- **CLIENT_ROSTER**: ~1.35M persons, core identifiers only
+- **SUPPORT_BY_YEAR**: ~1.85M person-year records, 354K unique individuals, demographics 50.5% coverage
+- **TRAINING_BY_YEAR**: ~525K person-year records, 268K individuals, demographics 99.7% coverage
+- **ASSESSMENT_BY_YEAR**: Assessment events (coverage varies by type)

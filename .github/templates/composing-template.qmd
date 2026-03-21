@@ -1,0 +1,217 @@
+---
+title: "{TITLE}"
+subtitle: "{NAME} — {TYPE} Report"
+author: "Analysis Team"
+date: last-modified
+format:
+  html:
+    page-layout: full
+    toc: true
+    toc-location: right
+    code-fold: show
+    theme: yeti
+    highlight-style: breeze
+    code-line-numbers: true
+    self-contained: true
+    embed-resources: true
+    keep-md: false
+editor: visual
+editor_options:
+  chunk_output_type: console
+---
+
+<!-- Composing Orchestra template — customize all {PLACEHOLDERS} before use. -->
+<!-- Mode: {TYPE} (EDA = explore with open mind | Report = synthesize prior findings) -->
+
+# Mission
+
+{1–2 sentence mission from report-contract.prompt.md}
+
+**Research Questions:**
+
+1. {RQ1}
+2. {RQ2}
+3. {RQ3}
+
+Following the dual-file development pattern, analytical code lives in the companion `.R` script. This document sources those chunks for presentation.
+
+# Definition of Terms
+
+```{r}
+#| code-summary: Reconciles working directory between execution modes
+#| echo: false
+#| results: hide
+#| message: false
+#| warning: false
+cat("Working directory: ", getwd())
+library(knitr)
+opts_knit$set(root.dir='../../') # keep this chunk isolated
+```
+
+```{r}
+#| label: set_options
+#| code-summary: Report-wide formatting options
+#| echo: false
+#| results: hide
+#| message: false
+cat("Working directory: ", getwd())
+report_render_start_time <- Sys.time()
+opts_chunk$set(
+  results      = 'show',
+  message      = FALSE,
+  warning      = FALSE,
+  comment      = NA,
+  tidy         = FALSE,
+  out.width    = "960px",
+  fig.width    = 10,
+  fig.height   = 6,
+  fig.path     = 'figure-png-iso/'
+)
+echo_chunks    <- FALSE
+message_chunks <- FALSE
+options(width = 100)
+ggplot2::theme_set(ggplot2::theme_minimal())
+read_chunk("analysis/{NAME}/{NAME}.R")
+```
+
+# Environment
+
+> Reviews the components of the working environment. Non-technical readers may skip this section.
+
+```{r}
+#| label: load-packages
+#| code-summary: Packages used in the current report
+#| echo: true
+#| results: hide
+#| message: false
+#| code-fold: true
+```
+
+```{r}
+#| label: load-sources
+#| code-summary: Collection of custom functions used in current repository
+#| echo: true
+#| results: hide
+#| message: false
+#| code-fold: true
+```
+
+```{r}
+#| label: declare-globals
+#| code-summary: Values used throughout the report
+#| echo: true
+#| results: hide
+#| message: false
+#| code-fold: true
+```
+
+```{r}
+#| label: declare-functions
+#| code-summary: Custom functions defined for use in this report
+#| echo: true
+#| results: hide
+#| message: false
+#| code-fold: true
+```
+
+# Data
+
+<!-- Describe the data assets used in this report. Reference the data primer for details. -->
+
+```{r}
+#| label: load-data
+#| code-summary: Load data from Ellis parquet outputs
+#| warning: false
+#| code-fold: true
+#| cache: true
+```
+
+```{r}
+#| label: inspect-data-0
+#| code-summary: Data overview
+#| code-fold: false
+#| eval: true
+#| cache: true
+```
+
+```{r}
+#| label: inspect-data-1
+#| code-summary: Grain verification
+#| code-fold: false
+#| eval: true
+#| cache: true
+```
+
+# Analysis
+
+## Graph Family g1: {g1 description from contract}
+
+<!-- Research question: {RQ1} -->
+
+```{r}
+#| label: g1-data-prep
+#| code-summary: Prepare data for g1 family
+#| code-fold: true
+#| eval: true
+#| cache: true
+```
+
+```{r}
+#| label: g1
+#| code-summary: "{g1 brief description}"
+#| code-fold: true
+#| eval: true
+#| cache: true
+#| fig-cap: "{g1 caption}"
+```
+
+## Graph Family g2: {g2 description from contract}
+
+<!-- Research question: {RQ2} -->
+
+```{r}
+#| label: g2-data-prep
+#| code-summary: Prepare data for g2 family
+#| code-fold: true
+#| eval: true
+#| cache: true
+```
+
+```{r}
+#| label: g2
+#| code-summary: "{g2 brief description}"
+#| code-fold: true
+#| eval: true
+#| cache: true
+#| fig-cap: "{g2 caption}"
+```
+
+## Graph Family g3: {g3 description from contract}
+
+<!-- Research question: {RQ3} -->
+
+```{r}
+#| label: g3-data-prep
+#| code-summary: Prepare data for g3 family
+#| code-fold: true
+#| eval: true
+#| cache: true
+```
+
+```{r}
+#| label: g3
+#| code-summary: "{g3 brief description}"
+#| code-fold: true
+#| eval: true
+#| cache: true
+#| fig-cap: "{g3 caption}"
+```
+
+# Session Information
+
+```{r}
+#| code-summary: Session info and render time
+#| echo: false
+cat("Report rendered in", round(difftime(Sys.time(), report_render_start_time, units = "secs"), 1), "seconds\n")
+sessionInfo()
+```

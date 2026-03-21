@@ -1,11 +1,11 @@
 <!-- CONTEXT OVERVIEW -->
-Total size: 12.7 KB (~3,248 tokens)
-- 1: Core AI Instructions  | 1.5 KB (~387 tokens)
+Total size: 16.9 KB (~4,317 tokens)
+- 1: Core AI Instructions  | 3.6 KB (~916 tokens)
 - 2: Active Persona: Project Manager | 8.1 KB (~2,084 tokens)
-- 3: Additional Context     | 3.0 KB (~777 tokens)
+- 3: Additional Context     | 5.1 KB (~1,317 tokens)
   -- project/mission (default)  | 1.1 KB (~273 tokens)
   -- project/method (default)  | 0.8 KB (~197 tokens)
-  -- project/glossary (default)  | 1.1 KB (~270 tokens)
+  -- project/glossary (default)  | 3.2 KB (~825 tokens)
 <!-- SECTION 1: CORE AI INSTRUCTIONS -->
 
 # Base AI Instructions
@@ -42,6 +42,38 @@ Total size: 12.7 KB (~3,248 tokens)
 ### Execution Strategy
 - **Direct**: When syntax documented in commands reference (./ai/docs/commands.md)
 - **Research**: Only for novel operations not covered in docs
+
+## MD Style Guide
+
+When generating or editing markdown, always follow these rules to prevent linting errors:
+
+- **MD025 / single-h1**: Every file has exactly one `#` (H1) heading — the document title. Use `##` and below for all sections, including date entries in log/memory files.
+- **MD022 / blanks-around-headings**: Always add a blank line before and after every heading (`#`, `##`, `###`, etc.).
+- **MD032 / blanks-around-lists**: Always add a blank line before and after every list block (bulleted or numbered).
+- **MD031 / blanks-around-fences**: Always add a blank line before and after fenced code blocks (` ``` `).
+- **MD012 / no-multiple-blanks**: Never use more than one consecutive blank line.
+- **MD009 / no-trailing-spaces**: No trailing whitespace at the end of lines.
+- **MD010 / no-hard-tabs**: Use spaces, not tab characters, for indentation.
+- **MD041 / first-line-heading**: The first line of every file must be a `#` H1 heading.
+
+
+## Publishing Orchestra
+
+This repo includes a two-agent publishing system for generating static Quarto websites from analytics content.
+- **Interviewer** (`@publishing-interviewer`): Plans the site, produces the contract.
+- **Writer** (`@publishing-writer`): Assembles `edited_content/`, renders `_site/`.
+- Design doc: `.github/publishing-orchestra-3.md`
+- Migration guide: `.github/migration.md`
+
+## Composing Orchestra
+
+This repo includes a single-agent system for bootstrapping and developing analytical reports (EDA or presentation Report) in `analysis/`.
+- **Report Composer** (`@report-composer`): Scaffolds directories, conducts adaptive interviews, iteratively develops .R + .qmd reports with a per-report Data Context section.
+- **Data Primer** (`analysis/data-primer-1/`): Centralized, human-verified data reference composed once via `@report-composer`. All EDAs and Reports link to it.
+- Design doc: `.github/composing-orchestra-1.md`
+- Bootstrap prompt: `.github/prompts/composing-new.prompt.md`
+- Instructions: `.github/instructions/report-composition.instructions.md` (applies to `analysis/**`)
+- Templates: `.github/templates/composing-*.{R,qmd,md}` + `data-primer-template.qmd`
 
 
 <!-- SECTION 2: ACTIVE PERSONA -->
@@ -215,22 +247,83 @@ Describe the analytical approach, standards, and reproducibility guardrails for 
 
 ### Project Glossary (from `ai/project/glossary.md`)
 
-# Glossary (Template)
+# Glossary
 
-Define core terms, abbreviations, and domain concepts to standardize communication.
+Core terms for standardizing project communication.
 
-| Term | Definition |
-|------|------------|
-| dataset | A structured collection of related observations prepared for analysis. |
-| pipeline | Sequential data processing steps transforming raw inputs to analytical outputs. |
-| feature | A derived variable used for modeling or summarization. |
-| artifact | Any generated output (report, model, dataset) subject to version control. |
-| seed | Fixed value used to initialize pseudo-random processes for reproducibility. |
-| persona | A role-specific instruction set shaping AI assistant behavior. |
-| memory entry | A logged observation or decision stored in project memory files. |
-| context refresh | Operation to rebuild `copilot-instructions.md` with selected sources. |
-| validation | Process of confirming data integrity, methodological soundness, or model performance. |
-| provenance | Documentation tracing origin and transformations applied to data. |
+---
+
+## Data Pipeline Terminology
+
+### Pattern
+A reusable solution template for common data pipeline tasks. Patterns define the structure, philosophy, and constraints for a category of operations. Examples: Ferry Pattern, Ellis Pattern.
+
+### Lane
+A specific implementation instance of a pattern within a project. Lanes are numbered to indicate approximate execution order. Examples: `0-ferry-IS.R`, `1-ellis-customer.R`, `3-ferry-LMTA.R`.
+
+### Ferry Pattern
+Data transport pattern that moves data between storage locations with minimal/zero semantic transformation. Like a "cargo ship" - carries data intact. 
+- **Allowed**: SQL filtering, SQL aggregation, column selection
+- **Forbidden**: Column renaming, factor recoding, business logic
+- **Input**: External databases, APIs, flat files
+- **Output**: CACHE database (staging schema), parquet backup
+
+### Ellis Pattern
+Data transformation pattern that creates clean, analysis-ready datasets. Named after Ellis Island - the immigration processing center where arrivals are inspected, documented, and standardized before entry.
+- **Required**: Name standardization, factor recoding, data type verification, missing data handling, derived variables
+- **Includes**: Minimal EDA for validation (not extensive exploration)
+- **Input**: CACHE staging (ferry output), flat files, parquet
+- **Output**: CACHE database (project schema), WAREHOUSE archive, parquet files
+- **Documentation**: Generates CACHE-manifest.md
+
+---
+
+## Storage Layers
+
+### CACHE
+Intermediate database storage - the last stop before analysis. Contains multiple schemas:
+- **Staging schema** (`{project}_staging` or `_TEST`): Ferry deposits raw data here
+- **Project schema** (`P{YYYYMMDD}`): Ellis writes analysis-ready data here
+- Both Ferry and Ellis write to CACHE, but to different schemas with different purposes.
+
+### WAREHOUSE
+Long-term archival database storage. Only Ellis writes here after data pipelines are stabilized and verified. Used for reproducibility and historical preservation.
+
+---
+
+## Schema Naming Conventions
+
+### `_TEST`
+Reserved for pattern demonstrations and ad-hoc testing. Not for production project data.
+
+### `P{YYYYMMDD}`
+Project schema naming convention. Date represents project launch or data snapshot date.
+Example: `P20250120` for a project launched January 20, 2025.
+
+### `P{YYYYMMDD}_staging`
+Optional staging schema within a project namespace for Ferry outputs before Ellis processing.
+
+---
+
+## General Terms
+
+### Artifact
+Any generated output (report, model, dataset) subject to version control.
+
+### Seed
+Fixed value used to initialize pseudo-random processes for reproducibility.
+
+### Persona
+A role-specific instruction set shaping AI assistant behavior.
+
+### Memory Entry
+A logged observation or decision stored in project memory files.
+
+### CACHE-manifest
+Documentation file (`./data-public/metadata/CACHE-manifest.md`) describing analysis-ready datasets produced by Ellis pattern. Includes data structure, transformations applied, factor taxonomies, and usage notes.
+
+### INPUT-manifest
+Documentation file (`./data-public/metadata/INPUT-manifest.md`) describing raw input data before Ferry/Ellis processing.
 
 ---
 *Expand with domain-specific terminology as project evolves.*
