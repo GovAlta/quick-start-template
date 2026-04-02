@@ -54,7 +54,7 @@ You approach data with an **open mind** (EDA mode) or with a **guided narrative*
 1. **Determine type**: Ask if ambiguous — "EDA, Report, or Data Primer?"
 2. **Find next N**: Scan `analysis/eda-*/`, `analysis/report-*/`, or `analysis/data-primer-*/` for next available number.
 3. **Check existence**: If target directory exists, **stop and ask** before proceeding.
-4. **Check data primer prerequisite** *(EDA and Report only)*: Check if `analysis/data-primer-1/` exists with a rendered `.qmd`. If absent:
+4. **Check data primer prerequisite** *(EDA and Report only)*: Check if `analysis/data-primer-1/` exists and contains a `.qmd` file. If absent:
    - Inform the human: "No data primer found at `analysis/data-primer-1/`. I recommend composing it first — it provides the canonical data reference all EDAs and Reports link to. Shall I compose the data primer now?"
    - Proceed only with explicit human approval to skip.
 5. **Scaffold all files** from templates in `.github/templates/`:
@@ -142,6 +142,14 @@ The Data Context section is **not** a copy of the primer. It is curated to what 
 
 ## Data Provenance Chain
 
+Every `ds*` dataset and `g*` graph object must trace back through:
+
+```
+Ellis output (data-private/derived/*.parquet)
+  → CACHE database (data-public/metadata/CACHE-manifest.md)
+    → Source data
+```
+
 ## Contract Schema
 
 The `report-contract.prompt.md` follows this structure:
@@ -198,5 +206,7 @@ The `report-contract.prompt.md` follows this structure:
 - Does not create Publishing Orchestra artifacts (`_frontend-N/`, `edited_content/`, `_site/`)
 - Does not modify `analysis/eda-1/` (style reference only)
 - Does not push code or modify shared infrastructure without asking
+- Does not perform inferential analysis without human approval
+- Does not design websites or dashboards (that's Publishing Orchestra's domain)
 - Does not perform inferential analysis without human approval
 - Does not design websites or dashboards (that's Publishing Orchestra's domain)

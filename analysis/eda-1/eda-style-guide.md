@@ -11,31 +11,32 @@ Example: `./analysis/eda-1/` R + QMD pair
 **R Script (`eda-1.R`)**: Your analytical laboratory
 - Interactive development and experimentation
 - Iterative refinement of visualizations
-- Save plots to disk with `ggsave()` - **no `print()` commands**
+- Use `print()` to display plots interactively AND `ggsave()` to save to disk
 - Focus on physical output specifications during development
 
 **Quarto Document (`eda-1.qmd`)**: Your publication layer
 - Polished reporting with narrative context
-- Use `print(plot_object)` in chunks for HTML rendering
+- Chunk bodies are empty — `print()` in the sourced R chunk renders automatically
 - Document your analytical reasoning and findings
 - Optimized for communication and sharing
 
 ### **Why This Split Matters**
 
-This separation forces deliberate consideration of **physical dimensions** during development. When you use `ggsave()` in the R script, you must think about how the graph will actually be viewed and used. The Quarto document then presents these thoughtfully-crafted visualizations with appropriate context.
+This separation forces deliberate consideration of **physical dimensions** during development. When you use `ggsave()` in the R script, you specify exact dimensions. The `print()` call in the same R chunk renders the plot both interactively and when Quarto sources the chunk — the `.qmd` chunk body stays empty.
 
 ```r
-# In R script - deliberate about physical output to be more human-friendly
-ggsave(paste0(prints_folder, "g21_performance_comparison.png"), 
+# In R script - print for interactive display AND save the artifact
+print(g21_plot)  # Renders interactively; also captured by Quarto via read_chunk()
+ggsave(paste0(prints_folder, "g21_performance_comparison.png"),
        g21_plot, width = 8.5, height = 5.5, dpi = 300)
-# No print() here - focus on the saved artifact
 ```
 
 ```qmd
-<!-- In Quarto - focus on communication -->
+<!-- In Quarto - chunk options only; print() comes from the sourced R chunk -->
 ```{r g21}
 #| fig-cap: "Performance varies significantly by transmission type"
-print(g21_plot)  # Print for HTML rendering
+#| fig-width: 8.5
+#| fig-height: 5.5
 ```
 
 
@@ -72,6 +73,7 @@ g21_performance_bars <- performance_summary %>%
   ggplot(aes(x = transmission, y = avg_mpg, fill = engine)) +
   geom_col(position = "dodge") +
   labs(title = "Average Fuel Efficiency by Design Choices")
+print(g21_performance_bars)
 
 # ---- g21a ---------------------------------------------------
 # Slight variation: Same idea but focus on sample size awareness
@@ -84,6 +86,7 @@ g21a_performance_bars_weighted <- performance_summary %>%
   labs(title = "Average Fuel Efficiency by Design Choices",
        subtitle = "Sample sizes shown for interpretation context") +
   ylim(0, max(performance_summary$avg_mpg) * 1.1)
+print(g21a_performance_bars_weighted)
 
 # ---- g22 ----------------------------------------------------
 # Family member: Detailed individual-level exploration
@@ -93,6 +96,7 @@ g22_performance_scatter <- mtcars %>%  # Further transforms the original data
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   labs(title = "Individual Vehicle Performance Patterns")
+print(g22_performance_scatter)
 ```
 
 ### **Examples of Different Family Approaches**
@@ -117,6 +121,7 @@ efficiency_patterns <- mtcars %>%
 g31_efficiency_histogram <- efficiency_patterns %>%
   ggplot(aes(x = mpg, fill = efficiency_category)) +
   geom_histogram(bins = 12)
+print(g31_efficiency_histogram)
 
 # ---- g32 ----------------------------------------------------  
 # Boxplot view by categories
@@ -124,6 +129,7 @@ g32_efficiency_boxplot <- efficiency_patterns %>%
   ggplot(aes(x = efficiency_category, y = mpg)) +
   geom_boxplot() +
   geom_jitter(width = 0.2, alpha = 0.6)
+print(g32_efficiency_boxplot)
 ```
 
 #### **Family Type 2: Assumption Exploration**
@@ -141,6 +147,7 @@ g41_linear_performance <- baseline_performance %>%
   ggplot(aes(x = wt, y = hp, color = factor(am))) +
   geom_point() +
   geom_smooth(method = "lm")  # Linear assumption
+print(g41_linear_performance)
 
 # ---- g42 ----------------------------------------------------
 # Non-linear assumption about the same relationship  
@@ -148,6 +155,7 @@ g42_nonlinear_performance <- baseline_performance %>%
   ggplot(aes(x = wt, y = hp, color = factor(am))) +
   geom_point() +
   geom_smooth(method = "loess")  # Non-linear assumption
+print(g42_nonlinear_performance)
 ```
 
 ### **Naming Convention Logic**
@@ -346,9 +354,10 @@ create_summary_table <- function(data, group_vars, numeric_vars) {
 #| fig-cap: "Performance varies significantly across transmission types"
 #| fig-width: 8.5
 #| fig-height: 5.5
-print(g21_performance_bars)
 ```
 ```
+
+The chunk body is empty because `print()` lives in the sourced R chunk. Quarto executes the R chunk code (including `print()`) when rendering.
 
 **Key chunk options explained:**
 - `cache: true`: Avoid re-running expensive computations
@@ -368,9 +377,9 @@ Each analytical chunk should address a specific question or test a particular hy
 
 1. **Start in R script** - work interactively with chunks
 2. **Develop data-prep chunk** - establish the conceptual foundation
-3. **Create family members** - explore different aspects systematically  
-4. **Save plots to prints/** - review physical output quality
-5. **Add to Quarto when ready** - document findings with narrative context
+3. **Create family members** - explore different aspects systematically
+4. **Add `print()` + `ggsave()`** - display interactively and save to `prints/`
+5. **Add to Quarto when ready** - add chunk header options only; `print()` is already in the R chunk
 6. **Iterate based on insights** - let discoveries guide next exploration
 
 ### **Professional Quality Checklist**
@@ -385,8 +394,9 @@ Each analytical chunk should address a specific question or test a particular hy
 
 **Code quality standards:**
 - [ ] Defensive package loading with helpful error messages
-- [ ] Directory creation is idempotent 
+- [ ] Directory creation is idempotent
 - [ ] Graph objects have descriptive names (`g21_performance_comparison`)
+- [ ] Each graph chunk ends with `print()` (for interactive display + Quarto rendering)
 - [ ] Comments explain analytical reasoning, not just code mechanics
 
 ## 💡 Advanced Patterns
