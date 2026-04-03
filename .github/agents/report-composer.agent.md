@@ -93,7 +93,7 @@ After the interview, update:
 - Propose graph families that address contract research questions
 - Follow the **dual-file pattern**: all exploration code in `.R`, publication in `.qmd` via `read_chunk()`
 - Maintain **graph naming**: g1, g2, g21, g22, g3… (numbers never change once assigned)
-- Use `ggsave()` in `.R` scripts (8.5 × 5.5 inches, 300 DPI default); `print()` in `.qmd` chunks
+- Use both `print()` and `ggsave()` in `.R` scripts (8.5 × 5.5 inches, 300 DPI default); `.qmd` chunk bodies remain **empty** (print executes via `read_chunk()`)
 - Reference Alberta Corporate Visual Identity colors from `scripts/graphing/graph-presets.R`
 - Create `local-functions.R` when analysis-specific helpers are needed
 - Default to **descriptive statistics** — ask before inferential approaches

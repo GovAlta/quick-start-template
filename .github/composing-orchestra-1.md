@@ -191,7 +191,7 @@ From `eda-style-guide.md`:
 
 ### Print Optimization
 
-Default: 8.5 × 5.5 inches at 300 DPI (letter-size half-page portrait). Use `ggsave()` in R scripts; use `print()` in Quarto chunks.
+Default: 8.5 × 5.5 inches at 300 DPI (letter-size half-page portrait). Use both `print()` and `ggsave()` in R scripts; Quarto chunk bodies remain empty as `print()` executes automatically via `read_chunk()`.
 
 ### Alberta Corporate Visual Identity
 

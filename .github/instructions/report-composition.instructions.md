@@ -14,8 +14,8 @@ These rules apply to all analytical content in `analysis/`. They codify the conv
 
 Every analysis consists of an `.R` script and a `.qmd` document:
 
-- **`.R` script** = analytical laboratory. All exploration, data wrangling, and visualization development happens here. Use `ggsave()` to save plots. No `print()` statements for display.
-- **`.qmd` document** = publication layer. Sources chunks from the `.R` script via `read_chunk()`. Uses `print(plot_object)` for HTML rendering. Provides narrative context around visualizations.
+- **`.R` script** = analytical laboratory. All exploration, data wrangling, and visualization development happens here. Use `print()` for interactive display and Quarto rendering, plus `ggsave()` to save plots to disk.
+- **`.qmd` document** = publication layer. Sources chunks from the `.R` script via `read_chunk()`. Chunk bodies remain **empty** — the `print()` statement in the sourced R chunk executes automatically during rendering. Provides narrative context around visualizations.
 - **Synchronization**: When creating a new chunk in `.R`, create the corresponding `.qmd` chunk reference. Chunk names must match exactly between files.
 
 ```r
@@ -142,8 +142,9 @@ if (requireNamespace("pkg", quietly = TRUE)) { library(pkg) }
 #| cache: true
 #| fig-cap: "Caption describing the visualization"
 #| code-fold: true
-print(g21_plot)
 ```
+
+**Note**: The chunk body is empty. The `print()` statement lives in the sourced R chunk and executes automatically when Quarto renders via `read_chunk()`. See [analysis/eda-1/eda-style-guide.md](../analysis/eda-1/eda-style-guide.md) for detailed rationale.
 
 ## Quality Standards
 
