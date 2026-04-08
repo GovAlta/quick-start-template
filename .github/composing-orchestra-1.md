@@ -38,7 +38,7 @@ Every EDA or Report produced by the Composing Orchestra generates two artifacts:
 
 ### Centralized Data Primer
 
-The data primer lives at `analysis/data-primer-1/` and is itself composed via `@report-composer` like any other analysis — with its own contract, `.R` + `.qmd` pair, and adaptive interview. It is the canonical, human-verified reference covering:
+The data primer lives at `analysis/data-primer-1/` and is itself composed via `@report-composer` like any other analysis — with its own contract, `.R` + `.qmd` pair, and adaptive interview. It exists to describe data as it emerges from the Ellis lane scripts. It is the canonical, human-verified reference covering:
 
 - Pipeline architecture (Ellis → parquet assets)
 - Data asset inventory (table, grain, row count, column count)
@@ -110,6 +110,7 @@ After scaffolding, the agent asks 3–5 focused questions to refine the contract
 5. "Any known patterns or hypotheses to explore?" → seeds initial graphs
 
 **Example question sequence for a Report:**
+
 1. "Which EDAs or documents should this report synthesize?" → establishes upstream sources
 2. "Who is the primary audience?" → sets narrative tone and detail level
 3. "What is the key message or finding?" → establishes thesis
@@ -202,7 +203,6 @@ Reference `scripts/graphing/graph-presets.R` for `abcol`, `binary_colors`, `acru
 Every `ds*` and `g*` object must trace back to:
 - Ellis output (`data-private/derived/manipulation/*.parquet`) →
 - CACHE database tables (`data-public/metadata/CACHE-manifest.md`) →
-- Batch-91 source data
 
 ### Descriptive Default
 
@@ -239,18 +239,21 @@ The `report-composer` agent is **not** a persona in the `ai/personas/` system. I
 ## Philosophical Foundations
 
 ### Tukey (Exploratory Data Analysis)
+
 - Approach data with an open mind — let patterns emerge
 - Use robust statistics resistant to outliers
 - "The greatest value of a picture is when it forces us to notice what we never expected to see"
 - Question assumptions; expect the unexpected
 
 ### Tufte (Visual Clarity)
+
 - Maximize data-ink ratio — remove chartjunk
 - Show the data clearly and honestly
 - Use small multiples for comparisons
 - "Above all else, show the data"
 
 ### Wickham (Tidy Toolchain)
+
 - Tidy data: variables in columns, observations in rows
 - Grammar of graphics: layer aesthetics, geometries, scales systematically
 - Pipe-based workflows for readability
