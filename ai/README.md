@@ -90,20 +90,11 @@ Pre-configured VSCode tasks for:
 - Context status monitoring  
 - System validation and testing
 
-## Migration Options
+## Migration
 
-### Manual Migration (with Mandatory Assessment)
-1. **Pre-migration Check**: Validates target repository compatibility
-2. **Impact Assessment**: Detailed analysis of changes and potential conflicts
-3. **Manual Review**: Human approval required before proceeding
-4. **Guided Installation**: Step-by-step installation with validation
-5. **Post-migration Testing**: Ensures all components work correctly
+See [`ai/migration.md`](migration.md) for the authoritative guide to migrating the ai/ support system between repositories. The migration workflow is driven by an AI agent (or human) reading that document, comparing source and target repos semantically, and proposing changes for human approval.
 
-### AI-Assisted Migration
-- Automatic compatibility detection
-- Smart conflict resolution
-- Adaptive integration based on target repo structure
-- Built-in rollback capability
+Helper functions in `scripts/migration-utilities.R` provide validation and backup utilities.
 
 ## Target Repository Compatibility
 
@@ -129,25 +120,18 @@ Pre-configured VSCode tasks for:
 
 ## Usage Examples
 
-### Exporting Persona System Only
+### Exporting to Another Repo
 ```r
-# Export just the persona system to another repo
-export_ai_components(
-  components = "personas",
-  target_repo = "path/to/target",
-  mode = "manual"  # Triggers mandatory assessment
-)
+# Use ai/migration.md as the guide. The AI agent reads it and drives the workflow.
+# Helper: validate that the target repo has expected structure
+source("ai/scripts/migration-utilities.R")
+validate_ai_structure("path/to/target")
 ```
 
-### Full AI Support Migration
+### Backing Up Before Migration
 ```r
-# Migrate entire AI support system
-migrate_ai_support(
-  from = "source-repository",
-  to = "target-repository", 
-  mode = "ai_assisted",
-  components = c("personas", "context", "memory", "vscode")
-)
+source("ai/scripts/migration-utilities.R")
+create_migration_backup("path/to/target")
 ```
 
 ## Quick Start
@@ -162,37 +146,25 @@ migrate_ai_support(
 
 ```
 ai/
-├── ai-support-config.yml      # Main configuration
 ├── README.md                  # This file
+├── migration.md               # Authoritative migration guide
 ├── core/                      # Context management
 │   └── base-instructions.md
-├── personas/                  # AI personas (12 specialized)
+├── personas/                  # AI personas (specialized)
 │   ├── developer.md
-│   ├── project_manager.md
+│   ├── project-manager.md
 │   └── ...
 ├── scripts/                   # Portable logic
 │   ├── dynamic-context-builder.R   # Core context building engine
-│   ├── ai-migration-toolkit.R      # Portable persona switching & migration tools
+│   ├── ai-config-utils.R           # Centralized configuration reader
 │   ├── ai-memory-functions.R       # Memory system with storage/logic separation
-│   ├── migration-utilities.R       # Export/import tools
-│   ├── tests/                      # Testing & verification
-│   │   ├── run-all-tests.R         # Comprehensive test runner
-│   │   ├── test-developer-integration.R     # Developer persona tests
-│   │   ├── test-project-manager-integration.R  # Project manager tests
-│   │   └── test-mini-eda-system.R  # Mini-EDA system tests
-│   └── wrappers/                   # VSCode task wrapper scripts
-│       ├── run-ai-memory-check.R
-│       ├── run-add-core-context.R
-│       └── test-context-management.R
-├── memory/                    # Memory system templates
-├── templates/                 # Migration templates
-│   ├── manual-migration/
-│   └── ai-assisted-migration/
+│   ├── migration-utilities.R       # Validation & backup helpers for migration
+│   └── tests/                      # Testing & verification
+├── memory/                    # Memory system (project-specific content)
+├── project/                   # Project context (mission, method, glossary)
 ├── vscode/                    # VSCode integration
 │   └── tasks-template.json
 └── docs/                      # Documentation
-    ├── migration-guide.md
-    └── troubleshooting.md
 ```
 
 ## Philosophy

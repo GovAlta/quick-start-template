@@ -366,7 +366,7 @@ ai/
 **Solution:** Check file exists at specified path, verify file is valid markdown
 
 **Problem:** VS Code task fails to activate persona  
-**Solution:** Verify ai-migration-toolkit.R is sourcing dynamic-context-builder.R correctly
+**Solution:** Verify the task sources dynamic-context-builder.R correctly and the persona file exists
 
 ---
 
