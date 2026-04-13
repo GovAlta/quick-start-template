@@ -122,6 +122,18 @@
       "problemMatcher": []
     },
     {
+      "label": "Activate Presenter Persona",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai/scripts/dynamic-context-builder.R'); activate_presenter(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
       "label": "Show AI Context Status",
       "type": "process",
       "command": "Rscript",

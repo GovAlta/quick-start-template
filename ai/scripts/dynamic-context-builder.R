@@ -106,6 +106,10 @@ get_persona_configs <- function() {
     "grapher" = list(
       file = get_persona_path("grapher.md"),
       default_context = c("project/glossary", "project/mission", "project/method")
+    ),
+    "presenter" = list(
+      file = get_persona_path("presenter.md"),
+      default_context = c()
     )
   )
 }
@@ -606,6 +610,10 @@ activate_reporter <- function() {
 
 activate_grapher <- function() {
   set_persona_with_defaults("grapher")
+}
+
+activate_presenter <- function() {
+  set_persona_with_defaults("presenter")
 }
 
 # ==============================================================================
