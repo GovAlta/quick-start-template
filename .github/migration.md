@@ -6,7 +6,7 @@ How to lift orchestration systems from source repositories into a target reposit
 
 ## Publishing Orchestra — Migration Guide
 
-How to lift the publishing orchestra from `caseload-forecast-demo` into another repository that does not have it yet.
+How to lift the publishing orchestra from `quick-start-template` into another repository that does not have it yet.
 
 ---
 
