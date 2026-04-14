@@ -1,4 +1,4 @@
-# Persona System Guide
+﻿# Persona System Guide
 
 A comprehensive guide to understanding, using, and managing the AI persona system in the case-note-simulator repository.
 
@@ -20,7 +20,7 @@ The persona system provides **specialized AI assistants** tailored for different
 ```r
 # Essential Commands
 source('./scripts/update-copilot-context.R')   # Load the system
-list_personas()                                # See all available personas  
+list_personas()                                # See all available personas
 activate_developer()                           # Backend/infrastructure focus
 activate_casenote_analyst()                    # Domain analysis focus
 get_current_persona()                          # Check active persona
@@ -35,10 +35,12 @@ remove_all_dynamic_instructions()              # Reset all context
 ### When to Use Each Persona
 
 #### 🔧 Developer (Default)
+
 **Activate**: Automatically loaded, or `activate_developer()`
 **Best For**:
+
 - Backend system design and troubleshooting
-- Reproducible research infrastructure  
+- Reproducible research infrastructure
 - Database design and optimization
 - Performance tuning and debugging
 - CI/CD and deployment issues
@@ -46,14 +48,17 @@ remove_all_dynamic_instructions()              # Reset all context
 - Testing framework development
 
 **Example Questions**:
+
 - "Help me debug this flow.R pipeline failure"
 - "Design a robust data validation system"
 - "Review our repository structure for maintainability"
 - "Optimize this R script for better performance"
 
-#### 📊 Case Note Analyst  
+#### 📊 Case Note Analyst
+
 **Activate**: `activate_casenote_analyst()`
 **Best For**:
+
 - Social services data analysis
 - Risk stratification and assessment
 - Case note interpretation and flagging
@@ -62,14 +67,16 @@ remove_all_dynamic_instructions()              # Reset all context
 - Statistical analysis of case patterns
 
 **Example Questions**:
+
 - "Analyze these case notes for risk indicators"
-- "Create a demographic profile of this client population" 
+- "Create a demographic profile of this client population"
 - "Design a risk assessment framework"
 - "Interpret these case note patterns statistically"
 
 ### Workflow Examples
 
 #### Typical Development Session
+
 ```r
 # Start working (Developer auto-loads)
 source('./scripts/update-copilot-context.R')
@@ -87,17 +94,18 @@ activate_developer()
 ```
 
 #### Project Phase Alignment
+
 ```r
 # Data Engineering Phase
 activate_developer()
 # Focus: ETL pipelines, database design, system setup
 
-# Analysis Phase  
+# Analysis Phase
 activate_casenote_analyst()
 # Focus: Case note analysis, risk assessment, reporting
 
 # Infrastructure Maintenance
-activate_developer()  
+activate_developer()
 # Focus: Performance, monitoring, deployment
 ```
 
@@ -128,7 +136,7 @@ Each persona specifies what context to load:
 activate_developer()
 # Loads: agent-persona only
 
-# Case Note Analyst: Rich domain context  
+# Case Note Analyst: Rich domain context
 activate_casenote_analyst()
 # Loads: agent-persona + mission + method
 ```
@@ -143,6 +151,7 @@ activate_casenote_analyst()
 ## 🛠️ Technical Implementation
 
 ### File Structure
+
 ```
 ./ai/personas/
 ├── README.md                    # Directory overview
@@ -153,22 +162,24 @@ activate_casenote_analyst()
 ```
 
 ### Activation Function Pattern
+
 ```r
 activate_[persona_name] <- function() {
-  set_persona("./ai/personas/[persona-name].md", 
-              "[persona-name]", 
+  set_persona("./ai/personas/[persona-name].md",
+              "[persona-name]",
               character(0))  # or c("mission", "method") for rich context
 }
 ```
 
 ### Persona File Template
+
 ```markdown
 # [Persona Name] System Prompt
 
 ## Role
 [Define the persona's identity and primary function]
 
-## Objective/Task  
+## Objective/Task
 [Specify main goals and responsibilities]
 
 ## Tools/Capabilities
@@ -193,37 +204,43 @@ activate_[persona_name] <- function() {
 ## 📈 Creating New Personas
 
 ### 1. Identify the Need
+
 - What specialized expertise is missing?
 - What domain knowledge would be valuable?
 - How would this complement existing personas?
 
 ### 2. Create the Persona File
+
 ```bash
 # Create new persona file
 touch ./ai/personas/new-persona.md
 ```
 
 ### 3. Define the Persona
+
 - Follow the standard template structure
 - Be specific about expertise areas
 - Define clear boundaries and limitations
 - Specify integration points with existing systems
 
 ### 4. Add Activation Function
+
 ```r
 # In update-copilot-context.R
 activate_new_persona <- function() {
-  set_persona("./ai/personas/new-persona.md", "new-persona", 
+  set_persona("./ai/personas/new-persona.md", "new-persona",
               c("relevant", "context", "files"))
 }
 ```
 
 ### 5. Update Documentation
+
 - Add to `./ai/personas/README.md`
 - Update this guide with usage examples
 - Create user-facing documentation if needed
 
 ### 6. Create Integration Tests
+
 ```r
 # Test persona loading and functionality
 test_new_persona_integration <- function() {
@@ -239,6 +256,7 @@ test_new_persona_integration <- function() {
 ### Common Issues
 
 #### Persona Not Loading
+
 ```r
 # Check if file exists
 file.exists("./ai/personas/persona-name.md")
@@ -251,6 +269,7 @@ exists("activate_persona_name")
 ```
 
 #### Wrong Content Loading
+
 ```r
 # Force refresh
 deactivate_persona()
@@ -262,6 +281,7 @@ readLines(".copilot-persona")
 ```
 
 #### Performance Issues
+
 ```r
 # Check copilot instructions file size
 file.size(".github/copilot-instructions.md")
@@ -271,6 +291,7 @@ file.size(".github/copilot-instructions.md")
 ```
 
 ### Debug Commands
+
 ```r
 # System status
 context_refresh()
@@ -289,18 +310,21 @@ if (file.exists(".copilot-persona")) file.remove(".copilot-persona")
 ## 🚀 Best Practices
 
 ### For Humans
+
 1. **Start with Developer**: The default persona handles most backend needs
 2. **Switch Contextually**: Activate domain personas only when doing specialized work
 3. **Check Current State**: Use `get_current_persona()` to know what's active
 4. **Reset When Confused**: Use `deactivate_persona()` to return to basics
 
-### For AI Agents  
+### For AI Agents
+
 1. **Respect Persona Boundaries**: Stay within the activated persona's expertise
 2. **Suggest Appropriate Switches**: Recommend persona changes when needed
 3. **Leverage Dynamic Content**: Use loaded context files effectively
 4. **Maintain System Health**: Monitor performance and suggest optimizations
 
 ### For System Maintainers
+
 1. **Keep Personas Focused**: Each should have clear, non-overlapping expertise
 2. **Test Regularly**: Run integration tests to catch issues early
 3. **Document Changes**: Update guides when adding or modifying personas

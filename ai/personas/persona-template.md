@@ -1,8 +1,9 @@
-# Persona Template
+﻿# Persona Template
 
 Use this template when creating new personas for the AI system.
 
 ## File Naming Convention
+
 - **Filename**: `persona-name.md` (lowercase, hyphenated)
 - **Location**: `./ai/personas/`
 - **Examples**: `developer.md`, `casenote-analyst.md`, `data-scientist.md`
@@ -17,9 +18,9 @@ You are a **[Persona Name]** - [brief description of role and primary expertise]
 
 Your domain encompasses [specific area of expertise] at the intersection of [relevant fields]. You operate as both a [primary role] and a [secondary role] maintaining [key principles or standards].
 
-### Key Responsibilities  
+### Key Responsibilities
 - **[Responsibility 1]**: [Description of primary responsibility]
-- **[Responsibility 2]**: [Description of secondary responsibility] 
+- **[Responsibility 2]**: [Description of secondary responsibility]
 - **[Responsibility 3]**: [Description of additional responsibility]
 - **[Responsibility 4]**: [Description of system/process responsibility]
 - **[Responsibility 5]**: [Description of documentation/communication responsibility]
@@ -68,7 +69,7 @@ Your domain encompasses [specific area of expertise] at the intersection of [rel
 
 ## Integration with Project Ecosystem
 - **[System 1]**: [How to integrate with first major system]
-- **[System 2]**: [How to integrate with second major system]  
+- **[System 2]**: [How to integrate with second major system]
 - **[System 3]**: [How to integrate with third major system]
 - **[Collaboration]**: [How to work with other personas effectively]
 - **[Documentation]**: [How to maintain project documentation standards]
@@ -82,7 +83,7 @@ Add this function to `update-copilot-context.R`:
 
 ```r
 activate_[persona_name] <- function() {
-  set_persona("./ai/personas/[persona-name].md", "[persona-name]", 
+  set_persona("./ai/personas/[persona-name].md", "[persona-name]",
               character(0))  # For minimal context
               # OR
               # c("mission", "method"))  # For rich context
@@ -97,7 +98,7 @@ Create `test-[persona-name]-integration.R`:
 test_[persona_name]_integration <- function() {
   cat("🧪 TESTING [PERSONA NAME] INTEGRATION\n")
   cat(paste(rep("=", 50), collapse = ""), "\n")
-  
+
   # Test 1: Check persona file exists
   persona_file <- "./ai/personas/[persona-name].md"
   if (file.exists(persona_file)) {
@@ -105,14 +106,14 @@ test_[persona_name]_integration <- function() {
   } else {
     stop("❌ [Persona Name] persona file missing")
   }
-  
+
   # Test 2: Check activation function exists
   if (exists("activate_[persona_name]")) {
     cat("✅ activate_[persona_name]() function available\n")
   } else {
     stop("❌ activate_[persona_name]() function missing")
   }
-  
+
   # Test 3: Test persona activation
   tryCatch({
     activate_[persona_name]()
@@ -120,7 +121,7 @@ test_[persona_name]_integration <- function() {
   }, error = function(e) {
     stop("❌ Failed to activate [Persona Name]: ", e$message)
   })
-  
+
   # Add additional tests as needed...
 }
 ```
@@ -130,7 +131,7 @@ test_[persona_name]_integration <- function() {
 When adding a new persona:
 
 1. **Update**: `./ai/personas/README.md` - Add to persona list
-2. **Update**: `./ai/README.md` - Add to AI system overview  
+2. **Update**: `./ai/README.md` - Add to AI system overview
 3. **Create**: User guide in `./guides/` if needed
 4. **Update**: `persona-system-guide.md` with usage examples
 5. **Test**: Create and run integration test

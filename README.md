@@ -11,17 +11,20 @@ Refer to [RAnalysisSkeleton](https://github.com/wibeasley/RAnalysisSkeleton) for
 This project template includes 9 specialized AI personas, each optimized for different research tasks:
 
 ### **Core Personas**
+
 - **🔧 Developer** - Technical infrastructure and reproducible code
 - **📊 Project Manager** - Strategic oversight and coordination
 - **🔬 Research Scientist** - Statistical analysis and methodology
 
-### **Specialized Personas**  
+### **Specialized Personas** 
+
 - **💡 Prompt Engineer** - AI optimization and prompt design
 - **⚡ Data Engineer** - Data pipelines and quality assurance
 - **📈 Grapher** - Data visualization and display of informatioin
 - **📝 Reporter** - Analysis communication and storytelling
 - **🚀 DevOps Engineer** - Deployment and operational excellence
 - **🎨 Frontend Architect** - User interfaces and visualization
+- **&#x1F3A4; Presenter** - Produces slides and talk materials. 
 
 You can switch between personas in VSCode:
 - `Ctrl+Shift+P` → "Tasks: Run Task" → "Activate [Persona Name] Persona"  
