@@ -43,7 +43,7 @@ The `dynamic-context-builder.R` script provides a clean, powerful AI context man
 
 ---
 
-## Function Inventory (18 Functions)
+## Function Inventory (22 Functions)
 
 ### Core Engine (5 functions - Internal Use)
 
@@ -159,7 +159,7 @@ These functions provide direct control over Section 3 context.
 
 ---
 
-### Persona Activation Shortcuts (10 functions - High-Value Convenience)
+### Persona Activation Shortcuts (11 functions - High-Value Convenience)
 
 These provide instant persona switching with intuitive names. All follow the same pattern: `activate_*() { set_persona_with_defaults("*") }`
 
@@ -167,14 +167,15 @@ These provide instant persona switching with intuitive names. All follow the sam
 |----------|---------|-----------------|----------|
 | `activate_default()` | Default | None | General assistance |
 | `activate_developer()` | Developer | None | Technical implementation, minimal context |
-| `activate_data_engineer()` | Data Engineer | None | Data pipeline specialist |
+| `activate_data_engineer()` | Data Engineer | cache-manifest, glossary | Data pipeline specialist |
 | `activate_research_scientist()` | Research Scientist | None | Statistical analysis |
 | `activate_devops_engineer()` | DevOps Engineer | None | Production deployment |
 | `activate_frontend_architect()` | Frontend Architect | None | Visualization specialist |
 | `activate_project_manager()` | Project Manager | mission, method, glossary | Strategic oversight, full context |
-| `activate_casenote_analyst()` | Casenote Analyst | None | Domain-specific analyst |
 | `activate_prompt_engineer()` | Prompt Engineer | None | Prompt engineering specialist |
 | `activate_reporter()` | Reporter | None | Analytical storytelling |
+| `activate_grapher()` | Grapher | glossary, mission, method | Graph design specialist |
+| `activate_presenter()` | Presenter | None | Presentation specialist |
 
 **Note:** These functions are integrated with VS Code tasks for one-click persona switching from the command palette.
 
@@ -322,7 +323,7 @@ ai/
 ├── personas/
 │   ├── developer.md                  # Section 2 sources
 │   ├── project-manager.md
-│   └── ... (10 total personas)
+│   └── ... (11 total personas)
 ├── project/
 │   ├── mission.md                    # Section 3 sources
 │   ├── method.md
@@ -340,8 +341,8 @@ ai/
 
 ### Code Statistics
 
-- **Total Lines:** ~670
-- **Functions:** 18 (organized in 4 categories)
+- **Total Lines:** ~660
+- **Functions:** 22 (organized in 4 categories)
 - **Dependencies:** ai-config-utils.R, config.yml
 - **Output:** Single copilot-instructions.md file
 
@@ -399,12 +400,12 @@ ai/
 
 **What:** Pure 3-section AI context management system
 **Purpose:** Control GitHub Copilot behavior via personas and project context
-**Scope:** 18 focused functions in 4 categories
+**Scope:** 22 focused functions in 4 categories
 **Status:** Production-ready
 **Complexity:** Low - simple, maintainable architecture
 
 **Key Features:**
-- ✅ 10 instant persona switches
+- ✅ 11 instant persona switches
 - ✅ Surgical context loading (add/remove specific files)
 - ✅ Built-in discovery tools
 - ✅ VS Code task integration

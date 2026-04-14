@@ -41,10 +41,12 @@ Implements portable memory management functions following a storage/logic separa
 
 **Key Functions:**
 
-- `ai_memory_check()` - Comprehensive memory system status check
 - `memory_status()` - Quick memory file status overview
 - `detect_memory_system()` - Auto-detect memory configuration
-- Memory file reading and validation utilities
+- `simple_memory_update()` - Add entry to AI memory
+- `human_memory_update()` - Add entry to human decision memory
+- `quick_intent_scan()` - Scan for TODO/FIXME patterns
+- `initialize_memory_system()` - Create memory structure
 
 **Version:** 1.0.0 - Designed for storage/logic separation
 
@@ -72,7 +74,8 @@ Clean, simplified AI context management system implementing a pure 3-section arc
 - `activate_frontend_architect()` - Visualization specialist
 - `activate_prompt_engineer()` - Prompt engineering specialist
 - `activate_reporter()` - Analytical storytelling
-- `activate_casenote_analyst()` - Domain-specific analyst
+- `activate_grapher()` - Graph design specialist
+- `activate_presenter()` - Presentation specialist
 - `activate_default()` - General assistance
 
 *Context Management:*
@@ -173,16 +176,10 @@ All scripts use **ai-config-utils.R** for:
 
 ## Related Resources
 
-- **Subdirectories:**
-  - `tests/` - Test suites for AI system validation
-  - `wrappers/` - VS Code task wrapper scripts
-
 - **Documentation:**
   - `../docs/context-system.md` - Context system guide
-  - `../docs/testing-guide.md` - Testing documentation
 
 - **Configuration:**
-  - `../ai-support-config.yml` - AI system configuration
   - `../../config.yml` - Main project configuration
 
 ---

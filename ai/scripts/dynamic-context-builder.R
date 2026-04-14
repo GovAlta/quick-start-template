@@ -48,7 +48,6 @@ get_file_map <- function() {
     # Other project files (examples)
     "semiology" = "./philosophy/semiology.md",
     "input-manifest" = "./data-public/metadata/INPUT-manifest.md",
-    "rdb-manifest" = "./data-public/metadata/RDB-manifest.md",
     "cache-manifest" = "./data-public/metadata/CACHE-manifest.md"  )
 }
 
@@ -596,10 +595,6 @@ activate_project_manager <- function() {
   set_persona_with_defaults("project-manager")
 }
 
-activate_casenote_analyst <- function() {
-  set_persona_with_defaults("casenote-analyst")
-}
-
 activate_prompt_engineer <- function() {
   set_persona_with_defaults("prompt-engineer")
 }
@@ -621,10 +616,8 @@ activate_presenter <- function() {
 # ==============================================================================
 
 # Load AI Memory System if available
-if (file.exists("./scripts/ai-memory-functions-core.R")) {
-  source("./scripts/ai-memory-functions-core.R")
-} else if (file.exists("./scripts/ai-memory-functions.R")) {
-  source("./scripts/ai-memory-functions.R")
+if (file.exists("ai/scripts/ai-memory-functions.R")) {
+  source("ai/scripts/ai-memory-functions.R")
 }
 
 # ==============================================================================
