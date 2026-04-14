@@ -10,6 +10,8 @@ The pipeline is organized into 4 phases:
 
 ### Phase 1: Ellis Data Pipeline (Multi-Stage Processing)
 
+Example from rg-fides/books-of-ukraine: 
+
 - **Stage 0**: `manipulation/0-ellis.R` - Core book data processing from local sources
 - **Stage 1**: `manipulation/1-ellis-ua-admin.R` - Ukrainian administrative data integration
 - **Stage 2**: `manipulation/2-ellis-extra.R` - **NEW** Modular custom data with bilingual support

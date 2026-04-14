@@ -20,6 +20,7 @@ This guide explains the different approaches for managing R package dependencies
 **Best for:** Templates, learning, rapid development, flexibility
 
 **Pros:**
+
 - ✅ Lightweight and transparent
 - ✅ Easy to customize packages per project
 - ✅ Version constraints available (min/max/exact)
@@ -28,11 +29,13 @@ This guide explains the different approaches for managing R package dependencies
 - ✅ Fast setup
 
 **Cons:**
+
 - ❌ Not fully deterministic (sub-dependencies can vary)
 - ❌ No automatic dependency discovery
 - ❌ Manual package list maintenance
 
 **Usage:**
+
 ```r
 # Install with latest versions
 Rscript utility/enhanced-install-packages.R
@@ -42,6 +45,7 @@ Rscript utility/install-packages.R
 ```
 
 **CSV Format:**
+
 ```csv
 package_name,install,on_cran,github_username,min_version,max_version,exact_version,description
 dplyr,TRUE,TRUE,,1.0.0,,,Essential data manipulation
@@ -55,6 +59,7 @@ OuhscMunge,TRUE,FALSE,OuhscBbmc,,,Custom package utilities
 **Best for:** Published research, strict collaboration, archival
 
 **Pros:**
+
 - ✅ **Exact reproducibility** - locks all package versions and dependencies
 - ✅ **Project isolation** - each project has its own package library
 - ✅ **Industry standard** - widely adopted in R community
@@ -62,12 +67,14 @@ OuhscMunge,TRUE,FALSE,OuhscBbmc,,,Custom package utilities
 - ✅ **Cross-platform** - works on Windows, Mac, Linux
 
 **Cons:**
+
 - ❌ **Heavier setup** - larger files, more complexity
 - ❌ **Less flexible** - harder to update individual packages
 - ❌ **Template friction** - renv.lock files can be intimidating
 - ❌ **Startup time** - project initialization takes longer
 
 **Usage:**
+
 ```r
 # Initialize renv (one-time setup)
 Rscript utility/init-renv.R
@@ -83,6 +90,7 @@ renv::snapshot()  # Update renv.lock with new packages
 **Best for:** Cross-language projects (R + Python), system dependencies
 
 **Pros:**
+
 - ✅ **Cross-language** - manages R, Python, system libraries
 - ✅ **System dependencies** - handles complex binary dependencies
 - ✅ **Fast solver** - mamba provides rapid dependency resolution
@@ -90,12 +98,14 @@ renv::snapshot()  # Update renv.lock with new packages
 - ✅ **Isolated environments** - complete separation
 
 **Cons:**
+
 - ❌ **Additional tooling** - requires conda/mamba installation
 - ❌ **Learning curve** - different command set
 - ❌ **R ecosystem** - not as R-native as renv
 - ❌ **File size** - environment files can be large
 
 **Usage:**
+
 ```bash
 # Create environment
 conda env create -f environment.yml

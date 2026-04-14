@@ -14,24 +14,28 @@ This guide explains how to add your own custom data sources to the Ellis Pipelin
 The Ellis Pipeline Stage 2 **automatically handles both Ukrainian and English column names**:
 
 **✅ Ukrainian Input (Natural for Ukrainian Users)**:
+
 ```
 Показник              | Територія           | 2023
 Кількість книгарень   | Івано-Франківська  | 19
 ```
 
 **✅ English Input (For Standardization)**:
+
 ```
 Measure               | Territory           | 2023
 Number of Bookstores  | Ivano-Frankivska    | 19
 ```
 
 **🔄 Automatic Standardization**:
+
 - All inputs are converted to English internally ("pokaznik", "teritoria")
 - Ensures consistency with core pipeline (Stages 0-1)
 - No manual translation required by users
 - Both formats work seamlessly
 
 **📝 Supported Ukrainian → English Mappings**:
+
 - `Показник` / `показник` → `pokaznik` (measure/indicator)
 - `Територія` / `територія` → `teritoria` (territory/region)
 - `Область` / `область` → `oblast` (oblast)
@@ -46,17 +50,20 @@ Number of Bookstores  | Ivano-Frankivska    | 19
 **Best for**: Data organized as dimensions × years (similar to core pipeline data)
 
 **Format Requirements**:
+
 - `pokaznik` column (measure type)
 - Category column (e.g., region names, themes)
 - Year columns (`x2005`, `x2006`, etc.)
 
 **Example Use Cases**:
+
 - Bookstores by region over time ✅ (currently implemented)
 - Libraries by oblast over time
 - Cultural events by city over time
 - Educational institutions by region
 
 **Google Sheets Structure**:
+
 ```
 pokaznik          | teritoria           | x2020 | x2021 | x2022 | x2023
 Кількість книгарень | Івано-Франківська  |   18  |   19  |   19  |   19
@@ -68,16 +75,19 @@ pokaznik          | teritoria           | x2020 | x2021 | x2022 | x2023
 **Best for**: Reference data and mappings
 
 **Format Requirements**:
+
 - Clear key columns for joining
 - Consistent data types
 
 **Example Use Cases**:
+
 - Region code mappings
 - Publisher classifications
 - Author biographical data
 - ISBN to metadata mappings
 
 **Google Sheets Structure**:
+
 ```
 region_name        | region_code | population | area_km2
 Івано-Франківська | IF          | 1400000    | 13900
@@ -89,16 +99,19 @@ region_name        | region_code | population | area_km2
 **Best for**: Event data and simple tabular information
 
 **Format Requirements**:
+
 - Consistent column structure
 - Clean data types
 
 **Example Use Cases**:
+
 - Book fair events
 - Publisher survey responses
 - Literary award winners
 - Author interviews
 
 **Google Sheets Structure**:
+
 ```
 event_name        | date       | location      | attendance | books_sold
 Lviv Book Forum   | 2023-09-15 | Lviv          | 25000      | 1200
@@ -196,6 +209,7 @@ source("manipulation/2-ellis-extra.R")
 ```
 
 **Watch for**:
+
 - ✅ "Loaded: X rows × Y columns" (data loaded successfully)
 - ✅ "Processed: X records for table: your_table" (processing successful)
 - ❌ Error messages (fix issues in your Google Sheet)
@@ -211,6 +225,7 @@ source("manipulation/last-ellis.R")
 ```
 
 **Check outputs**:
+
 - Your tables appear in the final SQLite database
 - CSV files are created in `data-private/derived/manipulation/CSV/`
 - Tables are named `ds_your_table` and `ds_your_table_wide`
@@ -220,18 +235,22 @@ source("manipulation/last-ellis.R")
 ### Common Issues
 
 **"Sheet not found"**:
+
 - Check sheet name spelling in `expected_sheets`
 - Verify the sheet exists in your Google document
 
 **"No category column detected"**:
+
 - For categorical time series, ensure you have a non-year, non-pokaznik column
 - Manually specify using `category_column_detection = "your_column_name"`
 
 **"Missing pokaznik column"**:
+
 - For categorical time series, you must have a column named "pokaznik"
 - This column defines what each row measures
 
 **"Error loading sheet"**:
+
 - Check Google Sheets sharing permissions
 - Verify the Sheet ID in your URL
 - Ensure authentication is working (run core pipeline first)
@@ -239,6 +258,7 @@ source("manipulation/last-ellis.R")
 ### Validation Errors
 
 The system validates your data before processing:
+
 - **Required columns** must be present
 - **Year columns** must follow x2023 format
 - **Data types** must be consistent

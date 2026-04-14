@@ -23,7 +23,10 @@ Open a terminal and run:
 git clone <REPO_URL>
 cd books-of-ukraine
 ```
-### Or download the repository as a ZIP file from GitHub and extract it to your desired location. **(recomended for beginners)**
+
+### 2. (alt) Download Zip
+
+Download the repository as a ZIP file from GitHub and extract it to your desired location. **(recomended for beginners)**
 
 ---
 
@@ -100,6 +103,7 @@ context_refresh() # Scans and summarizes the current AI/project memory context, 
 ```
 
 These commands will:
+
 - Validate your environment and dependencies
 - Check for required files and data
 - Assess project health and readiness
