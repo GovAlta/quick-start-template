@@ -95,7 +95,6 @@ ADDITIONS (new files to create):
 
 UPDATES (existing files to replace/patch):
   - ai/scripts/dynamic-context-builder.R — [what changed and why]
-  - ai/docs/commands.md — [what changed]
 
 DEPRECATIONS (files to remove):
   - ai/scripts/old-utility.R — [why it's removed]

@@ -18,7 +18,6 @@
 ## File Conventions
 - **AI directory**: Reference without `ai/` prefix (`'project/glossary'` → `ai/project/glossary.md`)
 - **Extensions**: Optional (both `'project/glossary'` and `'project/glossary.md'` work)
-- **Commands**: See `./ai/docs/commands.md` for authoritative reference
 
 
 ## Operational Guidelines
@@ -30,7 +29,7 @@
 - **Combine operations** when possible (persona + context in one command)
 
 ### Execution Strategy
-- **Direct**: When syntax documented in commands reference (./ai/docs/commands.md)
+- **Direct**: When operation is well-understood and straightforward
 - **Research**: Only for novel operations not covered in docs
 
 ## MD Style Guide

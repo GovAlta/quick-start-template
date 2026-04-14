@@ -178,7 +178,6 @@ All scripts use **ai-config-utils.R** for:
   - `wrappers/` - VS Code task wrapper scripts
 
 - **Documentation:**
-  - `../docs/commands.md` - Command reference
   - `../docs/context-system.md` - Context system guide
   - `../docs/testing-guide.md` - Testing documentation
 
