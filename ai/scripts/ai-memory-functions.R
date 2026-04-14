@@ -53,8 +53,6 @@ get_memory_file_paths <- function(project_root = ".") {
   return(list(
     ai = get_ai_file_path("memory-ai", project_root),
     human = get_ai_file_path("memory-human", project_root),
-    hub = get_ai_file_path("memory-hub", project_root),
-    guide = get_ai_file_path("memory-guide", project_root),
     log_dir = file.path(dirname(get_ai_file_path("memory-ai", project_root)), "log")
   ))
 }
@@ -243,10 +241,8 @@ show_memory_help <- function() {
   cat("- initialize_memory_system() - Create memory structure\n\n")
   
   cat("Memory Files:\n")
-  cat("- [[memory-hub]] - Navigation hub\n")
   cat("- [[memory-ai]] - AI technical notes\n")
   cat("- [[memory-human]] - Human decisions\n")
-  cat("- [[memory-guide]] - System documentation\n")
   return(invisible(TRUE))
 }
 
@@ -273,10 +269,8 @@ initialize_memory_system <- function(project_root = ".") {
   
   # Memory file templates
   memory_files <- list(
-    "memory-hub.md" = "# Memory Hub\n\nCentral navigation for project memory system.\n\n## Navigation\n- [[memory-ai]] - AI system status\n- [[memory-human]] - Human decisions  \n- [[memory-guide]] - Documentation\n",
     "memory-ai.md" = "# AI Memory\n\nAI system status and technical briefings.\n\n---\n",
-    "memory-human.md" = "# Human Memory\n\nHuman decisions and reasoning.\n\n---\n",
-    "memory-guide.md" = "# Memory Guide\n\nDocumentation for the memory system.\n\n## Usage\n- Use simple_memory_update() for AI notes\n- Use human_memory_update() for decisions\n- Navigate via [[memory-hub]]\n"
+    "memory-human.md" = "# Human Memory\n\nHuman decisions and reasoning.\n\n---\n"
   )
   
   # Create memory files

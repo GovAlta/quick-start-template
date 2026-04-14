@@ -18,8 +18,6 @@
 
 ## 🔗 **Related Documentation**
 
-- **Memory System Guide** → `../../ai/memory-guide.md`
-- **Memory Navigation** → `../../ai/memory-hub.md`
 - **Project Setup** → `../../README.md`
 
 *This guide integrates MCP capabilities with the existing research workflow while maintaining security and simplicity.*

@@ -37,7 +37,7 @@ Provides centralized configuration reading functions used by all other AI script
 
 **Memory System Logic Layer**
 
-Implements portable memory management functions following a storage/logic separation pattern. Provides tools for tracking project decisions, AI system status, and human reasoning across research workflows. Works with project-specific memory files (memory-ai.md, memory-human.md, memory-hub.md) while keeping logic portable for reuse across repositories.
+Implements portable memory management functions following a storage/logic separation pattern. Provides tools for tracking project decisions, AI system status, and human reasoning across research workflows. Works with project-specific memory files (memory-ai.md, memory-human.md) while keeping logic portable for reuse across repositories.
 
 **Key Functions:**
 

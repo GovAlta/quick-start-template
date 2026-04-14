@@ -114,8 +114,6 @@ get_ai_file_path <- function(file_type, project_root = ".") {
   switch(file_type,
     "memory-ai" = file.path(project_root, config$memory_dir, "memory-ai.md"),
     "memory-human" = file.path(project_root, config$memory_dir, "memory-human.md"),
-    "memory-hub" = file.path(project_root, config$memory_dir, "memory-hub.md"),
-    "memory-guide" = file.path(project_root, config$memory_dir, "memory-guide.md"),
     "mission" = file.path(project_root, config$project_dir, "mission.md"),
     "method" = file.path(project_root, config$project_dir, "method.md"),
     "glossary" = file.path(project_root, config$project_dir, "glossary.md"),
