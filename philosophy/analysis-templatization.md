@@ -34,9 +34,9 @@ A popular tool for practicing literate programming is the "literate programming 
 
 Faced with the necessity to manage literate scripts to provide the evidence for analytic conclusions we encounter new conceptual and technical challenges related to reproducibility, version control, documentation structure, tooling, and collaboration in our research enterprise. We can distinguish two broad classes/levels of templates aimed to assist us in facing these challenges:
 
--   **Script-level**: These techniques and practices help us strike a balance between code and explanatory text, integrating meaningful narrative and reproducible evidence within individual scripts.
+- **Script-level**: These techniques and practices help us strike a balance between code and explanatory text, integrating meaningful narrative and reproducible evidence within individual scripts.
 
--   **Project-level**: These approaches and methods focus on packaging literate scripts to ensure reproducibility, understandability, and scalability of research projects.
+- **Project-level**: These approaches and methods focus on packaging literate scripts to ensure reproducibility, understandability, and scalability of research projects.
 
 ### Script-Level
 

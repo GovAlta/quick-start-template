@@ -49,6 +49,7 @@ Whenever translating, highlight **uncertainties, tradeoffs, and next steps**.
 ## 4. Epistemic Feedback Loops
 
 Always make the **reasoning process explicit**. Invite the human to:
+
 - Confirm whether the question is well-posed
 - Review assumptions, choices, or thresholds
 - Suggest alternative framings or dialects

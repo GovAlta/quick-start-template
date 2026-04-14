@@ -2,14 +2,14 @@
 
 ## Table of Contents
 
--   [The Problem of Flattened Knowing](#introduction-the-problem-of-flattened-knowing)
--   [Useful Metaphors](#useful-metaphors)
-    -   [Data as a Multidimensional Fabric of Reality](#data-as-a-multidimensional-fabric-of-reality)
-    -   [Data as a Language](#data-as-a-language)
-    -   [Human Analyst as Conductor](#human-analyst-as-conductor)
-    -   [AI as a Polyglot](#ai-as-a-polyglot)
--   [Limits and Tensions](#limits-and-tensions)
--   [Toward a New Literacy](#toward-a-new-literacy)
+- [The Problem of Flattened Knowing](#introduction-the-problem-of-flattened-knowing)
+- [Useful Metaphors](#useful-metaphors)
+  - [Data as a Multidimensional Fabric of Reality](#data-as-a-multidimensional-fabric-of-reality)
+  - [Data as a Language](#data-as-a-language)
+  - [Human Analyst as Conductor](#human-analyst-as-conductor)
+  - [AI as a Polyglot](#ai-as-a-polyglot)
+- [Limits and Tensions](#limits-and-tensions)
+- [Toward a New Literacy](#toward-a-new-literacy)
 
 ![Dialects of data expression](../philosophy/images/dialects.jpg)
 
@@ -23,30 +23,30 @@ This document describes a dialectical epistemology for human–AI collaboration,
 
 ### Data as a Multidimensional Fabric of Reality {#data-as-a-multidimensional-fabric-of-reality}
 
--   In the universe of a research project, for the purposes of collaboration with AI, it may be convenient to think of observed data as the fabric of reality, a structured information that can be made manifest across different dimensions or cross-sections. These are not just formats; they are epistemic dialects, each revealing something different about reality of data:
-    -   **Tabular**: The raw grammar of structured data.
-    -   **Algebraic**: The syntax of mathematical models and statistical relationships.
-    -   **Graphical**: Intuition through visualization.
-    -   **Schematic**: Theory embodied in form (e.g., DAGs, SEMs).
-    -   **Syntactic**: Operationalized logic via code.
-    -   **Numeric**: Evidence for Inference and quantify uncertainly.
-    -   **Semantic**: Meaning rendered in human language.
--   This aligns with modern epistemology and theoretical physics, which conceptualize complex systems as "slices" or "projections" in higher-dimensional spaces.
+- In the universe of a research project, for the purposes of collaboration with AI, it may be convenient to think of observed data as the fabric of reality, a structured information that can be made manifest across different dimensions or cross-sections. These are not just formats; they are epistemic dialects, each revealing something different about reality of data:
+  - **Tabular**: The raw grammar of structured data.
+  - **Algebraic**: The syntax of mathematical models and statistical relationships.
+  - **Graphical**: Intuition through visualization.
+  - **Schematic**: Theory embodied in form (e.g., DAGs, SEMs).
+  - **Syntactic**: Operationalized logic via code.
+  - **Numeric**: Evidence for Inference and quantify uncertainly.
+  - **Semantic**: Meaning rendered in human language.
+- This aligns with modern epistemology and theoretical physics, which conceptualize complex systems as "slices" or "projections" in higher-dimensional spaces.
 
 ### Data as a Language {#data-as-a-language}
 
--   **Lost in Translation.** Another way to think about data is by comparing it to language. The initial tabular data is the proto language, the language of creation, the Old Tongue, the language that cannot lie. It is perfectly accurate, but intensely specific. To be meaningful to humans, it needs to be translated into other languages (i.e. dialects of data expression), which would invariably lose nuance of the captured information. In other words, in needs to be simplified, guidedly distorted to render it meaningful in human terms.
--   **Lies, Damn Lies, and Statistics**. The inherent interpretive nature of meaning-making (i.ie. translation from the proto-language, statistical modeling, etc.) places obvious ethical responsibilities on the human analyst to protect the interest of the public, to the extent that their position in the organization proscribes.
+- **Lost in Translation.** Another way to think about data is by comparing it to language. The initial tabular data is the proto language, the language of creation, the Old Tongue, the language that cannot lie. It is perfectly accurate, but intensely specific. To be meaningful to humans, it needs to be translated into other languages (i.e. dialects of data expression), which would invariably lose nuance of the captured information. In other words, in needs to be simplified, guidedly distorted to render it meaningful in human terms.
+- **Lies, Damn Lies, and Statistics**. The inherent interpretive nature of meaning-making (i.ie. translation from the proto-language, statistical modeling, etc.) places obvious ethical responsibilities on the human analyst to protect the interest of the public, to the extent that their position in the organization proscribes.
 
 This allows us to frame **data analysis** as a polyglot enterprise — expressing the reality written in the "true language of tabular data" into other dialects of data expression, each with its own strengths and limitations. Humans guide AI to implement this translation.
 
--   **Tabular**: Raw numeric records, the native format of many data systems.
--   **Algebraic**: Formal equations that define structure and relationships.
--   **Graphical**: Visualization as a dialect—communicating trends and variation visually.
--   **Schematic**: Diagrammatic models (e.g., SEM or HLM) that reveal theoretical scaffolding.
--   **Semantic**: Plain-language translation that narrativizes patterns into social meaning.
--   **Syntactic**: Code as expression—precise, executable representations of models.
--   **Numeric**: Inferential statistics—quantified evidence for claims.
+- **Tabular**: Raw numeric records, the native format of many data systems.
+- **Algebraic**: Formal equations that define structure and relationships.
+- **Graphical**: Visualization as a dialect—communicating trends and variation visually.
+- **Schematic**: Diagrammatic models (e.g., SEM or HLM) that reveal theoretical scaffolding.
+- **Semantic**: Plain-language translation that narrativizes patterns into social meaning.
+- **Syntactic**: Code as expression—precise, executable representations of models.
+- **Numeric**: Inferential statistics—quantified evidence for claims.
 
 ### Human Analyst as Conductor {#human-analyst-as-conductor}
 
@@ -81,6 +81,5 @@ What this approach demands is a new literacy for analysts: not just technical sk
 ![Dialects of Data Expression](images/dialects.jpg)
 
 Knowledge is a  conversation, emergent from discussion between humans. We employ AI as a polyglot to translate across dialects of data expression, but humans remain the conductors of meaning, flawed but ultimattely accountable for the ethical and epistemic integrity of the research enterprise.
-
 
 ![Dialectic Epistemology for Research Analytics](images/dialectic-epistemology.png)
