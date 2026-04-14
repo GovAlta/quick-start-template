@@ -1,4 +1,4 @@
-# MCP Setup Guide: Preliminaries
+﻿# MCP Setup Guide: Preliminaries
 
 ## Quick Overview
 
@@ -26,7 +26,7 @@
 
 ### MCP Architecture
 
-```         
+```
 AI Assistant ↔ VS Code (MCP Client) ↔ MCP Server ↔ Local Resources
 ```
 
@@ -38,7 +38,7 @@ AI Assistant ↔ VS Code (MCP Client) ↔ MCP Server ↔ Local Resources
 
 **Mitigation Strategy**:
 
-```         
+```
 HIGH SENSITIVITY → Manual curation via ./ai/ system (current approach)
 LOW SENSITIVITY → MCP access (new capability)
 ```

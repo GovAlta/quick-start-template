@@ -1,4 +1,4 @@
-# Adding Custom Data to the Ellis Pipeline
+﻿# Adding Custom Data to the Ellis Pipeline
 
 This guide explains how to add your own custom data sources to the Ellis Pipeline Stage 2 without modifying any R scripts.
 
@@ -19,13 +19,13 @@ The Ellis Pipeline Stage 2 **automatically handles both Ukrainian and English co
 Кількість книгарень   | Івано-Франківська  | 19
 ```
 
-**✅ English Input (For Standardization)**:  
+**✅ English Input (For Standardization)**:
 ```
 Measure               | Territory           | 2023
 Number of Bookstores  | Ivano-Frankivska    | 19
 ```
 
-**🔄 Automatic Standardization**: 
+**🔄 Automatic Standardization**:
 - All inputs are converted to English internally ("pokaznik", "teritoria")
 - Ensures consistency with core pipeline (Stages 0-1)
 - No manual translation required by users
@@ -33,7 +33,7 @@ Number of Bookstores  | Ivano-Frankivska    | 19
 
 **📝 Supported Ukrainian → English Mappings**:
 - `Показник` / `показник` → `pokaznik` (measure/indicator)
-- `Територія` / `територія` → `teritoria` (territory/region)  
+- `Територія` / `територія` → `teritoria` (territory/region)
 - `Область` / `область` → `oblast` (oblast)
 - `Рік` / `рік` → `year` (year)
 
@@ -42,11 +42,12 @@ Number of Bookstores  | Ivano-Frankivska    | 19
 ## 📊 Supported Data Types
 
 ### 1. Categorical Time Series (`categorical_time_series`)
+
 **Best for**: Data organized as dimensions × years (similar to core pipeline data)
 
 **Format Requirements**:
 - `pokaznik` column (measure type)
-- Category column (e.g., region names, themes)  
+- Category column (e.g., region names, themes)
 - Year columns (`x2005`, `x2006`, etc.)
 
 **Example Use Cases**:
@@ -63,6 +64,7 @@ pokaznik          | teritoria           | x2020 | x2021 | x2022 | x2023
 ```
 
 ### 2. Lookup Table (`lookup_table`)
+
 **Best for**: Reference data and mappings
 
 **Format Requirements**:
@@ -83,6 +85,7 @@ region_name        | region_code | population | area_km2
 ```
 
 ### 3. Fact Table (`fact_table`)
+
 **Best for**: Event data and simple tabular information
 
 **Format Requirements**:
@@ -91,7 +94,7 @@ region_name        | region_code | population | area_km2
 
 **Example Use Cases**:
 - Book fair events
-- Publisher survey responses  
+- Publisher survey responses
 - Literary award winners
 - Author interviews
 
@@ -105,6 +108,7 @@ Kyiv Book Arsenal | 2023-05-20 | Kyiv          | 30000      | 1800
 ## ⚙️ Configuration Examples
 
 ### Adding Bookstores Data (Already Implemented)
+
 ```r
 bookstores = list(
   name = "Ukrainian Bookstores by Region",
@@ -121,9 +125,10 @@ bookstores = list(
 ```
 
 ### Adding Libraries Data (Template)
+
 ```r
 libraries = list(
-  name = "Public Libraries by Region", 
+  name = "Public Libraries by Region",
   description = "Number of public libraries per region over time",
   url = "https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID",
   data_type = "categorical_time_series",
@@ -140,11 +145,12 @@ libraries = list(
 ```
 
 ### Adding Region Codes (Template)
+
 ```r
 region_codes = list(
   name = "Region Code Mappings",
   description = "Official codes and metadata for Ukrainian regions",
-  url = "https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID", 
+  url = "https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID",
   data_type = "lookup_table",
   active = TRUE,  # Set to TRUE when ready
   processing_notes = list(
@@ -157,18 +163,21 @@ region_codes = list(
 ## 🔧 Step-by-Step Setup
 
 ### Step 1: Prepare Your Google Sheet
+
 1. **Create or access** your Google Sheets document
 2. **Set sharing** to the same level as the main data (usually "Anyone with the link can view")
 3. **Structure your data** according to one of the supported types above
 4. **Name your sheets** clearly (you'll reference these names in configuration)
 
 ### Step 2: Get Your Sheet ID
+
 From a URL like:
 `https://docs.google.com/spreadsheets/d/1ovYOr_jmdDprYjcGMWAa-w9D1-h7kwwjbRgUgVtlUa0/edit`
 
 The Sheet ID is: `1ovYOr_jmdDprYjcGMWAa-w9D1-h7kwwjbRgUgVtlUa0`
 
-### Step 3: Configure Your Data Source  
+### Step 3: Configure Your Data Source
+
 1. **Open** `manipulation/extra-data-config.R`
 2. **Find** the appropriate template for your data type
 3. **Uncomment** the template code
@@ -180,6 +189,7 @@ The Sheet ID is: `1ovYOr_jmdDprYjcGMWAa-w9D1-h7kwwjbRgUgVtlUa0`
    - Set `active = TRUE`
 
 ### Step 4: Test Your Configuration
+
 ```r
 # Run the extra data script
 source("manipulation/2-ellis-extra.R")
@@ -191,10 +201,11 @@ source("manipulation/2-ellis-extra.R")
 - ❌ Error messages (fix issues in your Google Sheet)
 
 ### Step 5: Verify Integration
+
 ```r
 # Run the complete pipeline
 source("manipulation/0-ellis.R")
-source("manipulation/1-ellis-ua-admin.R") 
+source("manipulation/1-ellis-ua-admin.R")
 source("manipulation/2-ellis-extra.R")
 source("manipulation/last-ellis.R")
 ```
@@ -212,7 +223,7 @@ source("manipulation/last-ellis.R")
 - Check sheet name spelling in `expected_sheets`
 - Verify the sheet exists in your Google document
 
-**"No category column detected"**: 
+**"No category column detected"**:
 - For categorical time series, ensure you have a non-year, non-pokaznik column
 - Manually specify using `category_column_detection = "your_column_name"`
 
@@ -237,6 +248,7 @@ Fix issues in your Google Sheet and re-run the script.
 ## 📈 Advanced Tips
 
 ### Custom Measure Mappings
+
 ```r
 measure_mapping = list(
   "Кількість книгарень" = "bookstore_count",
@@ -246,15 +258,17 @@ measure_mapping = list(
 ```
 
 ### Multiple Sheets per Data Source
+
 ```r
 expected_sheets = c("MainData", "AdditionalData", "Metadata")
 ```
 
 ### Sheet-Specific Table Keys
+
 ```r
 sheet_mapping = list(
   "Головні дані" = "main_data",
-  "Додаткові дані" = "additional_data" 
+  "Додаткові дані" = "additional_data"
 )
 ```
 

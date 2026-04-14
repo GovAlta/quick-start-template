@@ -1,12 +1,13 @@
-# Command Usage Guide
+﻿# Command Usage Guide
 
 A human-friendly guide to the main commands in this project, organized by how often you'll use them.
 
 ## 📊 Main Commands (Daily Use)
 
 ### `context_refresh()`
-**What it does**: Instantly shows project status and refresh options  
-**When to use**: Start of work session, when you need quick overview  
+
+**What it does**: Instantly shows project status and refresh options
+**When to use**: Start of work session, when you need quick overview
 
 **Example**:
 ```r
@@ -20,8 +21,9 @@ context_refresh()
 ```
 
 ### `log_change("file.R", "Added new visualization function")`
-**What it does**: Tracks file changes in project logbook  
-**When to use**: After modifying any important file  
+
+**What it does**: Tracks file changes in project logbook
+**When to use**: After modifying any important file
 
 **Example**:
 ```r
@@ -34,8 +36,9 @@ log_change("analysis/eda-1/eda-1.R", "Added regional comparison plots")
 ```
 
 ### `ai_memory_check()`
-**What it does**: Reviews and updates project memory  
-**When to use**: When making important decisions or planning  
+
+**What it does**: Reviews and updates project memory
+**When to use**: When making important decisions or planning
 
 **Example**:
 ```r
@@ -49,8 +52,9 @@ ai_memory_check()
 ```
 
 ### `analyze_project_status()`
-**What it does**: Complete project health check and navigation command  
-**When to use**: New team member onboarding, regular health checks, when unsure what to do next  
+
+**What it does**: Complete project health check and navigation command
+**When to use**: New team member onboarding, regular health checks, when unsure what to do next
 
 **Example**:
 ```r
@@ -67,8 +71,9 @@ analyze_project_status()
 ```
 
 ### `project_setup_check()`
-**What it does**: Comprehensive environment validation with detailed diagnostics  
-**When to use**: After fresh installation, when experiencing errors, troubleshooting  
+
+**What it does**: Comprehensive environment validation with detailed diagnostics
+**When to use**: After fresh installation, when experiencing errors, troubleshooting
 
 **Example**:
 ```r
@@ -86,8 +91,9 @@ project_setup_check()
 ## 🔧 Regular Commands (Weekly Use)
 
 ### `memory_status()`
-**What it does**: Shows what's currently loaded in AI context  
-**When to use**: Before starting complex analysis work  
+
+**What it does**: Shows what's currently loaded in AI context
+**When to use**: Before starting complex analysis work
 
 **Example**:
 ```r
@@ -97,14 +103,15 @@ memory_status()
 ```
 Currently loaded components:
 ✅ mission (updated 2025-08-01)
-✅ mission (updated 2025-07-30)  
+✅ mission (updated 2025-07-30)
 ✅ method (updated 2025-08-02)
 ❌ Not loaded: dialects, semiology
 ```
 
 ### `add_core_context("filename")`
-**What it does**: Loads specific AI context files  
-**When to use**: When switching to different project aspects  
+
+**What it does**: Loads specific AI context files
+**When to use**: When switching to different project aspects
 
 **Example**:
 ```r
@@ -118,8 +125,9 @@ add_core_context("semiology")
 ```
 
 ### `add_data_context("dataset_name")`
-**What it does**: Loads specific dataset information  
-**When to use**: Before analyzing particular datasets  
+
+**What it does**: Loads specific dataset information
+**When to use**: Before analyzing particular datasets
 
 **Example**:
 ```r
@@ -135,8 +143,9 @@ add_data_context("ds_language_long")
 ## 📋 Occasional Commands (Monthly Use)
 
 ### `add_to_instructions("new instruction")`
-**What it does**: Updates AI instructions with new guidance  
-**When to use**: When establishing new project patterns  
+
+**What it does**: Updates AI instructions with new guidance
+**When to use**: When establishing new project patterns
 
 **Example**:
 ```r
@@ -150,8 +159,9 @@ add_to_instructions("Always include data source citations in visualizations")
 ```
 
 ### `log_file_change("path/to/file.R", "Description")`
-**What it does**: Full file change logging with metadata  
-**When to use**: For detailed documentation of major changes  
+
+**What it does**: Full file change logging with metadata
+**When to use**: For detailed documentation of major changes
 
 **Example**:
 ```r

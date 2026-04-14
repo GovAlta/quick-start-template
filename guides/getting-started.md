@@ -1,4 +1,4 @@
-# Getting Started Guide
+﻿# Getting Started Guide
 
 ## Welcome to the Project: First Steps for New Device Setup
 
@@ -17,13 +17,14 @@ This guide will help you set up your environment and get started with this repos
 
 ### 2. Clone the Repository
 
-Open a terminal and run: 
+Open a terminal and run:
 
 ```sh
 git clone <REPO_URL>
 cd books-of-ukraine
 ```
 ### Or download the repository as a ZIP file from GitHub and extract it to your desired location. **(recomended for beginners)**
+
 ---
 
 ### 3. Install Required R Packages
@@ -70,7 +71,6 @@ source("scripts/test-database-connection.R")
 - **Structure:** Modular scripts, reproducible reports, and robust context/memory management for collaborative analysis.
 - **Documentation:** See `README.md`, `guides/command-reference.md`, and `guides/` for detailed guides.
 
-
 ## The best documetns to visuit:
 
 - `README.md` - Project overview and setup instructions
@@ -108,6 +108,7 @@ These commands will:
 ---
 
 ## Need Help?
+
 - See `guides/command-reference.md` for all available commands and their usage
 - Review `README.md` for project background and structure
 - For database connection issues, run `Rscript scripts/verify-data-access.R`

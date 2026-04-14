@@ -1,4 +1,4 @@
-# Dendron Quick Reference
+﻿# Dendron Quick Reference
 
 > VS Code extension for hierarchical, wiki-linked markdown notes.
 > Install: `dendron.dendron` | Docs: https://wiki.dendron.so

@@ -1,4 +1,4 @@
-# MCP Setup Guide: Memory System Integration
+﻿# MCP Setup Guide: Memory System Integration
 
 *How Memory MCP integrates with our five-component memory system*
 
@@ -21,7 +21,7 @@
 
 ### **Create Key Entities**
 
-```         
+```
 # Add major project concepts to knowledge graph
 mcp_memory_create_entities([
   {name: "CEIS-NIA-2025", entityType: "project", observations: ["Net Impact Analysis implementation for 2025"]},
@@ -32,8 +32,8 @@ mcp_memory_create_entities([
 
 ### **Track Decision Evolution**
 
-```         
-# Connect decisions over time  
+```
+# Connect decisions over time
 mcp_memory_create_relations([
   {from: "Memory-System-Evaluation", to: "Phase-1-Implementation", relationType: "led-to"},
   {from: "Phase-1-Implementation", to: "Wiki-Link-Network", relationType: "created"},
@@ -43,11 +43,11 @@ mcp_memory_create_relations([
 
 ### **Search Knowledge Network**
 
-```         
+```
 # Find all project decisions
 mcp_memory_search_nodes("decision implementation phase")
 
-# Find methodology connections  
+# Find methodology connections
 mcp_memory_search_nodes("TWaNG methodology propensity score")
 ```
 

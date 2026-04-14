@@ -8,25 +8,23 @@ Refer to [RAnalysisSkeleton](https://github.com/wibeasley/RAnalysisSkeleton) for
 
 ## 🎭 AI Persona System
 
-This project template includes 9 specialized AI personas, each optimized for different research tasks:
+This project template includes several specialized AI personas, each optimized for different research tasks. Users are encouraged to edits the language of each persona to reflect personal preferences. 
 
-### **Core Personas**
+### **Defined Personas**
 
-- **🔧 Developer** - Technical infrastructure and reproducible code
-- **📊 Project Manager** - Strategic oversight and coordination
-- **🔬 Research Scientist** - Statistical analysis and methodology
-
-### **Specialized Personas** 
-
-- **💡 Prompt Engineer** - AI optimization and prompt design
 - **⚡ Data Engineer** - Data pipelines and quality assurance
-- **📈 Grapher** - Data visualization and display of informatioin
-- **📝 Reporter** - Analysis communication and storytelling
+- **🔧 Developer** - Technical infrastructure and reproducible code
 - **🚀 DevOps Engineer** - Deployment and operational excellence
 - **🎨 Frontend Architect** - User interfaces and visualization
-- **&#x1F3A4; Presenter** - Produces slides and talk materials. 
+- **💡 Prompt Engineer** - AI optimization and prompt design
+- **📈 Grapher** - Data visualization and display of informatioin
+- **🎤 Presenter** - Produces slides and talk materials. 
+- **📊 Project Manager** - Strategic oversight and coordination
+- **📝 Reporter** - Analysis communication and storytelling
+- **🔬 Research Scientist** - Statistical analysis and methodology
 
 You can switch between personas in VSCode:
+
 - `Ctrl+Shift+P` → "Tasks: Run Task" → "Activate [Persona Name] Persona"  
 - Instruct the chat agent to switch to the specific persona you name  
 
@@ -40,8 +38,6 @@ You can define persona's default context in `get_persona_configs()` function of 
 ```
 
 You can define what context files get a shortcut alias, so they can be integrated into the chat calls easily. See `get_file_map()` function in `ai/scripts/dynamic-context-builder.R`.
-
-
 
 ## 🧠 Memory System
 
@@ -105,9 +101,9 @@ The template includes an intelligent memory system that maintains project contin
 
 5. **Customize Your Project**
 
-Each personal could be customized by adding specific documents to the dynamic part of the copilot-instructions.md (Section 3). Some personas may have some documents loaded by default (e.g. Project Manager and Grapher load mission, method, and glossary). 
+Each personal could be customized by adding specific documents to the dynamic part of the copilot-instructions.md (Section 3). Some personas may have some documents loaded by default (e.g. Project Manager and Grapher load mission, method, and glossary).
 
-   - Edit `ai/mission.md` - What you wan to do: goals and deliverables
-   - Edit `ai/method.md` - How you want to do it: tecniques and processes 
-   - Edit `ai/glossary.md` - Encyclopedia of domain-specific terms
-   - Update `config.yml` - To set project-specific configurations
+- Edit `ai/mission.md` - What you wan to do: goals and deliverables
+- Edit `ai/method.md` - How you want to do it: tecniques and processes 
+- Edit `ai/glossary.md` - Encyclopedia of domain-specific terms
+- Update `config.yml` - To set project-specific configurations

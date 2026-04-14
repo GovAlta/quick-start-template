@@ -1,11 +1,13 @@
-# Silent Mini-EDA Export Guide
+﻿# Silent Mini-EDA Export Guide
 
 ## Overview
+
 This guide explains how to export the silent mini-EDA functionality from the books-of-ukraine project to other R-based data analysis projects.
 
 ## Core Files to Export
 
 ### 1. Silent EDA Engine
+
 **File**: `scripts/silent-mini-eda.R`
 **Purpose**: Core analysis functions that work with any data frame
 
@@ -19,6 +21,7 @@ This guide explains how to export the silent mini-EDA functionality from the boo
 ```
 
 ### 2. Integration Layer
+
 **File**: `scripts/common-functions.R` (relevant functions only)
 **Purpose**: Easy-to-use wrapper functions
 
@@ -31,6 +34,7 @@ This guide explains how to export the silent mini-EDA functionality from the boo
 ## Export Process
 
 ### Step 1: Copy Core Files
+
 ```bash
 # Copy the silent EDA engine
 cp scripts/silent-mini-eda.R /path/to/new/project/scripts/
@@ -40,6 +44,7 @@ cp scripts/silent-mini-eda.R /path/to/new/project/scripts/
 ```
 
 ### Step 2: Adapt for New Project
+
 ```r
 # In the new project's common-functions.R or setup script:
 source("./scripts/silent-mini-eda.R")
@@ -51,24 +56,25 @@ smart_plot <- function(dataset_name, plot_intent = "explore", verbose = FALSE) {
 ```
 
 ### Step 3: Integration Pattern
+
 For any analysis script in the new project:
 
 ```r
 # Standard pattern for intelligent plotting:
 if (exists("my_dataset")) {
-  
+
   # Silent analysis (invisible to user)
   if (file.exists("./scripts/silent-mini-eda.R")) {
     source("./scripts/silent-mini-eda.R")
-    
+
     cat("🤖 Running behind-the-scenes analysis of my_dataset...\n")
     analysis <- silent_mini_eda("my_dataset", verbose = FALSE)
-    
+
     if (analysis$exists && analysis$is_dataframe) {
       # Report key findings
       cat("✅ Dataset analysis complete. Key findings:\n")
       # ... (copy pattern from eda-3.R)
-      
+
       # Use analysis to inform plot design
       # ... (create intelligent ggplot based on insights)
     }
@@ -79,6 +85,7 @@ if (exists("my_dataset")) {
 ## Customization for Domain-Specific Projects
 
 ### Business Intelligence Projects
+
 ```r
 # Add BI-specific recommendations
 if (any(grepl("revenue|sales|profit", names(df), ignore.case = TRUE))) {
@@ -90,6 +97,7 @@ if (any(grepl("revenue|sales|profit", names(df), ignore.case = TRUE))) {
 ```
 
 ### Scientific Research Projects
+
 ```r
 # Add research-specific recommendations
 if (any(grepl("p_value|significance|treatment", names(df), ignore.case = TRUE))) {
@@ -101,6 +109,7 @@ if (any(grepl("p_value|significance|treatment", names(df), ignore.case = TRUE)))
 ```
 
 ### Geographic/Spatial Projects
+
 ```r
 # Add geographic recommendations
 if (any(grepl("lat|lon|latitude|longitude|region|country", names(df), ignore.case = TRUE))) {
@@ -112,6 +121,7 @@ if (any(grepl("lat|lon|latitude|longitude|region|country", names(df), ignore.cas
 ```
 
 ## Dependencies
+
 The exported functionality requires these R packages:
 ```r
 # Required packages
@@ -126,6 +136,7 @@ library(lubridate) # Date handling
 ```
 
 ## Testing the Export
+
 Create a simple test to verify the export works:
 
 ```r
@@ -141,6 +152,7 @@ cat("Export test completed successfully!\n")
 ```
 
 ## Minimal Working Example
+
 For a new project, create this minimal setup:
 
 ```r
@@ -152,7 +164,7 @@ if (!file.exists("scripts")) dir.create("scripts")
 
 create_intelligent_plot <- function(dataset_name, plot_type = "explore") {
   analysis <- silent_mini_eda(dataset_name, verbose = FALSE)
-  
+
   if (analysis$exists) {
     # Use analysis to create smart plot
     # Implementation depends on your specific needs
@@ -161,12 +173,14 @@ create_intelligent_plot <- function(dataset_name, plot_type = "explore") {
 ```
 
 ## Benefits for New Projects
+
 - **Immediate Intelligence**: Plots are optimized for data structure without manual configuration
 - **Consistent Quality**: Avoids common plotting mistakes across team members
 - **Reduced Learning Curve**: New team members get good visualizations immediately
 - **Extensible**: Easy to add domain-specific intelligence
 
 ## Support and Maintenance
+
 When using this in other projects:
 1. Keep the core functions generic (don't hard-code book publishing logic)
 2. Add project-specific intelligence in separate functions

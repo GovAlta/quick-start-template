@@ -1,4 +1,4 @@
-# Environment Management Guide
+﻿# Environment Management Guide
 
 This guide explains the different approaches for managing R package dependencies in this project, helping you choose the right method for your needs.
 
@@ -84,7 +84,7 @@ renv::snapshot()  # Update renv.lock with new packages
 
 **Pros:**
 - ✅ **Cross-language** - manages R, Python, system libraries
-- ✅ **System dependencies** - handles complex binary dependencies  
+- ✅ **System dependencies** - handles complex binary dependencies
 - ✅ **Fast solver** - mamba provides rapid dependency resolution
 - ✅ **Reproducible** - locks all package versions
 - ✅ **Isolated environments** - complete separation
@@ -100,7 +100,7 @@ renv::snapshot()  # Update renv.lock with new packages
 # Create environment
 conda env create -f environment.yml
 
-# Activate environment  
+# Activate environment
 conda activate quick-start-template
 
 # Update environment
@@ -110,6 +110,7 @@ conda env update -f environment.yml
 ## 🚀 **Migration Paths**
 
 ### From CSV to renv
+
 ```r
 # 1. Current CSV system working? Great!
 Rscript utility/enhanced-install-packages.R
@@ -123,6 +124,7 @@ git commit -m "Add renv for reproducibility"
 ```
 
 ### From renv back to CSV
+
 ```r
 # 1. Deactivate renv
 renv::deactivate()
@@ -136,6 +138,7 @@ Rscript utility/enhanced-install-packages.R
 ```
 
 ### Adding Conda Support
+
 ```bash
 # 1. Install miniconda/mamba
 # 2. Create environment from our template
@@ -148,6 +151,7 @@ conda activate quick-start-template
 ## 🔧 **Troubleshooting**
 
 ### Package Installation Issues
+
 ```r
 # Check what's failing
 Rscript scripts/check-setup.R
@@ -160,6 +164,7 @@ sapply(c("dplyr", "ggplot2"), packageVersion)
 ```
 
 ### renv Issues
+
 ```r
 # Reset renv cache
 renv::purge()
@@ -172,6 +177,7 @@ renv::diagnostics()
 ```
 
 ### Version Conflicts
+
 ```r
 # See what's installed
 installed.packages()[, c("Package", "Version")]
@@ -184,18 +190,21 @@ source("utility/enhanced-install-packages.R")
 ## 📋 **Best Practices**
 
 ### For Template Developers
+
 - ✅ Use **CSV system** for maximum flexibility
 - ✅ Provide **renv option** for users who need it
 - ✅ Test on **multiple platforms**
 - ✅ Document **version requirements** clearly
 
 ### For Research Projects
+
 - ✅ Start with **CSV system** for development
 - ✅ Switch to **renv** before publication
 - ✅ **Version control** your environment files
 - ✅ Test **restoration** on clean machines
 
 ### For Teams
+
 - ✅ **Decide together** on approach (CSV vs renv)
 - ✅ **Document** your choice in README
 - ✅ **Test** new member onboarding regularly
@@ -211,6 +220,6 @@ source("utility/enhanced-install-packages.R")
 ## 📚 **Additional Resources**
 
 - [renv documentation](https://rstudio.github.io/renv/)
-- [Conda documentation](https://docs.conda.io/)  
+- [Conda documentation](https://docs.conda.io/)
 - [R Package Management Best Practices](https://r-pkgs.org/)
 - [Reproducible Research with R](https://bookdown.org/)

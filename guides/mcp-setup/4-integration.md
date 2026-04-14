@@ -1,4 +1,4 @@
-# MCP Integration with ./ai/ Framework
+﻿# MCP Integration with ./ai/ Framework
 
 ## Quick Overview
 
@@ -43,7 +43,7 @@ Relations: ["MCP Integration" → "requires" → "Node.js Setup"]
 **For Complex Research Questions** (e.g., Net Impact Analysis):
 
 1. **Read Mission** (`./ai/mission.md`) → Understand research goals
-2. **Sequential Thinking MCP** → Break down analysis steps  
+2. **Sequential Thinking MCP** → Break down analysis steps
 3. **Context7 MCP** → Get current R/Python documentation
 4. **Memory MCP** → Track insights and decisions
 5. **Update Human Memory** (`./ai/memory-human.md`) → Document conclusions
@@ -67,7 +67,7 @@ Result: Current documentation from /tidyverse/dplyr repository
 Research Question: "What is the net impact of workforce development programs?"
 → Sequential Thinking MCP breaks this into:
   1. Define impact metrics
-  2. Identify data sources  
+  2. Identify data sources
   3. Choose analytical methods
   4. Plan validation approach
 ```
@@ -120,7 +120,7 @@ Memory MCP: Add entity "DBT Implementation"
 
 **Low Sensitivity** → MCP automation:
 - Public analysis code
-- Documentation and guides  
+- Documentation and guides
 - Library references
 - Technical implementation
 
@@ -145,7 +145,7 @@ Memory MCP: Add entity "DBT Implementation"
 ### Scenario 1: Collaborative Research
 
 **Problem**: Multiple researchers need to understand project status
-**Solution**: 
+**Solution**:
 - Static `./ai/mission.md` provides unchanging research philosophy
 - Dynamic Memory MCP tracks evolving insights and connections
 - Sequential Thinking documents analytical reasoning
@@ -172,12 +172,14 @@ Memory MCP: Add entity "DBT Implementation"
 ## Next Steps
 
 ### Immediate Implementation
+
 1. **Test Memory MCP** with current project entities
 2. **Use Sequential Thinking** for next analysis planning
 3. **Query Context7** for current R documentation needs
 4. **Update project status** script to show MCP capabilities
 
 ### Long-term Integration
+
 1. **Develop workflows** combining all MCP tools
 2. **Create templates** for common research patterns
 3. **Build project-specific** knowledge graphs

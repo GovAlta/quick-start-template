@@ -1,16 +1,16 @@
-# MCP Installation & Configuration
+﻿# MCP Installation & Configuration
 
 ## Quick Overview
 
 **Achievement**: ✅ MCP filesystem server installed and configured for VS Code integration.
 
-**What Works**: 
+**What Works**:
 - MCP filesystem server v2025.7.29 installed globally
 - VS Code configuration created with restricted directory access
 - Server runs successfully and accepts connections
 
 **Security Implementation**:
-- Access limited to: `data-public/`, `analysis/`, `ai/` 
+- Access limited to: `data-public/`, `analysis/`, `ai/`
 - `data-private/` explicitly excluded from MCP scope
 - Enterprise-friendly: no permanent system modifications
 
@@ -41,7 +41,7 @@ npm install -g @modelcontextprotocol/server-filesystem
       "args": [
         "C:\\Users\\andriy.koval\\AppData\\Roaming\\npm\\node_modules\\@modelcontextprotocol\\server-filesystem\\dist\\index.js",
         "C:\\Users\\andriy.koval\\Documents\\GitHub-EMU\\sda-ceis-dashboard\\data-public",
-        "C:\\Users\\andriy.koval\\Documents\\GitHub-EMU\\sda-ceis-dashboard\\analysis", 
+        "C:\\Users\\andriy.koval\\Documents\\GitHub-EMU\\sda-ceis-dashboard\\analysis",
         "C:\\Users\\andriy.koval\\Documents\\GitHub-EMU\\sda-ceis-dashboard\\ai"
       ]
     }
@@ -65,7 +65,7 @@ npm install -g @modelcontextprotocol/server-filesystem
 
 ### Enterprise Considerations
 
-**PATH Management**: 
+**PATH Management**:
 - Each terminal session requires `.\setup-nodejs.ps1`
 - VS Code configuration uses full paths to bypass PATH issues
 - No permanent system modifications required
