@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# Pre-commit hook: reject staged files containing patterns that look like
+# real Social Insurance Numbers (SINs).
+#
+# - Scans .R, .Rmd, .md, .csv files for 9-digit numbers in SIN contexts
+# - Allows synthetic 999-prefix values (not a valid Canadian SIN series)
+# - Install: git config core.hooksPath .githooks
+#
+
+FOUND=0
+
+# Get list of staged files (added or modified), filter to relevant extensions
+FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -iE '\.(R|Rmd|md|csv)$')
+
+if [ -z "$FILES" ]; then
+    exit 0
+fi
+
+for FILE in $FILES; do
+    # Extract staged content and look for 9-digit numbers near SIN-related keywords
+    # Skip lines where the 9-digit number starts with 999 (synthetic)
+    HITS=$(git show ":$FILE" 2>/dev/null | grep -inE '(social_insurance_number|_sin|sin\s*==|sin\s*%in%)' | grep -oE '\b[0-9]{9}\b' | grep -v '^999' || true)
+
+    if [ -n "$HITS" ]; then
+        echo "BLOCKED: $FILE contains what appears to be real SIN value(s):"
+        echo "$HITS" | head -5
+        FOUND=1
+    fi
+done
+
+if [ "$FOUND" -eq 1 ]; then
+    echo ""
+    echo "Commit rejected. Real SIN values must not be committed."
+    echo "Use synthetic 999-prefix identifiers for debugging."
+    exit 1
+fi
+
+exit 0
