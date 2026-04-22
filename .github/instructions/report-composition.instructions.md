@@ -23,6 +23,26 @@ Every analysis consists of an `.R` script and a `.qmd` document:
 read_chunk("analysis/eda-N/eda-N.R")
 ```
 
+## R Script Structure Conventions
+
+Every `.R` script uses two levels of structural markers:
+
+- **CHUNKS** — named with `# ---- chunk-name ----` (lowercase-hyphen). One chunk = one idea: data prep, one graph, or one table. Chunk names never change once assigned (graph numbers are stable).
+- **SECTIONS** — named with `# ---- SECTION: Title ----` (all-caps `SECTION:` prefix). Mark logical groups of related chunks (e.g., attrition, year-0 profile). Collapsible in RStudio (Alt+O to fold all). A plain-comment description goes immediately below the header.
+- **No decorative borders**: Never use `# ===...===` or similar ornamental comment lines anywhere in the script.
+
+```r
+# ---- SECTION: Attrition Narration -------------------------------------------
+# Two-stage reduction to the incident cohort.
+# Stage 0 — SIN-linkable; Stage 1 — Left-truncation (first record ≥ 2013).
+
+# ---- attrition-stage0 --------------------------------------------------------
+# ... chunk code ...
+
+# ---- attrition-stage1 --------------------------------------------------------
+# ... chunk code ...
+```
+
 ## Graph Family Protocol
 
 A **graph family** is a collection of visualizations sharing a common data-preparation ancestor.

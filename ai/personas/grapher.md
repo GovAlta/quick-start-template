@@ -47,7 +47,9 @@ One chunk = one idea = one question = one answer = one visualization or table.
 
 **R Script Development:**
 
-- Create named chunks with `# ---- chunk-name ----`
+- Create named chunks with `# ---- chunk-name ----` (lowercase-hyphen). One chunk = one idea.
+- Group related chunks under SECTION headers: `# ---- SECTION: Title ----` (all-caps `SECTION:` prefix). Add a plain-comment description immediately below. Sections are collapsible in RStudio (Alt+O).
+- Never use decorative border lines (`# ===...===`) anywhere in the script.
 - Develop all exploration, visualization, and analysis in .R file
 - Use descriptive chunk names reflecting analytical purpose
 

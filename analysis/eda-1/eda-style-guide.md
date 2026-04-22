@@ -40,7 +40,27 @@ ggsave(paste0(prints_folder, "g21_performance_comparison.png"),
 ```
 
 
-## 📊 Graph Families: The Heart of Systematic EDA
+## �️ R Script Structure Conventions
+
+Every `.R` script uses two levels of structural markers:
+
+- **CHUNKS** — named with `# ---- chunk-name ----` (lowercase-hyphen). One chunk = one idea. Chunk names never change once assigned.
+- **SECTIONS** — named with `# ---- SECTION: Title ----` (all-caps `SECTION:` prefix). Mark logical groups of related chunks. Collapsible in RStudio (Alt+O to fold all). A plain-comment description goes immediately below the header.
+- **No decorative borders**: Never use `# ===...===` or similar ornamental comment lines anywhere in the script.
+
+```r
+# ---- SECTION: Attrition Narration -------------------------------------------
+# Two-stage reduction to the incident cohort.
+# Stage 0 — SIN-linkable; Stage 1 — Left-truncation (first record ≥ 2013).
+
+# ---- attrition-stage0 --------------------------------------------------------
+# ... chunk code ...
+
+# ---- attrition-stage1 --------------------------------------------------------
+# ... chunk code ...
+```
+
+## �📊 Graph Families: The Heart of Systematic EDA
 
 ### **Understanding Graph Families Through Data Ancestry**
 
