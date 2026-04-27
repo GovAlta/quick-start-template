@@ -202,8 +202,10 @@ g21_cylinder_mpg <- g2_data %>%
   theme_minimal() +
   theme(legend.position = "none")
 
-# Save to prints folder (R script protocol - no print() here)
+# Save to prints folder (following template protocol)
 ggsave(paste0(prints_folder, "g21_cylinder_mpg.png"), 
        g21_cylinder_mpg, width = 8.5, height = 5.5, dpi = 300)
+# Note: R script saves to disk - print() added for Quarto display
+print(g21_cylinder_mpg)
 
 # nolint end
