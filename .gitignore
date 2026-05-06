@@ -103,6 +103,10 @@ Desktop.ini
 .~*.pptx#
 .~*.xlsx#
 
+# ---- copilot-support -------------------------------------
+.copilot-persona
+.github/copilot-instructions.md
+
 # ---- reporting-files --------------------------------------
 analysis/*/*.png
 analysis/*/*.jpg
@@ -125,6 +129,4 @@ analysis/*/*/*/*.html
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/settings.json.example
-.copilot-persona
-.github/copilot-instructions.md
 
