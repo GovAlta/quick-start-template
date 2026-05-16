@@ -3,7 +3,12 @@
 # Purpose : Extract the canonical Mermaid pipeline diagram from
 #           manipulation/pipeline.md and render it to a static image.
 #
-# Output  : libs/images/pipeline-architecture.jpg
+# Source  : manipulation/pipeline.md — the ```mermaid block tagged with
+#           <!-- PIPELINE-DIAGRAM-SOURCE --> on the line immediately before it
+# Output  : manipulation/images/pipeline-architecture.jpg
+#
+# Insertion sites are tagged with <!-- PIPELINE-DIAGRAM --> in the repo.
+# After rendering, this script scans and reports all tagged files.
 #
 # Dependencies:
 #   - Node.js / npx on the system PATH  (for @mermaid-js/mermaid-cli)
@@ -14,9 +19,11 @@
 #   # or interactively:
 #   source("utility/render-pipeline-diagram.R")
 #
-# Referencing the output in other documents:
-#   Markdown  : ![Pipeline Architecture](libs/images/pipeline-architecture.jpg)
-#   Quarto    : ![](../libs/images/pipeline-architecture.jpg){width="100%"}
+# Embedding the output:
+#   Markdown : <!-- PIPELINE-DIAGRAM -->
+#              ![Pipeline Architecture](manipulation/images/pipeline-architecture.jpg)
+#   Quarto   : <!-- PIPELINE-DIAGRAM -->
+#              ![](../../manipulation/images/pipeline-architecture.jpg){width="100%"}
 #
 # -----------------------------------------------------------------------------
 
@@ -30,19 +37,27 @@ width_in  <- 8.5    # output width  in inches
 height_in <- 2.5    # output height in inches
 dpi       <- 150    # resolution  (150 dpi → 1275 × 375 px at defaults)
 
-# ── 1. Extract the first ```mermaid block from pipeline.md ────────────────────
-lines    <- readLines(source_md, warn = FALSE)
-start_ix <- which(grepl("^```mermaid", lines))[1]
-if (is.na(start_ix)) stop("No ```mermaid block found in: ", source_md)
+# ── 1. Extract the ```mermaid block tagged with <!-- PIPELINE-DIAGRAM-SOURCE -->
+lines      <- readLines(source_md, warn = FALSE)
+src_marker <- "<!-- PIPELINE-DIAGRAM-SOURCE -->"
+marker_ix  <- which(trimws(lines) == src_marker)[1]
+if (is.na(marker_ix)) {
+  stop(
+    "No <!-- PIPELINE-DIAGRAM-SOURCE --> marker found in: ", source_md, "\n",
+    "Add this comment on the line immediately before the ```mermaid fence."
+  )
+}
 
-# find the closing fence that follows the opening fence
+start_ix <- which(grepl("^```mermaid", lines) & seq_along(lines) > marker_ix)[1]
+if (is.na(start_ix)) stop("No ```mermaid block found after the marker in: ", source_md)
+
 fence_ix <- which(grepl("^```\\s*$", lines))
 end_ix   <- fence_ix[fence_ix > start_ix][1]
 if (is.na(end_ix)) stop("Unclosed mermaid block in: ", source_md)
 
 mermaid_code <- paste(lines[(start_ix + 1L):(end_ix - 1L)], collapse = "\n")
 
-# ── 2. Write to a temp .mmd file ──────────────────────────────────────────────
+# ── 2. Write to a temp .mmd file ─────────────────────────────────────────────
 tmp_mmd <- tempfile(fileext = ".mmd")
 tmp_png <- tempfile(fileext = ".png")
 on.exit(suppressWarnings(file.remove(c(tmp_mmd, tmp_png))), add = TRUE)
@@ -71,12 +86,12 @@ if (rc != 0L) {
   )
 }
 
-# ── 4. Resize / crop to exact dimensions and save as JPG ─────────────────────
+# ── 4. Resize / pad to exact dimensions ───────────────────────────────────────
 img <- image_read(tmp_png)
 
 # Scale so width matches exactly; then extend/pad vertically to target height
-geo_w <- geometry_size_pixels(width = width_px)
-img   <- image_resize(img, geo_w)
+geo_w  <- geometry_size_pixels(width = width_px)
+img    <- image_resize(img, geo_w)
 
 geo_wh <- geometry_size_pixels(width = width_px, height = height_px)
 img    <- image_extent(img, geo_wh, gravity = "Center", color = "white")
@@ -84,9 +99,33 @@ img    <- image_extent(img, geo_wh, gravity = "Center", color = "white")
 # Ensure output directory exists
 dir.create(dirname(output_jpg), showWarnings = FALSE, recursive = TRUE)
 
+# ── 5. Save as JPG ───────────────────────────────────────────────────────────
 image_write(img, path = output_jpg, format = "jpeg", quality = 95)
 
 message(sprintf(
   "\u2713 Pipeline diagram saved to: %s  (%d \u00d7 %d px @ %d dpi)",
   output_jpg, width_px, height_px, dpi
 ))
+
+# ── 6. Scan repo for <!-- PIPELINE-DIAGRAM --> insertion sites ────────────────
+message("\n── Scanning repo for <!-- PIPELINE-DIAGRAM --> insertion sites …")
+
+scan_exts  <- c("*.md", "*.qmd", "*.R", "*.Rmd")
+all_files  <- unlist(lapply(scan_exts, function(ext) {
+  list.files(".", pattern = glob2rx(ext), recursive = TRUE,
+             full.names = TRUE, ignore.case = TRUE)
+}))
+
+ins_marker <- "<!-- PIPELINE-DIAGRAM -->"
+tagged     <- Filter(function(f) {
+  any(grepl(ins_marker, readLines(f, warn = FALSE), fixed = TRUE))
+}, all_files)
+
+if (length(tagged) == 0L) {
+  message("  (no files tagged — add ", ins_marker, " above each diagram embed)")
+} else {
+  message(sprintf("  Found %d tagged file(s):", length(tagged)))
+  for (f in sort(tagged)) message("    ", sub("^\\./", "", f))
+}
+
+message("\nDone. Refresh any tagged files to display the updated diagram.")

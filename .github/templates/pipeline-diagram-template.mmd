@@ -1,0 +1,58 @@
+%% Pipeline Diagram Template
+%%
+%% PURPOSE
+%%   Starting-point Mermaid diagram for projects that follow the
+%%   manipulation/ → analysis/ pipeline structure.
+%%
+%% EDITING
+%%   Edit this file (no ``` fences needed — it is a bare .mmd file).
+%%   Render to PNG + JPG with the "Render Pipeline Diagram" VS Code task
+%%   or:  Rscript utility/render-pipeline-diagram.R
+%%
+%% COLOR CONVENTIONS  (keep consistent across repos)
+%%   #4a90d9  Blue   — sequential flow scripts (Ingestion, Transformation)
+%%   #f5a623  Orange — advisory / nonflow / out-of-sequence (EDA)
+%%   #7b68ee  Purple — modeling stages (Mint, Train, Forecast)
+%%   #50c878  Green  — delivery / report
+%%
+%% INSERTION SITES
+%%   Tag every location where this image is embedded with the marker:
+%%     <!-- PIPELINE-DIAGRAM -->
+%%   The render script scans for this marker and reports all tagged files.
+%%
+%% ADVISORY NODE PATTERN
+%%   An out-of-sequence EDA or exploration script connects with a dashed
+%%   arrow (-.->|informs|) rather than a solid arrow, and is styled orange.
+%%   It receives input from the last sequential node before it diverges,
+%%   but does NOT pass output forward as a data artifact — only as insight.
+
+flowchart LR
+    subgraph "Data Ingestion"
+        A["1-ferry.R<br/><i>Import</i>"]
+    end
+    subgraph "Transformation"
+        B["2-ellis.R<br/><i>Clean &amp; Shape</i>"]
+    end
+    subgraph "Advisory"
+        C["eda-N.qmd<br/><i>Diagnostics</i>"]
+    end
+    subgraph "Modeling"
+        D["3-mint.R<br/><i>Prepare</i>"]
+        E["4-train.R<br/><i>Estimate</i>"]
+        F["5-forecast.R<br/><i>Predict</i>"]
+    end
+    subgraph "Delivery"
+        G["report-N.qmd<br/><i>Report</i>"]
+    end
+
+    A --> B --> C
+    B --> D --> E --> F --> G
+    C -.->|informs| D
+
+    style A fill:#4a90d9,color:#fff
+    style B fill:#4a90d9,color:#fff
+    style C fill:#f5a623,color:#fff
+    style D fill:#7b68ee,color:#fff
+    style E fill:#7b68ee,color:#fff
+    style F fill:#7b68ee,color:#fff
+    style G fill:#50c878,color:#fff

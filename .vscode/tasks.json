@@ -171,6 +171,19 @@
       "problemMatcher": []
     },
     {
+      "label": "Render Pipeline Diagram",
+      "detail": "Render manipulation/pipeline.md (<!-- PIPELINE-DIAGRAM-SOURCE --> block) to JPG, then report <!-- PIPELINE-DIAGRAM --> insertion sites",
+      "type": "shell",
+      "command": "Rscript",
+      "args": [
+        "utility/render-pipeline-diagram.R"
+      ],
+      "isBackground": false,
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
       "label": "Run Ferry Pattern Example",
       "detail": "Execute ferry-lane-example.R to transport mtcars from WAREHOUSE to CACHE",
       "type": "process",
